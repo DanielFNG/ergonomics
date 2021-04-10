@@ -1338,7 +1338,7 @@
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
 							<clamped>false</clamped>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
 							<prescribed_function />
 						</Coordinate>
@@ -1973,7 +1973,7 @@
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
 							<clamped>false</clamped>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
 							<prescribed_function />
 						</Coordinate>
@@ -2240,98 +2240,97 @@
 		</ConstraintSet>
 		<!--Forces in the model (includes Actuators).-->
 		<ForceSet name="forceset">
-			<objects>
-			</objects>
+			<objects />
 			<groups>
 				<ObjectGroup name="R_hip_abd">
-					<members> glut_max1_r glut_med1_r glut_med2_r glut_med3_r glut_min1_r glut_min2_r glut_min3_r peri_r sar_r tfl_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_hip_flex">
-					<members> add_brev_r add_long_r glut_med1_r glut_min1_r grac_r iliacus_r pect_r psoas_r rect_fem_r sar_r tfl_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_hip_inrot">
-					<members> glut_med1_r glut_min1_r iliacus_r psoas_r tfl_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_hip_exrot">
-					<members> gem_r glut_med3_r glut_min3_r peri_r quad_fem_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_hip_ext">
-					<members> add_long_r add_mag1_r add_mag2_r add_mag3_r bifemlh_r glut_max1_r glut_max2_r glut_max3_r glut_med3_r glut_min3_r semimem_r semiten_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_hip_add">
-					<members> add_brev_r add_long_r add_mag1_r add_mag2_r add_mag3_r bifemlh_r grac_r pect_r semimem_r semiten_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_knee_bend">
-					<members> bifemlh_r bifemsh_r grac_r lat_gas_r med_gas_r sar_r semimem_r semiten_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_knee_ext">
-					<members> rect_fem_r vas_int_r vas_lat_r vas_med_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_ankle_pf">
-					<members> flex_dig_r flex_hal_r lat_gas_r med_gas_r per_brev_r per_long_r soleus_r tib_post_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_inverter">
-					<members> ext_hal_r flex_dig_r flex_hal_r tib_ant_r tib_post_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_ankle_df">
-					<members> ext_dig_r ext_hal_r per_tert_r tib_ant_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="R_everter">
-					<members> ext_dig_r per_brev_r per_long_r per_tert_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_hip_abd">
-					<members> glut_max1_l glut_med1_l glut_med2_l glut_med3_l glut_min1_l glut_min2_l glut_min3_l peri_l sar_l tfl_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_hip_flex">
-					<members> add_brev_l add_long_l glut_med1_l glut_min1_l grac_l iliacus_l pect_l psoas_l rect_fem_l sar_l tfl_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_hip_inrot">
-					<members> glut_med1_l glut_min1_l iliacus_l psoas_l tfl_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_hip_exrot">
-					<members> gem_l glut_med3_l glut_min3_l peri_l quad_fem_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_hip_ext">
-					<members> add_long_l add_mag1_l add_mag2_l add_mag3_l bifemlh_l glut_max1_l glut_max2_l glut_max3_l glut_med3_l glut_min3_l semimem_l semiten_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_hip_add">
-					<members> add_brev_l add_long_l add_mag1_l add_mag2_l add_mag3_l bifemlh_l grac_l pect_l semimem_l semiten_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_knee_bend">
-					<members> bifemlh_l bifemsh_l grac_l lat_gas_l med_gas_l sar_l semimem_l semiten_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_knee_ext">
-					<members> rect_fem_l vas_int_l vas_lat_l vas_med_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_ankle_pf">
-					<members> flex_dig_l flex_hal_l lat_gas_l med_gas_l per_brev_l per_long_l soleus_l tib_post_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_inverter">
-					<members> ext_hal_l flex_dig_l flex_hal_l tib_ant_l tib_post_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_ankle_df">
-					<members> ext_dig_l ext_hal_l per_tert_l tib_ant_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="L_everter">
-					<members> ext_dig_l per_brev_l per_long_l per_tert_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="back_ext">
-					<members> ercspn_l ercspn_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="back_rlb">
-					<members> ercspn_r extobl_r intobl_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="back_introt">
-					<members> ercspn_r extobl_l intobl_r</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="back_llb">
-					<members> ercspn_l extobl_l intobl_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="back_extrot">
-					<members> ercspn_l extobl_r intobl_l</members>
+					<members />
 				</ObjectGroup>
 				<ObjectGroup name="back_flex">
-					<members> extobl_l extobl_r intobl_l intobl_r</members>
+					<members />
 				</ObjectGroup>
 			</groups>
 		</ForceSet>
