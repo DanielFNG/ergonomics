@@ -1398,7 +1398,7 @@
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
 							<clamped>false</clamped>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
 							<prescribed_function />
 						</Coordinate>
@@ -2108,7 +2108,7 @@
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
 							<clamped>false</clamped>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
 							<prescribed_function />
 						</Coordinate>
@@ -2507,25 +2507,25 @@
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.14251786143933051 0.28849475645273603 -0.00043742975298718956</location>
+					<location>0.14251786143934542 0.28849475645274159 -0.00043742975305156861</location>
 				</Marker>
 				<Marker name="R_Acromium">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.0036576147517528579 0.42772684109170322 0.17688876376898299</location>
+					<location>0.0036576147518174729 0.42772684109173054 0.1768887637689403</location>
 				</Marker>
 				<Marker name="L_Acromium">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.0041367204073648745 0.43191510891370788 -0.17487727142184412</location>
+					<location>0.0041367204073434749 0.43191510891370388 -0.1748772714218873</location>
 				</Marker>
 				<Marker name="R_ASIS">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.020397939499581894 0.0044172625343295024 0.13579059864963841</location>
+					<location>0.020397939499507828 0.0044172625343235072 0.13579059864970444</location>
 				</Marker>
 				<Marker name="L_ASIS">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
@@ -2539,211 +2539,211 @@
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.21312972348693321 0.029248883712370111 -0.014676235345092565</location>
+					<location>-0.21312972348694281 0.029248883712405305 -0.014676235345119838</location>
 				</Marker>
 				<Marker name="R_Knee_Med">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.002205538520841141 -0.40246331318433992 -0.083598174025792477</location>
+					<location>0.0022055385208782554 -0.40246331318432338 -0.083598174025752356</location>
 				</Marker>
 				<Marker name="R_Knee_Lat">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.015225312984640686 -0.40916719705470544 0.050697588815389993</location>
+					<location>0.01522531298464809 -0.40916719705469246 0.05069758881543282</location>
 				</Marker>
 				<Marker name="L_Knee_Med">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.0056434963612524078 -0.39333461053128932 0.085283600068069523</location>
+					<location>0.0056434963611015979 -0.39333461053130037 0.085283600068128018</location>
 				</Marker>
 				<Marker name="L_Knee_Lat">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.011567118341004427 -0.38387660223210351 -0.054432405212457624</location>
+					<location>0.011567118340984575 -0.38387660223212117 -0.054432405212393981</location>
 				</Marker>
 				<Marker name="R_Thigh_Upper">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.11378005361440441 -0.19980472588439002 0.013608167185318792</location>
+					<location>0.1137800536143727 -0.19980472588435272 0.013608167185394537</location>
 				</Marker>
 				<Marker name="R_Thigh_Front">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.089833406202487809 -0.30976039339332972 -0.039053742295545299</location>
+					<location>0.089833406202493402 -0.30976039339329542 -0.039053742295480365</location>
 				</Marker>
 				<Marker name="R_Thigh_Rear">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.068691222041542738 -0.31077887219418798 0.032088354379944672</location>
+					<location>0.068691222041532038 -0.31077887219416178 0.032088354380004624</location>
 				</Marker>
 				<Marker name="L_Thigh_Upper">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.1087950435630802 -0.18461338392645898 -0.018107740898824248</location>
+					<location>0.10879504356305181 -0.18461338392648752 -0.018107740898678754</location>
 				</Marker>
 				<Marker name="L_Thigh_Front">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.089486599188753208 -0.2896890706513523 0.03705025753589114</location>
+					<location>0.089486599188660282 -0.28968907065137584 0.037050257536023146</location>
 				</Marker>
 				<Marker name="L_Thigh_Rear">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.063854361955416328 -0.29953744350834199 -0.038521502297157229</location>
+					<location>0.063854361955392375 -0.29953744350836575 -0.038521502297048593</location>
 				</Marker>
 				<Marker name="R_Ankle_Med">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.0020386280809030211 -0.41417291087127422 -0.039271678169302993</location>
+					<location>0.0020386280809058105 -0.41417291087126007 -0.039271678169292598</location>
 				</Marker>
 				<Marker name="R_Ankle_Lat">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.020256653095745786 -0.43294168188993565 0.061561747808787329</location>
+					<location>-0.020256653095766852 -0.43294168188992738 0.061561747808791284</location>
 				</Marker>
 				<Marker name="L_Ankle_Lat">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.014937916776668628 -0.44215422674220511 -0.056176517946347287</location>
+					<location>-0.01493791677669172 -0.44215422674222193 -0.056176517946324195</location>
 				</Marker>
 				<Marker name="L_Ankle_Med">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.00084919165106572825 -0.40446945639326309 0.037078119334710752</location>
+					<location>0.00084919165095632271 -0.4044694563932828 0.037078119334749526</location>
 				</Marker>
 				<Marker name="R_Shank_Upper">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.054943083705547402 -0.14689626412356255 0.0080968821027728316</location>
+					<location>0.054943083705554001 -0.14689626412355472 0.008096882102814118</location>
 				</Marker>
 				<Marker name="R_Shank_Front">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.03162628691481198 -0.26397134209005974 -0.014436428984422489</location>
+					<location>0.03162628691481733 -0.26397134209004902 -0.014436428984394775</location>
 				</Marker>
 				<Marker name="R_Shank_Rear">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.030070370674858599 -0.26159901572749139 0.048916581755871505</location>
+					<location>0.03007037067484971 -0.26159901572748501 0.048916581755899025</location>
 				</Marker>
 				<Marker name="L_Shank_Upper">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.050422531430479416 -0.16411865922184882 -0.019377449879564829</location>
+					<location>0.050422531430424772 -0.16411865922186741 -0.019377449879473124</location>
 				</Marker>
 				<Marker name="L_Shank_Front">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.031795654470654119 -0.27728788249373526 0.016554072688022337</location>
+					<location>0.03179565447056501 -0.27728788249375469 0.016554072688093502</location>
 				</Marker>
 				<Marker name="L_Shank_Rear">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.01589658904292586 -0.26710203763668056 -0.055236545713154589</location>
+					<location>0.015896589042903572 -0.26710203763669771 -0.055236545713097884</location>
 				</Marker>
 				<Marker name="R_Heel">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.0264309654918439 0.03573517988901323 0.0032662014769287429</location>
+					<location>-0.026430965491857722 0.035735179889037939 0.0032662014769041098</location>
 				</Marker>
 				<Marker name="R_MTP1">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.18997080501134986 0.03737812272300603 -0.030833481753816699</location>
+					<location>0.1899708050113505 0.037378122722993054 -0.030833481753751321</location>
 				</Marker>
 				<Marker name="R_MTP5">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.16368351939112535 0.015529299136765828 0.051066482272511884</location>
+					<location>0.16368351939108872 0.015529299136773195 0.051066482272570726</location>
 				</Marker>
 				<Marker name="L_Heel">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.015148480661206526 0.044408382925661606 0.0058532680284553718</location>
+					<location>-0.015148480661272307 0.044408382925657672 0.0058532680285703076</location>
 				</Marker>
 				<Marker name="L_MTP1">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.17574794217731682 0.035602278745671866 0.032518754931985083</location>
+					<location>0.17574794217727063 0.035602278745548305 0.032518754931919802</location>
 				</Marker>
 				<Marker name="L_MTP5">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.15951087165518529 0.020255799355460909 -0.055284263957487895</location>
+					<location>0.15951087165505884 0.020255799355515941 -0.055284263957569524</location>
 				</Marker>
 				<Marker name="RHJC">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.05696923167429277 -0.078429544052202149 0.10179327715214823</location>
+					<location>-0.056969231674377861 -0.078429544052191824 0.10179327715219927</location>
 				</Marker>
 				<Marker name="LHJC">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.061605658770543616 -0.083273629808003458 -0.088437212344809543</location>
+					<location>-0.06160565877055766 -0.083273629808025107 -0.088437212344759375</location>
 				</Marker>
 				<Marker name="RKJC">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.013839926778864559 -0.013004288418194787 -0.016450292605201214</location>
+					<location>0.013839926778884022 -0.013004288418183019 -0.016450292605159761</location>
 				</Marker>
 				<Marker name="LKJC">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.012304254196997863 0.0037422178677565809 0.015425597427806054</location>
+					<location>0.012304254196912529 0.0037422178677372631 0.015425597427867116</location>
 				</Marker>
 				<Marker name="RAJC">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/talus_r</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.0079995877434430596 0.029522864578692104 0.011310196178707571</location>
+					<location>-0.0079995877434477225 0.029522864578704178 0.011310196178715426</location>
 				</Marker>
 				<Marker name="LAJC">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/talus_l</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.0042932894334514887 0.029913216908268626 -0.0099161842084049545</location>
+					<location>-0.0042932894335070693 0.029913216908257552 -0.0099161842083764773</location>
 				</Marker>
 				<Marker name="R_Pelvis">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.035832250820652486 0.041123844856037595 0.19697613915101236</location>
+					<location>-0.035832250820739278 0.041123844856058356 0.19697613915105053</location>
 				</Marker>
 				<Marker name="L_Pelvis">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>-0.052634824411475573 0.041290937879999712 -0.20388267119882661</location>
+					<location>-0.052634824411409632 0.041290937879955414 -0.20388267119879483</location>
 				</Marker>
 			</objects>
 			<groups />
