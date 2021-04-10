@@ -122,6 +122,15 @@
             <coordinate> ankle_angle_r </coordinate>
             <optimal_force>     300.00000000 </optimal_force>
          </CoordinateActuator>
+         <CoordinateActuator name="subtalar_angle_r">
+            <isDisabled> false </isDisabled><!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+            <min_control> -infinity </min_control><!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+            <max_control> infinity </max_control>
+            <coordinate> subtalar_angle_r </coordinate>
+            <optimal_force>     300.00000000 </optimal_force>
+         </CoordinateActuator>
          <CoordinateActuator name="hip_flexion_l">
             <isDisabled> false </isDisabled><!--Minimum allowed value for control signal. Used primarily when solving
 				    for control values-->
@@ -165,6 +174,15 @@
 				    for control values-->
             <max_control> infinity </max_control>
             <coordinate> ankle_angle_l </coordinate>
+            <optimal_force>     300.00000000 </optimal_force>
+         </CoordinateActuator>
+         <CoordinateActuator name="subtalar_angle_r">
+            <isDisabled> false </isDisabled><!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+            <min_control> -infinity </min_control><!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+            <max_control> infinity </max_control>
+            <coordinate> subtalar_angle_l </coordinate>
             <optimal_force>     300.00000000 </optimal_force>
          </CoordinateActuator>
          <CoordinateActuator name="lumbar_extension">
