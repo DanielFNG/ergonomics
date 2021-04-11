@@ -1,7 +1,8 @@
-model = 'C:\Users\danie\Documents\GitHub\ergonomics\Models\Scaled\gait2392musc.osim';
-controls = 'C:\Users\danie\Documents\GitHub\ergonomics\OpenSim\CMC\gait2392_contact\CMC_controls_modified.sto';
-states = 'C:\Users\danie\Documents\GitHub\ergonomics\OpenSim\CMC\gait2392_contact\CMC_states.sto';
-actuators = 'C:\Users\danie\Documents\GitHub\ergonomics\Settings\SO\gait2392\actuators.xml';
-save_path = 'cmc_simulation_states_new.sto';
+model = 'C:\Users\danie\Documents\GitHub\ergonomics\Models\Adjusted\gait2392musc_contact.osim';
+controls = 'C:\Users\danie\Documents\GitHub\ergonomics\OpenSim\CMC\CMC_controls.sto';
+states = 'C:\Users\danie\Documents\GitHub\ergonomics\OpenSim\CMC\CMC_states.sto';
+actuators = 'C:\Users\danie\Documents\GitHub\ergonomics\Settings\CMC\gait2392\actuators.xml';
+loads = 'C:\Users\danie\Documents\GitHub\ergonomics\Settings\RRA\gait2392\loads.xml';
+save_path = 'squat_forward_contact.sto';
 
-simulate2392CMCContact(model, controls, states, actuators, save_path);
+simulate(model, controls, states, actuators, loads, save_path);

@@ -1,4 +1,4 @@
-function simulate2392SO(osim_model, controls, states, actuators, loads, save_path)
+function simulate(osim_model, controls, states, actuators, loads, save_path)
 
     % Import OpenSim libraries
     import org.opensim.modeling.*
@@ -26,11 +26,11 @@ function simulate2392SO(osim_model, controls, states, actuators, loads, save_pat
     end
     
     % Create prescribed controllers for each actuator 
-    actuator_controls = ControlSet(controls);
-    for i = 0:actuator_controls.getSize() - 1
+    actuator_controls = Data(controls);
+    for i = 2:actuator_controls.NCols
         
         % Get actuator name & object
-        name = char(actuator_controls.get(i).getName());
+        name = actuator_controls.Labels{i};
         actuator = osim.updActuators().get(name);
         
         % Create & link a prescribed controller
@@ -39,9 +39,9 @@ function simulate2392SO(osim_model, controls, states, actuators, loads, save_pat
         
         % Convert control data in to a piecewise constant function
         signal = PiecewiseConstantFunction();
-        for j = n_frames
-            signal.addPoint(timesteps(j), ...
-                actuator_controls.get(i).getControlValue(timesteps(j)));
+        values = actuator_controls.getColumn(name);
+        for j = 1:actuator_controls.NFrames
+            signal.addPoint(actuator_controls.Timesteps(j), values(j));
         end
         
         % Link the controller and function
@@ -54,9 +54,9 @@ function simulate2392SO(osim_model, controls, states, actuators, loads, save_pat
         osim.addController(controller);
     end
     
-    % Load the ExternalLoads specified in the loads file
-    external_loads = ExternalLoads(loads, true);
-    osim.addModelComponent(external_loads);
+%     % Load the ExternalLoads specified in the loads file
+%     external_loads = ExternalLoads(loads, true);
+%     osim.addModelComponent(external_loads);
     
     % Initialise model state
     state = initialiseFromStates(osim, states);
@@ -67,7 +67,7 @@ function simulate2392SO(osim_model, controls, states, actuators, loads, save_pat
     simulation.initialize(state);
     
     % Simulate
-    for i = 1:200%n_frames
+    for i = 1:2000%n_frames
         
         % Show progress
         fprintf('Simulating... t = %fs (final time = %f).\n', ...
