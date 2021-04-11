@@ -176,7 +176,7 @@
             <coordinate> ankle_angle_l </coordinate>
             <optimal_force>     300.00000000 </optimal_force>
          </CoordinateActuator>
-         <CoordinateActuator name="subtalar_angle_r">
+         <CoordinateActuator name="subtalar_angle_l">
             <isDisabled> false </isDisabled><!--Minimum allowed value for control signal. Used primarily when solving
 				    for control values-->
             <min_control> -infinity </min_control><!--Maximum allowed value for control signal. Used primarily when solving

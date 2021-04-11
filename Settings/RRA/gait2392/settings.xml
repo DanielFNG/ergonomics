@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <OpenSimDocument Version="40000">
-	<RRATool name="RRA">
+	<RRATool name="gait2392">
 		<!--Name of the .osim file used to construct a model.-->
-		<model_file>/Users/daniel/Documents/GitHub/ergonomics/Settings/RRA/gait2392/../../../Models/Scaled/gait2392.osim</model_file>
+		<model_file>C:/Users/danie/Documents/GitHub/ergonomics/Settings/RRA/gait2392/../../../Models/Scaled/gait2392.osim</model_file>
 		<!--Replace the model's force set with sets specified in <force_set_files>? If false, the force set is appended to.-->
 		<replace_force_set>true</replace_force_set>
 		<!--List of xml files used to construct a force set for the model.-->
@@ -24,7 +24,7 @@
 		<!--Integrator error tolerance. When the error is greater, the integrator step size is decreased.-->
 		<integrator_error_tolerance>1.0000000000000001e-05</integrator_error_tolerance>
 		<!--Motion (.mot) or storage (.sto) file containing the desired kinematic trajectories.-->
-		<desired_kinematics_file>/Users/daniel/Documents/GitHub/ergonomics/Settings/RRA/gait2392/../../../OpenSim/IK/ik.mot</desired_kinematics_file>
+		<desired_kinematics_file>../../../OpenSim/IK/squat_gait2392.mot</desired_kinematics_file>
 		<!--File containing the tracking tasks. Which coordinates are tracked and with what weights are specified here.-->
 		<task_set_file>tasks.xml</task_set_file>
 		<!--Low-pass cut-off frequency for filtering the desired kinematics. A negative value results in no filtering. The default value is -1.0, so no filtering.-->
@@ -40,7 +40,7 @@
 		<!--Name of the body whose center of mass is adjusted. The heaviest segment in the model should normally be chosen. For a gait model, the torso segment is usually the best choice.-->
 		<adjusted_com_body>torso</adjusted_com_body>
 		<!--Name of the output model file (.osim) containing adjustments to anthropometry made to reduce average residuals. This file is written if the property adjust_com_to_reduce_residuals is set to true. If a name is not specified, the model is written out to a file called adjusted_model.osim.-->
-		<output_model_file>/Users/daniel/Documents/GitHub/ergonomics/Models/Adjusted/gait2392.osim</output_model_file>
+		<output_model_file>C:\Users\danie\Documents\GitHub\ergonomics\Models\Adjusted\gait2392musc.osim</output_model_file>
 		<!--True-false flag indicating whether or not to turn on verbose printing for cmc.-->
 		<use_verbose_printing>false</use_verbose_printing>
 	</RRATool>
