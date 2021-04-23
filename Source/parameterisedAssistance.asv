@@ -1,0 +1,19 @@
+function [fx, fy] = parameterisedAssistance(...
+    timesteps, start, length, magnitude, direction)
+
+    % Checks
+    if start < 0 || start + length > 100
+        error('Assistance must lie within time of motion.');
+    end
+
+    % Normalised force vs time
+    s = (timesteps - timesteps(1))/timesteps(end)*100;
+    f = sin((pi/length)*(s - start));
+    f(s <= start) = 0;
+    f(s > start + length) = 0;
+    
+    % Compute Cartesian components
+    fx = f*sin(direction);
+    fy = f*cos(direction);
+
+end

@@ -9,7 +9,13 @@ function removeReserves(input, output)
     
     % Loop and remove all reserve & residual controls
     for i = n_controls - 1:-1:0
-        
+        name = char(control_set.get(i).getName());
+        if contains(name, check)
+            control_set.remove(i);
+        end
     end
+    
+    % Output the reduced control constraint file
+    control_set.print(output);
 
 end
