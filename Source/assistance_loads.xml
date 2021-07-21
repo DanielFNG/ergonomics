@@ -23,6 +23,6 @@
 		</objects>
 		<groups />
 		<!--Storage file (.sto) containing (3) components of force and/or torque and point of application.Note: this file overrides the data source specified by the individual external forces if specified.-->
-		<datafile>residuals_feet_assistance180deg_strong.mot</datafile>
+		<datafile>residuals_feet_assistance180deg_medium.mot</datafile>
 	</ExternalLoads>
 </OpenSimDocument>

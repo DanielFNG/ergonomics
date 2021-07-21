@@ -1,4 +1,3 @@
-% -------------------------------------------------------------------------- %
 % OpenSim Moco: example2DWalking.m                                           %
 % -------------------------------------------------------------------------- %
 % Copyright (c) 2019 Stanford University and the Authors                     %
@@ -83,6 +82,10 @@ tableProcessor = TableProcessor('squat_reference_states_moco.sto');
 % data
 
 modelProcessor = ModelProcessor('gait1018_moco_raisedfloor.osim');
+
+% Append external loads
+modelProcessor.append(ModOpAddExternalLoads('assistance_loads.xml'));
+
 track.setModel(modelProcessor);
 track.setStatesReference(tableProcessor);
 track.set_states_global_tracking_weight(stateTrackingWeight);
@@ -95,7 +98,6 @@ track.set_initial_time(18);
 track.set_final_time(21.039);
 study = track.initialize();
 problem = study.updProblem();
-
 
 % Goals
 % =====
@@ -146,7 +148,7 @@ problem.setStateInfo('/jointset/lumbar/lumbar/value', [-90*pi/180, 90*pi/180], r
 % Solve the problem
 % =================
 tracking_solution = study.solve();
-tracking_solution.write('moco_squat_solution.sto');
+tracking_solution.write('moco_squat_solution_grfs_medium.sto');
 
 % Uncomment next line to visualize the result
 % study.visualize(fullStride);
@@ -164,7 +166,7 @@ contact_l.add('contactFront_l');
 externalForcesTableFlat = opensimMoco.createExternalLoadsTableForGait(model, ...
                                  tracking_solution,contact_r,contact_l);
 STOFileAdapter.write(externalForcesTableFlat, ...
-                             'moco_squat_grfs.sto');
+                             'moco_squat_grfs_grfs_medium.sto');
 
 
 % Uncomment next line to terminate after solving only the tracking problem
