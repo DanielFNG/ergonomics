@@ -29,7 +29,7 @@ effortGoal = MocoControlGoal('effort', 1);
 effortGoal.setExponent(3);
 
 % Fixed foot placement
-fixed_states = 'referenceFixedSittingStates_dropped.sto';
+fixed_states = 'new_static_states.sto';
 footPlacementGoal = MocoTranslationTrackingGoal('no_slip', 1);
 tableProcessor = TableProcessor(fixed_states);
 footPlacementGoal.setStatesReference(tableProcessor);
@@ -37,21 +37,21 @@ frames = org.opensim.modeling.StdVectorString();
 frames.add('/bodyset/calcn_r');
 frames.add('/bodyset/calcn_l');
 footPlacementGoal.setFramePaths(frames);
-%problem.addGoal(footPlacementGoal);
+problem.addGoal(footPlacementGoal);
 
 % Fixed foot orientation
 footOrientationGoal = MocoOrientationTrackingGoal('no_rotate', 1);
 footOrientationGoal.setStatesReference(tableProcessor);
 footOrientationGoal.setFramePaths(frames);
-%problem.addGoal(footOrientationGoal);
+problem.addGoal(footOrientationGoal);
 
-% Minimise foot velocity
-r_foot_v = MocoOutputGoal('rfv', 1);
-r_foot_v.setOutputPath('/bodyset/calcn_r|linear_velocity');
-r_foot_w = MocoOutputGoal('rfw', 1);
-r_foot_w.setOutputPath('/bodyset/calcn_r|angular_velocity');
-problem.addGoal(r_foot_v);
-problem.addGoal(r_foot_w);
+%% Minimise foot velocity
+%r_foot_v = MocoOutputGoal('rfv', 1);
+%r_foot_v.setOutputPath('/bodyset/calcn_r|linear_velocity');
+%r_foot_w = MocoOutputGoal('rfw', 1);
+%r_foot_w.setOutputPath('/bodyset/calcn_r|angular_velocity');
+%problem.addGoal(r_foot_v);
+%problem.addGoal(r_foot_w);
 
 
 % Bounds
