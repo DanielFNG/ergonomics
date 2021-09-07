@@ -2,8 +2,6 @@ function result = predictSitToStand(X)
 
     % Load the Moco libraries
     import org.opensim.modeling.*;
-    
-    global sitToStandTrackingSolution;
 
     % Define the optimal control problem
     % ==================================
@@ -23,7 +21,7 @@ function result = predictSitToStand(X)
 
     % Effort over distance
     effortGoal = MocoControlGoal('effort', X.w_effort);
-    problem.addGoal(effortGoal); % Temporarily removing effort goal
+    problem.addGoal(effortGoal);
     effortGoal.setExponent(3);
 
     % Fixed foot placement
@@ -85,7 +83,8 @@ function result = predictSitToStand(X)
     solver.set_optim_solver('ipopt');
     solver.set_optim_convergence_tolerance(1e-4);
     solver.set_optim_constraint_tolerance(1e-4);
-    solver.set_optim_max_iterations(1000);
+    solver.set_optim_max_iterations(1000); 
+    sitToStandTrackingSolution = MocoTrajectory('sitToStandTracking_solution.sto');
     solver.setGuess(sitToStandTrackingSolution); % Use tracking solution as initial guess
 
 
@@ -97,26 +96,43 @@ function result = predictSitToStand(X)
     if sitToStandPredictionSolution.isSealed()
         sitToStandPredictionSolution.unseal();
     end
-    sitToStandPredictionSolution.write('solution.sto');
+    
+    % Save the solution for posterity
+    save_name = [pwd filesep 'ResultsDirectory' ...
+        filesep 'solution' '_effort=' num2str(X.w_effort) '_reaction=' ...
+        num2str(X.w_reaction) '_translation=' num2str(X.w_translation) ...
+        '_rotation=' num2str(X.w_rotation) '.sto'];
+    sitToStandPredictionSolution.write(save_name);
     
     % Run BK on result
     bk_settings = 'C:\Users\danie\Documents\GitHub\opensim-matlab\Defaults\BK\bk.xml';
-    runAnalyse('bk', input_model, [pwd filesep 'solution.sto'], [], [pwd filesep 'solution'], bk_settings);
+    runAnalyse('bk', input_model, save_name, [], [pwd filesep 'solution'], bk_settings);
     
-    % Normalise the BK
-    % Identify start/end times for the sit-to-stand
-    velocity = Data('solution\bk_BodyKinematics_vel_global.sto');
-    [start, finish] = findSitToStandTimes(velocity);
+    %% Objective: sum of squared joint angles
+    % Note both solution & reference data already start & end at
+    % appropriate points of sit-to-stand motion, so no normalisation
+    % required
+    solution = Data(save_name);
+    reference = Data('referenceSitToStandCoordinates.sto');
+    squared_diffs = 0;
+    for i = 2:reference.NCols
+        joint = stretchVector(solution.getColumn(i), 101);
+        ref = stretchVector(reference.getColumn(solution.Labels{i}), 101);
+        joint_diff = (joint - ref).^2;
+        squared_diffs = squared_diffs + joint_diff;
+    end
+    result = sum(squared_diffs);
     
-    % Slice the BK position 
-    bk = Data('solution\bk_BodyKinematics_pos_global.sto');
-    bk = bk.slice(start, finish);
-    bk.writeToFile('solution\bk_normalised.sto');
-    
-    % Compute normalised squared distance to mean
-    info = load('means.mat');
-    x_com = stretchVector(bk.getColumn('center_of_mass_X'), 101);
-    y_com = stretchVector(bk.getColumn('center_of_mass_Y'), 101);
-    result = sum((x_com' - info.means(:, 1)).^2 + (y_com' - info.means(:, 2)).^2);
+%     %% Objective: CoM squared difference
+%     % Slice the BK position 
+%     bk = Data('solution\bk_BodyKinematics_pos_global.sto');
+%     bk = bk.slice(start, finish);
+%     bk.writeToFile('solution\bk_normalised.sto');
+%     
+%     % Compute normalised squared distance to mean
+%     info = load('means.mat');
+%     x_com = stretchVector(bk.getColumn('center_of_mass_X'), 101);
+%     y_com = stretchVector(bk.getColumn('center_of_mass_Y'), 101);
+%     result = sum((x_com' - info.means(:, 1)).^2 + (y_com' - info.means(:, 2)).^2);
 
 end
