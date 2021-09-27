@@ -1,0 +1,102 @@
+% Choose save name 
+save_name = 'sitToStandTracking_solution_constrained.sto';
+
+% Load the Moco libraries
+import org.opensim.modeling.*;
+
+% Define the optimal control problem
+% ==================================
+track = MocoTrack();
+track.setName('sitToStandTracking');
+
+% Set the weights for the terms in the objective function. The values below were
+% obtained by trial and error.
+controlEffortWeight = 0.00001;
+stateTrackingWeight = 1;
+
+% Reference data for tracking problem
+input_model = '2D_gait_scaled_contact_constrained.osim';
+input_data = 'referenceSitToStandCoordinates.sto';
+tableProcessor = TableProcessor(input_data);
+tableProcessor.append(TabOpLowPassFilter(6));
+
+modelProcessor = ModelProcessor(input_model);
+track.setModel(modelProcessor);
+track.setStatesReference(tableProcessor);
+track.set_states_global_tracking_weight(stateTrackingWeight);
+track.set_allow_unused_references(true);
+track.set_track_reference_position_derivatives(true);
+track.set_apply_tracked_states_to_guess(true);
+input_data = Data(input_data);
+track.set_initial_time(input_data.Timesteps(1));
+track.set_final_time(input_data.Timesteps(end));
+study = track.initialize();
+problem = study.updProblem();
+
+
+% Goals
+% =====
+
+% Model processing 
+model = modelProcessor.process();
+model.initSystem();
+
+% Get a reference to the MocoControlGoal that is added to every MocoTrack
+% problem by default and change the weight
+effort = MocoControlGoal.safeDownCast(problem.updGoal('control_effort'));
+effort.setWeight(controlEffortWeight);
+
+% Bounds
+% ======
+problem.setStateInfo('/jointset/groundPelvis/pelvis_tilt/value', [0*pi/180, 50*pi/180], 0.757922497);
+problem.setStateInfo('/jointset/groundPelvis/pelvis_tx/value', [0, 0.5], 0.05028483);
+problem.setStateInfo('/jointset/groundPelvis/pelvis_ty/value', [0.5, 1.0], 0.54743397);
+problem.setStateInfo('/jointset/hip_l/hip_flexion_l/value', [-15*pi/180, 80*pi/180], 0.844694386);
+problem.setStateInfo('/jointset/hip_r/hip_flexion_r/value', [-15*pi/180, 80*pi/180], 0.852378254);
+problem.setStateInfo('/jointset/knee_l/knee_angle_l/value', [-120*pi/180, 5], -1.95480329);
+problem.setStateInfo('/jointset/knee_r/knee_angle_r/value', [-120*pi/180, 5], -1.956778099);
+problem.setStateInfo('/jointset/ankle_l/ankle_angle_l/value', [0*pi/180, 35*pi/180], 0.324237382);
+problem.setStateInfo('/jointset/ankle_r/ankle_angle_r/value', [0*pi/180, 35*pi/180], 0.368424034);
+problem.setStateInfo('/jointset/lumbar/lumbar/value', [-70, 0*pi/180], -0.928212182);
+
+% Speeds - inital and final to 0
+problem.setStateInfo('/jointset/groundPelvis/pelvis_tilt/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/groundPelvis/pelvis_tx/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/groundPelvis/pelvis_ty/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/hip_l/hip_flexion_l/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/hip_r/hip_flexion_r/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/knee_l/knee_angle_l/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/knee_r/knee_angle_r/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/ankle_l/ankle_angle_l/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/ankle_r/ankle_angle_r/speed', [-500, 500], 0, 0);
+problem.setStateInfo('/jointset/lumbar/lumbar/speed', [-500, 500], 0, 0);
+
+% Solve the problem
+% =================
+sitToStandTrackingSolution = study.solve();
+sitToStandTrackingSolution.write(save_name);
+
+% Extract ground reaction forces
+% ==============================
+contact_r = StdVectorString();
+contact_l = StdVectorString();
+contact_r.add('contactHeel_r');
+contact_r.add('contactFront_r');
+contact_l.add('contactHeel_l');
+contact_l.add('contactFront_l');
+butt_r = StdVectorString();
+butt_l = StdVectorString();
+butt_r.add('chair_r');
+butt_l.add('chair_l');
+
+external_forces = opensimMoco.createExternalLoadsTableForGait(...
+    model, sitToStandTrackingSolution, contact_r, contact_l);
+chair_forces = opensimMoco.createExternalLoadsTableForGait(...
+    model, sitToStandTrackingSolution, butt_r, butt_l);
+STOFileAdapter.write(external_forces, 'sitToStandTracking_solutionGRF.sto');
+STOFileAdapter.write(chair_forces, 'sitToStandTracking_solutionChair.sto');
+
+
+
+
+
