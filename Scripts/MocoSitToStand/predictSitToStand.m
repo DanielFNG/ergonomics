@@ -138,7 +138,7 @@ function result = predictSitToStand(X)
         [values, labels, header] = MOTSTOTXTData.load(save_name);
         bk_data = STOData(values(:, 1:end-6), header, labels(1:end-6));
         bk_data.writeToFile(bk_name);
-        bk_settings = 'C:\Users\danie\Documents\GitHub\opensim-matlab\Defaults\BK\bk.xml';
+        bk_settings = [pwd filesep 'bk.xml'];
         runAnalyse('bk', input_model, bk_name, [], [pwd filesep 'solution'], bk_settings);
         
         %% Objective: sum of squared joint angles
@@ -155,8 +155,7 @@ function result = predictSitToStand(X)
             joint_diff = (joint - ref).^2;
             squared_diffs = squared_diffs + joint_diff;
         end
-        %result = sum(squared_diffs);
-        result = log1p(sum(squared_diffs));
+        result = sum(squared_diffs);
         
         %     %% Objective: CoM squared difference
         %     % Slice the BK position
@@ -171,5 +170,8 @@ function result = predictSitToStand(X)
         %     result = sum((x_com' - info.means(:, 1)).^2 + (y_com' - info.means(:, 2)).^2);
         
     end
+    
+    % Pass through log1p filter
+    result = log1p(result);
 
 end
