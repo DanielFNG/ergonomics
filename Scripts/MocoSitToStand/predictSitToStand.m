@@ -30,7 +30,7 @@ function result = predictSitToStand(X)
     problem.addGoal(effortGoal);
 
     % Fixed foot placement
-    fixed_states = 'new_static_states_activation.sto';
+    fixed_states = 'adjusted_reference_StatesReporter_states.sto';
     footPlacementGoal = MocoTranslationTrackingGoal('no_slip', X.w_translation/100);
     tableProcessor = TableProcessor(fixed_states);
     footPlacementGoal.setStatesReference(tableProcessor);
