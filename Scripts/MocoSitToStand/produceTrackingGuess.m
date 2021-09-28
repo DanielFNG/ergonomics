@@ -1,5 +1,5 @@
 % Choose save name 
-save_name = 'sitToStandTracking_solution_constrained_activation_redone.sto';
+save_name = 'sitToStandTracking_solution_constrained_activation_redone_puretrack.sto';
 
 % Load the Moco libraries
 import org.opensim.modeling.*;
@@ -11,7 +11,7 @@ track.setName('sitToStandTracking');
 
 % Set the weights for the terms in the objective function. The values below were
 % obtained by trial and error.
-controlEffortWeight = 0.1;
+controlEffortWeight = 0.0000000000000001;
 stateTrackingWeight = 1;
 
 % Reference data for tracking problem
