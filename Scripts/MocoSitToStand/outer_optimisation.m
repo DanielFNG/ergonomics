@@ -1,5 +1,5 @@
 % Optimal Control Weights
-w_effort = optimizableVariable('w_effort', [0, 100], 'Type', 'integer');
+w_effort = optimizableVariable('w_effort', [0, 50], 'Type', 'integer');
 %w_reaction = optimizableVariable('w_reaction', [0, 1], 'Type', 'real');
 w_translation = optimizableVariable('w_translation', [0, 100], 'Type', 'integer');
 %w_rotation = optimizableVariable('w_rotation', [0, 1], 'Type', 'real');

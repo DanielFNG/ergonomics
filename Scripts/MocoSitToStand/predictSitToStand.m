@@ -148,14 +148,17 @@ function result = predictSitToStand(X)
         solution = Data(bk_name);
         %reference = Data('referenceSitToStandCoordinates.sto');
         reference = Data('bk_w_effort=0.25_w_translation=0.75.sto'); 
-        squared_diffs = 0;
-        for i = 2:reference.NCols
-            ref = stretchVector(reference.getColumn(i), 101);
-            joint = stretchVector(solution.getColumn(reference.Labels{i}), 101);
-            joint_diff = (joint - ref).^2;
-            squared_diffs = squared_diffs + joint_diff;
-        end
-        result = sum(squared_diffs);
+%         squared_diffs = 0;
+%         for i = 2:reference.NCols
+%             ref = stretchVector(reference.getColumn(i), 101);
+%             joint = stretchVector(solution.getColumn(reference.Labels{i}), 101);
+%             joint_diff = (joint - ref).^2;
+%             squared_diffs = squared_diffs + joint_diff;
+%         end
+%         result = sum(squared_diffs);
+        ref = stretchVector(reference.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
+        joint = stretchVector(solution.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
+        result = sum((joint - ref).^2);
         
         %     %% Objective: CoM squared difference
         %     % Slice the BK position
