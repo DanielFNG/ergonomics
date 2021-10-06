@@ -110,7 +110,13 @@ function result = predictSitToStand(X)
     % Generate save name
     name = [];
     fields = fieldnames(X);
-    for i = 1:length(fields) - 3 % Ignore table properties etc
+    switch isa(X, 'table')
+        case true
+            upper = length(fields) - 3;
+        case false
+            upper = length(fields);
+    end
+    for i = 1:upper % Ignore table properties etc
         name = [name '_' fields{i} '=' num2str(X.(fields{i}))]; %#ok<AGROW>
     end
     save_name = [pwd filesep 'ResultsDirectory' filesep 'solution' name '.sto'];
