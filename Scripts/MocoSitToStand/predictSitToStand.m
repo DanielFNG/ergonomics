@@ -22,7 +22,7 @@ function result = predictSitToStand(X)
     model.initSystem();
 
     % Effort over distance
-    effortGoal = MocoControlGoal('effort', X.w_effort/100);
+    effortGoal = MocoControlGoal('effort', X.w_effort);
     effortGoal.setDivideByDisplacement(true); % This slightly increased
     % objective cost, but reduces iterations required. Maybe do further
     % testing, but for now going to keep it in
@@ -31,7 +31,7 @@ function result = predictSitToStand(X)
 
     % Fixed foot placement
     fixed_states = 'adjusted_reference_StatesReporter_states.sto';
-    footPlacementGoal = MocoTranslationTrackingGoal('no_slip', X.w_translation/100);
+    footPlacementGoal = MocoTranslationTrackingGoal('no_slip', X.w_translation);
     tableProcessor = TableProcessor(fixed_states);
     footPlacementGoal.setStatesReference(tableProcessor);
     frames = org.opensim.modeling.StdVectorString();
