@@ -1,4 +1,4 @@
-function result = predictSitToStand(X)
+function result = predictSitToStand(X, save_dir, obj, obj_args, filter)
 
     % Load the Moco libraries
     import org.opensim.modeling.*;
@@ -119,8 +119,8 @@ function result = predictSitToStand(X)
     for i = 1:upper % Ignore table properties etc
         name = [name '_' fields{i} '=' num2str(X.(fields{i}))]; %#ok<AGROW>
     end
-    save_name = [pwd filesep 'ResultsDirectory' filesep 'solution' name '.sto'];
-    bk_name = [pwd filesep 'ResultsDirectory' filesep 'bk' name '.sto'];
+    save_name = [save_dir filesep 'solution' name '.sto'];
+    reduced_name = [save_dir filesep 'reduced' name '.sto'];
     
     % Check if the solution is sealed, write it either way
     if sitToStandPredictionSolution.isSealed()
@@ -143,17 +143,20 @@ function result = predictSitToStand(X)
         % manually with the following.
         [values, labels, header] = MOTSTOTXTData.load(save_name);
         bk_data = STOData(values(:, 1:end-6), header, labels(1:end-6));
-        bk_data.writeToFile(bk_name);
+        bk_data.writeToFile(reduced_name);
         bk_settings = [pwd filesep 'bk.xml'];
-        runAnalyse('bk', input_model, bk_name, [], [pwd filesep 'solution'], bk_settings);
+        runAnalyse('bk', input_model, reduced_name, [], [pwd filesep 'solution'], bk_settings);
+        
+        %% Objective calculation
+        result = obj(reduced_name, obj_args{:});
         
         %% Objective: sum of squared joint angles
         % Note both solution & reference data already start & end at
         % appropriate points of sit-to-stand motion, so no normalisation
         % required
-        solution = Data(bk_name);
+%        solution = Data(reduced_name);
         %reference = Data('referenceSitToStandCoordinates.sto');
-        reference = Data('bk_w_effort=0.25_w_translation=0.75.sto'); 
+%        reference = Data('bk_w_effort=0.25_w_translation=0.75.sto'); 
 %         squared_diffs = 0;
 %         for i = 2:reference.NCols
 %             ref = stretchVector(reference.getColumn(i), 101);
@@ -162,9 +165,9 @@ function result = predictSitToStand(X)
 %             squared_diffs = squared_diffs + joint_diff;
 %         end
 %         result = sum(squared_diffs);
-        ref = stretchVector(reference.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
-        joint = stretchVector(solution.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
-        result = sum((joint - ref).^2);
+%        ref = stretchVector(reference.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
+%        joint = stretchVector(solution.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
+%        result = sum((joint - ref).^2);
         
         %     %% Objective: CoM squared difference
         %     % Slice the BK position
@@ -180,7 +183,9 @@ function result = predictSitToStand(X)
         
     end
     
-    % Pass through log1p filter
-    result = log1p(result);
+    % Pass through filter
+    if nargin == 5
+        result = filter(result);
+    end
 
 end
