@@ -2,15 +2,16 @@
 results_dir = '9DNoChange';
 obj = @sumSquaredStateDifference;
 obj_args = {[pwd filesep 'bk_w_effort=0.25_w_translation=0.75.sto'], 'all'};
-
-% Create results directory
-mkdir(results_dir);
-
-% Define sampling points
 effort_range = [0.0, 0.4];
 translation_range = [0.0, 1.0];
 n_effort = 3;
 n_translation = 3;
+
+% Create results directory
+mkdir(results_dir);
+save([results_dir filesep 'settings.mat'], 'obj', 'obj_args');
+
+% Compute sampling points
 [w_effort_points, w_translation_points] = create2DGrid(...
     effort_range, translation_range, n_effort, n_translation);
 
