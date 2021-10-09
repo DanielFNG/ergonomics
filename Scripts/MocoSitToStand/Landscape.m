@@ -1,7 +1,8 @@
 % Inputs
-results_dir = '9DNoChange';
+results_dir = '9DSpeedLimitsLoosenedLower_PelvisXVelocityUpper';
 obj = @sumSquaredStateDifference;
-obj_args = {[pwd filesep 'bk_w_effort=0.25_w_translation=0.75.sto'], 'all'};
+obj_args = {[pwd filesep 'bk_w_effort=0.25_w_translation=0.75.sto'], ...
+    '/jointset/groundPelvis/pelvis_tx/speed'};
 effort_range = [0.0, 0.4];
 translation_range = [0.0, 1.0];
 n_effort = 3;
@@ -37,7 +38,7 @@ bo = bayesopt(@sin, optimisation_variables, ...
     'IsObjectiveDeterministic', true, ...
     'AcquisitionFunctionName', 'expected-improvement-plus', ...
     'InitialX', inputs, 'InitialObjective', results);
-save([pwd filesep 'ResultsDirectory' filesep 'results.mat'], 'bo');
+save([pwd filesep results_dir filesep 'results.mat'], 'bo');
 
 % Fit the resulting points to a GP landscape - leaving this for now as we
 % can use the BayesOpt graphs to have a look anyway. 

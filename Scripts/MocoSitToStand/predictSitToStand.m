@@ -70,16 +70,16 @@ function result = predictSitToStand(X, save_dir, obj, obj_args, filter)
     problem.setStateInfo('/jointset/lumbar/lumbar/value', [-70*pi/180, 0*pi/180], -53.183*pi/180, 0);
     
     % Speeds in degrees
-    problem.setStateInfo('/jointset/groundPelvis/pelvis_tilt/speed', [-150, 150]*pi/180, 0, 0);
-    problem.setStateInfo('/jointset/groundPelvis/pelvis_tx/speed', [-0.5, 0.5], 0, 0);
-    problem.setStateInfo('/jointset/groundPelvis/pelvis_ty/speed', [-0.2, 1], 0, 0);
-    problem.setStateInfo('/jointset/hip_l/hip_flexion_l/speed', [-250, 150]*pi/180, 0, 0);
-    problem.setStateInfo('/jointset/hip_r/hip_flexion_r/speed', [-250, 150]*pi/180, 0, 0);
-    problem.setStateInfo('/jointset/knee_l/knee_angle_l/speed', [-50, 300]*pi/180, 0, 0);
-    problem.setStateInfo('/jointset/knee_r/knee_angle_r/speed', [-50, 300]*pi/180, 0, 0);
-    problem.setStateInfo('/jointset/ankle_l/ankle_angle_l/speed', [-120, 80]*pi/180, 0, 0);
-    problem.setStateInfo('/jointset/ankle_r/ankle_angle_r/speed', [-120, 80]*pi/180, 0, 0);
-    problem.setStateInfo('/jointset/lumbar/lumbar/speed', [-100, 200]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/groundPelvis/pelvis_tilt/speed', 10*[-150, 150]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/groundPelvis/pelvis_tx/speed', 10*[-0.5, 0.5], 0, 0);
+    problem.setStateInfo('/jointset/groundPelvis/pelvis_ty/speed', 10*[-0.2, 1], 0, 0);
+    problem.setStateInfo('/jointset/hip_l/hip_flexion_l/speed', 10*[-250, 150]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/hip_r/hip_flexion_r/speed', 10*[-250, 150]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/knee_l/knee_angle_l/speed', 10*[-50, 300]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/knee_r/knee_angle_r/speed', 10*[-50, 300]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/ankle_l/ankle_angle_l/speed', 10*[-120, 80]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/ankle_r/ankle_angle_r/speed', 10*[-120, 80]*pi/180, 0, 0);
+    problem.setStateInfo('/jointset/lumbar/lumbar/speed', 10*[-100, 200]*pi/180, 0, 0);
 
     % Configure the solver
     % ====================
