@@ -1,4 +1,4 @@
-function result = predictSitToStand(X, save_dir, obj, obj_args, filter)
+function solution = predictSitToStand(X)
 
     % Load the Moco libraries
     import org.opensim.modeling.*;
@@ -105,87 +105,6 @@ function result = predictSitToStand(X, save_dir, obj, obj_args, filter)
     
     % Solve problem
     % =============
-    sitToStandPredictionSolution = study.solve();
-    
-    % Generate save name
-    name = [];
-    fields = fieldnames(X);
-    switch isa(X, 'table')
-        case true
-            upper = length(fields) - 3;
-        case false
-            upper = length(fields);
-    end
-    for i = 1:upper % Ignore table properties etc
-        name = [name '_' fields{i} '=' num2str(X.(fields{i}))]; %#ok<AGROW>
-    end
-    save_name = [save_dir filesep 'solution' name '.sto'];
-    reduced_name = [save_dir filesep 'reduced' name '.sto'];
-    
-    % Check if the solution is sealed, write it either way
-    if sitToStandPredictionSolution.isSealed()
-        
-        % Unseal & save the solution for posterity
-        sitToStandPredictionSolution.unseal();
-        sitToStandPredictionSolution.write(save_name);
-        
-        % Set the result to an arbitrary high value
-        result = 1000;
-    else
-        
-        % Write solution
-        sitToStandPredictionSolution.write(save_name);
-        
-        % Run BK on result 
-        % Note: was getting some sort of bug where the Gamma variables in
-        % the last timestep of the solution file were NaNs. These variables
-        % are actually not needed for the BK so we can filter them out
-        % manually with the following.
-        [values, labels, header] = MOTSTOTXTData.load(save_name);
-        bk_data = STOData(values(:, 1:end-6), header, labels(1:end-6));
-        bk_data.writeToFile(reduced_name);
-        bk_settings = [pwd filesep 'bk.xml'];
-        runAnalyse('bk', input_model, reduced_name, [], [pwd filesep 'solution'], bk_settings);
-        
-        %% Objective calculation
-        result = obj(reduced_name, obj_args{:});
-        
-        %% Objective: sum of squared joint angles
-        % Note both solution & reference data already start & end at
-        % appropriate points of sit-to-stand motion, so no normalisation
-        % required
-%        solution = Data(reduced_name);
-        %reference = Data('referenceSitToStandCoordinates.sto');
-%        reference = Data('bk_w_effort=0.25_w_translation=0.75.sto'); 
-%         squared_diffs = 0;
-%         for i = 2:reference.NCols
-%             ref = stretchVector(reference.getColumn(i), 101);
-%             joint = stretchVector(solution.getColumn(reference.Labels{i}), 101);
-%             joint_diff = (joint - ref).^2;
-%             squared_diffs = squared_diffs + joint_diff;
-%         end
-%         result = sum(squared_diffs);
-%        ref = stretchVector(reference.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
-%        joint = stretchVector(solution.getColumn('/jointset/hip_r/hip_flexion_r/value'), 101);
-%        result = sum((joint - ref).^2);
-        
-        %     %% Objective: CoM squared difference
-        %     % Slice the BK position
-        %     bk = Data('solution\bk_BodyKinematics_pos_global.sto');
-        %     bk = bk.slice(start, finish);
-        %     bk.writeToFile('solution\bk_normalised.sto');
-        %
-        %     % Compute normalised squared distance to mean
-        %     info = load('means.mat');
-        %     x_com = stretchVector(bk.getColumn('center_of_mass_X'), 101);
-        %     y_com = stretchVector(bk.getColumn('center_of_mass_Y'), 101);
-        %     result = sum((x_com' - info.means(:, 1)).^2 + (y_com' - info.means(:, 2)).^2);
-        
-    end
-    
-    % Pass through filter
-    if nargin == 5
-        result = filter(result);
-    end
+    solution = study.solve();
 
 end

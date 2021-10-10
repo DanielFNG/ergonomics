@@ -1,5 +1,5 @@
 % Inputs
-results_dir = '9DSpeedLimitsLoosenedLower_PelvisXVelocityUpper';
+results_dir = 'FullExploration';
 obj = @sumSquaredStateDifference;
 obj_args = {[pwd filesep 'bk_w_effort=0.25_w_translation=0.75.sto'], ...
     '/jointset/groundPelvis/pelvis_tx/speed'};
