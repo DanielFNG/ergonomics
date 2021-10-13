@@ -23899,3 +23899,466 @@
 [2021-10-08 04:50:18.581] [info] Found 101 state vectors with time stamps ranging from 0.0 to 1.75719.
 [2021-10-08 04:50:18.581] [info] Executing the analyses from 0.0 to 1.75719...
 [2021-10-08 04:50:18.837] [info] Printing results of investigation bk to C:\Users\danie\Documents\GitHub\ergonomics\Scripts\MocoSitToStand\solution
+[2021-10-11 23:58:01.382] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.383] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.384] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.434] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.434] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.434] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.434] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.435] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.436] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.436] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.436] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.436] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.436] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.436] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.505] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.506] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.506] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.506] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.506] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.506] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.506] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.506] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.507] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.508] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.508] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.587] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.588] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.589] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.590] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.652] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.652] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.653] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.654] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.707] [info] ========================================================================
+[2021-10-11 23:58:01.707] [info] MocoCasADiSolver starting.
+[2021-10-11 23:58:01.707] [info] 11/10/2021 23:58:01
+[2021-10-11 23:58:01.707] [info] ------------------------------------------------------------------------
+[2021-10-11 23:58:01.707] [cout] [info] Costs: (total: 2)
+[2021-10-11 23:58:01.707] [cout] [info]   effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.1
+[2021-10-11 23:58:01.707] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /vasti_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /soleus_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /vasti_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /soleus_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]   no_slip. MocoTranslationTrackingGoal, enabled: true, mode: cost, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         translation reference file: 
+[2021-10-11 23:58:01.707] [cout] [info]         frame 0: /bodyset/calcn_r, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info]         frame 1: /bodyset/calcn_l, weight: 1.0
+[2021-10-11 23:58:01.707] [cout] [info] Endpoint constraints: none
+[2021-10-11 23:58:01.707] [cout] [info] Kinematic constraints: (total: 3)
+[2021-10-11 23:58:01.707] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2021-10-11 23:58:01.707] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2021-10-11 23:58:01.707] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2021-10-11 23:58:01.707] [cout] [info] Path constraints: none
+[2021-10-11 23:58:01.707] [cout] [info] States: (total: 39)
+[2021-10-11 23:58:01.707] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [0, 0.872665] initial: 0.757927 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [0, 0.5] initial: 0.05
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0.5, 1] initial: 0.535
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-0.261799, 1.39626] initial: 0.852733 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [0, 0.610865] initial: 0.368422 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-0.261799, 1.39626] initial: 0.852733 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-2.0944, 0.0872665] initial: -1.95674 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-2.0944, 0.0872665] initial: -1.95674 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [0, 0.610865] initial: 0.368422 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-1.22173, 0] initial: -0.928218 final: 0
+[2021-10-11 23:58:01.707] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-26.1799, 26.1799] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-17.4533, 34.9066] initial: 0 final: 0
+[2021-10-11 23:58:01.708] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info] Controls: (total: 19)
+[2021-10-11 23:58:01.708] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2021-10-11 23:58:01.708] [cout] [info] Parameters: none
+[2021-10-11 23:58:01.719] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.719] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.719] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.720] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.721] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.721] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.721] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.721] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.721] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.721] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.781] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.781] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.781] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.781] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.781] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.781] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.782] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.783] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.783] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.783] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.845] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.846] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.847] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.910] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.910] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.910] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.910] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.910] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.911] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.912] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.912] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.912] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.912] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:01.975] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:01.975] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:01.976] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:01.977] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.039] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:02.040] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:02.040] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:02.040] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:02.040] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:02.040] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:02.040] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:02.040] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:02.041] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:02.042] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.105] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:02.105] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:02.106] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:02.107] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.178] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:02.178] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:02.178] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:02.178] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:02.178] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:02.178] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:02.179] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:02.180] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:02.180] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:02.180] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:02.180] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.243] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:02.243] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:02.243] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:02.243] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:02.243] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:02.244] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:02.245] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:02.245] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:02.245] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:02.245] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.308] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:02.309] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:02.310] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.372] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:02.373] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:02.373] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:02.373] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:02.373] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:02.373] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:02.373] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:02.373] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:02.374] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:02.375] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.440] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-11 23:58:02.441] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-11 23:58:02.442] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2021-10-11 23:58:02.496] [info] Number of threads: 12
+[2021-10-12 00:11:38.836] [info] Set log level to Info.
+[2021-10-12 00:11:38.848] [info] ------------------------------------------------------------------------
+[2021-10-12 00:11:38.848] [info] Elapsed real time: 817 second(s) (13 minute(s), 37 second(s)).
+[2021-10-12 00:11:38.848] [info] 12/10/2021 00:11:38
+[2021-10-12 00:11:38.848] [info] MocoCasADiSolver succeeded!
+[2021-10-12 00:11:38.848] [info] ========================================================================
+[2021-10-12 01:43:27.801] [info] Loaded model 2D_gait from file 2D_gait_contact_constrained_activation.osim
+[2021-10-12 01:43:27.802] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2021-10-12 01:43:27.802] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2021-10-12 01:43:27.802] [warning] Couldn't find file 'sacrum.vtp'.
+[2021-10-12 01:43:27.802] [warning] Couldn't find file 'femur_l.vtp'.
+[2021-10-12 01:43:27.802] [warning] Couldn't find file 'femur_r.vtp'.
+[2021-10-12 01:43:27.802] [warning] Couldn't find file 'tibia_l.vtp'.
+[2021-10-12 01:43:27.802] [warning] Couldn't find file 'l_fibula.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'tibia_r.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'r_fibula.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'l_talus.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'r_talus.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'l_foot.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'r_foot.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'hat_spine.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2021-10-12 01:43:27.803] [warning] Couldn't find file 'hat_skull.vtp'.
+[2021-10-12 01:43:27.804] [warning] Couldn't find file 'hat_ribs.vtp'.

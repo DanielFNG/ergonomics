@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\SimTKcommon.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\SimTKmath.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\SimTKsimbody.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\adolc.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_conic_nlpsol.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_conic_qrqp.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_importer_shell.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_integrator_collocation.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_integrator_cvodes.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_integrator_idas.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_integrator_rk.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_interpolant_bspline.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_interpolant_linear.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_linsol_csparse.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_linsol_csparsecholesky.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_linsol_ldl.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_linsol_lsqr.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_linsol_qr.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_linsol_symbolicqr.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_linsol_tridiag.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_nlpsol_ipopt.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_nlpsol_qrsqp.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_nlpsol_scpgen.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_nlpsol_sqpmethod.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_rootfinder_fast_newton.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_rootfinder_kinsol.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_rootfinder_newton.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_rootfinder_nlpsol.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_sundials_common.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\casadi_xmlfile_tinyxml.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\concrt140.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\ezc3d.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\flang.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\flangrti.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\glut32.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\libblas.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\libgcc_s_sjlj-1.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\libgfortran-3.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\liblapack.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\libomp.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\libquadmath-0.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\msvcp140.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\msvcp140_1.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\msvcp140_2.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\msvcp140_atomic_wait.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\msvcp140_codecvt_ids.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\openblas.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimActuators.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimAnalyses.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimCommon.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimExampleComponents.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimJavaJNI.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimLepton.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimMoco.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimSimulation.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\osimTools.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\tropter.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\vcruntime140.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\c639c6b228e29decc94cf84e47d904e7\vcruntime140_1.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\6534693e5a1b1b0e726c0cb157e20c8b\Copy_OpenSim_DLLs.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\danie\Documents\GitHub\ergonomics\Source\cpp\build\CMakeFiles\Copy_OpenSim_DLLs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A07407E5-5A3A-3108-9650-8399F8579E63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
