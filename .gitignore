@@ -2,3 +2,5 @@
 OpenSim/*
 *.DS_Store
 *.asv
+*.vscode*
+Source/cpp/build
