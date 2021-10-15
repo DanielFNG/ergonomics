@@ -1,7 +1,13 @@
 cmake_minimum_required(VERSION 3.2)
 project(OpenSim_MocoMarginOfStabilityGoal)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+if (APPLE)
+        set(CMAKE_OSX_ARCHITECTURES x86_64)
+endif()
 
 find_package(OpenSim REQUIRED HINTS
     "${CMAKE_SOURCE_DIR}/../../../../../../")
