@@ -1,0 +1,10 @@
+^C:\USERS\DANIE\DOCUMENTS\GITHUB\ERGONOMICS\SOURCE\CPP\BUILD\CMAKEFILES\6534693E5A1B1B0E726C0CB157E20C8B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/danie/Documents/GitHub/ergonomics/Source/cpp -BC:/Users/danie/Documents/GitHub/ergonomics/Source/cpp/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/danie/Documents/GitHub/ergonomics/Source/cpp/build/OpenSim_MocoMarginOfStabilityGoal.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,5 @@
+C:/Users/danie/Documents/GitHub/ergonomics/Source/cpp/build/CMakeFiles/main.dir
+C:/Users/danie/Documents/GitHub/ergonomics/Source/cpp/build/CMakeFiles/osimMocoMarginOfStabilityGoal.dir
+C:/Users/danie/Documents/GitHub/ergonomics/Source/cpp/build/CMakeFiles/Copy_OpenSim_DLLs.dir
+C:/Users/danie/Documents/GitHub/ergonomics/Source/cpp/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/danie/Documents/GitHub/ergonomics/Source/cpp/build/CMakeFiles/ZERO_CHECK.dir
