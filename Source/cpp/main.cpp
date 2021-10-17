@@ -28,9 +28,9 @@ int main() {
     problem.setModelProcessor(model_processor);
 
     // Set up effort goal
-    //auto* effort_goal = problem.addGoal<MocoControlGoal>("effort", w_effort);
-    //effort_goal->setDivideByDisplacement(true);
-    //effort_goal->setExponent(2);
+    auto* effort_goal = problem.addGoal<MocoControlGoal>("effort", w_effort);
+    effort_goal->setDivideByDisplacement(true);
+    effort_goal->setExponent(2);
 
     // Set up foot translation goal
     //auto* translation_goal = problem.addGoal<MocoTranslationTrackingGoal>(
@@ -41,8 +41,8 @@ int main() {
     //translation_goal->setFramePaths(frames);
 
     // Set up margin of stability goal
-    auto* margin_of_stability_goal = problem.addGoal<MocoMarginOfStabilityGoal>(
-        "margin_of_stability", w_margin);
+    //auto* margin_of_stability_goal = problem.addGoal<MocoMarginOfStabilityGoal>(
+    //    "margin_of_stability", w_margin);
 
     // Specify bounds on start and end time
     problem.setTimeBounds(0, {1.0, 2.0});
