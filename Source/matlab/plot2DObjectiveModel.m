@@ -14,15 +14,10 @@ function plot2DObjectiveModel(results, n_points)
     y_range = results.VariableDescriptions(2).Range;
     
     % Create arrays of specified size
-    x = linspace(x_range(1), x_range(2), n_points);
-    y = linspace(y_range(1), y_range(2), n_points);
-    
-    % Get coordinates of prediction points
-    [xg, yg] = meshgrid(x, y);
-    coordinates = reshape(cat(2, xg', yg'), [], 2);
+    [xs, ys] = create2DGrid(x_range, y_range, n_points, n_points);
     
     % Predict function value on all coordinates
-    z = predict(results.ObjectiveFcnModel, coordinates);
+    z = predict(results.ObjectiveFcnModel, [xs, ys]);
 
     % Produce resulting plot
     figure;
