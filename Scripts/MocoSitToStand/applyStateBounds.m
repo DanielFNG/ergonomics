@@ -1,4 +1,4 @@
-function applyBounds(problem, bounds)
+function applyStateBounds(problem, bounds)
 
     for i = 1:size(bounds, 1)
         problem.setStateInfo(...
