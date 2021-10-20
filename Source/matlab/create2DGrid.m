@@ -8,10 +8,12 @@ function [xs, ys, x, y] = create2DGrid(xrange, yrange, nx, ny)
     n_points = nx*ny;
     xs = zeros(n_points, 1);
     ys = xs;
+    k = 1;
     for i = 1:nx
         for j = 1:ny
             xs(k) = x(i);
             ys(k) = y(j);
+            k = k + 1;
         end
     end
 
