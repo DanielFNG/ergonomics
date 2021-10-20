@@ -1,9 +1,10 @@
 % Inputs
-w_effort_range = [0, 0.1];
-n_effort = 11;
-w_translation_range = [0, 1];
-n_translation = 11;
-save_dir = 'Grid_10x10';
+
+w_effort_range = [0.05, 0.45];
+n_effort = 5;
+w_translation_range = [0.1, 0.9];
+n_translation = 5;
+save_dir = 'Grid_5x5';
 
 % Get sample points
 [xs, ys] = create2DGrid(w_effort_range, w_translation_range, ...
