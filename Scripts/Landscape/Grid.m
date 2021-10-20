@@ -5,13 +5,14 @@ n_effort = 5;
 w_translation_range = [0.1, 0.9];
 n_translation = 5;
 save_dir = 'Grid_5x5';
+mkdir(save_dir);
 
 % Get sample points
 [xs, ys] = create2DGrid(w_effort_range, w_translation_range, ...
     n_effort, n_translation);
 
 % At each sample point...
-for i = 1:length(xs)
+for i = 2:length(xs)
     
     % Define set of weights
     X.w_effort = xs(i);
