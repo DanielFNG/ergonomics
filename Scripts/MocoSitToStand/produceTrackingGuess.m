@@ -1,12 +1,17 @@
 function solution = produceTrackingGuess(...
-    name, w_states, w_controls, osim, input)
+    name, w_states, w_controls, osim, input, bounds)
+% Currently, in the absence of measured seat forces, this function performs
+% kinematic tracking only & does not consider any measured GRFs.
+
+    % Import OpenSim modeling libraries
+    import org.opensim.modeling.*
 
     % Define the optimal control problem
-    track = org.opensim.modeling.MocoTrack();
+    track = MocoTrack();
     track.setName(name);
-    table_processor = org.opensim.modeling.TableProcessor(input);
+    table_processor = TableProcessor(input);
     table_processor.append(TabOpLowPassFilter(6));
-    model_processor = org.opensim.modeling.ModelProcessor(osim);
+    model_processor = ModelProcessor(osim);
     track.setModel(model_processor);
     track.setStatesReference(table_processor);
     track.set_states_global_tracking_weight(w_states);
@@ -34,7 +39,7 @@ function solution = produceTrackingGuess(...
     effort.setWeight(w_controls);
 
     % Apply joint angle & speed bounds
-    applyBounds(problem, bounds); % Do I need to return problem here?
+    applyStateBounds(problem, bounds); % Do I need to return problem here?
 
     % Solve tracking problem
     solution = study.solve();
