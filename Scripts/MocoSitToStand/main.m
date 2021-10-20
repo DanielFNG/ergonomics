@@ -1,8 +1,9 @@
 %% Parameters (which can be varied freely)
 
-% Root directory for save
-save_dir = createOutputFolder(pwd); % Defaults to ergonomics/output, change as needed
-save_folder = 'default'; % 
+% Root directory for save - defaults to 
+% ergonomics/output/MocoSitToStand/default, change as needed
+save_dir = createOutputFolder(pwd); 
+save_folder = 'default'; 
 
 % State bounds for the tracking & prediction problems
 bounds = {'/jointset/groundPelvis/pelvis_tilt/value', [0*pi/180, 50*pi/180], 43.426*pi/180, 0; ...
@@ -37,7 +38,7 @@ t_controls = 0.01;
 % Weights for the predictive problem
 p_name = 'PredictiveSolution';
 p_effort = 0.01;
-p_load = 1;
+p_translation = 1;
 
 % Time horizon for predictive problem
 timerange = [1.0, 2.0];
@@ -51,6 +52,9 @@ input_kinematics = 'inputIK.mot';
 % Specific settings for this model & kinematics combo
 sub_model = {'lumbar'};
 sub_data = {'lumbar_extension'};
+
+% Reference data for the translation tracking goal
+translation_reference = 'translation_reference.sto';
 
 %% Create savepaths
 
@@ -148,9 +152,16 @@ effort_goal = org.opensim.modeling.MocoControlGoal('effort', p_effort);
 effort_goal.setDivideByDisplacement(true);
 effort_goal.setExponent(3);
 
-% Knee joint loading goals - due to symmetry only one side needed
-r_knee_load = org.opensim.modeling.MocoJointReactionGoal('r_load', p_load);
-r_knee_load.setJointPath('/jointset/knee_r');
+% Fixed foot placement
+translation_goal = ...
+    MocoTranslationTrackingGoal('translation', X.w_translation);
+translation_table = TableProcessor(translation_reference);
+translation_goal.setStatesReference(translation_table);
+frames = org.opensim.modeling.StdVectorString();
+frames.add('/bodyset/calcn_r');
+frames.add('/bodyset/calcn_l');
+translation_goal.setFramePaths(frames);
+problem.addGoal(footPlacementGoal);
 
 % Combine goals
 goals = {effort_goal, r_knee_load};
