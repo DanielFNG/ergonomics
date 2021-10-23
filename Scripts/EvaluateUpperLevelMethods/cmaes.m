@@ -17,19 +17,19 @@ close all;
 
 %% Problem Settings
 
-CostFunction=@Ackley;   % Cost Function
+CostFunction=@objective;   % Cost Function
 
-nVar=10;                % Number of Unknown (Decision) Variables
+nVar=2;                % Number of Unknown (Decision) Variables
 
 VarSize=[1 nVar];       % Decision Variables Matrix Size
 
-VarMin=-10;             % Lower Bound of Decision Variables
-VarMax= 10;             % Upper Bound of Decision Variables
+VarMin=0;             % Lower Bound of Decision Variables
+VarMax=1;             % Upper Bound of Decision Variables
 
 %% CMA-ES Settings
 
 % Maximum Number of Iterations
-MaxIt=300;
+MaxIt=100;
 
 % Population Size (and Number of Offsprings)
 lambda=(4+round(3*log(nVar)))*10;
@@ -79,6 +79,8 @@ M(1).Step=zeros(VarSize);
 M(1).Cost=CostFunction(M(1).Position);
 
 BestSol=M(1);
+
+BestSolSave = zeros(MaxIt, 1);
 
 BestCost=zeros(MaxIt,1);
 

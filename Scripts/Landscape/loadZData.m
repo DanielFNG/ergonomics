@@ -10,10 +10,9 @@ n_translation = 11;
 
 % Step through loading Z data
 zs = zeros(size(xs));
-root = '/Users/daniel/Dropbox/Ergonomics Results/Grid';
+root = 'D:\Dropbox\Ergonomics Results\Grid';
 obj = @sumSquaredStateDifference;
-obj_args = {[root filesep 'reduced_w_effort=0.25_w_translation=0.5.sto'], ...
-    '/jointset/groundPelvis/pelvis_tx/speed'};
+obj_args = {[root filesep 'reduced_w_effort=0.25_w_translation=0.5.sto'], 'all'};
 for i = length(xs):-1:1
     path = [root filesep 'reduced_w_effort=' num2str(xs(i)) ...
         '_w_translation=' num2str(ys(i)) '.sto'];
