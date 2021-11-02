@@ -32,17 +32,9 @@ int main() {
     effort_goal->setDivideByDisplacement(true);
     effort_goal->setExponent(2);
 
-    // Set up foot translation goal
-    //auto* translation_goal = problem.addGoal<MocoTranslationTrackingGoal>(
-    //    "translation", w_translation);
-    //TableProcessor table_processor = TableProcessor(translation_reference);
-    //translation_goal->setStatesReference(table_processor);
-    //std::vector<std::string> frames = {"/bodyset/calcn_r", "/bodyset/calcn_l"};
-    //translation_goal->setFramePaths(frames);
-
     // Set up margin of stability goal
-    //auto* margin_of_stability_goal = problem.addGoal<MocoMarginOfStabilityGoal>(
-    //    "margin_of_stability", w_margin);
+    auto* margin_of_stability_goal = problem.addGoal<MocoMarginOfStabilityGoal>(
+        "margin_of_stability", w_margin);
 
     // Specify bounds on start and end time
     problem.setTimeBounds(0, {1.0, 2.0});
