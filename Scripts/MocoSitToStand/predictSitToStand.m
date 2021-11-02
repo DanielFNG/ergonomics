@@ -29,16 +29,16 @@ function solution = predictSitToStand(X)
     effortGoal.setExponent(2); % Tested 2 > 3 for performance
     problem.addGoal(effortGoal);
 
-%     % Fixed foot placement
-%     fixed_states = 'adjusted_reference_StatesReporter_states.sto';
-%     footPlacementGoal = MocoTranslationTrackingGoal('no_slip', X.w_translation);
-%     tableProcessor = TableProcessor(fixed_states);
-%     footPlacementGoal.setStatesReference(tableProcessor);
-%     frames = org.opensim.modeling.StdVectorString();
-%     frames.add('/bodyset/calcn_r');
-%     frames.add('/bodyset/calcn_l');
-%     footPlacementGoal.setFramePaths(frames);
-%     problem.addGoal(footPlacementGoal);
+    % Fixed foot placement
+    fixed_states = 'adjusted_reference_StatesReporter_states.sto';
+    footPlacementGoal = MocoTranslationTrackingGoal('no_slip', X.w_translation);
+    tableProcessor = TableProcessor(fixed_states);
+    footPlacementGoal.setStatesReference(tableProcessor);
+    frames = org.opensim.modeling.StdVectorString();
+    frames.add('/bodyset/calcn_r');
+    frames.add('/bodyset/calcn_l');
+    footPlacementGoal.setFramePaths(frames);
+    problem.addGoal(footPlacementGoal);
 
 %     % Fixed foot orientation
 %     footOrientationGoal = MocoOrientationTrackingGoal('no_rotate', X.w_rotation);
