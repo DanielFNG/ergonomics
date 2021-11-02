@@ -1,4 +1,5 @@
 
-OpenSim/*
 *.DS_Store
+.vscode
 *.asv
+Output
