@@ -20,31 +20,14 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
     // Update model positions
     getModel().realizeDynamics(input.state);
 
-    /*
-
-    const auto& force = getModel().getComponent
-        <SmoothSphereHalfSpaceForce>("contactHeel_l");
-    Array<double> force_values = force.getRecordValues(input.state);
-
-    const auto& geometries = getModel().getContactGeometrySet();
-    const auto& ground_transform = 
-        geometries.get("heel_l").getFrame().getTransformInGround(input.state);
-
-    SimTK::Vec3 ground_point = 
-        ground_transform * geometries.get("heel_l").get_location();
-
-    integrand = ground_point[1];
-
-    */
-
     // Access required contact forces.
     std::vector<std::string> force_strings = {
-        "contactHeel_l", "contactHeel_r", "contactFront_l", "contactFront_r", "chair_l", "chair_r"
+        "chair_r", "chair_l", "contactHeel_l", "contactFront_l", "contactFront_r", "contactHeel_r"
     };
 
     // Access required contact geometries
     std::vector<std::string> sphere_strings = {
-        "heel_l", "heel_r", "front_l", "front_r", "butt_l", "butt_r"
+        "butt_r", "butt_l", "heel_l", "front_l", "front_r", "heel_r"
     };
         
     // Create BoS polygon
@@ -60,6 +43,32 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
         // If we register a vertical force, this point is active, so we append 
         // it to our BoS polygon
         if (force_values[1] > force.get_constant_contact_force()) {
+
+            //////////////////////////
+            
+            ///*
+            
+            // New implementation
+
+            // Get contact sphere & associated frame
+            const auto& geometries = getModel().getContactGeometrySet();
+            const auto& sphere = geometries.get(sphere_strings[i]);
+            const auto& frame = sphere.getFrame();
+
+            // Transform sphere location to ground frame
+            SimTK::Vec3 ground_point = frame.findStationLocationInGround(
+                input.state, sphere.get_location()); 
+
+            // Append the projected 2D point to our polygon
+            append(poly.outer(), make<point_2d>(
+                ground_point.get(0), ground_point.get(2)));
+
+            //*/
+
+            /*
+
+            // Old implementation
+
             // Get contact spheres
             const auto& geometries = getModel().getContactGeometrySet();
 
@@ -67,9 +76,13 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
             const auto& ground_transform = 
                 geometries.get(sphere_strings[i]).getFrame().getTransformInGround(input.state);
 
-            // Transform sphere location to ground frame
+            // Transform sphere location to ground frame 
             SimTK::Vec3 ground_point = 
                 ground_transform * geometries.get(sphere_strings[i]).get_location();
+
+            */
+
+            //////////////////////////
 
             // Append the projected 2D point to our polygon
             append(poly.outer(), make<point_2d>(

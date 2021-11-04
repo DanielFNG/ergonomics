@@ -1,7 +1,7 @@
 import org.opensim.modeling.*
 
 model_path = '2D_gait_contact_constrained_activation.osim';
-solution_path = 'mos_solution.sto';
+solution_path = 'mos_solution_retry.sto';
 solution = MocoTrajectory(solution_path);
 
 model_processor = ModelProcessor(model_path);
@@ -15,7 +15,7 @@ heel_l.add('contactHeel_l');
 
 heel_forces = opensimMoco.createExternalLoadsTableForGait(...
     model, solution, heel_r, heel_l);
-STOFileAdapter.write(heel_forces, 'heels.sto');
+STOFileAdapter.write(heel_forces, 'heels_retry.sto');
 
 toe_r = StdVectorString();
 toe_l = StdVectorString();
@@ -24,7 +24,7 @@ toe_l.add('contactFront_l');
 
 toe_forces = opensimMoco.createExternalLoadsTableForGait(...
     model, solution, toe_r, toe_l);
-STOFileAdapter.write(toe_forces, 'toes.sto');
+STOFileAdapter.write(toe_forces, 'toes_retry.sto');
 
 seat_r = StdVectorString();
 seat_l = StdVectorString();
@@ -33,5 +33,5 @@ seat_l.add('chair_l');
 
 seat_forces = opensimMoco.createExternalLoadsTableForGait(...
     model, solution, seat_r, seat_l);
-STOFileAdapter.write(seat_forces, 'seat.sto');
+STOFileAdapter.write(seat_forces, 'seat_retry.sto');
 
