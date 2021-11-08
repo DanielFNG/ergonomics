@@ -1,7 +1,8 @@
 function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
 
-    % Create a figure for visualisation
-    figure;
+    % Open VideoWriter
+    v = VideoWriter([save_folder filesep 'evolution.avi'], 'Uncompressed AVI');
+    open(v);
 
     % Parameters - ordering is important for geometry, these points are
     % expressed anti clockwise
@@ -27,6 +28,9 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
     
     % Initialise mos vector
     mos = zeros(solution.NFrames, 1);
+    
+    % Initialise figure
+    f = figure;
     
     % Iterate over the timesteps...
     for i = 1:solution.NFrames
@@ -64,7 +68,7 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
             
             % Append point to projected polygon
             this_point = [ground_point.get(0); ground_point.get(2)];
-            projected_points = [projected_points, this_point];
+            projected_points = [projected_points, this_point]; %#ok<AGROW>
             
             % If above a threshold...
             if force_value.get(1) > force.get_constant_contact_force()
@@ -151,8 +155,10 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
         title('Evolution of Margin of Stability');
         set(gca, 'FontSize', 15);
         
-        % Save image at this frame 
-        print([save_folder filesep num2str(i)], '-dpng');
+        % Save image at this frame
+        drawnow;
+        frame = getframe;
+        writeVideo(v, frame);
         
         % Reset hold
         hold off;
@@ -161,5 +167,9 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
     
     % Output timesteps as well
     timesteps = solution.Timesteps;
+    
+    % Close video & figure
+    close(v);
+    close(f);
 
 end
