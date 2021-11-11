@@ -28,6 +28,10 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
     
     % Initialise mos vector
     mos = zeros(solution.NFrames, 1);
+    wmos = zeros(solution.NFrames, 1);
+    
+    % Compute model weight
+    model_weight = abs(model.getGravity().get(1)*model.getTotalMass(state));
     
     % Initialise figure
     f = figure;
@@ -50,6 +54,7 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
         % For each contact point...
         polygon_points = [];
         projected_points = [];
+        point_weights = [];
         for j = 1:length(force_strings)
             
             % Compute vertical force
@@ -70,6 +75,10 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
             this_point = [ground_point.get(0); ground_point.get(2)];
             projected_points = [projected_points, this_point]; %#ok<AGROW>
             
+            % Compute point weight
+            this_weight = force_value.get(1)/model_weight;
+            point_weights = [point_weights, this_weight];
+            
             % If above a threshold...
             if force_value.get(1) > force.get_constant_contact_force()
                 
@@ -80,12 +89,27 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
             
         end
         
+        % Compute weighted centroid
+        wcentroid_x = 0;
+        wcentroid_y = 0;
+        for point = 1:length(projected_points)
+            wcentroid_x = wcentroid_x + ...
+                projected_points(1, point)*point_weights(point);
+            wcentroid_y = wcentroid_y + ...
+                projected_points(2, point)*point_weights(point);
+        end
+        wcentroid_x = wcentroid_x/sum(point_weights);
+        wcentroid_y = wcentroid_y/sum(point_weights);
+        
         % Plot projected points
         projection = polyshape(projected_points(1, :), projected_points(2, :));
         pj = plot(projection);
         pj.EdgeColor = [0 0 0];
         pj.FaceColor = [1 1 1];
         hold on;
+        
+        % Plot weighted centroid 
+        plot(wcentroid_x, wcentroid_y, 'gx', 'MarkerSize', 20, 'LineWidth', 2);
         
         % If our polygon is non-empty...
         if ~isempty(polygon_points)
@@ -144,7 +168,7 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
         end
         
         % Plot legend
-        legend('PBoS', 'BoS', 'Centre', 'PCoM');
+        legend('PBoS', 'WCentre', 'BoS', 'Centre', 'PCoM');
         
         % Constrain xlim
         xlim([-0.1 0.7]);
