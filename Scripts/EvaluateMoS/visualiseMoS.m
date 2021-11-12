@@ -1,4 +1,9 @@
-function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
+function [pcen, cen, wcen, pcom, xcom, mos, wmos, timesteps] = ...
+    visualiseMoS(model_path, solution_path, save_folder)
+
+    % Initialise figure
+    f = figure;
+    f.Position = [100 100 900 600];
 
     % Open VideoWriter
     v = VideoWriter([save_folder filesep 'evolution.avi'], 'Uncompressed AVI');
@@ -26,15 +31,22 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
     n_variables = state_names.getSize();
     array = Vector(n_variables, 0);
     
-    % Initialise mos vector
-    mos = zeros(solution.NFrames, 1);
-    wmos = zeros(solution.NFrames, 1);
+    % Initialise 
+    pcen.x = zeros(solution.NFrames, 1);
+    cen.x = pcen.x;
+    wcen.x = pcen.x;
+    pcom.x = pcen.x;
+    xcom.x = pcen.x;
+    pcen.z = zeros(solution.NFrames, 1);
+    cen.z = pcen.z;
+    wcen.z = pcen.z;
+    pcom.z = pcen.z;
+    xcom.z = pcen.z;
+    mos = pcen.x;
+    wmos = mos;
     
     % Compute model weight
     model_weight = abs(model.getGravity().get(1)*model.getTotalMass(state));
-    
-    % Initialise figure
-    f = figure;
     
     % Iterate over the timesteps...
     for i = 1:solution.NFrames
@@ -89,27 +101,29 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
             
         end
         
-        % Compute weighted centroid
-        wcentroid_x = 0;
-        wcentroid_y = 0;
-        for point = 1:length(projected_points)
-            wcentroid_x = wcentroid_x + ...
-                projected_points(1, point)*point_weights(point);
-            wcentroid_y = wcentroid_y + ...
-                projected_points(2, point)*point_weights(point);
-        end
-        wcentroid_x = wcentroid_x/sum(point_weights);
-        wcentroid_y = wcentroid_y/sum(point_weights);
+        max(point_weights)
         
         % Plot projected points
         projection = polyshape(projected_points(1, :), projected_points(2, :));
-        pj = plot(projection);
+        ch_projection = convhull(projection);
+        pj = plot(ch_projection);
         pj.EdgeColor = [0 0 0];
         pj.FaceColor = [1 1 1];
         hold on;
         
-        % Plot weighted centroid 
-        plot(wcentroid_x, wcentroid_y, 'gx', 'MarkerSize', 20, 'LineWidth', 2);
+        % Plot centre of projection
+        
+        % Compute weighted centroid
+        wcen.x(i) = 0;
+        wcen.z(i) = 0;
+        for point = 1:length(projected_points)
+            wcen.x(i) = wcen.x(i) + ...
+                projected_points(1, point)*point_weights(point);
+            wcen.z(i) = wcen.z(i) + ...
+                projected_points(2, point)*point_weights(point);
+        end
+        wcen.x(i) = wcen.x(i)/sum(point_weights);
+        wcen.z(i) = wcen.z(i)/sum(point_weights);
         
         % If our polygon is non-empty...
         if ~isempty(polygon_points)
@@ -120,58 +134,105 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
                 
                 % Compute centre of polygon
                 polygon = polyshape(polygon_points(1, :), polygon_points(2, :));
-                [x, z] = centroid(polygon);
-                plot(polygon);
-                plot(x, z, 'rx', 'MarkerSize', 20, 'LineWidth', 2);
+                [cen.x(i), cen.z(i)] = centroid(polygon);
+                pk = plot(polygon);
+                pk.EdgeColor = 'none';
                 
             elseif n_points == 2
                 
                 % Compute line midpoint
-                x = sum(polygon_points(1, :))/2;
-                z = sum(polygon_points(2, :))/2;
+                cen.x(i) = sum(polygon_points(1, :))/2;
+                cen.z(i) = sum(polygon_points(2, :))/2;
                 plot(polygon_points(1, :), polygon_points(2, :));
-                plot(x, z, 'rx', 'MarkerSize', 20, 'LineWidth', 2);
                 
             else
                 
                 % Single point of support
-                x = polygon_points(1, 1);
-                z = polygon_points(2, 1);
-                plot(x, z, 'rx', 'MarkerSize', 20, 'LineWidth', 2);
+                cen.x(i) = polygon_points(1, 1);
+                cen.z(i) = polygon_points(2, 1);
                 
             end
             
-            % Compute model CoM
+            % Plot centre of projected boundary of support
+            [pcen.x(i), pcen.z(i)] = centroid(ch_projection);
+            plot(pcen.x(i), pcen.z(i), 'kx', 'MarkerSize', 20, 'LineWidth', 2);
+            
+            % Plot centre of boundary of support
+            plot(cen.x(i), cen.z(i), 'rx', 'MarkerSize', 20, 'LineWidth', 2);
+            
+            % Plot weighted centroid 
+            plot(wcen.x(i), wcen.z(i), 'bx', 'MarkerSize', 20, 'LineWidth', 2);
+            
+            % Compute model CoM and CoM_v
             mass = 0;
             com = [0, 0, 0];
+            com_v = com;
             body_set = model.getBodySet();
             for j = 0:body_set.getSize() - 1
                 body = body_set.get(j);
                 body_com = body.get_mass_center();
-                vec = body.findStationLocationInGround(state, body_com);
+                pos = body.findStationLocationInGround(state, body_com);
+                vel = body.findStationVelocityInGround(state, body_com);
                 mass = mass + body.get_mass();
-                com = com + [body.get_mass() * vec.get(0), ...
-                    body.get_mass * vec.get(1), body.get_mass * vec.get(2)];
+                com = com + [body.get_mass() * pos.get(0), ...
+                    body.get_mass() * pos.get(1), body.get_mass() * pos.get(2)];
+                com_v = com_v + [body.get_mass * vel.get(0), ...
+                    body.get_mass() * vel.get(1), body.get_mass() * vel.get(2)];
             end
             com = com/mass;
+            com_v = com_v/mass;
+            
+            % Compute XCoM
+            pcom.x(i) = com(1);
+            pcom.z(i) = com(3);
+            xcom.x(i) = extrapolatePendulum(com(1), com_v(1), 0, com(2));
+            xcom.z(i) = extrapolatePendulum(com(3), com_v(3), 0, com(2));
+            
+%             % Plot CoM projection 
+%             plot(pcom.x(i), pcom.z(i), 'k+', 'MarkerSize', 20, 'LineWidth', 2);
+%             
+%             % Plot XCoM
+%             plot(xcom.x(i), xcom.z(i), 'r+', 'MarkerSize', 20, 'LineWidth', 2);
             
             % Compute distance between polygon centre & CoM projection
-            mos(i) = sqrt((x - com(1))^2 + (z - com(3))^2);
-            
-            % Plot CoM projection 
-            plot(com(1), com(3), 'bx', 'MarkerSize', 20, 'LineWidth', 2);
+            mos(i) = sqrt((cen.x(i) - xcom.x(i))^2 + (cen.z(i) - xcom.z(i))^2);
+            wmos(i) = sqrt((wcen.x(i) - xcom.x(i))^2 + (wcen.z(i) - xcom.z(i))^2);
             
         else
             
             mos(i) = 10;
+            wmos(i) = 10;
             
         end
         
+        % Step through plotting vertices
+        for j = 1:length(force_strings)
+            [~, on] = isinterior(ch_projection, ...
+                projected_points(1, j), projected_points(2, j));
+            if on
+                if max(abs(point_weights(j))) > 1
+                    colour_vector = [1 1 1];
+                else
+                    colour_vector = [1 1 1]*abs(point_weights(j));
+                end
+                plot(projected_points(1, j), projected_points(2, j), '-o', ...
+                    'MarkerSize', 20, 'LineWidth', 1, 'MarkerEdgeColor', 'black', ...
+                    'MarkerFaceColor', colour_vector);
+            end
+        end
+        
+        % Add colorbar
+        colormap gray;
+        c = colorbar;
+        c.Label.FontSize = 15;
+        c.Label.String = 'Vertex Weight';
+        
         % Plot legend
-        legend('PBoS', 'WCentre', 'BoS', 'Centre', 'PCoM');
+        %legend('PBoS', 'BoS', 'PCentre', 'Centre', 'WCentre', 'PCoM', 'XCoM');
+        legend('PBoS', 'BoS', 'PCentre', 'Centre', 'WCentre');
         
         % Constrain xlim
-        xlim([-0.1 0.7]);
+        xlim([-0.1 0.8]);
         
         % Formatting
         xlabel('X (m)');
@@ -181,7 +242,7 @@ function [mos, timesteps] = visualiseMoS(model_path, solution_path, save_folder)
         
         % Save image at this frame
         drawnow;
-        frame = getframe;
+        frame = getframe(gcf);;
         writeVideo(v, frame);
         
         % Reset hold
