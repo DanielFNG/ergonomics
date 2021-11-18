@@ -1,15 +1,21 @@
 %% Inputs
-model = '2D_gait_contact_constrained_activation.osim';
-source_data = {'mos_only.sto', 'mos_effort.sto', 'translation_only.sto', ...
-    'translation_effort.sto', 'effort_only.sto'};
-source_output = {'mos_only', 'mos_effort', 'translation_only', ...
+model_path = '2D_gait_contact_constrained_activation.osim';
+solution_folder = 'solutions';
+solution_files = {'mos_only.sto', 'mos_effort.sto', ...
+    'translation_only.sto', 'translation_effort.sto', 'effort_only.sto'};
+output_names = {'mos_only', 'mos_effort', 'translation_only', ...
     'translation_effort', 'effort_only'};
+contact_list = {'chair_r', 'chair_l', 'contactHeel_l', ...
+        'contactFront_l', 'contactFront_r', 'contactHeel_r'};
 output_dir = createOutputFolder(pwd); % Change if non-default folder needed
 
 %% Processing & Analysis
 
+% Load model
+model = org.opensim.modeling.Model(model_path);
+
 % Create cell array to hold certain outputs
-n_sources = length(source_data);
+n_sources = length(solution_files);
 mos = cell(n_sources, 1);
 timesteps = cell(n_sources, 1);
 
@@ -21,35 +27,50 @@ hold on;
 for i = 1:n_sources
     
     % Make directories
-    source_dir = [output_dir filesep source_output{i}];
+    source_dir = [output_dir filesep output_names{i}];
     image_dir = [source_dir filesep 'evolution'];
     grf_dir = [source_dir filesep 'grfs'];
     graphs_dir = [source_dir filesep 'graphs'];
     mkdir(image_dir);
     mkdir(grf_dir);
     mkdir(graphs_dir);
-
-    % Create image sequences visualising each of the input motions. I then use
-    % ImageJ to create GIFs, I believe this can probably be done in MATLAB 
-    [mos{i}, timesteps{i}] = visualiseMoS(model, source_data{i}, image_dir);
+    
+    % Load solution 
+    solution_path = [solution_folder filesep solution_files{i}];
+    solution = Data(solution_path);
+    
+    % Compute stability regions & centroids
+    [pbos, bos, wbos] = ...
+        computeStabilityRegionEvolution(model, solution, contact_list);
+    cpbos = computeCentroidEvolution(pbos);
+    cbos = computeCentroidEvolution(bos);
+    cwbos = computeCentroidEvolution(pbos, wbos);
+    
+    % Create a gif visualising the input motions
+    visualiseStability(image_dir, solution.NFrames, ...
+        pbos, bos, wbos, {cpbos, cbos, cwbos}, {'cpbos', 'cbos', 'cwbos'});
+    
+    % Compute stability criteria
+    mos{i} = cwbos; % Placeholder - still need to add this, extrapolate pendulum etc
     
     % Compare MoS evolution;
     figure(mos_fig);
     hold on;
-    plot(timesteps{i}/timesteps{i}(end)*100, mos{i}, 'LineWidth', 2);
+    plot(solution.Timesteps/solution.Timesteps(end)*100, mos{i}, 'LineWidth', 2);
 
-    % Produce grf files
-    %produceGRFData(model, source_data{i}, grf_dir);
+    % Produce grf files - for some reason getting an error with the
+    % translation input files here
+    produceGRFData(model_path, solution_path, grf_dir);
 
     % Produce grf plots
-    %plotGRFs(grf_dir, graphs_dir);
+    plotGRFs(grf_dir, graphs_dir);
 end
 
 % Finish up MoS evolution graph
 figure(mos_fig);
 xlabel('% of Motion');
 ylabel('Margin of Stability');
-legend(source_output{:}, 'Interpreter', 'none');
+legend(output_names{:}, 'Interpreter', 'none');
 set(gca, 'FontSize', 15);
 saveas(gcf, [output_dir filesep 'mos-comparison.png']);
 close(mos_fig);

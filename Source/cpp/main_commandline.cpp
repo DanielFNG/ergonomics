@@ -4,18 +4,28 @@
 
 using namespace OpenSim;
 
-int main() {
+int main(int argc, char *argv[]) {
 
     // Define some inputs here for now
     std::string input_model = "2D_gait_contact_constrained_activation.osim";
     std::string study_name = "sit_to_stand";
     std::string translation_reference = 
         "adjusted_reference_StatesReporter_states.sto";
+    std::vector<std::string> translation_frames = 
+        {"/bodyset/calcn_r", "/bodyset/calcn_l"};
     std::string guess_trajectory = 
         "sitToStandTracking_solution_constrained_activation.sto";
-    std::string output_path = "pure_mos.sto";
-    double w_effort = 0;
-    double w_margin = 0.1;
+
+    // Parse program inputs - we require the three weights & output file name.
+    double w_effort = atof(argv[1]);
+    auto w_effort_str = std::to_string(w_effort);
+    double w_translation = atof(argv[2]);
+    auto w_translation_str = std::to_string(w_translation);
+    double w_margin = atof(argv[3]);
+    auto w_margin_str = std::to_string(w_margin);
+    std::string output_path = argv[4];
+    output_path.append(std::string("/w_effort=") + w_effort_str + 
+        "_w_translation=" + w_translation_str + "_w_mos=" + w_margin_str + ".sto");
 
     // Initialise study
     MocoStudy study;
@@ -30,6 +40,13 @@ int main() {
     auto* effort_goal = problem.addGoal<MocoControlGoal>("effort", w_effort);
     effort_goal->setDivideByDisplacement(true);
     effort_goal->setExponent(3);
+
+    // Set up foot tracking goal
+    auto* translation_goal = problem.addGoal<MocoTranslationTrackingGoal>(
+        "translation", w_translation);
+    TableProcessor table_processor = TableProcessor(translation_reference);
+    translation_goal->setStatesReference(table_processor);
+    translation_goal->setFramePaths(translation_frames);
 
     // Set up margin of stability goal
     auto* margin_of_stability_goal = problem.addGoal<MocoMarginOfStabilityGoal>(
