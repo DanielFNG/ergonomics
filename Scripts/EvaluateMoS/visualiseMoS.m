@@ -188,11 +188,11 @@ function [pcen, cen, wcen, pcom, xcom, mos, wmos, timesteps] = ...
             xcom.x(i) = extrapolatePendulum(com(1), com_v(1), 0, com(2));
             xcom.z(i) = extrapolatePendulum(com(3), com_v(3), 0, com(2));
             
-%             % Plot CoM projection 
-%             plot(pcom.x(i), pcom.z(i), 'k+', 'MarkerSize', 20, 'LineWidth', 2);
-%             
-%             % Plot XCoM
-%             plot(xcom.x(i), xcom.z(i), 'r+', 'MarkerSize', 20, 'LineWidth', 2);
+            % Plot CoM projection 
+            plot(pcom.x(i), pcom.z(i), 'k+', 'MarkerSize', 20, 'LineWidth', 2);
+            
+            % Plot XCoM
+            plot(xcom.x(i), xcom.z(i), 'r+', 'MarkerSize', 20, 'LineWidth', 2);
             
             % Compute distance between polygon centre & CoM projection
             mos(i) = sqrt((cen.x(i) - xcom.x(i))^2 + (cen.z(i) - xcom.z(i))^2);
@@ -228,8 +228,8 @@ function [pcen, cen, wcen, pcom, xcom, mos, wmos, timesteps] = ...
         c.Label.String = 'Vertex Weight';
         
         % Plot legend
-        %legend('PBoS', 'BoS', 'PCentre', 'Centre', 'WCentre', 'PCoM', 'XCoM');
-        legend('PBoS', 'BoS', 'PCentre', 'Centre', 'WCentre');
+        legend('PBoS', 'BoS', 'PCentre', 'Centre', 'WCentre', 'PCoM', 'XCoM');
+        %legend('PBoS', 'BoS', 'PCentre', 'Centre', 'WCentre');
         
         % Constrain xlim
         xlim([-0.1 0.8]);
@@ -242,7 +242,7 @@ function [pcen, cen, wcen, pcom, xcom, mos, wmos, timesteps] = ...
         
         % Save image at this frame
         drawnow;
-        frame = getframe(gcf);;
+        frame = getframe(gcf);
         writeVideo(v, frame);
         
         % Reset hold

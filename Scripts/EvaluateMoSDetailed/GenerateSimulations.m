@@ -5,8 +5,8 @@ save_dir = [pwd filesep 'simulations'];
 mkdir(save_dir);
 
 % Generate simulations
-for i = 1:n_weights
-    for j = 1:n_weights
+for i = 3%1:n_weights
+    for j = 3:n_weights%1:n_weights
         for k = 1:n_weights
             command = ['./main ' num2str(allowable_weights(i)) ' ' ...
                 num2str(allowable_weights(j)) ' ' ...
