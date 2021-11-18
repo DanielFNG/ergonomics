@@ -34,9 +34,6 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
     double model_weight = getModel().getGravity().get(1)*getModel().getTotalMass(input.state);
         
     // Create BoS polygon
-    std::vector<double> vertex_x = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-    std::vector<double> vertex_z = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-    std::vector<double> vertex_weights = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     polygon_2d poly;
     bool empty = true;
     for (int i = 0; i < force_strings.size(); i++) {
@@ -45,18 +42,9 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
             <SmoothSphereHalfSpaceForce>(force_strings[i]);
         Array<double> force_values = force.getRecordValues(input.state);
 
-        // Assign vertex weight
-        vertex_weights[i] = force_values[1]/model_weight;
-
         // If we register a vertical force, this point is active, so we append 
         // it to our BoS polygon
         if (force_values[1] > force.get_constant_contact_force()) {
-
-            //////////////////////////
-            
-            ///*
-            
-            // New implementation
 
             // Get contact sphere & associated frame
             const auto& geometries = getModel().getContactGeometrySet();
@@ -71,35 +59,6 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
             append(poly.outer(), make<point_2d>(
                 ground_point.get(0), ground_point.get(2)));
 
-            //*/
-
-            /*
-
-            // Old implementation
-
-            // Get contact spheres
-            const auto& geometries = getModel().getContactGeometrySet();
-
-            // Compute transformation from sphere frame to ground frame
-            const auto& ground_transform = 
-                geometries.get(sphere_strings[i]).getFrame().getTransformInGround(input.state);
-
-            // Transform sphere location to ground frame 
-            SimTK::Vec3 ground_point = 
-                ground_transform * geometries.get(sphere_strings[i]).get_location();
-
-            */
-
-            //////////////////////////
-
-            // Append the projected 2D point to our polygon
-            append(poly.outer(), make<point_2d>(
-                ground_point.get(0), ground_point.get(2)));
-
-            // Assign vertex position - doing this in case correct changes order later
-            vertex_x[i] = ground_point.get(0);
-            vertex_z[i] = ground_point.get(2);
-
             // Note that we have at least one point in our polygon
             empty = false;
         }
@@ -110,17 +69,6 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
 
     // If our polygon is non-empty...
     if (!empty) {
-
-        // Compute centre of weighted polygon
-        std::vector<double> wcent = {0.0, 0.0};
-        double total_weight = 0;
-        for (int i = 0; i < force_strings.size(); i++) {
-            total_weight = total_weight + vertex_weights[i];
-            wcent[0] = wcent[0] + vertex_x[i]*vertex_weights[i];
-            wcent[1] = wcent[1] + vertex_z[i]*vertex_weights[i];
-        }
-        wcent[0] = wcent[0]/total_weight;
-        wcent[1] = wcent[1]/total_weight;
 
         // Compute the centre of the polygon
         point_2d cent;
@@ -159,18 +107,10 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
         xcom[1] = com[1] + com_v[1]/sqrt(g/com[1]);
         xcom[2] = com[2] + com_v[2]/sqrt(g/com[1]);
 
-        // Compute the distance between the polygon centre and the CoM projection
-        // point_2d com_projection;
-        // assign_values(com_projection, com[0], com[2]);
-        // integrand = distance(com_projection, cent);
-
         // Compute the distance between the polygon centre and the extrapolated CoM
         point_2d extrapolated_com;
         assign_values(extrapolated_com, xcom[0], xcom[2]);
         integrand = distance(extrapolated_com, cent);
-
-        // Compute the distance between the weighted polygon centre and the extrapolated CoM
-        // integrand = sqrt(pow((wcent[0] - xcom[0]), 2) + pow((wcent[1] - xcom[2]), 2));
 
     } else {
         integrand = 10;

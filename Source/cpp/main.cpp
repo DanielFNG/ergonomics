@@ -1,10 +1,12 @@
 #include "MocoMarginOfStabilityGoal.h"
+#include "MocoProjectedMarginOfStabilityGoal.h"
+#include "MocoWeightedMarginOfStabilityGoal.h"
 #include <string>
 #include <OpenSim/Moco/osimMoco.h>
 
 using namespace OpenSim;
 
-int main() {
+int main(int argc, char *argv[]) {
 
     // Define some inputs here for now
     std::string input_model = "2D_gait_contact_constrained_activation.osim";
@@ -13,9 +15,33 @@ int main() {
         "adjusted_reference_StatesReporter_states.sto";
     std::string guess_trajectory = 
         "sitToStandTracking_solution_constrained_activation.sto";
-    std::string output_path = "pure_mos.sto";
-    double w_effort = 0;
-    double w_margin = 0.1;
+    std::string pelvis_path = "groundPelvis";
+    std::string hip_path = "hip_r";
+    std::string knee_path = "knee_r";
+    std::string ankle_path = "ankle_r";
+
+    // Parse program inputs - we require the 8 weights and the ouput file name, in that order
+    double w_effort = atof(argv[1]);
+    auto w_effort_str = std::to_string(w_effort);
+    double w_mos = atof(argv[2]);
+    auto w_mos_str = std::to_string(w_mos);
+    double w_pmos = atof(argv[3]);
+    auto w_pmos_str = std::to_string(w_pmos);
+    double w_wmos = atof(argv[4]);
+    auto w_wmos_str = std::to_string(w_wmos);
+    double w_aload = atof(argv[5]);
+    auto w_aload_str = std::to_string(w_aload);
+    double w_kload = atof(argv[6]);
+    auto w_kload_str = std::to_string(w_kload);
+    double w_hload = atof(argv[7]);
+    auto w_hload_str = std::to_string(w_hload);
+    double w_pload = atof(argv[8]);
+    auto w_pload_str = std::to_string(w_pload);
+    std::string output_path = argv[9];
+    output_path.append(std::string("/w_effort=") + w_effort_str + 
+        "_w_mos=" + w_mos_str + "_w_pmos=" + w_pmos_str + "_w_wmos=" 
+        + w_wmos_str + "_w_aload=" + w_aload_str + "_w_kload=" + w_kload_str
+        + "_w_hload_=" + w_hload_str + "_w_ploat_=" + w_pload_str + ".sto");
 
     // Initialise study
     MocoStudy study;
@@ -27,13 +53,65 @@ int main() {
     problem.setModelProcessor(model_processor);
 
     // Set up effort goal
-    auto* effort_goal = problem.addGoal<MocoControlGoal>("effort", w_effort);
-    effort_goal->setDivideByDisplacement(true);
-    effort_goal->setExponent(3);
+    if (w_effort > 0) 
+    {
+        auto* effort_goal = problem.addGoal<MocoControlGoal>("effort", w_effort);
+        effort_goal->setDivideByDisplacement(true);
+        effort_goal->setExponent(3);
+    }
 
     // Set up margin of stability goal
-    auto* margin_of_stability_goal = problem.addGoal<MocoMarginOfStabilityGoal>(
-        "margin_of_stability", w_margin);
+    if (w_mos > 0)
+    {
+        auto* mos_goal = problem.addGoal
+            <MocoMarginOfStabilityGoal>("mos", w_mos);
+    }
+
+    // Set up projected margin of stability goal
+    if (w_pmos > 0)
+    {
+        auto* pmos_goal = problem.addGoal
+            <MocoProjectedMarginOfStabilityGoal>("pmos", w_pmos);
+    }
+
+    // Set up margin of stability goal
+    if (w_wmos > 0)
+    {
+        auto* wmos_goal = problem.addGoal
+            <MocoWeightedMarginOfStabilityGoal>("wmos", w_wmos);
+    }
+
+    // Set up ankle joint loading
+    if (w_aload > 0)
+    {
+        auto* aload_goal = 
+            problem.addGoal<MocoJointReactionGoal>("aload", w_aload);
+        aload_goal->setJointPath(ankle_path);
+    }
+
+    // Set up knee joint loading
+    if (w_kload > 0)
+    {
+        auto* kload_goal = 
+            problem.addGoal<MocoJointReactionGoal>("kload", w_kload);
+        kload_goal->setJointPath(knee_path);
+    }
+
+    // Set up hip joint loading
+    if (w_hload > 0)
+    {
+        auto* hload_goal = 
+            problem.addGoal<MocoJointReactionGoal>("hload", w_hload);
+        hload_goal->setJointPath(hip_path);
+    }
+
+    // Set up pelvis joint loading
+    if (w_pload > 0)
+    {
+        auto* pload_goal = 
+            problem.addGoal<MocoJointReactionGoal>("pload", w_pload);
+        pload_goal->setJointPath(pelvis_path);
+    }
 
     // Specify bounds on start and end time
     problem.setTimeBounds(0, {1.0, 2.0});
@@ -83,14 +161,19 @@ int main() {
     problem.setStateInfo("/jointset/lumbar/lumbar/speed", 
         {-1000*Pi/180, 2000*Pi/180}, 0, 0);
 
+    std::cout << "oi" << std::endl;
+
     // Configure the solver.
     MocoCasADiSolver& solver = study.initCasADiSolver();
+    std::cout << "oi" << std::endl;
     solver.set_num_mesh_intervals(50);
     solver.set_verbosity(2);
     solver.set_optim_solver("ipopt");
     solver.set_optim_max_iterations(1000);
     solver.set_optim_convergence_tolerance(1e-2);
-    solver.set_optim_constraint_tolerance(1e-4);    
+    solver.set_optim_constraint_tolerance(1e-4);
+
+    std::cout << "oi" << std::endl;    
 
     // Specify an initial guess.
     MocoTrajectory guess = MocoTrajectory(guess_trajectory);
