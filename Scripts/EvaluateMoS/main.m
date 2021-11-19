@@ -1,10 +1,8 @@
 %% Inputs
 model_path = '2D_gait_contact_constrained_activation.osim';
-solution_folder = 'solutions';
-solution_files = {'mos_only.sto', 'mos_effort.sto', ...
-    'translation_only.sto', 'translation_effort.sto', 'effort_only.sto'};
-output_names = {'mos_only', 'mos_effort', 'translation_only', ...
-    'translation_effort', 'effort_only'};
+solution_folder = 'solutions2';
+solution_files = {'mos.sto', 'wmos.sto', 'pmos.sto'};
+output_names = {'mos', 'wmos', 'pmos'};
 contact_list = {'chair_r', 'chair_l', 'contactHeel_l', ...
         'contactFront_l', 'contactFront_r', 'contactHeel_r'};
 output_dir = createOutputFolder(pwd); % Change if non-default folder needed
@@ -24,7 +22,7 @@ mos_fig = figure;
 hold on;
 
 % Do the rest in a loop
-for i = 1:n_sources
+for i = 2:n_sources
     
     % Make directories
     source_dir = [output_dir filesep output_names{i}];
@@ -50,20 +48,20 @@ for i = 1:n_sources
     visualiseStability(image_dir, solution.NFrames, ...
         pbos, bos, wbos, {cpbos, cbos, cwbos}, {'cpbos', 'cbos', 'cwbos'});
     
-    % Compute stability criteria
-    mos{i} = cwbos; % Placeholder - still need to add this, extrapolate pendulum etc
-    
-    % Compare MoS evolution;
-    figure(mos_fig);
-    hold on;
-    plot(solution.Timesteps/solution.Timesteps(end)*100, mos{i}, 'LineWidth', 2);
-
-    % Produce grf files - for some reason getting an error with the
-    % translation input files here
-    produceGRFData(model_path, solution_path, grf_dir);
-
-    % Produce grf plots
-    plotGRFs(grf_dir, graphs_dir);
+%     % Compute stability criteria
+%     mos{i} = cwbos; % Placeholder - still need to add this, extrapolate pendulum etc
+%     
+%     % Compare MoS evolution;
+%     figure(mos_fig);
+%     hold on;
+%     plot(solution.Timesteps/solution.Timesteps(end)*100, mos{i}, 'LineWidth', 2);
+% 
+%     % Produce grf files - for some reason getting an error with the
+%     % translation input files here
+%     produceGRFData(model_path, solution_path, grf_dir);
+% 
+%     % Produce grf plots
+%     plotGRFs(grf_dir, graphs_dir);
 end
 
 % Finish up MoS evolution graph
