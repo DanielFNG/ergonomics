@@ -38,7 +38,7 @@ function visualiseStability(savedir, n_timesteps, ...
             elseif n_vertices == 2
                 plot(bos{t}(1, :), bos{t}(2, :));
             else
-                error('Placeholder');
+                plot(0, 0);
             end
             legend_entries = [legend_entries 'BoS'];
         end

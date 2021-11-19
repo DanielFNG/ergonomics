@@ -15,12 +15,13 @@ int main(int argc, char *argv[]) {
         "adjusted_reference_StatesReporter_states.sto";
     std::string guess_trajectory = 
         "sitToStandTracking_solution_constrained_activation.sto";
-    std::string pelvis_path = "groundPelvis";
-    std::string hip_path = "hip_r";
-    std::string knee_path = "knee_r";
-    std::string ankle_path = "ankle_r";
+    std::string pelvis_path = "jointset/groundPelvis";
+    std::string hip_path = "jointset/hip_r";
+    std::string knee_path = "jointset/knee_r";
+    std::string ankle_path = "jointset/ankle_r";
+    int max_iterations = 2000;
 
-    // Parse program inputs - we require the 8 weights and the ouput file name, in that order
+    // Parse program inputs - we require the 7 weights and the ouput file name, in that order
     double w_effort = atof(argv[1]);
     auto w_effort_str = std::to_string(w_effort);
     double w_mos = atof(argv[2]);
@@ -35,13 +36,11 @@ int main(int argc, char *argv[]) {
     auto w_kload_str = std::to_string(w_kload);
     double w_hload = atof(argv[7]);
     auto w_hload_str = std::to_string(w_hload);
-    double w_pload = atof(argv[8]);
-    auto w_pload_str = std::to_string(w_pload);
-    std::string output_path = argv[9];
+    std::string output_path = argv[8];
     output_path.append(std::string("/w_effort=") + w_effort_str + 
         "_w_mos=" + w_mos_str + "_w_pmos=" + w_pmos_str + "_w_wmos=" 
         + w_wmos_str + "_w_aload=" + w_aload_str + "_w_kload=" + w_kload_str
-        + "_w_hload_=" + w_hload_str + "_w_ploat_=" + w_pload_str + ".sto");
+        + "_w_hload=" + w_hload_str + ".sto");
 
     // Initialise study
     MocoStudy study;
@@ -105,14 +104,6 @@ int main(int argc, char *argv[]) {
         hload_goal->setJointPath(hip_path);
     }
 
-    // Set up pelvis joint loading
-    if (w_pload > 0)
-    {
-        auto* pload_goal = 
-            problem.addGoal<MocoJointReactionGoal>("pload", w_pload);
-        pload_goal->setJointPath(pelvis_path);
-    }
-
     // Specify bounds on start and end time
     problem.setTimeBounds(0, {1.0, 2.0});
 
@@ -141,25 +132,25 @@ int main(int argc, char *argv[]) {
 
     // Specify bounds on speeds
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/speed", 
-        {-1500*Pi/180, 1500*Pi/180}, 0, 0);
+        {-1500*Pi/180, 1500*Pi/180}, 0);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tx/speed", 
-        {-5, 5}, 0, 0);
+        {-5, 5}, 0);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_ty/speed", 
-        {-2, 10}, 0, 0);
+        {-2, 10}, 0);
     problem.setStateInfo("/jointset/hip_l/hip_flexion_l/speed", 
-        {-2500*Pi/180, 1500*Pi/180}, 0, 0);
+        {-2500*Pi/180, 1500*Pi/180}, 0);
     problem.setStateInfo("/jointset/hip_r/hip_flexion_r/speed", 
-        {-2500*Pi/180, 1500*Pi/180}, 0, 0);
+        {-2500*Pi/180, 1500*Pi/180}, 0);
     problem.setStateInfo("/jointset/knee_l/knee_angle_l/speed", 
-        {-500*Pi/180, 3000*Pi/180}, 0, 0);
+        {-500*Pi/180, 3000*Pi/180}, 0);
     problem.setStateInfo("/jointset/knee_r/knee_angle_r/speed", 
-        {-500*Pi/180, 3000*Pi/180}, 0, 0);
+        {-500*Pi/180, 3000*Pi/180}, 0);
     problem.setStateInfo("/jointset/ankle_l/ankle_angle_l/speed", 
-        {-1200*Pi/180, 800*Pi/180}, 0, 0);
+        {-1200*Pi/180, 800*Pi/180}, 0);
     problem.setStateInfo("/jointset/ankle_r/ankle_angle_r/speed", 
-        {-1200*Pi/180, 800*Pi/180}, 0, 0);
+        {-1200*Pi/180, 800*Pi/180}, 0);
     problem.setStateInfo("/jointset/lumbar/lumbar/speed", 
-        {-1000*Pi/180, 2000*Pi/180}, 0, 0);
+        {-1000*Pi/180, 2000*Pi/180}, 0);
 
     std::cout << "oi" << std::endl;
 
@@ -169,7 +160,7 @@ int main(int argc, char *argv[]) {
     solver.set_num_mesh_intervals(50);
     solver.set_verbosity(2);
     solver.set_optim_solver("ipopt");
-    solver.set_optim_max_iterations(1000);
+    solver.set_optim_max_iterations(max_iterations);
     solver.set_optim_convergence_tolerance(1e-2);
     solver.set_optim_constraint_tolerance(1e-4);
 
