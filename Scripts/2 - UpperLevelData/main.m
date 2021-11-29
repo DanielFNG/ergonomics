@@ -61,8 +61,9 @@ for i = 1:3
     sdevs(:, i) = std(com(:, :, i), 0, 2);
 end
 
-% Visualise results
+% Visualise and save results
 plotShadedSDevs({com(:, :, 1)', com(:, :, 2)'}, {'X', 'Y'}, '% of Movement', 'Position (m)', 0:100);
+saveas(gcf, [output_dir filesep 'com_trajectory.png']);
 
 %% Produce a file saving the mean CoM trajectories (OpenSim format)
 labels = {'time', 'center_of_mass_X', 'center_of_mass_Y', ...
