@@ -29,11 +29,10 @@ VarMax=1.1;             % Upper Bound of Decision Variables
 %% CMA-ES Settings
 
 % Maximum Number of Iterations
-MaxIt=100;
+MaxIt=15;
 
 % Population Size (and Number of Offsprings)
-%lambda=(4+round(3*log(nVar)))*10;
-lambda = 4;
+lambda=4+round(3*log(nVar));
 
 % Number of Parents
 mu=round(lambda/2);
