@@ -8,36 +8,35 @@ using namespace OpenSim;
 
 int main(int argc, char *argv[]) {
 
-    // Define some inputs here for now
-    std::string input_model = "2D_gait_contact_constrained_activation.osim";
+    // Fixed parameters    
     std::string study_name = "sit_to_stand";
-    std::string translation_reference = 
-        "adjusted_reference_StatesReporter_states.sto";
-    std::string guess_trajectory = 
-        "sitToStandTracking_solution_constrained_activation.sto";
     std::string pelvis_path = "jointset/groundPelvis";
     std::string hip_path = "jointset/hip_r";
     std::string knee_path = "jointset/knee_r";
     std::string ankle_path = "jointset/ankle_r";
     int max_iterations = 2000;
 
-    // Parse program inputs - we require the 7 weights and the ouput file name, in that order
-    double w_effort = atof(argv[1]);
+    // Parse program inputs - 10 parameters 
+    // Path to model file, path to guess trajectory, path to output directory, and the 7 weights 
+    // See below for order 
+    std::string model_path = argv[1];
+    std::string guess_path = argv[2];
+    std::string output_dir = argv[3];
+    double w_effort = atof(argv[4]);
     auto w_effort_str = std::to_string(w_effort);
-    double w_mos = atof(argv[2]);
+    double w_mos = atof(argv[5]);
     auto w_mos_str = std::to_string(w_mos);
-    double w_pmos = atof(argv[3]);
+    double w_pmos = atof(argv[6]);
     auto w_pmos_str = std::to_string(w_pmos);
-    double w_wmos = atof(argv[4]);
+    double w_wmos = atof(argv[7]);
     auto w_wmos_str = std::to_string(w_wmos);
-    double w_aload = atof(argv[5]);
+    double w_aload = atof(argv[8]);
     auto w_aload_str = std::to_string(w_aload);
-    double w_kload = atof(argv[6]);
+    double w_kload = atof(argv[9]);
     auto w_kload_str = std::to_string(w_kload);
-    double w_hload = atof(argv[7]);
+    double w_hload = atof(argv[10]);
     auto w_hload_str = std::to_string(w_hload);
-    std::string output_path = argv[8];
-    output_path.append(std::string("/w_effort=") + w_effort_str + 
+    output_dir.append(std::string("/w_effort=") + w_effort_str + 
         "_w_mos=" + w_mos_str + "_w_pmos=" + w_pmos_str + "_w_wmos=" 
         + w_wmos_str + "_w_aload=" + w_aload_str + "_w_kload=" + w_kload_str
         + "_w_hload=" + w_hload_str + ".sto");
@@ -48,7 +47,7 @@ int main(int argc, char *argv[]) {
 
     // Isolate problem & assign model
     MocoProblem& problem = study.updProblem();
-    ModelProcessor model_processor = ModelProcessor(input_model);
+    ModelProcessor model_processor = ModelProcessor(model_path);
     problem.setModelProcessor(model_processor);
 
     // Set up effort goal
@@ -152,8 +151,6 @@ int main(int argc, char *argv[]) {
     problem.setStateInfo("/jointset/lumbar/lumbar/speed", 
         {-1000*Pi/180, 2000*Pi/180}, 0);
 
-    std::cout << "oi" << std::endl;
-
     // Configure the solver.
     MocoCasADiSolver& solver = study.initCasADiSolver();
     std::cout << "oi" << std::endl;
@@ -167,7 +164,7 @@ int main(int argc, char *argv[]) {
     std::cout << "oi" << std::endl;    
 
     // Specify an initial guess.
-    MocoTrajectory guess = MocoTrajectory(guess_trajectory);
+    MocoTrajectory guess = MocoTrajectory(guess_path);
     solver.setGuess(guess);
 
     // Solve the problem.
@@ -175,7 +172,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Solution status: " << solution.getStatus() << std::endl;
 
     // For now, write the solution
-    solution.write(output_path);
+    solution.write(output_dir);
 
     return EXIT_SUCCESS;
 }
