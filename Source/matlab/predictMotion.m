@@ -31,7 +31,7 @@ function solution = predictMotion(...
     solver.set_optim_solver('ipopt');
     solver.set_optim_convergence_tolerance(1e-2);
     solver.set_optim_constraint_tolerance(1e-4);
-    solver.set_optim_max_iterations(1000);
+    solver.set_optim_max_iterations(2000);
 
     % Specify initial guess
     solver.setGuess(guess); 
