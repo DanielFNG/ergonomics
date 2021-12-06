@@ -1,4 +1,4 @@
-#include "MocoMarginOfStabilityGoal.h"
+#include "MocoProjectedMarginOfStabilityGoal.h"
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 
@@ -8,13 +8,13 @@ using namespace boost::geometry;
 typedef model::d2::point_xy<double> point_2d;
 typedef model::polygon<point_2d> polygon_2d;
 
-void MocoMarginOfStabilityGoal::initializeOnModelImpl(const Model&) const {
+void MocoProjectedMarginOfStabilityGoal::initializeOnModelImpl(const Model&) const {
 
     // Specify 1 integrand, 1 output, position stage
     setRequirements(1, 1, SimTK::Stage::Dynamics);
 }
 
-void MocoMarginOfStabilityGoal::calcIntegrandImpl(
+void MocoProjectedMarginOfStabilityGoal::calcIntegrandImpl(
         const IntegrandInput& input, double& integrand) const {
     
     // Update model positions
@@ -42,26 +42,21 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
             <SmoothSphereHalfSpaceForce>(force_strings[i]);
         Array<double> force_values = force.getRecordValues(input.state);
 
-        // If we register a vertical force, this point is active, so we append 
-        // it to our BoS polygon
-        if (force_values[1] > force.get_constant_contact_force()) {
+        // Get contact sphere & associated frame
+        const auto& geometries = getModel().getContactGeometrySet();
+        const auto& sphere = geometries.get(sphere_strings[i]);
+        const auto& frame = sphere.getFrame();
 
-            // Get contact sphere & associated frame
-            const auto& geometries = getModel().getContactGeometrySet();
-            const auto& sphere = geometries.get(sphere_strings[i]);
-            const auto& frame = sphere.getFrame();
+        // Transform sphere location to ground frame
+        SimTK::Vec3 ground_point = frame.findStationLocationInGround(
+            input.state, sphere.get_location()); 
 
-            // Transform sphere location to ground frame
-            SimTK::Vec3 ground_point = frame.findStationLocationInGround(
-                input.state, sphere.get_location()); 
+        // Append the projected 2D point to our polygon
+        append(poly.outer(), make<point_2d>(
+            ground_point.get(0), ground_point.get(2)));
 
-            // Append the projected 2D point to our polygon
-            append(poly.outer(), make<point_2d>(
-                ground_point.get(0), ground_point.get(2)));
-
-            // Note that we have at least one point in our polygon
-            empty = false;
-        }
+        // Note that we have at least one point in our polygon
+        empty = false;
     }
 
     // Close the polygon & make sure it is directed clockwise
@@ -117,7 +112,7 @@ void MocoMarginOfStabilityGoal::calcIntegrandImpl(
     }
 }
 
-void MocoMarginOfStabilityGoal::calcGoalImpl(
+void MocoProjectedMarginOfStabilityGoal::calcGoalImpl(
         const GoalInput& input, SimTK::Vector& cost) const {
     cost[0] = input.integral;
 }
