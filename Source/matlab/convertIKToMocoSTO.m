@@ -4,7 +4,7 @@ function output = convertIKToMocoSTO(mot, osim)
     coordinates = osim.getCoordinateSet();
     labels = cell(mot.NCols, 1);
     labels{1} = 'time';
-    values = zeros(mot.NFrames, mot.NCols);
+    values = zeros(mot.NFrames, mot.NCols - 1);
     for i = 2:mot.NCols
         name = mot.Labels{i};
         coord = coordinates.get(name);
@@ -12,11 +12,11 @@ function output = convertIKToMocoSTO(mot, osim)
         type = char(coord.getMotionType());
         switch type
             case 'Rotational'
-                values(:, i) = deg2rad(mot.getColumn(name));
+                values(:, i - 1) = deg2rad(mot.getColumn(name));
             case 'Translational'
-                values(:, i) = mot.getColumn(name);
+                values(:, i - 1) = mot.getColumn(name);
         end
-        labels{i} = fullname;
+        labels{i} = [fullname '/value'];
     end
     
     % Create header object
