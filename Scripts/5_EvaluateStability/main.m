@@ -5,7 +5,7 @@ output_names = {'mos', 'wmos', 'pmos'};
 contact_list = {'chair_r', 'chair_l', 'contactHeel_l', ...
         'contactFront_l', 'contactFront_r', 'contactHeel_r'};
 contact_list_reduced = {'chair', 'contactHeel', 'contactFront'};
-output_dir = createOutputFolder(pwd); % Change if non-default folder needed
+output_dir = createOutputFolder('4_EvaluateStability'); % Change if non-default folder needed
 nan_value = 1; 
 stability_direction = 1; % Corresponds to x direction  
 
