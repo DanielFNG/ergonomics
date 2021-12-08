@@ -3,3 +3,4 @@
 *\build
 *.asv
 Output
+bin/*
