@@ -2,11 +2,11 @@
 #define OPENSIM_MOCOMARGINOFSTABILITYGOAL_H
 
 #include <OpenSim/Moco/osimMoco.h>
-#include "osimMocoMarginOfStabilityGoalDLL.h"
+#include <OpenSim/Moco/MocoGoal/MocoGoal.h>
 
 namespace OpenSim {
 
-class OSIMMOCOMARGINOFSTABILITYGOAL_API MocoMarginOfStabilityGoal : public MocoGoal {
+class OSIMMOCO_API MocoMarginOfStabilityGoal : public MocoGoal {
     OpenSim_DECLARE_CONCRETE_OBJECT(MocoMarginOfStabilityGoal, MocoGoal);
 
 public:
