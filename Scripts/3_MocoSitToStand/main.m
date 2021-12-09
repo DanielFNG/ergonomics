@@ -2,7 +2,7 @@
 
 % Root directory for save - defaults to 
 % ergonomics/output/MocoSitToStand/default, change as needed
-save_dir = createOutputFolder(pwd); 
+save_dir = createOutputFolder('3_MocoSitToStand'); 
 save_folder = 'new_bounds_fixed';
 
 % Bound information
