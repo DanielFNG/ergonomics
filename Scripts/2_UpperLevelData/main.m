@@ -1,7 +1,7 @@
 %% Define inputs
 model = 'gait2392_markers_scaled.osim';
 data_dir = [pwd filesep 'Data'];
-output_dir = createOutputFolder(pwd);
+output_dir = createOutputFolder('2_UpperLevelData');
 bk_settings = 'bk.xml';
 n_points = 101;
 labels = {'center_of_mass_X', 'center_of_mass_Y', 'center_of_mass_Z'};
