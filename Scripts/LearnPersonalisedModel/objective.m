@@ -33,8 +33,7 @@ function result = objective(weights)
         case 0
             [values, labels, header] = MOTSTOTXTData.load(save_path);
             reduced = STOData(values(:, 1:end-6), header, labels(1:end-6));
-            reduced.writeToFile(reduced_path);
-            result = gradeSitToStand(reduced_path, obj, args, []);
+            result = gradeSitToStand(reduced, obj, args, []);
         otherwise
             result = -1;
     end
