@@ -1,9 +1,4 @@
-function result = sumSquaredStateDifference(...
-    input_path, reference_path, labels)
-
-    % Load data objects
-    input = Data(input_path);
-    reference = Data(reference_path);
+function result = sumSquaredStateDifference(input, reference, labels)
     
     % Process labels argument 
     if strcmp(labels, 'all')

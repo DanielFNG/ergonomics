@@ -1,7 +1,6 @@
-function output = createOutputFolder(source)
+function output = createOutputFolder(name)
 
-    [scripts_path, name] = fileparts(source);
-    root_path = fileparts(scripts_path);
+    root_path = getenv('ERGONOMICS_ROOT');
     output = [root_path filesep 'Output' filesep name];
     mkdir(output);
 

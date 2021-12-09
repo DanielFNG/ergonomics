@@ -1,75 +1,44 @@
-cmake_minimum_required(VERSION 3.2)
-project(OpenSim_MocoMarginOfStabilityGoal)
+project(CustomStabilityGoals)
 
+cmake_minimum_required(VERSION 3.2)
+
+# Settings.
+# ---------
+set(TARGET sitToStand)
+set(OPENSIM_INSTALL_DIR $ENV{OPENSIM_HOME}
+        CACHE PATH "Top-level directory of OpenSim install")
+
+# OpenSim uses C++11 language features, and we need >=14 for Boost.
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_EXTENSIONS OFF) # This is needed to stop some weird error
 
+# Settings for compilation on Apple
 if (APPLE)
         set(CMAKE_OSX_ARCHITECTURES x86_64)
 endif()
 
-find_package(OpenSim REQUIRED HINTS
-    "${CMAKE_SOURCE_DIR}/../../../../../../")
-include("${OpenSim_USE_FILE}")
+# Find and hook up to OpenSim.
+# ----------------------------
+find_package(OpenSim REQUIRED PATHS "${OPENSIM_INSTALL_DIR}")
 
-add_library(osimMocoMarginOfStabilityGoal SHARED
-        MocoMarginOfStabilityGoal.h
-        MocoMarginOfStabilityGoal.cpp
-        osimMocoMarginOfStabilityGoalDLL.h
-        RegisterTypes_osimMocoMarginOfStabilityGoal.h
-        RegisterTypes_osimMocoMarginOfStabilityGoal.cpp
-        )
-add_library(osimMocoProjectedMarginOfStabilityGoal SHARED
-        MocoProjectedMarginOfStabilityGoal.h
-        MocoProjectedMarginOfStabilityGoal.cpp
-        osimMocoProjectedMarginOfStabilityGoalDLL.h
-        RegisterTypes_osimMocoProjectedMarginOfStabilityGoal.h
-        RegisterTypes_osimMocoProjectedMarginOfStabilityGoal.cpp
-        )
-add_library(osimMocoWeightedMarginOfStabilityGoal SHARED
-        MocoWeightedMarginOfStabilityGoal.h
-        MocoWeightedMarginOfStabilityGoal.cpp
-        osimMocoWeightedMarginOfStabilityGoalDLL.h
-        RegisterTypes_osimMocoWeightedMarginOfStabilityGoal.h
-        RegisterTypes_osimMocoWeightedMarginOfStabilityGoal.cpp
-        )
-target_link_libraries(osimMocoMarginOfStabilityGoal
-        osimTools osimExampleComponents osimMoco)
-target_link_libraries(osimMocoProjectedMarginOfStabilityGoal
-        osimTools osimExampleComponents osimMoco)
-target_link_libraries(osimMocoWeightedMarginOfStabilityGoal
-        osimTools osimExampleComponents osimMoco)
+# Configure this project.
+# -----------------------
+file(GLOB SOURCE_FILES *.h *.cpp)
 
-string(TOUPPER MocoMarginOfStabilityGoal margin_name_upper)
-string(TOUPPER MocoProjectedMarginOfStabilityGoal projected_name_upper)
-string(TOUPPER MocoWeightedMarginOfStabilityGoal weighted_name_upper)
-set_target_properties(osimMocoMarginOfStabilityGoal PROPERTIES
-        DEFINE_SYMBOL OSIM${margin_name_upper}_EXPORTS
-        )
-set_target_properties(osimMocoProjectedMarginOfStabilityGoal PROPERTIES
-        DEFINE_SYMBOL OSIM${projected_name_upper}_EXPORTS
-        )
-set_target_properties(osimMocoWeightedMarginOfStabilityGoal PROPERTIES
-        DEFINE_SYMBOL OSIM${weighted_name_upper}_EXPORTS
-        )
+add_executable(${TARGET} ${SOURCE_FILES})
 
-# Include boost libraries
+# Set bin path for executable
+cmake_path(GET CMAKE_CURRENT_SOURCE_DIR PARENT_PATH parentPath)
+cmake_path(GET parentPath PARENT_PATH rootPath)
+set(binPath ${rootPath}/bin)
+set_target_properties(sitToStand PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY_RELEASE ${binPath})
+
+# Find boost libraries
 set(Boost_DEBUG ON)
 find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
-add_executable(main main.cpp)
-target_link_libraries(main osimMocoMarginOfStabilityGoal 
-        osimMocoProjectedMarginOfStabilityGoal 
-        osimMocoWeightedMarginOfStabilityGoal ${Boost_LIBRARIES})
 
-# For Windows: make sure DLLs for dependencies are available.
-OpenSimCopyDependencyDLLsForWin(DEP_NAME OpenSim
-        DEP_BIN_DIR "${OpenSim_BIN_DIR}")
-if(WIN32)
-    add_dependencies(osimMocoMarginOfStabilityGoal Copy_OpenSim_DLLs)
-    add_dependencies(osimMocoProjectedMarginOfStabilityGoal Copy_OpenSim_DLLs)
-    add_dependencies(osimMocoWeightedMarginOfStabilityGoal Copy_OpenSim_DLLs)
-endif()
-
-file(COPY  DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
+# Link everything
+target_link_libraries(${TARGET} ${Boost_LIBRARIES} ${OpenSim_LIBRARIES})
