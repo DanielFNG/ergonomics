@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     std::string hip_path = "jointset/hip_r";
     std::string knee_path = "jointset/knee_r";
     std::string ankle_path = "jointset/ankle_r";
-    int max_iterations = 2000;
+    int max_iterations = 1000;
 
     // Parse program inputs - 10 parameters 
     // Path to model file, path to guess trajectory, path to output directory, and the 7 weights 
