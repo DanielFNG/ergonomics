@@ -111,23 +111,23 @@ int main(int argc, char *argv[]) {
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/value", 
         {0*Pi/180, 50*Pi/180}, 43.426*Pi/180, 0);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tx/value", 
-        {0, 1.0}, 0.05);
+        {0, 0.5}, 0.05);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_ty/value", 
-        {0, 1.0}, 0.535);
+        {0.5, 1.0}, 0.535);
     problem.setStateInfo("/jointset/hip_l/hip_flexion_l/value", 
-        {-30*Pi/180, 160*Pi/180}, 48.858*Pi/180, 0);
+        {-15*Pi/180, 80*Pi/180}, 48.858*Pi/180, 0);
     problem.setStateInfo("/jointset/hip_r/hip_flexion_r/value", 
-        {-30*Pi/180, 160*Pi/180}, 48.858*Pi/180, 0);
+        {-15*Pi/180, 80*Pi/180}, 48.858*Pi/180, 0);
     problem.setStateInfo("/jointset/knee_l/knee_angle_l/value", 
-        {-240*Pi/180, 10*Pi/180}, -112.113*Pi/180, 0);
+        {-120*Pi/180, 5*Pi/180}, -112.113*Pi/180, 0);
     problem.setStateInfo("/jointset/knee_r/knee_angle_r/value", 
-        {-240*Pi/180, 10*Pi/180}, -112.113*Pi/180, 0);
+        {-120*Pi/180, 5*Pi/180}, -112.113*Pi/180, 0);
     problem.setStateInfo("/jointset/ankle_l/ankle_angle_l/value", 
-        {0*Pi/180, 70*Pi/180}, 21.109*Pi/180, 0);
+        {0*Pi/180, 35*Pi/180}, 21.109*Pi/180, 0);
     problem.setStateInfo("/jointset/ankle_r/ankle_angle_r/value", 
-        {0*Pi/180, 70*Pi/180}, 21.109*Pi/180, 0);
+        {0*Pi/180, 35*Pi/180}, 21.109*Pi/180, 0);
     problem.setStateInfo("/jointset/lumbar/lumbar/value", 
-        {-140*Pi/180, 0*Pi/180}, -53.183*Pi/180, 0);
+        {-70*Pi/180, 0*Pi/180}, -53.183*Pi/180, 0);
 
     // Specify bounds on speeds
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/speed", 
