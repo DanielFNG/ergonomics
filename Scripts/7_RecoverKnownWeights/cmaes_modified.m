@@ -57,6 +57,9 @@ alpha_mu=2;
 cmu=min(1-c1,alpha_mu*(mu_eff-2+1/mu_eff)/((nVar+2)^2+alpha_mu*mu_eff/2));
 hth=(1.4+2/(nVar+1))*ENN;
 
+% Keep track of the number of failed iterations
+n_failures = 0;
+
 %% Initialization
 
 ps=cell(MaxIt,1);
@@ -80,6 +83,8 @@ while true
     M(1).Cost=CostFunction(M(1).Position);
     if M(1).Cost ~= -1
         break
+    else
+        n_failures = n_failures + 1;
     end
 end
 
@@ -102,6 +107,8 @@ for g=1:MaxIt
             pop(i).Cost=CostFunction(pop(i).Position);
             if pop(i).Cost ~= -1
                 break;
+            else
+                n_failures = n_failures + 1;
             end
         end
         
