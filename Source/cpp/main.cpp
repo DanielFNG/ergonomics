@@ -1,6 +1,4 @@
-#include "MocoMarginOfStabilityGoal.h"
-#include "MocoProjectedMarginOfStabilityGoal.h"
-#include "MocoWeightedMarginOfStabilityGoal.h"
+#include "MocoStabilityGoal.h"
 #include <string>
 #include <OpenSim/Moco/osimMoco.h>
 
@@ -58,25 +56,14 @@ int main(int argc, char *argv[]) {
         effort_goal->setExponent(3);
     }
 
-    // Set up margin of stability goal
-    if (w_mos > 0)
+    // Set up stability goal
+    if (w_mos > 0 || w_pmos > 0 || w_wmos > 0)
     {
-        auto* mos_goal = problem.addGoal
-            <MocoMarginOfStabilityGoal>("mos", w_mos);
-    }
-
-    // Set up projected margin of stability goal
-    if (w_pmos > 0)
-    {
-        auto* pmos_goal = problem.addGoal
-            <MocoProjectedMarginOfStabilityGoal>("pmos", w_pmos);
-    }
-
-    // Set up margin of stability goal
-    if (w_wmos > 0)
-    {
-        auto* wmos_goal = problem.addGoal
-            <MocoWeightedMarginOfStabilityGoal>("wmos", w_wmos);
+        auto* stability_goal = problem.addGoal
+            <MocoStabilityGoal>("stability");
+        stability_goal->setMOSWeight(w_mos);
+        stability_goal->setPMOSWeight(w_pmos);
+        stability_goal->setWMOSWeight(w_wmos);
     }
 
     // Set up ankle joint loading
