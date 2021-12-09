@@ -1,4 +1,4 @@
-function solution = sitToStandInterface(...
+function path = sitToStandInterface(...
     model_path, guess_path, output_dir, weights)
 
     % Just a little check
@@ -24,11 +24,10 @@ function solution = sitToStandInterface(...
     % Execute the command
     system(command);
     
-    % If needed, load the resulting data 
-    if nargout > 0
-        % Load the resulting solution data
-        path = generateSolutionPath(output_dir, weights);
-        solution = Data(path);
+    % Return path to resulting data, or -1 if solve failed
+    path = generateSolutionPath(output_dir, weights);
+    if ~isfile(path)
+        path = -1;
     end
     
     function path = generateSolutionPath(output_dir, weights)
