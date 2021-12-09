@@ -44,6 +44,6 @@ tracking_path = 'TrackingSolution.sto';
 % t_savepath = 'TrackingSolution.sto';
 
 % Weights
-weights = [0 0.1 0.1 0.1 0 0 0];
+weights = [0.1 0.1 0.1 0.1 0.1 0.1 0.1];
 
 sitToStandInterface(model_path, tracking_path, output_dir, weights);
