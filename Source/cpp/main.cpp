@@ -118,25 +118,25 @@ int main(int argc, char *argv[]) {
 
     // Specify bounds on speeds
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/speed", 
-        {-1500*Pi/180, 1500*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tx/speed", 
         {-5, 5}, 0);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_ty/speed", 
         {-2, 10}, 0);
     problem.setStateInfo("/jointset/hip_l/hip_flexion_l/speed", 
-        {-2500*Pi/180, 1500*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
     problem.setStateInfo("/jointset/hip_r/hip_flexion_r/speed", 
-        {-2500*Pi/180, 1500*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
     problem.setStateInfo("/jointset/knee_l/knee_angle_l/speed", 
-        {-500*Pi/180, 3000*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
     problem.setStateInfo("/jointset/knee_r/knee_angle_r/speed", 
-        {-500*Pi/180, 3000*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
     problem.setStateInfo("/jointset/ankle_l/ankle_angle_l/speed", 
-        {-1200*Pi/180, 800*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
     problem.setStateInfo("/jointset/ankle_r/ankle_angle_r/speed", 
-        {-1200*Pi/180, 800*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
     problem.setStateInfo("/jointset/lumbar/lumbar/speed", 
-        {-1000*Pi/180, 2000*Pi/180}, 0);
+        {-360*Pi/180, 360*Pi/180}, 0);
 
     // Configure the solver.
     MocoCasADiSolver& solver = study.initCasADiSolver();
