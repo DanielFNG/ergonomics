@@ -33,7 +33,7 @@ function path = sitToStandInterface(...
     function path = generateSolutionPath(output_dir, weights)
         
         % Hard-coded format spec, width & weight order from C++ source
-        format = '%.5f';
+        format = '%.6f';
         width = 8;
         labels = {'w_effort', 'w_mos', 'w_pmos', 'w_wmos', 'w_aload', ...
             'w_kload', 'w_hload'};
