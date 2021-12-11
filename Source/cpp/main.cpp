@@ -1,5 +1,6 @@
 #include "MocoStabilityGoal.h"
 #include <string>
+#include <sstream>
 #include <OpenSim/Moco/osimMoco.h>
 
 using namespace OpenSim;
@@ -14,6 +15,10 @@ int main(int argc, char *argv[]) {
     std::string ankle_path = "jointset/ankle_r";
     int max_iterations = 1000;
 
+    // Set up sstream precision
+    std::ostringstream oss;
+    oss << std::setprecision(3);
+
     // Parse program inputs - 10 parameters 
     // Path to model file, path to guess trajectory, path to output directory, and the 7 weights 
     // See below for order 
@@ -21,19 +26,32 @@ int main(int argc, char *argv[]) {
     std::string guess_path = argv[2];
     std::string output_dir = argv[3];
     double w_effort = atof(argv[4]);
-    auto w_effort_str = std::to_string(w_effort);
+    oss << w_effort;
+    std::string w_effort_str = oss.str();
+    oss.str("");
     double w_mos = atof(argv[5]);
-    auto w_mos_str = std::to_string(w_mos);
+    oss << w_mos;
+    std::string w_mos_str = oss.str();
+    oss.str("");
     double w_pmos = atof(argv[6]);
-    auto w_pmos_str = std::to_string(w_pmos);
+    oss << w_pmos;
+    std::string w_pmos_str = oss.str();
+    oss.str("");
     double w_wmos = atof(argv[7]);
-    auto w_wmos_str = std::to_string(w_wmos);
+    oss << w_wmos;
+    std::string w_wmos_str = oss.str();
+    oss.str("");
     double w_aload = atof(argv[8]);
-    auto w_aload_str = std::to_string(w_aload);
+    oss << w_aload;
+    std::string w_aload_str = oss.str();
+    oss.str("");
     double w_kload = atof(argv[9]);
-    auto w_kload_str = std::to_string(w_kload);
+    oss << w_kload;
+    std::string w_kload_str = oss.str();
+    oss.str("");
     double w_hload = atof(argv[10]);
-    auto w_hload_str = std::to_string(w_hload);
+    oss << w_hload;
+    std::string w_hload_str = oss.str();
     output_dir.append(std::string("/w_effort=") + w_effort_str + 
         "_w_mos=" + w_mos_str + "_w_pmos=" + w_pmos_str + "_w_wmos=" 
         + w_wmos_str + "_w_aload=" + w_aload_str + "_w_kload=" + w_kload_str
