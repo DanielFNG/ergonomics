@@ -8,8 +8,13 @@ function success = sitToStandInterface(...
     end
 
     % Path to compiled C++ executable
+    if ismac
+        name = 'sitToStand';
+    elseif ispc
+        name = 'sitToStand.exe';
+    end
     executable_path = ...
-        [getenv('ERGONOMICS_ROOT') filesep 'bin' filesep 'sitToStand'];
+        [getenv('ERGONOMICS_ROOT') filesep 'bin' filesep name];
     if ~isfile(executable_path)
         error('Need to compile C++ code.');
     end
