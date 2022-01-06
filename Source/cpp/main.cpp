@@ -15,47 +15,19 @@ int main(int argc, char *argv[]) {
     std::string ankle_path = "jointset/ankle_r";
     int max_iterations = 1000;
 
-    // Set up sstream precision
-    std::ostringstream oss;
-    oss << std::setprecision(3);
-
     // Parse program inputs - 10 parameters 
-    // Path to model file, path to guess trajectory, path to output directory, and the 7 weights 
+    // Path to model file, path to guess trajectory, output file path, and the 7 weights 
     // See below for order 
     std::string model_path = argv[1];
     std::string guess_path = argv[2];
-    std::string output_dir = argv[3];
+    std::string output_path = argv[3];
     double w_effort = atof(argv[4]);
-    oss << w_effort;
-    std::string w_effort_str = oss.str();
-    oss.str("");
     double w_mos = atof(argv[5]);
-    oss << w_mos;
-    std::string w_mos_str = oss.str();
-    oss.str("");
     double w_pmos = atof(argv[6]);
-    oss << w_pmos;
-    std::string w_pmos_str = oss.str();
-    oss.str("");
     double w_wmos = atof(argv[7]);
-    oss << w_wmos;
-    std::string w_wmos_str = oss.str();
-    oss.str("");
     double w_aload = atof(argv[8]);
-    oss << w_aload;
-    std::string w_aload_str = oss.str();
-    oss.str("");
     double w_kload = atof(argv[9]);
-    oss << w_kload;
-    std::string w_kload_str = oss.str();
-    oss.str("");
     double w_hload = atof(argv[10]);
-    oss << w_hload;
-    std::string w_hload_str = oss.str();
-    output_dir.append(std::string("/w_effort=") + w_effort_str + 
-        "_w_mos=" + w_mos_str + "_w_pmos=" + w_pmos_str + "_w_wmos=" 
-        + w_wmos_str + "_w_aload=" + w_aload_str + "_w_kload=" + w_kload_str
-        + "_w_hload=" + w_hload_str + ".sto");
 
     // Initialise study
     MocoStudy study;
@@ -177,7 +149,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Solution status: " << solution.getStatus() << std::endl;
 
     // For now, write the solution
-    solution.write(output_dir);
+    solution.write(output_path);
 
     return EXIT_SUCCESS;
 }
