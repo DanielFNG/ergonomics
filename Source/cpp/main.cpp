@@ -1,5 +1,6 @@
 #include "MocoStabilityGoal.h"
 #include <string>
+#include <sstream>
 #include <OpenSim/Moco/osimMoco.h>
 
 using namespace OpenSim;
@@ -15,29 +16,18 @@ int main(int argc, char *argv[]) {
     int max_iterations = 1000;
 
     // Parse program inputs - 10 parameters 
-    // Path to model file, path to guess trajectory, path to output directory, and the 7 weights 
+    // Path to model file, path to guess trajectory, output file path, and the 7 weights 
     // See below for order 
     std::string model_path = argv[1];
     std::string guess_path = argv[2];
-    std::string output_dir = argv[3];
+    std::string output_path = argv[3];
     double w_effort = atof(argv[4]);
-    auto w_effort_str = std::to_string(w_effort);
     double w_mos = atof(argv[5]);
-    auto w_mos_str = std::to_string(w_mos);
     double w_pmos = atof(argv[6]);
-    auto w_pmos_str = std::to_string(w_pmos);
     double w_wmos = atof(argv[7]);
-    auto w_wmos_str = std::to_string(w_wmos);
     double w_aload = atof(argv[8]);
-    auto w_aload_str = std::to_string(w_aload);
     double w_kload = atof(argv[9]);
-    auto w_kload_str = std::to_string(w_kload);
     double w_hload = atof(argv[10]);
-    auto w_hload_str = std::to_string(w_hload);
-    output_dir.append(std::string("/w_effort=") + w_effort_str + 
-        "_w_mos=" + w_mos_str + "_w_pmos=" + w_pmos_str + "_w_wmos=" 
-        + w_wmos_str + "_w_aload=" + w_aload_str + "_w_kload=" + w_kload_str
-        + "_w_hload=" + w_hload_str + ".sto");
 
     // Initialise study
     MocoStudy study;
@@ -159,7 +149,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Solution status: " << solution.getStatus() << std::endl;
 
     // For now, write the solution
-    solution.write(output_dir);
+    solution.write(output_path);
 
     return EXIT_SUCCESS;
 }
