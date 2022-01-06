@@ -81,7 +81,7 @@ while true
     M(1).Position=unifrnd(VarMin,VarMax,VarSize);
     M(1).Step=zeros(VarSize);
     M(1).Cost=CostFunction(M(1).Position);
-    if M(1).Cost ~= -1
+    if ~isnan(M(1).Cost)
         break
     else
         n_failures = n_failures + 1;
@@ -105,7 +105,7 @@ for g=1:MaxIt
             pop(i).Step=mvnrnd(zeros(VarSize),C{g});
             pop(i).Position=M(g).Position+sigma{g}*pop(i).Step;
             pop(i).Cost=CostFunction(pop(i).Position);
-            if pop(i).Cost ~= -1
+            if ~isnan(pop(i).Cost)
                 break;
             else
                 n_failures = n_failures + 1;
@@ -141,7 +141,10 @@ for g=1:MaxIt
     end
     M(g+1).Position=M(g).Position+sigma{g}*M(g+1).Step;
     M(g+1).Cost=CostFunction(M(g+1).Position);
-    if M(g+1).Cost<BestSol.Cost
+    if isnan(M(g + 1).Cost)
+        error('Houston we have a problem - mean doesn''t converge.');
+    end
+    if M(g+1).Cost<BestSol.Cost 
         BestSol=M(g+1);
     end
     
