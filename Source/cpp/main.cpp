@@ -15,8 +15,9 @@ int main(int argc, char *argv[]) {
     std::string ankle_path = "jointset/ankle_r";
     int max_iterations = 1000;
 
-    // Parse program inputs - 10 parameters 
-    // Path to model file, path to guess trajectory, output file path, and the 7 weights 
+    // Parse program inputs - 10 or 11 parameters 
+    // Path to model file, path to guess trajectory, output file path, and the 7 weights
+    // Optional final parameter specifies whether to run on all cores (1) or a single core (0)  
     // See below for order 
     std::string model_path = argv[1];
     std::string guess_path = argv[2];
@@ -28,6 +29,11 @@ int main(int argc, char *argv[]) {
     double w_aload = atof(argv[8]);
     double w_kload = atof(argv[9]);
     double w_hload = atof(argv[10]);
+    double parallel = 1;
+    if (argc == 12) {
+        parallel = atof(argv[11]);
+    }
+    
 
     // Initialise study
     MocoStudy study;
@@ -130,15 +136,13 @@ int main(int argc, char *argv[]) {
 
     // Configure the solver.
     MocoCasADiSolver& solver = study.initCasADiSolver();
-    std::cout << "oi" << std::endl;
+    solver.set_parallel(parallel);
     solver.set_num_mesh_intervals(50);
     solver.set_verbosity(2);
     solver.set_optim_solver("ipopt");
     solver.set_optim_max_iterations(max_iterations);
     solver.set_optim_convergence_tolerance(1e-2);
-    solver.set_optim_constraint_tolerance(1e-4);
-
-    std::cout << "oi" << std::endl;    
+    solver.set_optim_constraint_tolerance(1e-4);  
 
     // Specify an initial guess.
     MocoTrajectory guess = MocoTrajectory(guess_path);
