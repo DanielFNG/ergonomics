@@ -2,7 +2,7 @@
 output_dir = createOutputFolder('7_RecoverKnownWeights');
 model_path = '2D_gait_jointspace.osim';
 tracking_path = 'TrackingSolution.sto';
-reference_path = 'reference.sto'; % full weights, all 0.1
+reference_path = [output_dir filesep 'reference.sto']; % full weights, all 0.1
 upper_objective = @sumSquaredStateDifference;
 
 % Generate reference motion if needed
