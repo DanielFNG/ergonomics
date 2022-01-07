@@ -1,5 +1,10 @@
 function success = sitToStandInterface(...
-    model_path, guess_path, output_path, weights)
+    model_path, guess_path, output_path, weights, all_cores)
+
+    % By default, assume we want to use all cores
+    if nargin < 5
+        all_cores = 1;
+    end
 
     % Just a little check
     n_weights = 7;
@@ -25,6 +30,7 @@ function success = sitToStandInterface(...
     for i = 1:n_weights
         command = [command ' ' num2str(weights(i))]; %#ok<AGROW>
     end
+    command = [command ' ' num2str(all_cores)];
     
     % Execute the command
     [~, ~] = system(command);
