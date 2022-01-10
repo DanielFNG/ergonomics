@@ -39,6 +39,8 @@ function success = sitToStandInterface(...
     success = true;
     if ~isfile(output_path)
         success = false;
+        fmt = [repmat('%g, ', 1, length(weights) - 1) '%g]'];
+        fprintf(['Failed for w = [' fmt '\n'], weights);
     end
-
+    
 end
