@@ -21,23 +21,23 @@ outer_objective = @ (weights) objective(upper_objective, upper_args, ...
     model_path, tracking_path, output_dir, weights);
 
 %% Bayesopt
-% % Optimal Control Weights
-% range = [0, 0.2];
-% names = {'w_effort', 'w_mos', 'w_pmos', 'w_wmos', ...
-%     'w_aload', 'w_kload', 'w_hload'};
-% args = {'Type', 'real'};
-% n_variables = length(names);
-% optimisation_variables = [];
-% for i = 1:n_variables
-%     optimisation_variables = [optimisation_variables ...
-%         optimizableVariable(names{i}, range, args{:})];
-% end
-% 
-% % Call Bayesopt
-% results = bayesopt(outer_objective, optimisation_variables, ...
-%     'MaxObjectiveEvaluations', 150, ...
-%     'AcquisitionFunctionName', 'expected-improvement-plus', ...
-%     'NumSeedPoints', 10);
+% Optimal Control Weights
+range = [0, 0.2];
+names = {'w_effort', 'w_mos', 'w_pmos', 'w_wmos', ...
+    'w_aload', 'w_kload', 'w_hload'};
+args = {'Type', 'real'};
+n_variables = length(names);
+optimisation_variables = [];
+for i = 1:n_variables
+    optimisation_variables = [optimisation_variables ...
+        optimizableVariable(names{i}, range, args{:})];
+end
+
+% Call Bayesopt
+results = bayesopt(outer_objective, optimisation_variables, ...
+    'MaxObjectiveEvaluations', 150, ...
+    'AcquisitionFunctionName', 'expected-improvement-plus', ...
+    'NumSeedPoints', 10);
 
 
 %% CMA-ES full
@@ -53,10 +53,7 @@ outer_objective = @ (weights) objective(upper_objective, upper_args, ...
 %     fitfun, xstart, insigma, inopts);
 
 %% CMA-ES Hansen
-cmaes_hansen;
-
-%% CMA-ES simple
-% cmaes_modified;
+% cmaes_hansen;
 
 %% GA
 % options = optimoptions('ga', 'Display', 'iter', ...
