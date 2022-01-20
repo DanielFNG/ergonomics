@@ -5,6 +5,11 @@
 
 using namespace OpenSim;
 
+int assignBounds(MocoProblem& problem, std::string filename)
+{
+    return 0;
+}
+
 int main(int argc, char *argv[]) {
 
     // Fixed parameters    
@@ -33,7 +38,6 @@ int main(int argc, char *argv[]) {
     if (argc == 12) {
         parallel = atof(argv[11]);
     }
-    
 
     // Initialise study
     MocoStudy study;
