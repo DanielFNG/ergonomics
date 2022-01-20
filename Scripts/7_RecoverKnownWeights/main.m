@@ -7,7 +7,7 @@ upper_objective = @sumSquaredStateDifference;
 
 % Generate reference motion if needed
 if ~isfile(reference_path)
-    weights = [0.1 0.1 0.1 0.1 0.1 0.1 0.1]; 
+    weights = 0.1*ones(1, 7);
     sitToStandInterface(model_path, tracking_path, reference_path, weights);
 end
 
@@ -38,6 +38,8 @@ results = bayesopt(outer_objective, optimisation_variables, ...
     'MaxObjectiveEvaluations', 150, ...
     'AcquisitionFunctionName', 'expected-improvement-plus', ...
     'NumSeedPoints', 10);
+
+
 
 
 %% CMA-ES full
