@@ -1,13 +1,133 @@
 #include "MocoStabilityGoal.h"
 #include <string>
 #include <sstream>
+#include <iostream>
+#include <fstream>
 #include <OpenSim/Moco/osimMoco.h>
 
 using namespace OpenSim;
 
-int assignBounds(MocoProblem& problem, std::string filename)
+struct ProblemBounds 
 {
-    return 0;
+    std::vector<std::string> name;
+    std::vector<double> lower_bound;
+    std::vector<double> upper_bound;
+    std::vector<double> initial_value;
+    std::vector<double> final_value;
+};
+
+std::vector<std::string> split (const std::string &s, char delim) 
+{
+    std::vector<std::string> result;
+    std::stringstream ss(s);
+    std::string item;
+
+    while (std::getline(ss, item, delim))
+    {
+        result.push_back(item);
+    }
+
+    return result;
+}
+
+std::string trim(const std::string& line)
+{
+    if (line.find_first_not_of(' ') != std::string::npos)
+    {
+        const char* white_space = " \t\v\r\n";
+        std::size_t start = line.find_first_not_of(white_space);
+        std::size_t end = line.find_last_not_of(white_space);
+        return line.substr(start, end - start + 1);
+    }
+    else
+    {
+        return std::string();
+    }
+}
+
+ProblemBounds parseBounds(std::string filename, Model osim)
+{
+    // Create empty ProblemBounds struct
+    ProblemBounds bounds;
+    
+    // Open bounds file
+    std::ifstream bounds_file;
+    bounds_file.open(filename);
+
+    // Get the in_degrees property
+    std::string line;
+    std::getline(bounds_file, line, '\t');
+    std::getline(bounds_file, line, '\t');
+    for (int i = 0; i < line.length(); i++) 
+    {
+        line[i] = tolower(line[i]);
+    }
+    bool in_degrees = (line == "yes") ? true : false;
+
+    // Ignore the line of headers
+    std::getline(bounds_file, line, '\n');
+
+    // Read in the data
+    while (bounds_file.good())
+    {
+        // Get joint name
+        std::getline(bounds_file, line, '\t');
+        bounds.name.push_back(trim(line));
+        std::cout << "Oi" << std::endl;
+
+        // Create vector of bound values 
+        std::vector<double> bound_values;
+        for (int i = 0; i < 4; i++)
+        {
+            char delim = (i < 3) ? '\t' : '\n';
+            std::getline(bounds_file, line, delim);
+            line = trim(line);
+            line.empty() ? bound_values.push_back(std::numeric_limits<double>::quiet_NaN()) : bound_values.push_back(std::stod(line));
+        }
+
+        // Convert from degrees to radians if necessary
+        if (in_degrees)
+        {
+            CoordinateSet coordinate_set = osim.getCoordinateSet();
+            std::vector<std::string> path_decomposed = split(bounds.name[bounds.name.size() - 1], '/');
+            std::string coordinate_name = path_decomposed[path_decomposed.size() - 2];
+            Coordinate::MotionType joint_type = coordinate_set.get(coordinate_name).getMotionType(); 
+            if (joint_type == Coordinate::MotionType::Rotational)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    bound_values[i] = bound_values[i]*SimTK::Pi/180.0;
+                }
+            }
+        }
+
+        // Assign the values to the bounds struct
+        bounds.lower_bound.push_back(bound_values[0]);
+        bounds.upper_bound.push_back(bound_values[1]);
+        bounds.initial_value.push_back(bound_values[2]);
+        bounds.final_value.push_back(bound_values[3]);
+    }
+
+    // Close bounds file
+    bounds_file.close();
+
+    return bounds;
+}
+
+void assignBounds(MocoProblem& problem, ProblemBounds bounds)
+{
+    for (int i = 0; i < bounds.name.size() - 1; i++)
+    {
+        // Logic for handling if there are no specific initial/final values
+        double initial, final;
+        std::isnan(bounds.initial_value[i]) ? initial = {} : initial = bounds.initial_value[i];
+        std::isnan(bounds.final_value[i]) ? final = {} : final = bounds.final_value[i];
+
+        // Set state info
+        problem.setStateInfo(bounds.name[i], {bounds.lower_bound[i], bounds.upper_bound[i]}, 
+            initial, final);
+    }
+
 }
 
 int main(int argc, char *argv[]) {
@@ -20,23 +140,24 @@ int main(int argc, char *argv[]) {
     std::string ankle_path = "jointset/ankle_r";
     int max_iterations = 1000;
 
-    // Parse program inputs - 10 or 11 parameters 
-    // Path to model file, path to guess trajectory, output file path, and the 7 weights
+    // Parse program inputs - 11 or 12 parameters 
+    // Path to model file, path to bounds file, path to guess trajectory, output file path, and the 7 weights
     // Optional final parameter specifies whether to run on all cores (1) or a single core (0)  
     // See below for order 
     std::string model_path = argv[1];
-    std::string guess_path = argv[2];
-    std::string output_path = argv[3];
-    double w_effort = atof(argv[4]);
-    double w_mos = atof(argv[5]);
-    double w_pmos = atof(argv[6]);
-    double w_wmos = atof(argv[7]);
-    double w_aload = atof(argv[8]);
-    double w_kload = atof(argv[9]);
-    double w_hload = atof(argv[10]);
+    std::string bounds_path = argv[2];
+    std::string guess_path = argv[3];
+    std::string output_path = argv[4];
+    double w_effort = atof(argv[5]);
+    double w_mos = atof(argv[6]);
+    double w_pmos = atof(argv[7]);
+    double w_wmos = atof(argv[8]);
+    double w_aload = atof(argv[9]);
+    double w_kload = atof(argv[10]);
+    double w_hload = atof(argv[11]);
     double parallel = 1;
-    if (argc == 12) {
-        parallel = atof(argv[11]);
+    if (argc == 13) {
+        parallel = atof(argv[12]);
     }
 
     // Initialise study
@@ -93,50 +214,10 @@ int main(int argc, char *argv[]) {
     // Specify bounds on start and end time
     problem.setTimeBounds(0, {1.0, 2.0});
 
-    // Specify bounds on positions
-    using SimTK::Pi;
-    problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/value", 
-        {0*Pi/180, 50*Pi/180}, 43.426*Pi/180, 0);
-    problem.setStateInfo("/jointset/groundPelvis/pelvis_tx/value", 
-        {0, 0.5}, 0.05);
-    problem.setStateInfo("/jointset/groundPelvis/pelvis_ty/value", 
-        {0.5, 1.0}, 0.535);
-    problem.setStateInfo("/jointset/hip_l/hip_flexion_l/value", 
-        {-15*Pi/180, 80*Pi/180}, 48.858*Pi/180, 0);
-    problem.setStateInfo("/jointset/hip_r/hip_flexion_r/value", 
-        {-15*Pi/180, 80*Pi/180}, 48.858*Pi/180, 0);
-    problem.setStateInfo("/jointset/knee_l/knee_angle_l/value", 
-        {-120*Pi/180, 5*Pi/180}, -112.113*Pi/180, 0);
-    problem.setStateInfo("/jointset/knee_r/knee_angle_r/value", 
-        {-120*Pi/180, 5*Pi/180}, -112.113*Pi/180, 0);
-    problem.setStateInfo("/jointset/ankle_l/ankle_angle_l/value", 
-        {0*Pi/180, 35*Pi/180}, 21.109*Pi/180, 0);
-    problem.setStateInfo("/jointset/ankle_r/ankle_angle_r/value", 
-        {0*Pi/180, 35*Pi/180}, 21.109*Pi/180, 0);
-    problem.setStateInfo("/jointset/lumbar/lumbar/value", 
-        {-70*Pi/180, 0*Pi/180}, -53.183*Pi/180, 0);
-
-    // Specify bounds on speeds
-    problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
-    problem.setStateInfo("/jointset/groundPelvis/pelvis_tx/speed", 
-        {-5, 5}, 0);
-    problem.setStateInfo("/jointset/groundPelvis/pelvis_ty/speed", 
-        {-2, 10}, 0);
-    problem.setStateInfo("/jointset/hip_l/hip_flexion_l/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
-    problem.setStateInfo("/jointset/hip_r/hip_flexion_r/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
-    problem.setStateInfo("/jointset/knee_l/knee_angle_l/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
-    problem.setStateInfo("/jointset/knee_r/knee_angle_r/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
-    problem.setStateInfo("/jointset/ankle_l/ankle_angle_l/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
-    problem.setStateInfo("/jointset/ankle_r/ankle_angle_r/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
-    problem.setStateInfo("/jointset/lumbar/lumbar/speed", 
-        {-360*Pi/180, 360*Pi/180}, 0);
+    // Specify bounds on joint limits and joint speeds
+    Model osim = Model(model_path);
+    ProblemBounds bounds = parseBounds(bounds_path, osim);
+    assignBounds(problem, bounds);
 
     // Configure the solver.
     MocoCasADiSolver& solver = study.initCasADiSolver();
@@ -160,4 +241,5 @@ int main(int argc, char *argv[]) {
     solution.write(output_path);
 
     return EXIT_SUCCESS;
+
 }
