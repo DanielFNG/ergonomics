@@ -1632,6 +1632,38 @@
 		<!--Geometry to be used in contact forces.-->
 		<ContactGeometrySet name="contactgeometryset">
 			<objects>
+				<ContactSphere name="heel_r">
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
+					<socket_frame>/bodyset/calcn_r</socket_frame>
+					<!--Location of geometry center in the PhysicalFrame.-->
+					<location>0.031307527581931796 0.010435842527310599 0</location>
+					<!--Radius of the sphere (default: 0).-->
+					<radius>0.035000000000000003</radius>
+				</ContactSphere>
+				<ContactSphere name="heel_l">
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
+					<socket_frame>/bodyset/calcn_l</socket_frame>
+					<!--Location of geometry center in the PhysicalFrame.-->
+					<location>0.031307527581931796 0.010435842527310599 0</location>
+					<!--Radius of the sphere (default: 0).-->
+					<radius>0.035000000000000003</radius>
+				</ContactSphere>
+				<ContactSphere name="front_r">
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
+					<socket_frame>/bodyset/calcn_r</socket_frame>
+					<!--Location of geometry center in the PhysicalFrame.-->
+					<location>0.17740932296428019 -0.015653763790965898 0.0052179212636552993</location>
+					<!--Radius of the sphere (default: 0).-->
+					<radius>0.014999999999999999</radius>
+				</ContactSphere>
+				<ContactSphere name="front_l">
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
+					<socket_frame>/bodyset/calcn_l</socket_frame>
+					<!--Location of geometry center in the PhysicalFrame.-->
+					<location>0.17740932296428019 -0.015653763790965898 -0.0052179212636552993</location>
+					<!--Radius of the sphere (default: 0).-->
+					<radius>0.014999999999999999</radius>
+				</ContactSphere>
 				<ContactSphere name="r_1">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
