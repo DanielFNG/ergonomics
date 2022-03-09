@@ -11,6 +11,11 @@ function bounds = parseBounds(filename, osim)
     % Import the rest of the data as a table
     bounds = readtable(filename);
     
+    % Trim state names
+    for i = 1:height(bounds)
+        bounds.Name{i} = strtrim(bounds.Name{i});
+    end
+    
     % Convert from degrees to radians if necessary
     if in_degrees
         coordinate_set = osim.getCoordinateSet();
