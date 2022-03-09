@@ -37,7 +37,6 @@ function success = mocoExecutableInterface(...
         system(command);
     else
         [~, ~] = system(command);
-    %[~, ~] = system(command);
     end
     
     % Return indication of success
