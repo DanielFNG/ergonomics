@@ -3,8 +3,9 @@ method = 'bayesopt';  % 'bayesopt' or 'ga'
 model = 'block';  % 'block' or 'contact'
 upper_limit = 0.2;
 lower_limit = 0.0;
-reference_weights = 0.1*ones(1, 5);  % Determines n_variables
+reference_weights = 0.1*ones(1, 4);  % Determines n_variables
 output_dir = createOutputFolder('11_RecoverKnownWeights');
+executable = 'optimise4D';
 
 % Two possible model/tracking combinations
 switch model
