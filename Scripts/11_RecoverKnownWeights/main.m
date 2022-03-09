@@ -20,7 +20,7 @@ end
 % Generate reference motion if needed
 reference_path = [output_dir filesep 'reference.sto'];
 if ~isfile(reference_path)
-    sitToStandInterface(...
+    mocoExecutableInterface(executable, ...
         model_path, tracking_path, reference_path, reference_weights);
 end
 
