@@ -1,5 +1,5 @@
 % User setting
-method = 'bayesopt'; % 'bayesopt' or 'ga'
+method = 'ga'; % 'bayesopt' or 'ga'
 upper_limit = 10;
 lower_limit = -10;
 n_dimensions = 5;
@@ -40,3 +40,20 @@ switch method
             outer_objective, 5, [], [], [], [], lb, ub, [], options);
 end
 
+% Code for rastrigin function
+function result = rastrigin(X)
+    A = 10;
+    if isa(X, 'table')
+        n = width(X);
+        result = A * n;
+        for i = 1:n
+            result = result + (X.(i))^2 - A * cos(2 * pi * X.(i)); 
+        end
+    else
+        n = length(X);
+        result = A * n;
+        for i = 1:n
+            result = result + (X(i))^2 - A * cos(2 * pi * X(i));
+        end
+    end
+end
