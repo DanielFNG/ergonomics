@@ -1,19 +1,19 @@
-function result = objective(upper_objective, upper_args, ...
-    model_path, tracking_path, output_dir, weights)
+function result = objective(executable, upper_objective, upper_args, ...
+    model_path, tracking_path, output_path, weights)
 
     % Generate sit-to-stand solution
-    path = sitToStandInterface(model_path, tracking_path, output_dir, weights);
+    success = mocoExecutableInterface(executable, model_path, tracking_path, output_path, weights);
     
     % Grade solution results
-    switch path
-        case -1
+    switch success
+        case false
             result = -1;
         otherwise
             try
-                solution = Data(path);
+                solution = Data(output_path);
             catch
-                fprintf('Solution at path %s has nans, replacing with 0.\n', path);
-                [values, labs, header] = MOTSTOTXTData.load(path);
+                fprintf('Solution at path %s has nans, replacing with 0.\n', output_path);
+                [values, labs, header] = MOTSTOTXTData.load(output_path);
                 values(isnan(values)) = 0;
                 solution = STOData(values, header, labs);
             end

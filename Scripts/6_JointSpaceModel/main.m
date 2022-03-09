@@ -2,10 +2,15 @@
 
 % Save directory
 output_dir = createOutputFolder('6_JointSpaceModel');
+output_path = [output_dir filesep 'prediction.sto'];
 
 % Input model & kinematics
 model_path = '2D_gait_jointspace.osim';
 tracking_path = 'TrackingSolution.sto';
+
+% Lower-level executable
+executable = 'optimise7D';
+
 % % 
 % % % ref
 % % reference_data = 'ReferenceData.sto';
@@ -46,4 +51,4 @@ tracking_path = 'TrackingSolution.sto';
 % Weights
 weights = [0.1 0.1 0.1 0.1 0.1 0.1 0.1];
 
-sitToStandInterface(model_path, tracking_path, output_dir, weights);
+mocoExecutableInterface(executable, model_path, tracking_path, output_path, weights);
