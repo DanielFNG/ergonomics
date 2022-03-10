@@ -1,4 +1,4 @@
-#include "MocoStabilityGoal.h"
+#include "Goals/MocoStabilityGoal.h"
 #include <string>
 #include <sstream>
 #include <OpenSim/Moco/osimMoco.h>
@@ -15,8 +15,8 @@ int main(int argc, char *argv[]) {
     std::string ankle_path = "jointset/ankle_r";
     int max_iterations = 1000;
 
-    // Parse program inputs - 10 or 11 parameters 
-    // Path to model file, path to guess trajectory, output file path, and the 7 weights
+    // Parse program inputs - 8 or 9 parameters 
+    // Path to model file, path to guess trajectory, output file path, and the 5 weights
     // Optional final parameter specifies whether to run on all cores (1) or a single core (0)  
     // See below for order 
     std::string model_path = argv[1];
@@ -24,16 +24,13 @@ int main(int argc, char *argv[]) {
     std::string output_path = argv[3];
     double w_effort = atof(argv[4]);
     double w_mos = atof(argv[5]);
-    double w_pmos = atof(argv[6]);
-    double w_wmos = atof(argv[7]);
-    double w_aload = atof(argv[8]);
-    double w_kload = atof(argv[9]);
-    double w_hload = atof(argv[10]);
+    double w_aload = atof(argv[6]);
+    double w_kload = atof(argv[7]);
+    double w_hload = atof(argv[8]);
     double parallel = 1;
-    if (argc == 12) {
-        parallel = atof(argv[11]);
+    if (argc == 10) {
+        parallel = atof(argv[9]);
     }
-    
 
     // Initialise study
     MocoStudy study;
@@ -53,13 +50,9 @@ int main(int argc, char *argv[]) {
     }
 
     // Set up stability goal
-    if (w_mos > 0 || w_pmos > 0 || w_wmos > 0)
+    if (w_mos > 0)
     {
-        auto* stability_goal = problem.addGoal
-            <MocoStabilityGoal>("stability");
-        stability_goal->setMOSWeight(w_mos);
-        stability_goal->setPMOSWeight(w_pmos);
-        stability_goal->setWMOSWeight(w_wmos);
+        auto* stability_goal = problem.addGoal<MocoStabilityGoal>("stability", w_mos);
     }
 
     // Set up ankle joint loading
@@ -94,23 +87,23 @@ int main(int argc, char *argv[]) {
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/value", 
         {0*Pi/180, 50*Pi/180}, 43.426*Pi/180, 0);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tx/value", 
-        {0, 0.5}, 0.05);
+        {-2, 2}, 0.05);
     problem.setStateInfo("/jointset/groundPelvis/pelvis_ty/value", 
-        {0.5, 1.0}, 0.535);
+        {0, 2}, 0.572);
     problem.setStateInfo("/jointset/hip_l/hip_flexion_l/value", 
-        {-15*Pi/180, 80*Pi/180}, 48.858*Pi/180, 0);
+        {-180*Pi/180, 180*Pi/180}, 48.858*Pi/180, 0);
     problem.setStateInfo("/jointset/hip_r/hip_flexion_r/value", 
-        {-15*Pi/180, 80*Pi/180}, 48.858*Pi/180, 0);
+        {-180*Pi/180, 180*Pi/180}, 48.858*Pi/180, 0);
     problem.setStateInfo("/jointset/knee_l/knee_angle_l/value", 
-        {-120*Pi/180, 5*Pi/180}, -112.113*Pi/180, 0);
+        {-180*Pi/180, 180*Pi/180}, -112.113*Pi/180, 0);
     problem.setStateInfo("/jointset/knee_r/knee_angle_r/value", 
-        {-120*Pi/180, 5*Pi/180}, -112.113*Pi/180, 0);
+        {-180*Pi/180, 180*Pi/180}, -112.113*Pi/180, 0);
     problem.setStateInfo("/jointset/ankle_l/ankle_angle_l/value", 
-        {0*Pi/180, 35*Pi/180}, 21.109*Pi/180, 0);
+        {-180*Pi/180, 180*Pi/180}, 19.827*Pi/180, 0);
     problem.setStateInfo("/jointset/ankle_r/ankle_angle_r/value", 
-        {0*Pi/180, 35*Pi/180}, 21.109*Pi/180, 0);
+        {-180*Pi/180, 180*Pi/180}, 19.827*Pi/180, 0);
     problem.setStateInfo("/jointset/lumbar/lumbar/value", 
-        {-70*Pi/180, 0*Pi/180}, -53.183*Pi/180, 0);
+        {-180*Pi/180, 180*Pi/180}, -53.183*Pi/180, 0);
 
     // Specify bounds on speeds
     problem.setStateInfo("/jointset/groundPelvis/pelvis_tilt/speed", 
