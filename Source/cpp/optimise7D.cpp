@@ -130,6 +130,7 @@ int main(int argc, char *argv[]) {
     // Configure the solver.
     MocoCasADiSolver& solver = study.initCasADiSolver();
     solver.set_parallel(parallel);
+    solver.set_optim_max_iterations(2000);
     solver.set_num_mesh_intervals(50);
     solver.set_verbosity(2);
     solver.set_optim_solver("ipopt");
