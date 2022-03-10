@@ -8,13 +8,20 @@ function result = sumSquaredStateDifference(input, reference, labels)
     end
     
     % Initialise result
-    result = 0;
+    result = zeros(1, length(labels));
     
     % Compute sum of squared state differences over required labels
     for i = 1:length(labels)
-        ref = stretchVector(reference.getColumn(labels{i}), 101);
-        joint = stretchVector(input.getColumn(labels{i}), 101);
-        result = result + sum((joint - ref).^2);
+        if ref.NFrames ~= joint.NFrames
+            % We assume evenly distributed knot points here
+            ref = stretchVector(reference.getColumn(labels{i}), 101);
+            joint = stretchVector(input.getColumn(labels{i}), 101);
+        end
+        ref = reference.getColumn(labels{i});
+        joint = input.getColumn(labels{i});
+        result(i) = sum((joint - ref).^2);
     end
+    
+    result = sum(result);
 
 end
