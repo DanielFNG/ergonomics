@@ -1,4 +1,4 @@
-#include "MocoStabilityGoal.h"
+#include "MocoProjectedStabilityGoal.h"
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 
@@ -8,15 +8,15 @@ using namespace boost::geometry;
 typedef model::d2::point_xy<double> point_2d;
 typedef model::polygon<point_2d> polygon_2d;
 
-MocoStabilityGoal::MocoStabilityGoal() {}
+MocoProjectedStabilityGoal::MocoProjectedStabilityGoal() {}
 
-void MocoStabilityGoal::initializeOnModelImpl(const Model&) const {
+void MocoProjectedStabilityGoal::initializeOnModelImpl(const Model&) const {
 
     // Specify 1 integrand, 1 output, position stage
     setRequirements(1, 1, SimTK::Stage::Dynamics);
 }
 
-void MocoStabilityGoal::calcIntegrandImpl(
+void MocoProjectedStabilityGoal::calcIntegrandImpl(
         const IntegrandInput& input, double& integrand) const {
     
     // Update model positions
@@ -102,7 +102,7 @@ void MocoStabilityGoal::calcIntegrandImpl(
     integrand = distance(extrapolated_com, pbos_cent);
 }
 
-void MocoStabilityGoal::calcGoalImpl(
+void MocoProjectedStabilityGoal::calcGoalImpl(
         const GoalInput& input, SimTK::Vector& cost) const {
     cost[0] = input.integral;
 }

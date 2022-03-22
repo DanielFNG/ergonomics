@@ -52,7 +52,8 @@ int main(int argc, char *argv[]) {
     // Set up stability goal
     if (w_mos > 0)
     {
-        auto* stability_goal = problem.addGoal<MocoStabilityGoal>("stability", w_mos);
+        auto* stability_goal = problem.addGoal<MocoStabilityGoal>("stability");
+        stability_goal->setPMOSWeight(w_mos);
     }
 
     // Set up ankle joint loading

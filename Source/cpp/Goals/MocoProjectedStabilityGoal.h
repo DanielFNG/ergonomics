@@ -3,21 +3,21 @@
 #define OSIMMOCO_API 
 #define OPENSIM_OSIMMOCODLL_H
 
-#ifndef OPENSIM_MOCOSTABILITYGOAL_H
-#define OPENSIM_MOCOSTABILITYGOAL_H
+#ifndef OPENSIM_MOCOPROJECTEDSTABILITYGOAL_H
+#define OPENSIM_MOCOPROJECTEDSTABILITYGOAL_H
 
 #include <OpenSim/Moco/osimMoco.h>
 #include <OpenSim/Moco/MocoGoal/MocoGoal.h>
 
 namespace OpenSim {
 
-class OSIMMOCO_API MocoStabilityGoal : public MocoGoal {
-    OpenSim_DECLARE_CONCRETE_OBJECT(MocoStabilityGoal, MocoGoal);
+class OSIMMOCO_API MocoProjectedStabilityGoal : public MocoGoal {
+    OpenSim_DECLARE_CONCRETE_OBJECT(MocoProjectedStabilityGoal, MocoGoal);
 
 public:
-    MocoStabilityGoal();
-    MocoStabilityGoal(std::string name) : MocoGoal(std::move(name)) { }
-    MocoStabilityGoal(std::string name, double weight) : MocoGoal(std::move(name), weight) { }
+    MocoProjectedStabilityGoal();
+    MocoProjectedStabilityGoal(std::string name) : MocoGoal(std::move(name)) { }
+    MocoProjectedStabilityGoal(std::string name, double weight) : MocoGoal(std::move(name), weight) { }
 
 protected:
     Mode getDefaultModeImpl() const override { return Mode::Cost; }
