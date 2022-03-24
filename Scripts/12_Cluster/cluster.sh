@@ -4,7 +4,7 @@
 #$ -cwd
 #$ -l h_rt=01:00:00
 #$ -l h_vmem=1G
-#$ -t 1-10 # NEEDS TO BE IN SYNC WITH MATLAB SCRIPT
+#$ -t 1-50 # NEEDS TO BE IN SYNC WITH MATLAB SCRIPT
  
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
