@@ -106,6 +106,7 @@ int main(int argc, char *argv[]) {
     solver.set_optim_solver("ipopt");
     solver.set_optim_convergence_tolerance(1e-2);
     solver.set_optim_constraint_tolerance(1e-4);
+    solver.set_parallel(0);
     //solver.set_multibody_dynamics_mode("implicit");
     //solver.set_minimize_implicit_multibody_accelerations(true);
 
