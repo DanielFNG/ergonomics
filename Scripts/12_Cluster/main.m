@@ -14,6 +14,10 @@ reference_path = [output_dir filesep 'reference.sto'];
 model_path = '2D_gait_jointspace_welded.osim';
 tracking_path = 'guess.sto';
 
+% Define objective function
+upper_objective = (weights) clusterObjective(output_dir, script_dir, ...
+    cluster_script, population_size, weights);
+
 % Create output directory
 mkdir(output_dir);
 
@@ -39,37 +43,5 @@ ub = upper_limit*ones(1, n_parameters);
 % Save result
 save([output_dir filesep 'results.mat']);
 
-function results = upper_objective(weights)
 
-    % Create an inner results folder based on time
-    folder = [output_dir filesep datestr(datetime('now'), 'yy-mm-dd_hh-MM-ss')];
-    mkdir(folder);
-
-    % Write weights.txt file
-    weights_file = [script_dir filesep 'weights.txt'];
-    fid = fopen(weights_file, 'w');
-    fprintf(fid, [repmat('%f ', 1, n_parameters) '\n'], weights);
-    fclose(fid);
-
-    % Execute cluster run
-    system(['qsub -sync y ' cluster_script]);
-
-    % Read results files
-    results = zeros(population_size, 1);
-    for i = 1:population_size
-        try
-            filename = [num2str(i) '.txt.'];
-            fid = fopen(filename);
-            results(i) = fscanf(fid, '%f');
-            fclose(fid);
-            movefile(filename, folder);
-        catch
-            results(i) = nan;
-        end
-    end
-
-    % Move weights file from workspace dir to output dir
-    movefile(weights_file, folder);
-
-end
 
