@@ -1,11 +1,12 @@
 % User setting
-method = 'bayesopt'; % 'bayesopt' or 'ga'
 upper_limit = 0.1;
 lower_limit = 0;
-reference_weights = [0.07, 0.05, 0.05, 0.02];
+reference_weights = [0.02, 0.04, 0.02, 0.08];
+executable = 'optimise4D_cluster'; % Same as optimise 4D but produces GRF file
+results_dir = '/exports/eddie/scratch/dgordon3/results';
 
 % Inputs
-output_dir = createOutputFolder('12_2DVariability');
+output_dir = createOutputFolder(results_dir);
 reference_path = [output_dir filesep 'reference.sto'];
 upper_objective = @compareRelativeKinematicsAndGRFs;
 model_path = '2D_gait_jointspace_welded.osim';
@@ -13,8 +14,8 @@ tracking_path = 'guess.sto';
 
 % Generate reference motion if needed
 if ~isfile(reference_path)
-    optimise2DInterface(...
-        model_path, tracking_path, reference_path, reference_weights);
+    mocoExecutableInterface(executable, model_path, tracking_path, ...
+        reference_path, reference_weights, true, false);
 end
 
 % Process reference data 
@@ -26,32 +27,16 @@ contacts = {'chair_r', 'r_1', 'r_2', 'r_3', 'r_4'};
 upper_args = {reference, labels, contacts, model_path};
 
 % Define objective 
-outer_objective = @ (weights) objective(upper_objective, upper_args, ...
-    model_path, tracking_path, output_dir, weights);
+outer_objective = @ (weights) objective(...
+    upper_objective, upper_args, output_dir, weights);
 
-switch method
-    case 'bayesopt'
-        % Optimal Control Weights
-        range = [lower_limit, upper_limit];
-        names = {'lumbar', 'hip', 'knee', 'ankle'};
-        args = {'Type', 'real'};
-        n_variables = length(names);
-        optimisation_variables = [];
-        for i = 1:n_variables
-            optimisation_variables = [optimisation_variables ...
-                optimizableVariable(names{i}, range, args{:})];
-        end
-        results = bayesopt(outer_objective, optimisation_variables, ...
-            'MaxObjectiveEvaluations', 150, ...
-            'AcquisitionFunctionName', 'expected-improvement-plus', ...
-            'NumSeedPoints', 10, 'IsObjectiveDeterministic', true);
-    case 'ga'
-        options = optimoptions('ga', 'Display', 'iter', ...
-            'MaxGenerations', 15, 'PlotFcn', 'gaplotscores', ...
-            'PopulationSize', 10); 
-        lb = lower_limit*ones(1, 2);
-        ub = upper_limit*ones(1, 2);
-        [x, fval, exitflag, output, population, scores] = ga(...
-            outer_objective, 2, [], [], [], [], lb, ub, [], options);
-end
+% Use GA to run optimisation
+n_parameters = length(reference_weights);
+options = optimoptions('ga', 'Display', 'iter', ...
+    'MaxGenerations', 3, 'PlotFcn', 'gaplotscores', ...
+    'PopulationSize', 10, 'UseVectorized', true); 
+lb = lower_limit*ones(1, n_parameters);
+ub = upper_limit*ones(1, n_parameters);
+[x, fval, exitflag, output, population, scores] = ga(...
+    outer_objective, n_parameters, [], [], [], [], lb, ub, [], options);
 
