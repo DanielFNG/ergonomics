@@ -119,38 +119,23 @@ int main(int argc, char *argv[]) {
     MocoSolution solution = study.solve();
     std::cout << "Solution status: " << solution.getStatus() << std::endl;
 
-    // Load the reference solution
-    MocoTrajectory reference = MocoTrajectory(reference_path);
-    double upper_objective = solution.compareContinuousVariablesRMS(reference);
+    // Change behaviour based on input reference_path
+    if (reference_path == "none") {
+        // Write the solution to file
+        solution.write(output_path);
+    }
+    else {
+        // Load the provided reference
+        MocoTrajectory reference = MocoTrajectory(reference_path);
 
-    // Write the value to a result file
-    std::ofstream output_file(output_path);
-    output_file << upper_objective;
-    output_file.close();
+        // Compare solution to reference
+        double upper_objective = solution.compareContinuousVariablesRMS(reference);
 
-
-    // // Extract ground reaction forces
-    // std::vector<std::string> contact_r;
-    // std::vector<std::string> contact_l;
-    // contact_r.push_back("chair_r");
-    // contact_r.push_back("r_1");
-    // contact_r.push_back("r_2");
-    // contact_r.push_back("r_3");
-    // contact_r.push_back("r_4");
-    // contact_l.push_back("chair_l");
-    // contact_l.push_back("l_1");
-    // contact_l.push_back("l_2");
-    // contact_l.push_back("l_3");
-    // contact_l.push_back("l_4");
-    // Model model = model_processor.process();
-    // model.initSystem();
-    // TimeSeriesTable external_forces = createExternalLoadsTableForGait(
-    //     model, solution, contact_r, contact_l);
-    // STOFileAdapter::write(external_forces, "test.sto");
-
-    // Compute metric
-
-    // Write metric to output file
+        // Write the resulting RMS to the specified result file
+        std::ofstream output_file(output_path);
+        output_file << upper_objective;
+        output_file.close();
+    }
 
     return EXIT_SUCCESS;
 
