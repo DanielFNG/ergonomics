@@ -19,7 +19,7 @@ function results = clusterObjective(output_dir, script_dir, cluster_script, ...
     results = zeros(population_size, 1);
     for i = 1:population_size
         try
-            filename = [num2str(i) '.txt.'];
+            filename = [num2str(i) '.txt'];
             fid = fopen(filename);
             results(i) = fscanf(fid, '%f');
             fclose(fid);

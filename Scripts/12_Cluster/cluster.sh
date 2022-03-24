@@ -23,4 +23,4 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_DEPENDENCIES_DIR}/casadi/lib
 readarray -t weights < weights.txt
 
 # Job payload
-~/ergonomics/bin/optimise4D_cluster 2D_gait_jointspace_welded.osim guess.sto ${SGE_TASK_ID}.txt none ${weights[$((-1 + ${SGE_TASK_ID}))]}
+~/ergonomics/bin/optimise4D_cluster 2D_gait_jointspace_welded.osim guess.sto ${SGE_TASK_ID}.txt reference.sto ${weights[$((-1 + ${SGE_TASK_ID}))]}
