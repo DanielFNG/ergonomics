@@ -14,9 +14,9 @@ set(CMAKE_CXX_EXTENSIONS OFF) # This is needed to stop some weird error
 
 ## Settings for compilation on intel Macs/M1 Macs running Rosetta
 ## Not needed if OpenSim was compiled from source.
-#if (APPLE)
-#        set(CMAKE_OSX_ARCHITECTURES x86_64)
-#endif()
+if (APPLE)
+        set(CMAKE_OSX_ARCHITECTURES x86_64)
+endif()
 
 # Find and hook up to OpenSim.
 # ----------------------------
