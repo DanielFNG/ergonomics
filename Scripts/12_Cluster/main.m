@@ -23,7 +23,7 @@ upper_objective = @ (weights) clusterObjective(output_dir, script_dir, ...
 mkdir(output_dir);
 
 % Generate reference motion
-%system(['qsub -sync y ' reference_script]);
+system(['qsub -sync y ' reference_script]);
 
 % Use GA to run optimisation
 n_parameters = length(reference_weights);
