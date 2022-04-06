@@ -1,0 +1,22 @@
+indegrees                                	yes
+Name                                     	LowerBound 	UpperBound 	InitialValue 	FinalValue
+/jointset/groundPelvis/pelvis_tilt/value 	0           	50          	43.426        	0
+/jointset/groundPelvis/pelvis_tx/value   	0           	0.5         	0.05          	
+/jointset/groundPelvis/pelvis_ty/value   	0.5         	1.0         	0.535         	    
+/jointset/hip_l/hip_flexion_l/value      	-15         	80          	48.858        	0
+/jointset/hip_r/hip_flexion_r/value      	-15         	80          	48.858        	0
+/jointset/knee_l/knee_angle_l/value      	-120        	5           	-112.113      	0
+/jointset/knee_r/knee_angle_r/value      	-120        	5           	-112.113      	0
+/jointset/ankle_l/ankle_angle_l/value    	0           	35          	21.109        	0
+/jointset/ankle_r/ankle_angle_r/value    	0           	35          	21.109        	0
+/jointset/lumbar/lumbar/value            	-70         	0          	-53.183       	0
+/jointset/groundPelvis/pelvis_tilt/speed 	-360       	360        	0       	             	
+/jointset/groundPelvis/pelvis_tx/speed   	-5          	5           	0        	            	
+/jointset/groundPelvis/pelvis_ty/speed   	-2          	10          	0        	            	
+/jointset/hip_l/hip_flexion_l/speed      	-360       	360        	0       	             	
+/jointset/hip_r/hip_flexion_r/speed      	-360       	360        	0       	             	
+/jointset/knee_l/knee_angle_l/speed      	-360        	360        	0       	             	
+/jointset/knee_r/knee_angle_r/speed      	-360        	360        	0       	             	
+/jointset/ankle_l/ankle_angle_l/speed    	-360       	360         	0       	             	
+/jointset/ankle_r/ankle_angle_r/speed    	-360       	360         	0       	             	
+/jointset/lumbar/lumbar/speed            	-360       	360           	0       	             	
