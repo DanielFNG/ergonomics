@@ -1,0 +1,5 @@
+# Hard-coded IPOPT options
+
+# Change mu_strategy to adaptive
+mu_strategy adaptive
+#linear_solver ma97
