@@ -1,5 +1,5 @@
 function results = clusterObjective(output_dir, script_dir, cluster_script, ...
-    population_size, weights)
+    population_size, weights, normalisers)
 
     % Create an inner results folder based on time
     folder = [output_dir filesep datestr(datetime('now'), 'yy-mm-dd_hh-MM-ss')];
@@ -9,7 +9,8 @@ function results = clusterObjective(output_dir, script_dir, cluster_script, ...
     n_parameters = size(weights, 2);
     weights_file = [script_dir filesep 'weights.txt'];
     fid = fopen(weights_file, 'w');
-    fprintf(fid, [repmat('%f ', 1, n_parameters) '\n'], weights);
+    normalised_weights = weights./normalisers;
+    fprintf(fid, [repmat('%f ', 1, n_parameters) '\n'], normalised_weights);
     fclose(fid);
 
     % Execute cluster run
