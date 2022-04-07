@@ -2,7 +2,7 @@
 
 # Grid Engine options
 #$ -cwd
-#$ -l h_rt=01:00:00
+#$ -l h_rt=02:00:00
 #$ -l h_vmem=1G
  
 # Initialise the environment modules
@@ -19,4 +19,3 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_DEPENDENCIES_DIR}/ipopt/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_DEPENDENCIES_DIR}/casadi/lib
 
 # Job payload
-~/ergonomics/bin/optimise4D_cluster 2D_gait_jointspace_welded.osim guess.sto reference.sto none 0.02 0.04 0.02 0.08 

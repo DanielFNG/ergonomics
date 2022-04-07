@@ -1,7 +1,5 @@
 #include <string>
 #include <OpenSim/Moco/osimMoco.h>
-#include <OpenSim/Moco/MocoGoal/MocoOutputGoal.h>
-#include "Goals/MocoMultiJointReactionGoal.h"
 #include <OpenSim/Common/STOFileAdapter.h>
 #include <fstream>
 
@@ -14,7 +12,7 @@ int main(int argc, char *argv[]) {
     std::string hip_path = "/jointset/hip_r";
     std::string knee_path = "/jointset/knee_r/";
     std::string ankle_path = "/jointset/ankle_r";
-    int max_iterations = 1000;
+    int max_iterations = 2000;
 
     // Parse program inputs - 8
     // Path to model file, path to guess trajectory, output file path, 
@@ -38,17 +36,46 @@ int main(int argc, char *argv[]) {
     ModelProcessor model_processor = ModelProcessor(model_path);
     problem.setModelProcessor(model_processor);
 
+    /*
     // Set up effort goal
     auto* effort_goal = problem.addGoal<MocoControlGoal>("effort", 0.1);
     effort_goal->setDivideByDisplacement(true);
     effort_goal->setExponent(3);
+    */
 
-    // Set up joint loading
+    /*
+    // Set up joint loading with combined terms
     auto* joint_loading = problem.addGoal<MocoMultiJointReactionGoal>("joint_loading");
     joint_loading->setJointPathAndWeight(lumbar_path, w_lumbar);
     joint_loading->setJointPathAndWeight(hip_path, w_hip);
     joint_loading->setJointPathAndWeight(knee_path, w_knee);
     joint_loading->setJointPathAndWeight(ankle_path, w_ankle);
+    */
+
+    // Set up joint loading with separate terms
+    if (w_lumbar > 0)
+    {
+        auto* lumbar_goal = problem.addGoal<MocoJointReactionGoal>("lumbar", w_lumbar);
+        lumbar_goal->setJointPath(lumbar_path);
+    }
+
+    if (w_hip > 0)
+    {
+        auto* hip_goal = problem.addGoal<MocoJointReactionGoal>("hip", w_hip);
+        hip_goal->setJointPath(hip_path);
+    }
+
+    if (w_knee > 0)
+    {
+        auto* knee_goal = problem.addGoal<MocoJointReactionGoal>("knee", w_knee);
+        knee_goal->setJointPath(knee_path);
+    }
+
+    if (w_ankle > 0)
+    {
+        auto* ankle_goal = problem.addGoal<MocoJointReactionGoal>("ankle", w_ankle);
+        ankle_goal->setJointPath(ankle_path);
+    }
 
     // Specify bounds on start and end time
     problem.setTimeBounds(0, {1.5, 1.5});
@@ -104,15 +131,12 @@ int main(int argc, char *argv[]) {
     solver.set_num_mesh_intervals(50);
     solver.set_verbosity(2);
     solver.set_optim_solver("ipopt");
-    solver.set_optim_convergence_tolerance(1e-2);
+    solver.set_optim_convergence_tolerance(1e-4);
     solver.set_optim_constraint_tolerance(1e-4);
     solver.set_parallel(0);
-    //solver.set_multibody_dynamics_mode("implicit");
-    //solver.set_minimize_implicit_multibody_accelerations(true);
 
     // Specify an initial guess.
     MocoTrajectory guess = MocoTrajectory(guess_path);
-    //guess.generateAccelerationsFromSpeeds();
     solver.setGuess(guess);
 
     // Solve the problem.

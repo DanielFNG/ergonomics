@@ -2,7 +2,7 @@
 
 # Grid Engine options
 #$ -cwd
-#$ -l h_rt=01:00:00
+#$ -l h_rt=02:00:00
 #$ -l h_vmem=1G
 #$ -t 1-50 # NEEDS TO BE IN SYNC WITH MATLAB SCRIPT
  
