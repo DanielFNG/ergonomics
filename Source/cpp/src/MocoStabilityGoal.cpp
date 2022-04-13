@@ -1,4 +1,4 @@
-#include "MocoStabilityGoal.h"
+#include <MocoStabilityGoal.hpp>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 
@@ -7,10 +7,6 @@ using namespace boost::geometry;
 
 typedef model::d2::point_xy<double> point_2d;
 typedef model::polygon<point_2d> polygon_2d;
-
-MocoStabilityGoal::MocoStabilityGoal() {
-    constructProperties();
-}
 
 void MocoStabilityGoal::constructProperties() {
     constructProperty_mos_weight(0.0);

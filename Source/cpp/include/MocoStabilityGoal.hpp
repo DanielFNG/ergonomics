@@ -1,5 +1,3 @@
-// The below two lines skip some dll stuff in OpenSim Moco that otherwise 
-// seems to interfere with compilation
 #define OSIMMOCO_API 
 #define OPENSIM_OSIMMOCODLL_H
 
