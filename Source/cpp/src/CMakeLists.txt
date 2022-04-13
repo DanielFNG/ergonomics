@@ -9,7 +9,7 @@ target_include_directories(custom_goals PUBLIC ../include)
 # Link to OpenSim and Boost
 target_link_libraries(custom_goals PRIVATE ${OpenSim_LIBRARIES} Boost::boost)
 
-# IDEs should put the headers in a nice place
+# For IDEs
 source_group(
   TREE "${PROJECT_SOURCE_DIR}/include"
   PREFIX "Header Files"
