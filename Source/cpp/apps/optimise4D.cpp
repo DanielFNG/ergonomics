@@ -101,20 +101,12 @@ int main(int argc, char *argv[]) {
     solver.set_optim_solver("ipopt");
     solver.set_optim_convergence_tolerance(1e-2);
     solver.set_optim_constraint_tolerance(1e-4);
-    //solver.set_multibody_dynamics_mode("implicit");
-    //solver.set_minimize_implicit_multibody_accelerations(true);
 
     // Specify an initial guess.
     MocoTrajectory guess = MocoTrajectory(guess_path);
-    //guess.generateAccelerationsFromSpeeds();
-    std::cout << "oi" << std::endl;
-    std::cout << "beans" << std::endl;
     solver.setGuess(guess);
-    std::cout << "Nope" << std::endl;
 
     // Solve the problem.
-    std::cout << "oi" << std::endl;
-    std::cout << "beans" << std::endl;
     MocoSolution solution = study.solve();
     std::cout << "Solution status: " << solution.getStatus() << std::endl;
 
