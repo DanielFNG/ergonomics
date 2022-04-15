@@ -1,50 +1,37 @@
-project(CustomStabilityGoals)
+cmake_minimum_required(VERSION 3.19)
 
-cmake_minimum_required(VERSION 3.2)
+# Project name & versioning
+project(MocoLowerLevel VERSION 0.1
+        DESCRIPTION "Lower-level optimiser for ergonomics project."
+        LANGUAGES CXX)
 
-# Settings.
-# ---------
-set(OPENSIM_INSTALL_DIR $ENV{OPENSIM_HOME}
-        CACHE PATH "Top-level directory of OpenSim install")
+# Protect from being included elsewhere
+if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 
-# OpenSim uses C++11 language features, and we need >=14 for Boost.
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF) # This is needed to stop some weird error
+        # OpenSim uses C++11 language features, and we need >=14 for Boost.
+        set(CMAKE_CXX_STANDARD 14)
+        set(CMAKE_CXX_STANDARD_REQUIRED ON)
+        set(CMAKE_CXX_EXTENSIONS OFF)
 
-## Settings for compilation on intel Macs/M1 Macs running Rosetta
-## Not needed if OpenSim was compiled from source.
-if (APPLE)
-        set(CMAKE_OSX_ARCHITECTURES x86_64)
+        # Settings for compilation on Apple
+        if (APPLE)
+                set(CMAKE_OSX_ARCHITECTURES x86_64)
+        endif()
+
+        # Support folders in IDEs
+        set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 endif()
 
-# Find and hook up to OpenSim.
-# ----------------------------
+# Find OpenSim
+set(OPENSIM_INSTALL_DIR $ENV{OPENSIM_HOME} CACHE PATH "Top-level directory of OpenSim install")
 find_package(OpenSim REQUIRED PATHS "${OPENSIM_INSTALL_DIR}")
 
-# Configure this project.
-# -----------------------
-file(GLOB GOALS Goals/*.h Goals/*.cpp)
-file(GLOB UTILS Utils/*.h Utils/*.cpp)
-file(GLOB SOURCE *.h *.cpp)
-
-# Set bin path for executable
-cmake_path(GET CMAKE_CURRENT_SOURCE_DIR PARENT_PATH parentPath)
-cmake_path(GET parentPath PARENT_PATH rootPath)
-set(binPath ${rootPath}/bin)
-
-# Find boost libraries
+# Find Boost
 set(Boost_DEBUG ON)
 find_package(Boost REQUIRED)
-include_directories(${Boost_INCLUDE_DIRS})
 
-# Create executables - not sure this is done right, think all executables
-# are compiled against all headers and all source cpp files which obviously
-# isn't necessary. Fine for now.
-foreach(source_file ${SOURCE})
-        get_filename_component(source_name ${source_file} NAME_WE)
-        add_executable(${source_name} ${source_file} ${GOALS} ${UTILS})
-        set_target_properties(${source_name} PROPERTIES
-                RUNTIME_OUTPUT_DIRECTORY_RELEASE ${binPath})
-        target_link_libraries(${source_name} ${Boost_LIBRARIES} ${OpenSim_LIBRARIES})
-endforeach(source_file ${SOURCE})
+# Add library
+add_subdirectory(src)
+
+# Add executables
+add_subdirectory(apps)

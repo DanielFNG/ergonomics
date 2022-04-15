@@ -1,7 +1,7 @@
 // A revised version of the MocoJointReactionGoal that allows for the specification
 // of multiple terms, with an overall weighted cost. 
 
-#include "MocoMultiJointReactionGoal.h"
+#include <MocoMultiJointReactionGoal.hpp>
 
 #include <OpenSim/Moco/MocoUtilities.h>
 
