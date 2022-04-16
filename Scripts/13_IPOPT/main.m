@@ -1,7 +1,15 @@
 % Number of passes
 n_tries = 3;
 
-% IPOPT options to change
+% IPOPT options to change. NOTE: only the MUMPS linear solver is installed
+% by OpenSim by default. Other options include the HSL solvers referenced
+% below, which were fairly easy to install on mac. Installation on Windows
+% was more complicated, and didn't seem to work on the version of minGW I
+% had, so I just left it.
+% HSL solvers: https://www.hsl.rl.ac.uk/ipopt/
+if ispc
+    error('Have you installed the HSL linear solvers?')
+end
 options = {'', ...
     'mu_strategy adaptive', ...
     'linear_solver ma27', ...
