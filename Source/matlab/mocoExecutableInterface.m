@@ -1,5 +1,5 @@
-function success = mocoExecutableInterface(...
-    name, model_path, guess_path, output_path, weights, output, parallel)
+function [success, result] = mocoExecutableInterface(name, model_path, ...
+    guess_path, output_path, reference_path, weights, output, parallel)
     % Provides an interface for running Moco C++ executables within 
     % Matlab. We assume that the executable (name) is located within
     % ergonomics/bin, and has the standard argument list i.e.
@@ -7,10 +7,10 @@ function success = mocoExecutableInterface(...
     % for the weights as passed in to this function.
 
     % By default, assume we want to use all cores, and have minimal program output
-    if nargin < 7
+    if nargin < 8
         parallel = 1;
     end
-    if nargin < 6
+    if nargin < 7
         output = false;
     end
 
@@ -26,7 +26,7 @@ function success = mocoExecutableInterface(...
 
     % Generate appropriate command line arguments
     command = [executable_path ' ' model_path ' ' guess_path ' ' ...
-        output_path];
+        output_path ' ' reference_path];
     for i = 1:length(weights)
         command = [command ' ' num2str(weights(i))]; %#ok<AGROW>
     end
@@ -41,10 +41,16 @@ function success = mocoExecutableInterface(...
     
     % Return indication of success
     success = true;
+    result = nan;
     if ~isfile(output_path)
         success = false;
         fmt = [repmat('%g, ', 1, length(weights) - 1) '%g]'];
         fprintf(['Failed for w = [' fmt '\n'], weights);
+    end
+    if ~strcmp(reference_path, 'none')
+        fid = fopen(output_path, "r");
+        result = fscanf(fid, '%f');
+        fclose(fid);
     end
     
 end

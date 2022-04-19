@@ -1,6 +1,8 @@
 #include <string>
 #include <MocoMultiJointReactionGoal.hpp>
 #include <OpenSim/Moco/osimMoco.h>
+#include <OpenSim/Common/STOFileAdapter.h>
+//#include <fstream>
 
 using namespace OpenSim;
 
@@ -11,7 +13,7 @@ int main(int argc, char *argv[]) {
     std::string hip_path = "/jointset/hip_r";
     std::string knee_path = "/jointset/knee_r/";
     std::string ankle_path = "/jointset/ankle_r";
-    int max_iterations = 1000;
+    int max_iterations = 2000;
 
     // Parse program inputs - 5
     // Path to model file, path to guess trajectory, output file path, and the weight 
@@ -19,31 +21,48 @@ int main(int argc, char *argv[]) {
     std::string model_path = argv[1];
     std::string guess_path = argv[2];
     std::string output_path = argv[3];
-    double w_lumbar = atof(argv[4]);
-    double w_hip = atof(argv[5]);
-    double w_knee = atof(argv[6]);
-    double w_ankle = atof(argv[7]);
+    std::string reference_path = argv[4];
+    double w_lumbar = atof(argv[5]);
+    double w_hip = atof(argv[6]);
+    double w_knee = atof(argv[7]);
+    double w_ankle = atof(argv[8]);
+    int parallel = 1;
+    if (argc == 9) {
+        parallel = atoi(argv[9]);
+    }
 
     // Initialise study
     MocoStudy study;
-    study.setName("test_MocoOutput");
 
     // Isolate problem & assign model
     MocoProblem& problem = study.updProblem();
     ModelProcessor model_processor = ModelProcessor(model_path);
     problem.setModelProcessor(model_processor);
 
-    // Set up effort goal
-    auto* effort_goal = problem.addGoal<MocoControlGoal>("effort", 0.1);
-    effort_goal->setDivideByDisplacement(true);
-    effort_goal->setExponent(3);
+    // Set up joint loading with separate terms
+    if (w_lumbar > 0)
+    {
+        auto* lumbar_goal = problem.addGoal<MocoJointReactionGoal>("lumbar", w_lumbar);
+        lumbar_goal->setJointPath(lumbar_path);
+    }
 
-    // Set up joint loading
-    auto* joint_loading = problem.addGoal<MocoMultiJointReactionGoal>("joint_loading");
-    joint_loading->setJointPathAndWeight(lumbar_path, w_lumbar);
-    joint_loading->setJointPathAndWeight(hip_path, w_hip);
-    joint_loading->setJointPathAndWeight(knee_path, w_knee);
-    joint_loading->setJointPathAndWeight(ankle_path, w_ankle);
+    if (w_hip > 0)
+    {
+        auto* hip_goal = problem.addGoal<MocoJointReactionGoal>("hip", w_hip);
+        hip_goal->setJointPath(hip_path);
+    }
+
+    if (w_knee > 0)
+    {
+        auto* knee_goal = problem.addGoal<MocoJointReactionGoal>("knee", w_knee);
+        knee_goal->setJointPath(knee_path);
+    }
+
+    if (w_ankle > 0)
+    {
+        auto* ankle_goal = problem.addGoal<MocoJointReactionGoal>("ankle", w_ankle);
+        ankle_goal->setJointPath(ankle_path);
+    }
 
     // Specify bounds on start and end time
     problem.setTimeBounds(0, {1.5, 1.5});
@@ -101,6 +120,7 @@ int main(int argc, char *argv[]) {
     solver.set_optim_solver("ipopt");
     solver.set_optim_convergence_tolerance(1e-2);
     solver.set_optim_constraint_tolerance(1e-4);
+    solver.set_parallel(parallel);
 
     // Specify an initial guess.
     MocoTrajectory guess = MocoTrajectory(guess_path);
@@ -110,8 +130,24 @@ int main(int argc, char *argv[]) {
     MocoSolution solution = study.solve();
     std::cout << "Solution status: " << solution.getStatus() << std::endl;
 
-    // For now, write the solution
-    solution.write(output_path);
+    // Change behaviour based on input reference_path
+    if (reference_path == "none") {
+        // Write the solution to file
+        solution.write(output_path);
+    }
+    else {
+        // Load the provided reference
+        MocoTrajectory reference = MocoTrajectory(reference_path);
+
+        // Compare solution to reference
+        double upper_objective = solution.compareContinuousVariablesRMS(reference);
+
+        // Write the resulting RMS to the specified result file
+        std::ofstream output_file(output_path);
+        output_file << upper_objective;
+        output_file.close();
+    }
+    
 
     return EXIT_SUCCESS;
 
