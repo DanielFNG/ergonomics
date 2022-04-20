@@ -2,6 +2,7 @@
 output_dir = createOutputFolder('14_BayesoptMuscleNew');
 model_path = '2D_gait_jointspace_welded.osim';
 guess_path = 'TrackingSolutionJoints.sto';
+method = 'surrogateopt';
 
 % Lower-level optimiser setup
 executable = 'optimise4D';
@@ -46,22 +47,33 @@ outer_objective = @ (weights) objective(executable, ...
     model_path, guess_path, output_dir, reference_path, ...
     weights, normalisers, weights_active);
 
-% Optimal Control Weights
-range = [lower_limit, upper_limit];
-args = {'Type', 'real'};
-optimisation_variables = [];
-for i = 1:n_parameters
-    if weights_active(i)
-        optimisation_variables = [optimisation_variables ...
-            optimizableVariable(['w' num2str(i)], range, args{:})];
-    end
+% Optimisation
+switch method
+    case 'bayesopt'
+        range = [lower_limit, upper_limit];
+        args = {'Type', 'real'};
+        optimisation_variables = [];
+        for i = 1:n_parameters
+            if weights_active(i)
+                optimisation_variables = [optimisation_variables ...
+                    optimizableVariable(['w' num2str(i)], range, args{:})];
+            end
+        end
+        results = bayesopt(outer_objective, optimisation_variables, ...
+            'XConstraintFcn', @xconstraint, ...
+            'ConditionalVariableFcn', @condvariablefcn, ...
+            'MaxObjectiveEvaluations', n_evaluations, ...
+            'AcquisitionFunctionName', 'expected-improvement-plus', ...
+            'NumSeedPoints', n_seeds, 'IsObjectiveDeterministic', false);
+    case 'surrogateopt'
+        n_active_parameters = sum(weights_active);
+        lb = ones(1, n_active_parameters)*lower_limit;
+        ub = ones(1, n_active_parameters)*upper_limit;
+        Aeq = ones(1, n_active_parameters);
+        beq = 1;
+        [x, fval, exitflag, output, trials] = surrogateopt(...
+            outer_objective, lb, ub, [], [], [], Aeq, beq);
 end
-results = bayesopt(outer_objective, optimisation_variables, ...
-    'XConstraintFcn', @xconstraint, ...
-    'ConditionalVariableFcn', @condvariablefcn, ...
-    'MaxObjectiveEvaluations', n_evaluations, ...
-    'AcquisitionFunctionName', 'expected-improvement-plus', ...
-    'NumSeedPoints', n_seeds, 'IsObjectiveDeterministic', true);
 
 % Define constraints
 function tf = xconstraint(X)

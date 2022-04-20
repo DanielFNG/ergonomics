@@ -7,7 +7,7 @@ function result = objective(executable, model_path, guess_path, ...
     end
 
     % Handle working with subsets of the full weight set
-    full_weights = zeros(length(weights_active), 1);
+    full_weights = zeros(1, length(weights_active));
     full_weights(weights_active) = weights;
 
     % Normalise

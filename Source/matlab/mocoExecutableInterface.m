@@ -14,6 +14,11 @@ function [success, result] = mocoExecutableInterface(name, model_path, ...
         output = false;
     end
 
+    % Check input weights are given as a row vector
+    if ~(size(weights, 1) == 1 && size(weights, 2) > 0)
+        error('Input weights expected as row vector.');
+    end
+
     % Path to compiled C++ executable if on Windows
     if ispc
         name = [name '.exe'];
