@@ -52,7 +52,7 @@ function [success, result] = mocoExecutableInterface(name, model_path, ...
         fmt = [repmat('%g, ', 1, length(weights) - 1) '%g]'];
         fprintf(['Failed for w = [' fmt '\n'], weights);
     end
-    if ~strcmp(reference_path, 'none')
+    if success && ~strcmp(reference_path, 'none')
         fid = fopen(output_path, "r");
         result = fscanf(fid, '%f');
         fclose(fid);
