@@ -5,21 +5,21 @@ guess_path = 'TrackingSolutionJoints.sto';
 method = 'surrogateopt';
 
 % Lower-level optimiser setup
-executable = 'optimise4D';
-reference_weights = [0.15 0.45 0.1 0.3]; %0.25*ones(1, 4);  % Determines n_variables
-weights_active = [true, true, true, true];
+executable = 'optimise6D';
+reference_weights = [0.1 0.1 0.3 0.1 0.3 0.1]; % Determines n_variables
+weights_active = [true, true, true, true, true, true];
 
 % Internal settings
 upper_limit = 1;
 lower_limit = 0;
 normaliser_dir = [output_dir filesep 'normalisers'];
 ideal_optimised_cost = 10;
-n_seeds = 4;
+n_parameters = length(reference_weights);
+n_seeds = n_parameters^2;
 n_evaluations = 1000;
 
 % Compute normalisers if needed, otherwise read from file
 mkdir(normaliser_dir);
-n_parameters = length(reference_weights);
 normalisers = zeros(1, n_parameters);
 for i = 1:n_parameters
     normaliser_path = [normaliser_dir filesep num2str(i) '.sto'];

@@ -4,7 +4,7 @@ set(bin_dir_release "../../../../bin")
 # Executables we want to compile
 set(APP_FILES 
     optimise4D
-    optimise7D
+    optimise6D
     optimise4D_cluster)
 
 # Create executables in turn

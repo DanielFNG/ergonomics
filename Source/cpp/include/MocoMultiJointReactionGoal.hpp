@@ -1,10 +1,10 @@
+#ifndef OPENSIM_MOCOMULTIJOINTREACTIONGOAL_H
+#define OPENSIM_MOCOMULTIJOINTREACTIONGOAL_H
+
 // The below two lines skip some dll stuff in OpenSim Moco that otherwise 
 // seems to interfere with compilation
 #define OSIMMOCO_API 
 #define OPENSIM_OSIMMOCODLL_H
-
-#ifndef OPENSIM_MOCOMULTIJOINTREACTIONGOAL_H
-#define OPENSIM_MOCOMULTIJOINTREACTIONGOAL_H
 
 #include <OpenSim/Moco/osimMoco.h>
 #include <OpenSim/Moco/MocoGoal/MocoGoal.h>

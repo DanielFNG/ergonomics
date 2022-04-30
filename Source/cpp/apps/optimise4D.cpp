@@ -1,8 +1,6 @@
 #include <string>
-#include <MocoMultiJointReactionGoal.hpp>
 #include <OpenSim/Moco/osimMoco.h>
 #include <OpenSim/Common/STOFileAdapter.h>
-//#include <fstream>
 
 using namespace OpenSim;
 
