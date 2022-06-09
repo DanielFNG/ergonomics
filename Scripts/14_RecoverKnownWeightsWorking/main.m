@@ -134,7 +134,7 @@ function X = condvariablefcn(X)
 % by the xconstraint function
     X{:, :} = round(X{:, :}, 3);
     partial_sum = sum(X{:, 1:end - 1}, 2);
-    if height(X{partial_sum <= 1, :}) > 0
+    if height(X(partial_sum <= 1, :)) > 0
         X{partial_sum <= 1, end} = 1 - partial_sum(partial_sum <= 1);
     end
 end
