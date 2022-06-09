@@ -4,8 +4,14 @@ function applyStateBoundsTracking(problem, bounds)
 % because this is more apt for running state tracking problems.
 
     for i = 1:height(bounds)
-        problem.setStateInfo(...
-            bounds.Name{i}, [bounds.LowerBound(i), bounds.UpperBound(i)]);
+
+        % Parse initial values which may be NaN's
+        initial = bounds.InitialValue(i);
+        if isnan(initial)
+            initial = [];
+        end
+        problem.setStateInfo(bounds.Name{i}, ...
+            [bounds.LowerBound(i), bounds.UpperBound(i)], initial);
     end
 
 end

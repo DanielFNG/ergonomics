@@ -1,4 +1,4 @@
-#include <MocoStabilityGoal.hpp>
+#include <MocoWeightedStabilityGoal.hpp>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 
@@ -8,19 +8,19 @@ using namespace boost::geometry;
 typedef model::d2::point_xy<double> point_2d;
 typedef model::polygon<point_2d> polygon_2d;
 
-void MocoStabilityGoal::initializeOnModelImpl(const Model&) const {
+void MocoWeightedStabilityGoal::initializeOnModelImpl(const Model&) const {
 
     // Specify 1 integrand, 1 output, position stage
     setRequirements(1, 1, SimTK::Stage::Dynamics);
 }
 
-void MocoStabilityGoal::calcIntegrandImpl(
+void MocoWeightedStabilityGoal::calcIntegrandImpl(
         const IntegrandInput& input, double& integrand) const {
     
     // Update model positions
     getModel().realizeDynamics(input.state);
 
-    /*// Access required contact forces.
+    // Access required contact forces.
     std::vector<std::string> force_strings = {
         "chair_r", "chair_l", "l_1", "l_3", "r_3", "r_1"
     };
@@ -28,29 +28,26 @@ void MocoStabilityGoal::calcIntegrandImpl(
     // Access required contact geometries
     std::vector<std::string> sphere_strings = {
         "butt_r", "butt_l", "heel_l", "front_l", "front_r", "heel_r"
-    };*/
-
-    // Access required contact forces.
-    std::vector<std::string> force_strings = {
-        "l_1", "l_3", "r_3", "r_1"
-    };
-
-    // Access required contact geometries
-    std::vector<std::string> sphere_strings = {
-        "heel_l", "front_l", "front_r", "heel_r"
     };
 
     // Get model weight
     double model_weight = getModel().getGravity().get(1)*getModel().getTotalMass(input.state);
         
     // Create BoS polygon
-    polygon_2d bos_poly;
-    bool empty = true;
+    std::vector<double> vertex_x = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+    std::vector<double> vertex_z = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+    std::vector<double> vertex_weights = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+    double min_force;
     for (int i = 0; i < force_strings.size(); i++) {
+
         // Compute force at contact point
         const auto& force = getModel().getComponent
             <SmoothSphereHalfSpaceForce>(force_strings[i]);
         Array<double> force_values = force.getRecordValues(input.state);
+        min_force = force.get_constant_contact_force();
+
+        // Assign vertex weight
+        vertex_weights[i] = force_values[1]/model_weight;
 
         // Get contact sphere & associated frame
         const auto& geometries = getModel().getContactGeometrySet();
@@ -60,22 +57,11 @@ void MocoStabilityGoal::calcIntegrandImpl(
         // Transform sphere location to ground frame
         SimTK::Vec3 ground_point = frame.findStationLocationInGround(
             input.state, sphere.get_location());
-
-        // If we register a vertical force, this point is active, so we append 
-        // it to our BoS polygon
-        if (force_values[1] > force.get_constant_contact_force()) {
-
-            // Append the projected 2D point to our polygon
-            append(bos_poly.outer(), make<point_2d>(
-                ground_point.get(0), ground_point.get(2)));
-
-            // Note that we have at least one point in our bos polygon
-            empty = false;
-        }
+            
+        // Assign vertex position - incase order changes later
+        vertex_x[i] = ground_point.get(0);
+        vertex_z[i] = ground_point.get(2);
     }
-
-    // Close the polygons & make sure they are directed clockwise
-    correct(bos_poly);
 
     // Compute the position & velocity of the CoM of the model given the current state
     double Mass = 0.0;
@@ -114,21 +100,22 @@ void MocoStabilityGoal::calcIntegrandImpl(
     point_2d extrapolated_com;
     assign_values(extrapolated_com, xcom[0], xcom[2]);
 
-    // Compute the integrand as the distance between the bos centre and the xcom
-    point_2d bos_cent;
-    integrand = 10.0;  // Default value if BoS is empty
-    // If our polygon is non-empty...
-    if (!empty) {
-
-        // Compute the centre of the bos polygon
-        centroid(bos_poly, bos_cent);
-
-        // Compute the distance between the bos centre and the extrapolated CoM
-        integrand = distance(extrapolated_com, bos_cent);
+    // Compute the centre of the weighted polygon
+    std::vector<double> wcent = {0.0, 0.0};
+    double total_weight = 0;  // Start very close to 0 but not quite
+    for (int i = 0; i < force_strings.size(); i++) {
+        total_weight = total_weight + vertex_weights[i];
+        wcent[0] = wcent[0] + vertex_x[i]*vertex_weights[i];
+        wcent[1] = wcent[1] + vertex_z[i]*vertex_weights[i];
     }
+    wcent[0] = wcent[0]/total_weight;
+    wcent[1] = wcent[1]/total_weight;
+
+    // Compute the integrand as the distance between the wmos centre and the xcom
+    integrand = sqrt(pow((wcent[0] - xcom[0]), 2) + pow((wcent[1] - xcom[2]), 2));
 }
 
-void MocoStabilityGoal::calcGoalImpl(
+void MocoWeightedStabilityGoal::calcGoalImpl(
         const GoalInput& input, SimTK::Vector& cost) const {
     cost[0] = input.integral;
 }

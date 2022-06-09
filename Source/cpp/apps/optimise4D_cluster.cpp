@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
     solver.set_optim_solver("ipopt");
     solver.set_optim_convergence_tolerance(1e-4);
     solver.set_optim_constraint_tolerance(1e-4);
-    solver.set_parallel(0);
+    solver.set_parallel(1);
 
     // Specify an initial guess.
     MocoTrajectory guess = MocoTrajectory(guess_path);

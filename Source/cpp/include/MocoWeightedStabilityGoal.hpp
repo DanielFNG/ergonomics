@@ -1,5 +1,5 @@
-#ifndef OPENSIM_MOCOSTABILITYGOAL_H
-#define OPENSIM_MOCOSTABILITYGOAL_H
+#ifndef OPENSIM_MOCOWEIGHTEDSTABILITYGOAL_H
+#define OPENSIM_MOCOWEIGHTEDSTABILITYGOAL_H
 
 #define OSIMMOCO_API 
 #define OPENSIM_OSIMMOCODLL_H
@@ -9,13 +9,13 @@
 
 namespace OpenSim {
 
-    class OSIMMOCO_API MocoStabilityGoal : public MocoGoal {
-        OpenSim_DECLARE_CONCRETE_OBJECT(MocoStabilityGoal, MocoGoal);
+    class OSIMMOCO_API MocoWeightedStabilityGoal : public MocoGoal {
+        OpenSim_DECLARE_CONCRETE_OBJECT(MocoWeightedStabilityGoal, MocoGoal);
 
         public:
-            MocoStabilityGoal();
-            MocoStabilityGoal(std::string name) : MocoGoal(std::move(name)) {}
-            MocoStabilityGoal(std::string name, double weight) : 
+            MocoWeightedStabilityGoal();
+            MocoWeightedStabilityGoal(std::string name) : MocoGoal(std::move(name)) {}
+            MocoWeightedStabilityGoal(std::string name, double weight) : 
                 MocoGoal(std::move(name), weight) {}
 
         protected:

@@ -1,4 +1,4 @@
-#include <MocoStabilityGoal.hpp>
+#include <MocoProjectedStabilityGoal.hpp>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 
@@ -8,13 +8,13 @@ using namespace boost::geometry;
 typedef model::d2::point_xy<double> point_2d;
 typedef model::polygon<point_2d> polygon_2d;
 
-void MocoStabilityGoal::initializeOnModelImpl(const Model&) const {
+void MocoProjectedStabilityGoal::initializeOnModelImpl(const Model&) const {
 
     // Specify 1 integrand, 1 output, position stage
     setRequirements(1, 1, SimTK::Stage::Dynamics);
 }
 
-void MocoStabilityGoal::calcIntegrandImpl(
+void MocoProjectedStabilityGoal::calcIntegrandImpl(
         const IntegrandInput& input, double& integrand) const {
     
     // Update model positions
@@ -43,14 +43,10 @@ void MocoStabilityGoal::calcIntegrandImpl(
     // Get model weight
     double model_weight = getModel().getGravity().get(1)*getModel().getTotalMass(input.state);
         
-    // Create BoS polygon
-    polygon_2d bos_poly;
+    // Create PBoS polygon
+    polygon_2d pbos_poly;
     bool empty = true;
     for (int i = 0; i < force_strings.size(); i++) {
-        // Compute force at contact point
-        const auto& force = getModel().getComponent
-            <SmoothSphereHalfSpaceForce>(force_strings[i]);
-        Array<double> force_values = force.getRecordValues(input.state);
 
         // Get contact sphere & associated frame
         const auto& geometries = getModel().getContactGeometrySet();
@@ -61,21 +57,13 @@ void MocoStabilityGoal::calcIntegrandImpl(
         SimTK::Vec3 ground_point = frame.findStationLocationInGround(
             input.state, sphere.get_location());
 
-        // If we register a vertical force, this point is active, so we append 
-        // it to our BoS polygon
-        if (force_values[1] > force.get_constant_contact_force()) {
-
-            // Append the projected 2D point to our polygon
-            append(bos_poly.outer(), make<point_2d>(
-                ground_point.get(0), ground_point.get(2)));
-
-            // Note that we have at least one point in our bos polygon
-            empty = false;
-        }
+        // Append the projected 2D point to our polygon
+        append(pbos_poly.outer(), make<point_2d>(
+            ground_point.get(0), ground_point.get(2)));
     }
 
     // Close the polygons & make sure they are directed clockwise
-    correct(bos_poly);
+    correct(pbos_poly);
 
     // Compute the position & velocity of the CoM of the model given the current state
     double Mass = 0.0;
@@ -115,20 +103,16 @@ void MocoStabilityGoal::calcIntegrandImpl(
     assign_values(extrapolated_com, xcom[0], xcom[2]);
 
     // Compute the integrand as the distance between the bos centre and the xcom
-    point_2d bos_cent;
-    integrand = 10.0;  // Default value if BoS is empty
-    // If our polygon is non-empty...
-    if (!empty) {
+    point_2d pbos_cent;
 
-        // Compute the centre of the bos polygon
-        centroid(bos_poly, bos_cent);
+    // Compute the centre of the bos polygon
+    centroid(pbos_poly, pbos_cent);
 
-        // Compute the distance between the bos centre and the extrapolated CoM
-        integrand = distance(extrapolated_com, bos_cent);
-    }
+    // Compute the distance between the bos centre and the extrapolated CoM
+    integrand = distance(extrapolated_com, pbos_cent);
 }
 
-void MocoStabilityGoal::calcGoalImpl(
+void MocoProjectedStabilityGoal::calcGoalImpl(
         const GoalInput& input, SimTK::Vector& cost) const {
     cost[0] = input.integral;
 }

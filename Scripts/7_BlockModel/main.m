@@ -1,6 +1,6 @@
 % Input model & reference kinematics
 output_dir = createOutputFolder('7_BlockModel');
-model_path = '2D_gait_jointspace_welded.osim';
+model_path = '2D_gait_musclespace_welded.osim';
 reference_data = 'ReferenceData.sto';
 
 % Parse bounds
