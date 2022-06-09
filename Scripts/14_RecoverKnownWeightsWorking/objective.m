@@ -16,7 +16,7 @@ function result = objective(executable, model_path, guess_path, ...
     % Generate sit-to-stand solution
     output_path = [output_dir filesep 'results.txt'];
     [~, result] = mocoExecutableInterface(executable, ...
-        model_path, guess_path, output_path, reference_path, normalised_weights);
+        model_path, guess_path, output_path, reference_path, normalised_weights, true);
 
     % Delete results file
     delete(output_path);
