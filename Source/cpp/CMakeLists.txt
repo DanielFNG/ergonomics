@@ -22,9 +22,8 @@ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
         set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 endif()
 
-# Find OpenSim
-set(OPENSIM_INSTALL_DIR $ENV{OPENSIM_HOME} CACHE PATH "Top-level directory of OpenSim install")
-find_package(OpenSim REQUIRED PATHS "${OPENSIM_INSTALL_DIR}")
+# Find OpenSim - should work if the OpenSim bin folder is in the PATH
+find_package(OpenSim REQUIRED)
 
 # Find Boost
 set(Boost_DEBUG ON)
