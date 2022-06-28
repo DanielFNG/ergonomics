@@ -33,6 +33,7 @@ mkdir(output_dir);
 checkpoint_file = [output_dir filesep 'checkpoint.mat'];
 save_file = [output_dir filesep 'results.mat'];
 settings_file = [output_dir filesep 'settings.mat'];
+reference_path = [output_dir filesep 'reference.sto'];
 
 % Save relevant settings for reference
 save(settings_file, 'method', 'executable', 'n_evaluations', ...
@@ -45,11 +46,6 @@ ideal_optimised_cost = 10;
 n_parameters = length(reference_weights);
 n_active_parameters = sum(weights_active);
 n_seeds = n_parameters^2;
-
-% Define objective 
-outer_objective = @ (weights) objective(executable, ...
-    model_path, guess_path, output_dir, reference_path, ...
-    weights, normalisers, weights_active);
 
 %% Initialisation steps
 
@@ -70,13 +66,17 @@ for i = 1:n_parameters
 end
 
 % Generate reference motion if needed
-reference_path = [output_dir filesep 'reference.sto'];
 if ~isfile(reference_path)
     mocoExecutableInterface(executable, model_path, guess_path, ...
         reference_path, 'none', reference_weights./normalisers, true);
 end
 
 %% Main optimisation step
+
+% Define objective 
+outer_objective = @ (weights) objective(executable, ...
+    model_path, guess_path, output_dir, reference_path, ...
+    weights, normalisers, weights_active);
 
 switch method
     case 'bayesopt'
