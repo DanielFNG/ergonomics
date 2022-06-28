@@ -13,10 +13,10 @@ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
         set(CMAKE_CXX_STANDARD_REQUIRED ON)
         set(CMAKE_CXX_EXTENSIONS OFF)
 
-        # Settings for compilation on Apple
-        if (APPLE)
-                set(CMAKE_OSX_ARCHITECTURES x86_64)
-        endif()
+        # Force x86_64 compilation on Apple M-series chips
+        # if (APPLE)
+        #         set(CMAKE_OSX_ARCHITECTURES x86_64)
+        # endif()
 
         # Support folders in IDEs
         set_property(GLOBAL PROPERTY USE_FOLDERS ON)
