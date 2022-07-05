@@ -6,14 +6,14 @@ save_dir = createOutputFolder('3_MocoSitToStand');
 save_folder = 'new_bounds_fixed';
 
 % Bound information
-bounds_file = 'bounds.txt';
+bounds_file = 'bounds_block.txt';
 
 % Settings for reference data
 r_name = 'ReferenceData';
 
 % Settings for the tracking problem
 t_name = 'TrackingSolution';
-t_states = 1;
+t_states = 10;
 t_controls = 0.001;
 
 % Weights for the predictive problem
@@ -27,7 +27,7 @@ timerange = [1.0, 2.0];
 %% Parameters (which should be varied carefully)
 
 % Input model & kinematics
-input_model = '2D_gait_contact_constrained_activation.osim';
+input_model = '2D_gait_musclespace_welded.osim';
 input_kinematics = 'inputIK.mot';
 
 % Specific settings for this model & kinematics combo

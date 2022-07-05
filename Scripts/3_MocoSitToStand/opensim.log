@@ -1,0 +1,1597 @@
+[2022-04-17 03:02:49.499] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 03:02:49.500] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 03:02:49.501] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 03:02:52.649] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 03:02:52.650] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 03:02:52.651] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 03:02:53.399] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 03:02:53.399] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 03:02:53.400] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 03:02:53.513] [info] ========================================================================
+[2022-04-17 03:02:53.513] [info] MocoCasADiSolver starting.
+[2022-04-17 03:02:53.513] [info] 17/04/2022 03:02:53
+[2022-04-17 03:02:53.513] [info] ------------------------------------------------------------------------
+[2022-04-17 03:02:53.513] [cout] [info] Costs: (total: 2)
+[2022-04-17 03:02:53.513] [cout] [info]   state_tracking. MocoStateTrackingGoal, enabled: true, mode: cost, weight: 100.0
+[2022-04-17 03:02:53.513] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/value, weight: 1.0
+[2022-04-17 03:02:53.513] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/value, weight: 1.0
+[2022-04-17 03:02:53.513] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/value, weight: 1.0
+[2022-04-17 03:02:53.513] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/value, weight: 0.0
+[2022-04-17 03:02:53.513] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/value, weight: 1.0
+[2022-04-17 03:02:53.513] [cout] [info]         state: /jointset/knee_l/knee_angle_l/value, weight: 0.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/knee_r/knee_angle_r/value, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/value, weight: 0.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/value, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/lumbar/lumbar/value, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/speed, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/speed, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/speed, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/speed, weight: 0.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/speed, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/knee_l/knee_angle_l/speed, weight: 0.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/knee_r/knee_angle_r/speed, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/speed, weight: 0.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/speed, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         state: /jointset/lumbar/lumbar/speed, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]   control_effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.00100000
+[2022-04-17 03:02:53.514] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /vasti_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /soleus_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /vasti_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /soleus_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2022-04-17 03:02:53.514] [cout] [info] Endpoint constraints: none
+[2022-04-17 03:02:53.514] [cout] [info] Kinematic constraints: (total: 3)
+[2022-04-17 03:02:53.514] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 03:02:53.514] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 03:02:53.514] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 03:02:53.514] [cout] [info] Path constraints: none
+[2022-04-17 03:02:53.514] [cout] [info] States: (total: 39)
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0, 2] initial: 0.572
+[2022-04-17 03:02:53.514] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [-3.14159, 3.14159] initial: 0.757927 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-3.14159, 3.14159] initial: -1.95674 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-3.14159, 3.14159] initial: -1.95674 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [-2, 2] initial: 0.05
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [-3.14159, 3.14159] initial: 0.346046 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-3.14159, 3.14159] initial: 0.852733 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [-3.14159, 3.14159] initial: 0.346046 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-3.14159, 3.14159] initial: 0.852733 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-3.14159, 3.14159] initial: -0.928218 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 03:02:53.514] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2022-04-17 03:02:53.514] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info] Controls: (total: 19)
+[2022-04-17 03:02:53.515] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2022-04-17 03:02:53.515] [cout] [info] Parameters: none
+[2022-04-17 03:02:53.934] [info] Number of threads: 12
+[2022-04-17 04:42:38.921] [info] Set log level to Info.
+[2022-04-17 04:42:38.929] [info] ------------------------------------------------------------------------
+[2022-04-17 04:42:38.929] [info] Elapsed real time: 5985 second(s) (1 hour(s), 39 minute(s), 45 second(s)).
+[2022-04-17 04:42:38.929] [info] 17/04/2022 04:42:38
+[2022-04-17 04:42:38.929] [warning] MocoCasADiSolver did NOT succeed:
+[2022-04-17 04:42:38.929] [warning]   Maximum_Iterations_Exceeded
+[2022-04-17 04:42:38.929] [info] ========================================================================
+[2022-04-17 04:49:45.294] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 04:49:45.295] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 04:49:45.295] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 04:49:45.295] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 04:49:45.295] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 04:49:45.295] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 04:49:45.295] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 04:49:45.295] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 04:49:45.296] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 04:49:45.887] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 04:49:45.888] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 04:49:45.889] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 04:49:46.615] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 04:49:46.615] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 04:49:46.616] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 04:49:46.710] [info] ========================================================================
+[2022-04-17 04:49:46.710] [info] MocoCasADiSolver starting.
+[2022-04-17 04:49:46.710] [info] 17/04/2022 04:49:46
+[2022-04-17 04:49:46.710] [info] ------------------------------------------------------------------------
+[2022-04-17 04:49:46.710] [cout] [info] Costs: (total: 2)
+[2022-04-17 04:49:46.710] [cout] [info]   state_tracking. MocoStateTrackingGoal, enabled: true, mode: cost, weight: 100.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/value, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/value, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/value, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/value, weight: 0.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/value, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/knee_l/knee_angle_l/value, weight: 0.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/knee_r/knee_angle_r/value, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/value, weight: 0.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/value, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/lumbar/lumbar/value, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/speed, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/speed, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/speed, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/speed, weight: 0.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/speed, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/knee_l/knee_angle_l/speed, weight: 0.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/knee_r/knee_angle_r/speed, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/speed, weight: 0.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/speed, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         state: /jointset/lumbar/lumbar/speed, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]   control_effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.00100000
+[2022-04-17 04:49:46.710] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /vasti_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /soleus_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /vasti_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /soleus_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2022-04-17 04:49:46.710] [cout] [info] Endpoint constraints: none
+[2022-04-17 04:49:46.710] [cout] [info] Kinematic constraints: (total: 3)
+[2022-04-17 04:49:46.710] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 04:49:46.710] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 04:49:46.710] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 04:49:46.710] [cout] [info] Path constraints: none
+[2022-04-17 04:49:46.710] [cout] [info] States: (total: 39)
+[2022-04-17 04:49:46.710] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0, 1] initial: 0.535
+[2022-04-17 04:49:46.710] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.710] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [0, 0.872665] initial: 0.757927 final: 0
+[2022-04-17 04:49:46.710] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 04:49:46.710] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [0, 1] initial: 0.05
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-2.44346, 0] initial: -0.928218 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-26.1799, 26.1799] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-17.4533, 34.9066] initial: 0 final: 0
+[2022-04-17 04:49:46.711] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info] Controls: (total: 19)
+[2022-04-17 04:49:46.711] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2022-04-17 04:49:46.711] [cout] [info] Parameters: none
+[2022-04-17 04:49:47.129] [info] Number of threads: 12
+[2022-04-17 05:28:14.546] [info] Set log level to Info.
+[2022-04-17 05:28:14.554] [info] ------------------------------------------------------------------------
+[2022-04-17 05:28:14.554] [info] Elapsed real time: 2308 second(s) (38 minute(s), 28 second(s)).
+[2022-04-17 05:28:14.554] [info] 17/04/2022 05:28:14
+[2022-04-17 05:28:14.554] [warning] MocoCasADiSolver did NOT succeed:
+[2022-04-17 05:28:14.554] [warning]   Restoration_Failed
+[2022-04-17 05:28:14.554] [info] ========================================================================
+[2022-04-17 12:47:54.921] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 12:47:54.922] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 12:47:54.923] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 12:47:55.490] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 12:47:55.490] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 12:47:55.490] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 12:47:55.491] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 12:47:55.492] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 12:47:55.492] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 12:47:55.492] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 12:47:55.492] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 12:47:55.492] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 12:47:56.258] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 12:47:56.258] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 12:47:56.258] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 12:47:56.258] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 12:47:56.258] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 12:47:56.258] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 12:47:56.259] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 12:47:56.260] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 12:47:56.260] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 12:47:56.381] [info] ========================================================================
+[2022-04-17 12:47:56.381] [info] MocoCasADiSolver starting.
+[2022-04-17 12:47:56.381] [info] 17/04/2022 12:47:56
+[2022-04-17 12:47:56.381] [info] ------------------------------------------------------------------------
+[2022-04-17 12:47:56.381] [cout] [info] Costs: (total: 2)
+[2022-04-17 12:47:56.381] [cout] [info]   state_tracking. MocoStateTrackingGoal, enabled: true, mode: cost, weight: 1000.0
+[2022-04-17 12:47:56.381] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/value, weight: 1.0
+[2022-04-17 12:47:56.381] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/value, weight: 1.0
+[2022-04-17 12:47:56.381] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/value, weight: 1.0
+[2022-04-17 12:47:56.381] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/value, weight: 0.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/value, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/knee_l/knee_angle_l/value, weight: 0.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/knee_r/knee_angle_r/value, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/value, weight: 0.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/value, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/lumbar/lumbar/value, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/speed, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/speed, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/speed, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/speed, weight: 0.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/speed, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/knee_l/knee_angle_l/speed, weight: 0.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/knee_r/knee_angle_r/speed, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/speed, weight: 0.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/speed, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         state: /jointset/lumbar/lumbar/speed, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]   control_effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.00100000
+[2022-04-17 12:47:56.382] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /vasti_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /soleus_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /vasti_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /soleus_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2022-04-17 12:47:56.382] [cout] [info] Endpoint constraints: none
+[2022-04-17 12:47:56.382] [cout] [info] Kinematic constraints: (total: 3)
+[2022-04-17 12:47:56.382] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 12:47:56.382] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 12:47:56.382] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 12:47:56.382] [cout] [info] Path constraints: none
+[2022-04-17 12:47:56.382] [cout] [info] States: (total: 39)
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0, 1] initial: 0.535
+[2022-04-17 12:47:56.382] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [0, 0.872665] initial: 0.757927 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [0, 1] initial: 0.05
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-2.44346, 0] initial: -0.928218 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-26.1799, 26.1799] initial: 0 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 12:47:56.382] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 12:47:56.383] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 12:47:56.383] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 12:47:56.383] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-17.4533, 34.9066] initial: 0 final: 0
+[2022-04-17 12:47:56.383] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info] Controls: (total: 19)
+[2022-04-17 12:47:56.383] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2022-04-17 12:47:56.383] [cout] [info] Parameters: none
+[2022-04-17 12:47:56.830] [info] Number of threads: 12
+[2022-04-17 14:04:41.267] [info] Set log level to Info.
+[2022-04-17 14:04:41.276] [info] ------------------------------------------------------------------------
+[2022-04-17 14:04:41.276] [info] Elapsed real time: 4605 second(s) (1 hour(s), 16 minute(s), 45 second(s)).
+[2022-04-17 14:04:41.276] [info] 17/04/2022 14:04:41
+[2022-04-17 14:04:41.276] [warning] MocoCasADiSolver did NOT succeed:
+[2022-04-17 14:04:41.276] [warning]   Restoration_Failed
+[2022-04-17 14:04:41.276] [info] ========================================================================
+[2022-04-17 14:06:01.538] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:06:01.538] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:06:01.538] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:06:01.538] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:06:01.539] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:06:01.540] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:06:01.540] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:06:01.540] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:06:01.540] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:06:01.540] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:06:02.032] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:06:02.032] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:06:02.032] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:06:02.033] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:06:02.034] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:06:02.034] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:06:02.034] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:06:02.034] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:06:02.034] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:06:02.758] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:06:02.759] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:06:02.760] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:06:02.855] [info] ========================================================================
+[2022-04-17 14:06:02.855] [info] MocoCasADiSolver starting.
+[2022-04-17 14:06:02.855] [info] 17/04/2022 14:06:02
+[2022-04-17 14:06:02.855] [info] ------------------------------------------------------------------------
+[2022-04-17 14:06:02.855] [cout] [info] Costs: (total: 2)
+[2022-04-17 14:06:02.855] [cout] [info]   state_tracking. MocoStateTrackingGoal, enabled: true, mode: cost, weight: 10.0
+[2022-04-17 14:06:02.855] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/value, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/value, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/value, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/value, weight: 0.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/value, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/knee_l/knee_angle_l/value, weight: 0.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/knee_r/knee_angle_r/value, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/value, weight: 0.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/value, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/lumbar/lumbar/value, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/speed, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/speed, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/speed, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/speed, weight: 0.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/speed, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/knee_l/knee_angle_l/speed, weight: 0.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/knee_r/knee_angle_r/speed, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/speed, weight: 0.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/speed, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         state: /jointset/lumbar/lumbar/speed, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]   control_effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.00100000
+[2022-04-17 14:06:02.856] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /vasti_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /soleus_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /vasti_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /soleus_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2022-04-17 14:06:02.856] [cout] [info] Endpoint constraints: none
+[2022-04-17 14:06:02.856] [cout] [info] Kinematic constraints: (total: 3)
+[2022-04-17 14:06:02.856] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:06:02.856] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:06:02.856] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:06:02.856] [cout] [info] Path constraints: none
+[2022-04-17 14:06:02.856] [cout] [info] States: (total: 39)
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0, 1] initial: 0.535
+[2022-04-17 14:06:02.856] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [0, 0.872665] initial: 0.757927 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [0, 1] initial: 0.05
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-2.44346, 0] initial: -0.928218 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-26.1799, 26.1799] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-17.4533, 34.9066] initial: 0 final: 0
+[2022-04-17 14:06:02.856] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2022-04-17 14:06:02.856] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info] Controls: (total: 19)
+[2022-04-17 14:06:02.857] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2022-04-17 14:06:02.857] [cout] [info] Parameters: none
+[2022-04-17 14:06:03.295] [info] Number of threads: 12
+[2022-04-17 14:13:14.519] [info] Set log level to Info.
+[2022-04-17 14:13:14.527] [info] ------------------------------------------------------------------------
+[2022-04-17 14:13:14.527] [info] Elapsed real time: 432 second(s) (7 minute(s), 12 second(s)).
+[2022-04-17 14:13:14.527] [info] 17/04/2022 14:13:14
+[2022-04-17 14:13:14.527] [info] MocoCasADiSolver succeeded!
+[2022-04-17 14:13:14.527] [info] ========================================================================
+[2022-04-17 14:13:14.624] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:14.624] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:14.625] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:14.626] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:14.664] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:14.664] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:14.665] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:14.731] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:14.731] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:14.731] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:14.731] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:14.731] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:14.731] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.732] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.733] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:14.733] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:14.733] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:14.733] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:14.804] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:14.804] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:14.804] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:14.804] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:14.804] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:14.804] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:14.804] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:14.804] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:14.805] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:14.870] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:14.870] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:14.870] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:14.870] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:14.870] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:14.870] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:14.871] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:14.872] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:14.872] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:14.923] [info] ========================================================================
+[2022-04-17 14:13:14.923] [info] MocoCasADiSolver starting.
+[2022-04-17 14:13:14.923] [info] 17/04/2022 14:13:14
+[2022-04-17 14:13:14.923] [info] ------------------------------------------------------------------------
+[2022-04-17 14:13:14.923] [cout] [info] Costs: (total: 2)
+[2022-04-17 14:13:14.923] [cout] [info]   effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.01
+[2022-04-17 14:13:14.923] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /vasti_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /soleus_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2022-04-17 14:13:14.923] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /vasti_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /soleus_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]   translation. MocoTranslationTrackingGoal, enabled: true, mode: cost, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         translation reference file: 
+[2022-04-17 14:13:14.924] [cout] [info]         frame 0: /bodyset/calcn_r, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info]         frame 1: /bodyset/calcn_l, weight: 1.0
+[2022-04-17 14:13:14.924] [cout] [info] Endpoint constraints: none
+[2022-04-17 14:13:14.924] [cout] [info] Kinematic constraints: (total: 3)
+[2022-04-17 14:13:14.924] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:13:14.924] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:13:14.924] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:13:14.924] [cout] [info] Path constraints: none
+[2022-04-17 14:13:14.924] [cout] [info] States: (total: 39)
+[2022-04-17 14:13:14.924] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [0, 0.872665] initial: 0.757927 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [0, 1] initial: 0.05
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0, 1] initial: 0.535
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [0, 1.22173] initial: 0.368422 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-2.44346, 0] initial: -0.928218 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-26.1799, 26.1799] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-17.4533, 34.9066] initial: 0 final: 0
+[2022-04-17 14:13:14.924] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:13:14.924] [cout] [info] Controls: (total: 19)
+[2022-04-17 14:13:14.924] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2022-04-17 14:13:14.925] [cout] [info] Parameters: none
+[2022-04-17 14:13:14.937] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:14.937] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:14.937] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:14.937] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:14.937] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:14.937] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:14.937] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:14.937] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:14.938] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:14.999] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:14.999] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.000] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.061] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.062] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.063] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.123] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.124] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.125] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.186] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.187] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.188] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.251] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.252] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.253] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.314] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.314] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.314] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.314] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.314] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.314] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.315] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.316] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.316] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.316] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.383] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.383] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.383] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.383] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.383] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.384] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.385] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.385] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.385] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.449] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.450] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.451] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.516] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.517] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.518] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.579] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.580] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.581] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.641] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:13:15.641] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:13:15.641] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:13:15.641] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:13:15.641] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:13:15.642] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:13:15.643] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:13:15.643] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:13:15.691] [info] Number of threads: 12
+[2022-04-17 14:19:31.876] [info] Set log level to Info.
+[2022-04-17 14:19:31.882] [info] ------------------------------------------------------------------------
+[2022-04-17 14:19:31.882] [info] Elapsed real time: 377 second(s) (6 minute(s), 17 second(s)).
+[2022-04-17 14:19:31.882] [info] 17/04/2022 14:19:31
+[2022-04-17 14:19:31.882] [info] MocoCasADiSolver succeeded!
+[2022-04-17 14:19:31.882] [info] ========================================================================
+[2022-04-17 14:35:09.185] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:35:09.185] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:35:09.185] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:35:09.185] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:35:09.185] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:35:09.185] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:35:09.185] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:35:09.185] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:35:09.186] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:35:09.802] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:35:09.802] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:35:09.802] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:35:09.803] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:35:09.804] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:35:09.804] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:35:09.804] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:35:09.804] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:35:09.804] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:35:09.804] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:35:10.575] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 14:35:10.575] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 14:35:10.576] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 14:35:10.577] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 14:35:10.577] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:35:10.577] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 14:35:10.577] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 14:35:10.577] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 14:35:10.577] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 14:35:10.577] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 14:35:10.678] [info] ========================================================================
+[2022-04-17 14:35:10.678] [info] MocoCasADiSolver starting.
+[2022-04-17 14:35:10.678] [info] 17/04/2022 14:35:10
+[2022-04-17 14:35:10.678] [info] ------------------------------------------------------------------------
+[2022-04-17 14:35:10.678] [cout] [info] Costs: (total: 2)
+[2022-04-17 14:35:10.678] [cout] [info]   state_tracking. MocoStateTrackingGoal, enabled: true, mode: cost, weight: 10.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/value, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/value, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/value, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/value, weight: 0.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/value, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/knee_l/knee_angle_l/value, weight: 0.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/knee_r/knee_angle_r/value, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/value, weight: 0.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/value, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/lumbar/lumbar/value, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/speed, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/speed, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/speed, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/speed, weight: 0.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/speed, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/knee_l/knee_angle_l/speed, weight: 0.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/knee_r/knee_angle_r/speed, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/speed, weight: 0.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/speed, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         state: /jointset/lumbar/lumbar/speed, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]   control_effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.00100000
+[2022-04-17 14:35:10.678] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /vasti_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /soleus_r, weight: 1.0
+[2022-04-17 14:35:10.678] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /vasti_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /soleus_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2022-04-17 14:35:10.679] [cout] [info] Endpoint constraints: none
+[2022-04-17 14:35:10.679] [cout] [info] Kinematic constraints: (total: 3)
+[2022-04-17 14:35:10.679] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:35:10.679] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:35:10.679] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 14:35:10.679] [cout] [info] Path constraints: none
+[2022-04-17 14:35:10.679] [cout] [info] States: (total: 39)
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0, 1] initial: 0.572
+[2022-04-17 14:35:10.679] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [0, 0.872665] initial: 0.757927 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-4.18879, 0.174533] initial: -1.95674 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [0, 1] initial: 0.05
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [0, 1.22173] initial: 0.346046 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-8.72665, 52.3599] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [0, 1.22173] initial: 0.346046 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-0.523599, 2.79253] initial: 0.852733 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-2.44346, 0] initial: -0.928218 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-26.1799, 26.1799] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-43.6332, 26.1799] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-20.944, 13.9626] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-17.4533, 34.9066] initial: 0 final: 0
+[2022-04-17 14:35:10.679] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.679] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info] Controls: (total: 19)
+[2022-04-17 14:35:10.680] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2022-04-17 14:35:10.680] [cout] [info] Parameters: none
+[2022-04-17 14:35:11.130] [info] Number of threads: 12
+[2022-04-17 14:47:59.547] [info] Set log level to Info.
+[2022-04-17 14:47:59.556] [info] ------------------------------------------------------------------------
+[2022-04-17 14:47:59.556] [info] Elapsed real time: 769 second(s) (12 minute(s), 49 second(s)).
+[2022-04-17 14:47:59.556] [info] 17/04/2022 14:47:59
+[2022-04-17 14:47:59.556] [info] MocoCasADiSolver succeeded!
+[2022-04-17 14:47:59.556] [info] ========================================================================
+[2022-04-17 18:31:37.203] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 18:31:37.204] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 18:31:37.205] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 18:31:37.667] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 18:31:37.668] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 18:31:37.669] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 18:31:38.410] [info] Loaded model 2D_gait from file 2D_gait_musclespace_welded.osim
+[2022-04-17 18:31:38.410] [warning] Couldn't find file 'r_pelvis.vtp'.
+[2022-04-17 18:31:38.410] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2022-04-17 18:31:38.410] [warning] Couldn't find file 'sacrum.vtp'.
+[2022-04-17 18:31:38.410] [warning] Couldn't find file 'femur_l.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'femur_r.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'tibia_l.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'l_fibula.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'tibia_r.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'r_fibula.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'l_talus.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'r_talus.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'l_foot.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'r_foot.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'r_bofoot.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'block.vtp'.
+[2022-04-17 18:31:38.411] [warning] Couldn't find file 'hat_spine.vtp'.
+[2022-04-17 18:31:38.412] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2022-04-17 18:31:38.412] [warning] Couldn't find file 'hat_skull.vtp'.
+[2022-04-17 18:31:38.412] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2022-04-17 18:31:38.550] [info] ========================================================================
+[2022-04-17 18:31:38.550] [info] MocoCasADiSolver starting.
+[2022-04-17 18:31:38.550] [info] 17/04/2022 18:31:38
+[2022-04-17 18:31:38.550] [info] ------------------------------------------------------------------------
+[2022-04-17 18:31:38.550] [cout] [info] Costs: (total: 2)
+[2022-04-17 18:31:38.550] [cout] [info]   state_tracking. MocoStateTrackingGoal, enabled: true, mode: cost, weight: 10.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/value, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/value, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/value, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/value, weight: 0.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/value, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/knee_l/knee_angle_l/value, weight: 0.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/knee_r/knee_angle_r/value, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/value, weight: 0.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/value, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/lumbar/lumbar/value, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/groundPelvis/pelvis_tilt/speed, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/groundPelvis/pelvis_tx/speed, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/groundPelvis/pelvis_ty/speed, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/hip_l/hip_flexion_l/speed, weight: 0.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/hip_r/hip_flexion_r/speed, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/knee_l/knee_angle_l/speed, weight: 0.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/knee_r/knee_angle_r/speed, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/ankle_l/ankle_angle_l/speed, weight: 0.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/ankle_r/ankle_angle_r/speed, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         state: /jointset/lumbar/lumbar/speed, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]   control_effort. MocoControlGoal, enabled: true, mode: cost, weight: 0.00100000
+[2022-04-17 18:31:38.550] [cout] [info]         control: /lumbarAct, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /hamstrings_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /bifemsh_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /glut_max_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /iliopsoas_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /rect_fem_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /vasti_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /gastroc_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /soleus_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /tib_ant_r, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /hamstrings_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /bifemsh_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /glut_max_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /iliopsoas_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /rect_fem_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /vasti_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /gastroc_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /soleus_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info]         control: /tib_ant_l, weight: 1.0
+[2022-04-17 18:31:38.550] [cout] [info] Endpoint constraints: none
+[2022-04-17 18:31:38.550] [cout] [info] Kinematic constraints: (total: 3)
+[2022-04-17 18:31:38.550] [cout] [info]   kinematic_constraint_cid10. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 18:31:38.550] [cout] [info]   kinematic_constraint_cid11. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 18:31:38.550] [cout] [info]   kinematic_constraint_cid12. MocoConstraintInfo. number of scalar equations: 3. bounds: 0, 0, 0
+[2022-04-17 18:31:38.550] [cout] [info] Path constraints: none
+[2022-04-17 18:31:38.550] [cout] [info] States: (total: 39)
+[2022-04-17 18:31:38.550] [cout] [info]   /jointset/groundPelvis/pelvis_ty/value. bounds: [0, 2] initial: 0.572
+[2022-04-17 18:31:38.550] [cout] [info]   /gastroc_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/value. bounds: [-3.14159, 3.14159] initial: 0.757927 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/knee_r/knee_angle_r/value. bounds: [-3.14159, 3.14159] initial: -1.95674 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/knee_l/knee_angle_l/value. bounds: [-3.14159, 3.14159] initial: -1.95674 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/groundPelvis/pelvis_tx/value. bounds: [-2, 2] initial: 0.05
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/knee_r/knee_angle_r/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/ankle_l/ankle_angle_l/value. bounds: [-3.14159, 3.14159] initial: 0.346046 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/knee_l/knee_angle_l/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/hip_l/hip_flexion_l/value. bounds: [-3.14159, 3.14159] initial: 0.852733 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/ankle_r/ankle_angle_r/value. bounds: [-3.14159, 3.14159] initial: 0.346046 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/hip_r/hip_flexion_r/value. bounds: [-3.14159, 3.14159] initial: 0.852733 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/lumbar/lumbar/value. bounds: [-3.14159, 3.14159] initial: -0.928218 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/groundPelvis/pelvis_tilt/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/groundPelvis/pelvis_tx/speed. bounds: [-5, 5] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/groundPelvis/pelvis_ty/speed. bounds: [-2, 10] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/hip_l/hip_flexion_l/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/ankle_r/ankle_angle_r/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/hip_r/hip_flexion_r/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/ankle_l/ankle_angle_l/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /jointset/lumbar/lumbar/speed. bounds: [-6.28319, 6.28319] initial: 0 final: 0
+[2022-04-17 18:31:38.551] [cout] [info]   /lumbarAct/activation. bounds: [-1, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /hamstrings_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /bifemsh_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /glut_max_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /iliopsoas_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /rect_fem_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /tib_ant_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /vasti_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /gastroc_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /soleus_r/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /hamstrings_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /bifemsh_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /glut_max_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /iliopsoas_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /rect_fem_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /tib_ant_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /vasti_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /soleus_l/activation. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info] Controls: (total: 19)
+[2022-04-17 18:31:38.551] [cout] [info]   /hamstrings_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /lumbarAct. bounds: [-1, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /bifemsh_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /glut_max_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /tib_ant_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /vasti_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /rect_fem_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /iliopsoas_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /gastroc_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /soleus_r. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /hamstrings_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /bifemsh_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /glut_max_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.551] [cout] [info]   /iliopsoas_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.552] [cout] [info]   /rect_fem_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.552] [cout] [info]   /tib_ant_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.552] [cout] [info]   /vasti_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.552] [cout] [info]   /gastroc_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.552] [cout] [info]   /soleus_l. bounds: [0.01, 1]
+[2022-04-17 18:31:38.552] [cout] [info] Parameters: none
+[2022-04-17 18:31:38.977] [info] Number of threads: 12
+[2022-04-17 18:38:58.370] [info] Set log level to Info.
+[2022-04-17 18:38:58.378] [info] ------------------------------------------------------------------------
+[2022-04-17 18:38:58.378] [info] Elapsed real time: 440 second(s) (7 minute(s), 20 second(s)).
+[2022-04-17 18:38:58.378] [info] 17/04/2022 18:38:58
+[2022-04-17 18:38:58.378] [warning] MocoCasADiSolver did NOT succeed:
+[2022-04-17 18:38:58.378] [warning]   User_Requested_Stop
+[2022-04-17 18:38:58.378] [info] ========================================================================

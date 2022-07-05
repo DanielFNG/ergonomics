@@ -39,7 +39,7 @@ function solution = produceTrackingGuess(...
     effort.setWeight(w_controls);
 
     % Apply joint angle & speed bounds
-    applyStateBoundsTracking(problem, bounds); 
+    applyStateBounds(problem, bounds);
 
     % Solve tracking problem
     solution = study.solve();
