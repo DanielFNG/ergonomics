@@ -5,7 +5,8 @@ set(bin_dir_release "../../../../bin")
 set(APP_FILES 
     optimise4D
     optimise6D
-    optimise4D_cluster)
+    optimise4D_cluster
+    boundsParseAndPrint)
 
 # Create executables in turn
 foreach(TARGET IN LISTS APP_FILES)

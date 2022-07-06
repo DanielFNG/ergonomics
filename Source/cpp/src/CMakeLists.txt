@@ -4,7 +4,8 @@ add_library(custom_goals
     MocoProjectedStabilityGoal.cpp "${MocoLowerLevel_SOURCE_DIR}/include/MocoProjectedStabilityGoal.hpp"
     MocoWeightedStabilityGoal.cpp "${MocoLowerLevel_SOURCE_DIR}/include/MocoWeightedStabilityGoal.hpp"
     MocoMultiStabilityGoal.cpp "${MocoLowerLevel_SOURCE_DIR}/include/MocoMultiStabilityGoal.hpp"
-    MocoMultiJointReactionGoal.cpp "${MocoLowerLevel_SOURCE_DIR}/include/MocoMultiJointReactionGoal.hpp")
+    MocoMultiJointReactionGoal.cpp "${MocoLowerLevel_SOURCE_DIR}/include/MocoMultiJointReactionGoal.hpp"
+    ProblemBounds.cpp "${MocoLowerLevel_SOURCE_DIR}/include/ProblemBounds.hpp")
 
 # Inlcude directories
 target_include_directories(custom_goals PUBLIC ../include)
