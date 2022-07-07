@@ -7,7 +7,7 @@
 #include <fstream>
 #include <OpenSim/Moco/osimMoco.h>
 
-ProblemBounds::ProblemBounds(std::string filename, OpenSim::Model osim) {
+ProblemBounds::ProblemBounds(std::string filename, const OpenSim::Model& osim) {
 
     // Open bounds file
     std::ifstream bounds_file;
@@ -19,9 +19,17 @@ ProblemBounds::ProblemBounds(std::string filename, OpenSim::Model osim) {
     std::getline(bounds_file, line, '\n');
     for (int i = 0; i < line.length(); i++) 
     {
+        std::cout << "Oi" << std::endl;
         line[i] = tolower(line[i]);
     }
     in_degrees = (line == "true") ? true : false;
+
+    // Get time bounds
+    std::getline(bounds_file, line, '\t');
+    std::getline(bounds_file, line, '\t');
+    time_bound.push_back(std::stod(line));
+    std::getline(bounds_file, line, '\n');
+    time_bound.push_back(std::stod(line));
 
     // Ignore the line of headers
     std::getline(bounds_file, line, '\n');
@@ -85,6 +93,7 @@ void ProblemBounds::writeToFile(std::string output_path, bool in_degrees) {
 
     std::string in_degrees_str = (in_degrees) ? "true" : "false";
     output_file << "indegrees\t" << in_degrees_str << "\n";
+    output_file << "timerange\t" << time_bound[0] << '\t' << time_bound[1] << '\n';
     output_file << "Name\t" << "LowerBound\t" << "UpperBound\t" << "InitialValue\t" << "FinalValue\n";  
     for (int i = 0; i < coordinate_name.size(); i++)
     {
@@ -110,6 +119,9 @@ void ProblemBounds::assign(OpenSim::MocoProblem& problem)
 
         // Set state info
         problem.setStateInfo(coordinate_name[i], {lower_bound[i], upper_bound[i]}, initial, final);
+
+        // Set time info
+        problem.setTimeBounds(0, {time_bound[0], time_bound[1]});
     }
 }
 

@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     std::string model_path = argv[3];
 
     // Load OpenSim model
-    OpenSim::Model osim = OpenSim::Model(model_path);
+    const OpenSim::Model& osim = OpenSim::Model(model_path);
 
     // Parse bounds
     ProblemBounds bounds = ProblemBounds(bounds_in, osim);
