@@ -66,8 +66,6 @@ void LowerLevel::configureSolver()
 void LowerLevel::configureGuess()
 {
     // Specify initial guess
-    //MocoTrajectory guess = MocoTrajectory(config.guess_path);
-    //study.updSolver<MocoCasADiSolver>().setGuess(guess);
     study.updSolver<MocoCasADiSolver>().setGuessFile(config.guess_path);
 }
 
