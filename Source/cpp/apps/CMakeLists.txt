@@ -2,10 +2,7 @@
 set(bin_dir_release "../../../../bin")
 
 # Executables we want to compile
-set(APP_FILES 
-    optimise6D
-    boundsParseAndPrint
-    configParseAndPrint
+set(APP_FILES
     solveAndCompare
     solveAndPrint)
 
