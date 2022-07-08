@@ -3,11 +3,11 @@ set(bin_dir_release "../../../../bin")
 
 # Executables we want to compile
 set(APP_FILES 
-    optimise4D
     optimise6D
-    optimise4D_cluster
     boundsParseAndPrint
-    configParseAndPrint)
+    configParseAndPrint
+    solveAndCompare
+    solveAndPrint)
 
 # Create executables in turn
 foreach(TARGET IN LISTS APP_FILES)

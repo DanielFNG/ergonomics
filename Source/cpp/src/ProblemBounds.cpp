@@ -7,6 +7,8 @@
 #include <fstream>
 #include <OpenSim/Moco/osimMoco.h>
 
+ProblemBounds::ProblemBounds() {};
+
 ProblemBounds::ProblemBounds(std::string filename, const OpenSim::Model& osim) {
 
     // Open bounds file
@@ -19,7 +21,6 @@ ProblemBounds::ProblemBounds(std::string filename, const OpenSim::Model& osim) {
     std::getline(bounds_file, line, '\n');
     for (int i = 0; i < line.length(); i++) 
     {
-        std::cout << "Oi" << std::endl;
         line[i] = tolower(line[i]);
     }
     in_degrees = (line == "true") ? true : false;
@@ -39,7 +40,7 @@ ProblemBounds::ProblemBounds(std::string filename, const OpenSim::Model& osim) {
     {
         // Read first entry. Assume we're done if there's an empty line at the end of the file.
         std::getline(bounds_file, line, '\t');
-        if (line.empty()) {
+        if (line.empty() || line == "\n") {
             break;
         }
         coordinate_name.push_back(trim(line));
@@ -108,28 +109,11 @@ void ProblemBounds::writeToFile(std::string output_path, bool in_degrees) {
 
 }
 
-void ProblemBounds::assign(OpenSim::MocoProblem& problem)
-{
-    for (int i = 0; i < coordinate_name.size(); i++)
-    {
-        // Handle absence of specific initial/final values
-        double initial, final;
-        std::isnan(initial_value[i]) ? initial = {} : initial = initial_value[i];
-        std::isnan(final_value[i]) ? final = {} : final = final_value[i];
-
-        // Set state info
-        problem.setStateInfo(coordinate_name[i], {lower_bound[i], upper_bound[i]}, initial, final);
-
-        // Set time info
-        problem.setTimeBounds(0, {time_bound[0], time_bound[1]});
-    }
-}
-
 std::string trim(const std::string& line)
 {
-    if (line.find_first_not_of(' ') != std::string::npos)
+    const char* white_space = " \t\v\r\n";
+    if (line.find_first_not_of(white_space) != std::string::npos)
     {
-        const char* white_space = " \t\v\r\n";
         std::size_t start = line.find_first_not_of(white_space);
         std::size_t end = line.find_last_not_of(white_space);
         return line.substr(start, end - start + 1);

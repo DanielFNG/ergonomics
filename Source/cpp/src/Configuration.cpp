@@ -81,3 +81,8 @@ Configuration parseConfiguration(std::string config_path)
 
     return config;
 }
+
+ProblemBounds parseBounds(Configuration config)
+{
+    return ProblemBounds(config.bounds_path, OpenSim::Model(config.model_path));
+}

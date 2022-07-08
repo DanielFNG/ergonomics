@@ -1,4 +1,8 @@
+#ifndef INCLUDE_CONFIGURATION
+#define INCLUDE_CONFIGURATION
+
 #include <string>
+#include <ProblemBounds.hpp>
 
 struct Configuration {
     std::string model_path;
@@ -13,4 +17,6 @@ struct Configuration {
 
 void writeConfiguration(Configuration, std::string);
 Configuration parseConfiguration(std::string);
+ProblemBounds parseBounds(Configuration config);
 
+#endif
