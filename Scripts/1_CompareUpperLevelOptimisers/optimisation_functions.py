@@ -15,7 +15,6 @@ def rastrigin(x):
     n = len(x)
     return A * n + sum(np.power(x, 2) - A * np.cos(np.multiply(x, 2 * np.pi)))
 
-
 def rosenbrock(x):
     y = x[1:] - np.power(x[:-1], 2)
     return sum(100*np.power(y, 2) + np.power(np.subtract(1, x[:-1]), 2)) 
