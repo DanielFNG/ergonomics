@@ -9,7 +9,7 @@ project(MocoLowerLevel VERSION 0.1
 if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 
         # OpenSim uses C++11 language features, and we need >=14 for Boost.
-        set(CMAKE_CXX_STANDARD 14)
+        set(CMAKE_CXX_STANDARD 17)
         set(CMAKE_CXX_STANDARD_REQUIRED ON)
         set(CMAKE_CXX_EXTENSIONS OFF)
 

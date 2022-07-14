@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <filesystem>
 
 void writeConfiguration(Configuration config, std::string output_path)
 {
@@ -67,6 +68,18 @@ Configuration parseConfiguration(std::string config_path)
         }
         int index = std::distance(labels.begin(), it);
         indices.push_back(index);
+    }
+
+    // Convert to absolute paths
+    std::filesystem::path root(config_path);
+    std::filesystem::path absolute_root = std::filesystem::absolute(root).parent_path();
+    for (int i = 0; i < 3; i++)
+    {
+        std::filesystem::path path(values[indices[i]]);
+        if (path.is_relative())
+        {
+            values[indices[i]] = std::filesystem::path(absolute_root.string() + "/" + path.string()).make_preferred();
+        }
     }
 
     // Assign the values appropriately
