@@ -1,8 +1,8 @@
 %% Optimisation
 
 % User-modifiable parameters
-method_names = {'bayesopt', 'surrogateopt', 'ga'};
-max_evaluations = 1000;
+method_names = {'surrogateopt', 'ga'};
+max_evaluations = 10000;
 
 % Internal parameters
 function_names = {'schafferF6', 'sphere', 'griewank', 'rastrigin', 'rosenbrock'};

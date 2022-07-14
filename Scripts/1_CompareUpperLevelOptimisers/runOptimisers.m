@@ -43,10 +43,6 @@ if any(strcmp(method_names, 'bayesopt'))
 
     end
     time.bayesopt = toc;
-else
-    deterministic.bayesopt = nan_array;
-    noisy.bayesopt = nan_array;
-    time.bayesopt = nan;
 end
 
 %% Surrogate Optimisation
@@ -69,10 +65,6 @@ if any(strcmp(method_names, 'surrogateopt'))
             ones(1, dimension(i))*lb(i), ones(1, dimension(i))*ub(i), [], [], [], [], [], options);
     end
     time.surrogate = toc;
-else
-    deterministic.surrogate = nan_array;
-    noisy.surrogate = nan_array;
-    time.surrogate = nan;
 end
 
 %% Genetic Optimisation
@@ -98,10 +90,6 @@ if any(strcmp(method_names, 'ga'))
             ones(1, dimension(i))*lb(i), ones(1, dimension(i))*ub(i), [] , options);
     end
     time.ga = toc;
-else
-    deterministic.ga = nan_array;
-    noisy.ga = nan_array;
-    time.ga = nan;
 end
 
 %% Save results

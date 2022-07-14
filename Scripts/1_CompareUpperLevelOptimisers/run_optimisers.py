@@ -8,6 +8,9 @@ import json
 
 PATH_TO_BONMIN = "~/External/bonmin-binary/bonmin"
 PATH_TO_IPOPT = "~/External/ipopt-binary/ipopt"
+BAYESOPT_ID = "bayesopt"
+RBF_ID = "rbf"
+CMA_ID = "cma"
 
 
 def solve_bayesopt(func, dim, bounds, max_evals):
@@ -20,7 +23,7 @@ def solve_bayesopt(func, dim, bounds, max_evals):
 
     optimiser = BayesianOptimization(objective, pbounds, random_state=1)
     optimiser.maximize(init_points = init_evals, n_iter = max_evals - init_evals)
-    return optimiser.max['target']
+    return -optimiser.max['target']
 
 
 def solve_rbf(func, dim, lbs, ubs, types, max_evals):
@@ -32,7 +35,7 @@ def solve_rbf(func, dim, lbs, ubs, types, max_evals):
         max_evaluations = max_evals
     )
     alg = rbfopt.RbfoptAlgorithm(settings, bb)
-    val, x, itercount, evalcount, fast_evalcount = alg.optimize()
+    val, _, _, _, _ = alg.optimize()
     return val
 
 def solve_cma(func, dim, lb, ub, max_evals):
@@ -42,42 +45,49 @@ def solve_cma(func, dim, lb, ub, max_evals):
     return es.result.fbest
 
 if __name__ == '__main__':
-    max_evals = 100
+    max_evals = 10000
+    methods = ["RBF", "CMA"] # "Bayesopt", "RBF", "CMA"
+    methods = [x.lower() for x in methods]
     save_file = "py_results" + str(max_evals) + ".json"
-    noise_level = 1
+    noise_level = 0.1
     dimensions = [2, 5, 10, 10, 10] * 2
     lbs = [-100, -100, -600, -5.12, -50] * 2
     deterministic_functions = [opt.schafferF6, opt.sphere, opt.griewank, opt.rastrigin, opt.rosenbrock]
-    noisy_functions = [lambda x: func(x) + abs(np.random.normal(0, noise_level)) for func in deterministic_functions]
+    noisy_functions = [lambda x, func=func: func(x) + abs(np.random.normal(0, noise_level)) for func in deterministic_functions]
     functions = deterministic_functions + noisy_functions
-    n_deterministic_functions = len(deterministic_functions)
-    n_functions = len(functions)
-    times = [[], [], []]
-    values = [[], [], []]
+    times = [[] for _ in range(len(methods))]
+    values = [[] for _ in range(len(methods))]
 
     for func, dim, lb in zip(functions, dimensions, lbs):
 
         # Bayesian optimisation
-        init_samples = 4
-        bounds = [[lb, -lb]]*dim
-        func_inverted = lambda x: -func(x)
-        t = time.time()
-        values[0].append(solve_bayesopt(func_inverted, dim, bounds, max_evals))
-        times[0].append(time.time() - t)
+        if BAYESOPT_ID in methods:
+            init_samples = 4
+            bounds = [[lb, -lb]]*dim
+            func_inverted = lambda x: -func(x)
+            t = time.time()
+            index = methods.index(BAYESOPT_ID)
+            values[index].append(solve_bayesopt(func_inverted, dim, bounds, max_evals))
+            times[index].append(time.time() - t)
 
         # RBF optimisation
-        lower_bounds = np.array([lb] * dim)
-        upper_bounds = -lower_bounds
-        types = np.array(['R'] * dim)
-        t = time.time()
-        values[1].append(solve_rbf(func, dim, lower_bounds, upper_bounds, types, max_evals))
-        times[1].append(time.time() - t)
+        if RBF_ID in methods:
+            lower_bounds = np.array([lb] * dim)
+            upper_bounds = -lower_bounds
+            types = np.array(['R'] * dim)
+            t = time.time()
+            index = methods.index(RBF_ID)
+            values[index].append(solve_rbf(func, dim, lower_bounds, upper_bounds, types, max_evals))
+            times[index].append(time.time() - t)
 
         # CMA-ES
-        t = time.time()
-        values[2].append(solve_cma(func, dim, lb, -lb, max_evals))
-        times[2].append(time.time() - t)
+        if CMA_ID in methods:
+            t = time.time()
+            index = methods.index(CMA_ID)
+            values[index].append(solve_cma(func, dim, lb, -lb, max_evals))
+            times[index].append(time.time() - t)
 
-    save_data = {"times": times, "values": values}
+    overall_times = [sum(inner_time) for inner_time in times]
+    save_data = {"methods": methods, "times": overall_times, "values": values}
     with open(save_file, 'w') as f:
         json.dump(save_data, f, indent = 4)
