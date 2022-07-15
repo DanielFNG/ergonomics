@@ -3,6 +3,7 @@ import numpy as np
 from bayes_opt import BayesianOptimization
 import rbfopt
 import cma
+import PyNomad
 import time
 import json
 
@@ -11,7 +12,7 @@ PATH_TO_IPOPT = "~/External/ipopt-binary/ipopt"
 BAYESOPT_ID = "bayesopt"
 RBF_ID = "rbf"
 CMA_ID = "cma"
-
+NOMAD_ID = "nomad"
 
 def solve_bayesopt(func, dim, bounds, max_evals):
     init_evals = 4
@@ -44,9 +45,26 @@ def solve_cma(func, dim, lb, ub, max_evals):
     x, es = cma.fmin2(func, x0, sigma, {'bounds': [lb, ub], 'maxfevals': max_evals})
     return es.result.fbest
 
+def solve_nomad(func, dim, lb, ub, max_evals):
+    def objective(x):
+        vals = [x.get_coord(i) for i in range(x.size())]
+        f = func(vals)
+        x.setBBO(str(f).encode("UTF-8"))
+        return 1
+
+    x0 = np.random.uniform(0, 1, dim)
+    lb = [0] * dim
+    ub = [1] * dim
+
+    params = ["DIMENSION " + str(dim), "BB_OUTPUT_TYPE OBJ", 
+        "MAX_BB_EVAL " + str(max_evals), "DIRECTION_TYPE ORTHO N+1 UNI",
+        "ANISOTROPIC_MESH no"] 
+
+    return PyNomad.optimize(objective, x0, lb, ub, params)
+
 if __name__ == '__main__':
-    max_evals = 10000
-    methods = ["RBF", "CMA"] # "Bayesopt", "RBF", "CMA"
+    max_evals = 1000
+    methods = ["nomad"] # "Bayesopt", "RBF", "CMA", "Nomad"
     methods = [x.lower() for x in methods]
     save_file = "py_results" + str(max_evals) + ".json"
     noise_level = 0.1
@@ -85,6 +103,14 @@ if __name__ == '__main__':
             t = time.time()
             index = methods.index(CMA_ID)
             values[index].append(solve_cma(func, dim, lb, -lb, max_evals))
+            times[index].append(time.time() - t)
+
+        # Nomad
+        if NOMAD_ID in methods:
+            t = time.time()
+            index = methods.index(NOMAD_ID)
+            n = solve_nomad(func, dim, lb, -lb, max_evals)
+            values[index].append(n['f_best'])
             times[index].append(time.time() - t)
 
     overall_times = [sum(inner_time) for inner_time in times]

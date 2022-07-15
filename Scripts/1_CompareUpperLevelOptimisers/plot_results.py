@@ -69,7 +69,7 @@ def customValuePlot(data, m, methods, title, ylabel):
 
 
 if __name__ == "__main__":
-    save_file = "py_results10000.json"
+    save_file = "results/py_results1000.json"
 
     with open(save_file, 'r') as f:
         data = json.load(f)
