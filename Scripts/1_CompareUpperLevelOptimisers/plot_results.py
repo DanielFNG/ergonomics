@@ -45,10 +45,7 @@ def customTimePlot(data, methods, title, ylabel):
     ax.set_ylabel(ylabel)
     ax.set_ylim(ylims)
 
-def customValuePlot(data, m, methods, title, ylabel):
-
-    # Compute appropriate ylims
-    ylims = getYLims(data)
+def customValuePlot(data, m, methods, title, ylabel, ylims):
 
     # Partition data
     d_data = data[:, :m]
@@ -69,21 +66,33 @@ def customValuePlot(data, m, methods, title, ylabel):
 
 
 if __name__ == "__main__":
-    save_file = "results/py_results1000.json"
+    
+    py_file = "results/py_results1000.json"
+    ml_file = "results/ml_results1000.json"
 
-    with open(save_file, 'r') as f:
-        data = json.load(f)
+    data_combined = []
+    values_combined = []
+    for file in [py_file, ml_file]:
+        with open(file, 'r') as f:
+            data = json.load(f)
+            data_combined.append(data)
+            values_combined += data['values']
 
-    # Organise data
-    time_data = np.array(data['times'])
-    value_data = np.array(data['values'])
-    m = int(np.size(value_data, 1)/2)
+    # Get some common YLims for comparison's sake
+    ylims = getYLims(np.array(values_combined))
 
-    # Plot time data
-    customTimePlot(time_data, data['methods'], 'Time', 'Time (s)')
+    for file, data in zip([py_file, ml_file], data_combined):
 
-    # Plot value data
-    customValuePlot(value_data, m, data['methods'], 'Obtained Minima', 'Function Value')
+        # Organise data
+        time_data = np.array(data['times'])
+        value_data = np.array(data['values'])
+        m = int(np.size(value_data, 1)/2)
+
+        # Plot time data
+        customTimePlot(time_data, data['methods'], 'Time ' + file, 'Time (s)')
+
+        # Plot value data
+        customValuePlot(value_data, m, data['methods'], 'Obtained Minima ' + file, 'Function Value', ylims)
 
     # Show all figs
     plt.show()
