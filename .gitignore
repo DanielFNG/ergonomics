@@ -4,3 +4,4 @@
 *.asv
 Output
 bin/*
+*.pyc
