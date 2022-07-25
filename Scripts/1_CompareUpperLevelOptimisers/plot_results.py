@@ -67,12 +67,11 @@ def customValuePlot(data, m, methods, title, ylabel, ylims):
 
 if __name__ == "__main__":
     
-    py_file = "results/py_results1000.json"
-    ml_file = "results/ml_results1000.json"
+    files = None # List of strings - paths to results .json files
 
     data_combined = []
     values_combined = []
-    for file in [py_file, ml_file]:
+    for file in files:
         with open(file, 'r') as f:
             data = json.load(f)
             data_combined.append(data)
@@ -81,7 +80,7 @@ if __name__ == "__main__":
     # Get some common YLims for comparison's sake
     ylims = getYLims(np.array(values_combined))
 
-    for file, data in zip([py_file, ml_file], data_combined):
+    for file, data in zip(files, data_combined):
 
         # Organise data
         time_data = np.array(data['times'])
