@@ -7,13 +7,19 @@ import PyNomad
 import time
 import json
 
-PATH_TO_BONMIN = "~/External/bonmin-binary/bonmin"
-PATH_TO_IPOPT = "~/External/ipopt-binary/ipopt"
-BAYESOPT_ID = "bayesopt"
-RBF_ID = "rbf"
-CMA_ID = "cma"
-NOMAD_ID = "nomad"
-NOMAD_VECTORISED_ID = "nomad_vectorised"
+# USER PARAMETERS
+MAX_EVALS = 1000
+METHODS = ["bayesopt", "rbf", "cma", "nomad", "nomad-vectorised"]
+OUTPUT_DIR = None # Add path to output folder here
+
+# INTERNAL PARAMETERS
+_PATH_TO_BONMIN = "~/External/bonmin-binary/bonmin"
+_PATH_TO_IPOPT = "~/External/ipopt-binary/ipopt"
+_BAYESOPT_ID = "bayesopt"
+_RBF_ID = "rbf"
+_CMA_ID = "cma"
+_NOMAD_ID = "nomad"
+_NOMAD_VECTORISED_ID = "nomad_vectorised"
 
 def solve_bayesopt(func, dim, bounds, max_evals):
     init_evals = 4
@@ -32,8 +38,8 @@ def solve_rbf(func, dim, lbs, ubs, types, max_evals):
 
     bb = rbfopt.RbfoptUserBlackBox(dim, lbs, ubs, types, func)
     settings = rbfopt.RbfoptSettings(
-        minlp_solver_path = PATH_TO_BONMIN,
-        nlp_solver_path = PATH_TO_IPOPT,
+        minlp_solver_path = _PATH_TO_BONMIN,
+        nlp_solver_path = _PATH_TO_IPOPT,
         max_evaluations = max_evals
     )
     alg = rbfopt.RbfoptAlgorithm(settings, bb)
@@ -84,11 +90,9 @@ def solve_nomad_vectorised(func, dim, lb, ub, max_evals):
 
     return PyNomad.optimize(objective, [], lb, ub, params)
 
-if __name__ == '__main__':
-    max_evals = 1000
-    methods = ["bayesopt", "rbf", "cma", "nomad", "nomad-vectorised"] 
-    methods = [x.lower() for x in methods]
-    save_file = "py_results" + str(max_evals) + ".json"
+if __name__ == '__main__': 
+    methods = [x.lower() for x in METHODS]
+    save_file = "py_results" + str(MAX_EVALS) + ".json"
     noise_level = 0.1
     dimensions = [2, 5, 10, 10, 10] * 2
     lbs = [-100, -100, -600, -5.12, -50] * 2
@@ -101,45 +105,45 @@ if __name__ == '__main__':
     for func, dim, lb in zip(functions, dimensions, lbs):
 
         # Bayesian optimisation
-        if BAYESOPT_ID in methods:
+        if _BAYESOPT_ID in methods:
             init_samples = 4
             bounds = [[lb, -lb]]*dim
             func_inverted = lambda x: -func(x)
             t = time.time()
-            index = methods.index(BAYESOPT_ID)
-            values[index].append(solve_bayesopt(func_inverted, dim, bounds, max_evals))
+            index = methods.index(_BAYESOPT_ID)
+            values[index].append(solve_bayesopt(func_inverted, dim, bounds, MAX_EVALS))
             times[index].append(time.time() - t)
 
         # RBF optimisation
-        if RBF_ID in methods:
+        if _RBF_ID in methods:
             lower_bounds = np.array([lb] * dim)
             upper_bounds = -lower_bounds
             types = np.array(['R'] * dim)
             t = time.time()
-            index = methods.index(RBF_ID)
-            values[index].append(solve_rbf(func, dim, lower_bounds, upper_bounds, types, max_evals))
+            index = methods.index(_RBF_ID)
+            values[index].append(solve_rbf(func, dim, lower_bounds, upper_bounds, types, MAX_EVALS))
             times[index].append(time.time() - t)
 
         # CMA-ES
-        if CMA_ID in methods:
+        if _CMA_ID in methods:
             t = time.time()
-            index = methods.index(CMA_ID)
-            values[index].append(solve_cma(func, dim, lb, -lb, max_evals))
+            index = methods.index(_CMA_ID)
+            values[index].append(solve_cma(func, dim, lb, -lb, MAX_EVALS))
             times[index].append(time.time() - t)
 
         # Nomad
-        if NOMAD_ID in methods:
+        if _NOMAD_ID in methods:
             t = time.time()
-            index = methods.index(NOMAD_ID)
-            n = solve_nomad(func, dim, lb, -lb, max_evals)
+            index = methods.index(_NOMAD_ID)
+            n = solve_nomad(func, dim, lb, -lb, MAX_EVALS)
             values[index].append(n['f_best'])
             times[index].append(time.time() - t)
 
         # Nomad (vectorised)
-        if NOMAD_VECTORISED_ID in methods:
+        if _NOMAD_VECTORISED_ID in methods:
             t = time.time()
-            index = methods.index(NOMAD_VECTORISED_ID)
-            n = solve_nomad_vectorised(func, dim, lb, -lb, max_evals)
+            index = methods.index(_NOMAD_VECTORISED_ID)
+            n = solve_nomad_vectorised(func, dim, lb, -lb, MAX_EVALS)
             values[index].append(n['f_best'])
             times[index].append(time.time() - t)
 
