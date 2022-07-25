@@ -13,6 +13,7 @@ BAYESOPT_ID = "bayesopt"
 RBF_ID = "rbf"
 CMA_ID = "cma"
 NOMAD_ID = "nomad"
+NOMAD_VECTORISED_ID = "nomad_vectorised"
 
 def solve_bayesopt(func, dim, bounds, max_evals):
     init_evals = 4
@@ -58,13 +59,34 @@ def solve_nomad(func, dim, lb, ub, max_evals):
 
     params = ["DIMENSION " + str(dim), "BB_OUTPUT_TYPE OBJ", 
         "MAX_BB_EVAL " + str(max_evals), "DIRECTION_TYPE ORTHO N+1 UNI",
-        "ANISOTROPIC_MESH no"] 
+        "VNS_MADS_SEARCH yes", "ANISOTROPIC_MESH no", "LH_SEARCH 50 0"]
 
-    return PyNomad.optimize(objective, x0, lb, ub, params)
+    return PyNomad.optimize(objective, [], lb, ub, params)
+
+def solve_nomad_vectorised(func, dim, lb, ub, max_evals):
+
+    def objective(block):
+        n_points = block.size()
+        eval_ok = [False for i in range(n_points)]
+        for i in range(n_points):
+            x = block.get_x(i)
+            vals = [x.get_coord(i) for i in range(x.size())]
+            f = func(vals)
+            x.setBBO(str(f).encode("UTF-8"))
+            eval_ok[i] = True
+        return eval_ok
+
+    params = ["DIMENSION " + str(dim), "BB_OUTPUT_TYPE OBJ", 
+        "MAX_BB_EVAL " + str(max_evals), 
+        "DIRECTION_TYPE ORTHO N+1 QUAD", "DIRECTION_TYPE ORTHO 2N", "DIRECTION_TYPE ORTHO N+1 NEG", "DIRECTION_TYPE N+1 UNI",
+        "VNS_MADS_SEARCH yes", "ANISOTROPIC_MESH no", 
+        "BB_MAX_BLOCK_SIZE 50", "LH_SEARCH 50 0"]
+
+    return PyNomad.optimize(objective, [], lb, ub, params)
 
 if __name__ == '__main__':
     max_evals = 1000
-    methods = ["nomad"] # "Bayesopt", "RBF", "CMA", "Nomad"
+    methods = ["bayesopt", "rbf", "cma", "nomad", "nomad-vectorised"] 
     methods = [x.lower() for x in methods]
     save_file = "py_results" + str(max_evals) + ".json"
     noise_level = 0.1
@@ -110,6 +132,14 @@ if __name__ == '__main__':
             t = time.time()
             index = methods.index(NOMAD_ID)
             n = solve_nomad(func, dim, lb, -lb, max_evals)
+            values[index].append(n['f_best'])
+            times[index].append(time.time() - t)
+
+        # Nomad (vectorised)
+        if NOMAD_VECTORISED_ID in methods:
+            t = time.time()
+            index = methods.index(NOMAD_VECTORISED_ID)
+            n = solve_nomad_vectorised(func, dim, lb, -lb, max_evals)
             values[index].append(n['f_best'])
             times[index].append(time.time() - t)
 
