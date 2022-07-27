@@ -10,6 +10,7 @@ int main(int argc, char* argv[])
     // Parse program inputs
     //  * Name of task function
     //  * Path to config file
+    //  * Path to output file
     //  * Weights (double)
     const int WEIGHTS_START = 4;
     std::string task_function = argv[1];
