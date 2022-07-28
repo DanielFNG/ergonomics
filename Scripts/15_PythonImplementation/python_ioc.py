@@ -9,10 +9,9 @@ import json
 # High-level options
 N_EVALUATIONS = 1000
 REFERENCE_WEIGHTS = [0.1, 0.2, 0.3, 0.1, 0.2, 0.1]
-CONFIG_PATH = (
-    os.path.join(os.getenv('ERGONOMICS_HOME'), "Examples", "SitToStand", "config.txt")
-)
+CONFIG_PATH = "config.txt"  # No need to give cluster_config here, even in cluster mode
 RESULTS_DIR = os.getcwd()
+_MODE = 'cluster'
 
 # Low-level options
 _UPPER_LIMIT = 1
@@ -23,6 +22,7 @@ _REFERENCE_FILE = "reference.sto"
 _EXECUTABLE_PRINT = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndPrint")
 _EXECUTABLE_COMPARE = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndCompare")
 _OBJECTIVE_STR = "objective="
+_CLUSTER_WEIGHTS_FILE = "weights.txt"
 
 
 def run_lower_level_print(output_path, weights):
@@ -81,10 +81,55 @@ def objective(weights, normalisers, reference_file):
         return float(temp_file.readline())
 
 
-def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds):
+def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
     """NOMAD interface with constraints, in batch mode"""
 
-    def objective(block):
+    def cluster_objective(block):
+        n_points = block.size()
+        eval_ok = [False for i in range(n_points)]
+        gs = []
+        validity = []
+
+        # Write weights file
+        with open(_CLUSTER_WEIGHTS_FILE, 'w') as file:
+            for i in range(n_points):
+                x = block.get_x(i)
+                vals = [x.get_coord(i) for i in range(x.size())]
+                total = numpy.sum(numpy.array(vals))
+                g = total - 1
+                gs.append(g)
+                if g <= 0:
+                    validity.append(True)
+                    for val in vals:
+                        file.write(str(val) + " ")
+                        file.write('\n')
+                else:
+                    validity.append(False)
+        
+        # Dispatch to cluster
+        command = ["qsub", "-sync", "y", "-t", "1-" + str(n_points), "cluster.sh"]
+        subprocess.run(command, check=True)
+
+        # Read results
+        for i in range(n_points):
+            x = block.get_x(i)
+            f = 0
+            if validity[i]:
+                filepath = str(i) + ".sto"
+                with open(filepath, 'r') as file:
+                    f = float(file.readline())
+                os.remove(filepath)
+            rawBBO = str(f) + " " + gs[i]
+            x.setBBO(rawBBO.encode("UTF-8"))
+            eval_ok[i] = True
+
+        # Delete weights file
+        os.remove(_CLUSTER_WEIGHTS_FILE)
+
+        return eval_ok
+
+
+    def local_objective(block):
         n_points = block.size()
         eval_ok = [False for i in range(n_points)]
         for i in range(n_points):
@@ -106,6 +151,10 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds):
         "DIRECTION_TYPE ORTHO N+1 NEG", "DIRECTION_TYPE N+1 UNI",
         "VNS_MADS_SEARCH yes", "ANISOTROPIC_MESH no", 
         "BB_MAX_BLOCK_SIZE " + str(n_seeds), "LH_SEARCH " + str(n_seeds) + " 0"]
+
+    objective = local_objective
+    if mode == "cluster":
+        objective = cluster_objective
 
     return PyNomad.optimize(objective, [], [lb] * dim, [ub] * dim, params)
 
@@ -134,7 +183,8 @@ def main():
     # Use MADS to run upper-level optimisation
     inner_objective = lambda weights: objective(weights, normalisers, reference_path)
     result = solve_constrained_nomad(
-        inner_objective, n_parameters, _LOWER_LIMIT, _UPPER_LIMIT, N_EVALUATIONS, n_seeds)
+        inner_objective, n_parameters, _LOWER_LIMIT, _UPPER_LIMIT, N_EVALUATIONS, 
+        n_seeds, _MODE)
     
     # Save results to file
     with open(results_path, 'w') as f:
