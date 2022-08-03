@@ -112,7 +112,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
                 if g <= 0:
                     validity.append(True)
                     for val in vals:
-                        file.write(f"{str(val):.4f}" + " ")
+                        file.write(f"{val:.4f}" + " ")
                     file.write("\n")
                 else:
                     validity.append(False)
