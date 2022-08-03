@@ -91,10 +91,9 @@ def objective(weights, normalisers, reference_file):
 def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
     """NOMAD interface with constraints, in batch mode"""
 
-    global _N_BLOCK
-    _N_BLOCK = _N_BLOCK + 1
-
     def cluster_objective(block):
+        global _N_BLOCK
+        _N_BLOCK = _N_BLOCK + 1
         n_points = block.size()
         eval_ok = [False for i in range(n_points)]
         gs = []
