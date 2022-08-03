@@ -112,7 +112,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
                 if g <= 0:
                     validity.append(True)
                     for val in vals:
-                        file.write(str(val) + " ")
+                        file.write(f"{str(val):.4f}" + " ")
                     file.write("\n")
                 else:
                     validity.append(False)
@@ -181,6 +181,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
         "ANISOTROPIC_MESH no",
         "BB_MAX_BLOCK_SIZE " + str(n_seeds),
         "LH_SEARCH " + str(n_seeds) + " 0",
+        "GRANULARITY * 0.0001",
     ]
 
     objective = local_objective
