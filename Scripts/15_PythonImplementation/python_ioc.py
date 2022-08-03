@@ -199,7 +199,7 @@ def main():
     results_path = os.path.join(RESULTS_DIR, "results.json")
 
     # Run normaliser simulations
-    if ~os.path.exists(normaliser_dir):
+    if not os.path.exists(normaliser_dir):
         simulate_normalisers(normaliser_dir, n_parameters)
 
     # Load normaliser results
@@ -208,7 +208,7 @@ def main():
     )
 
     # Compute reference
-    if ~os.path.exists(reference_path):
+    if not os.path.exists(reference_path):
         normalised_weights = numpy.divide(REFERENCE_WEIGHTS, normalisers)
         run_lower_level_print(reference_path, normalised_weights)
 
