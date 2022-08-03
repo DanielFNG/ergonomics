@@ -7,9 +7,9 @@ import PyNomad
 import json
 
 # High-level options
-N_EVALUATIONS = 1000
+N_EVALUATIONS = 50
 REFERENCE_WEIGHTS = [0.1, 0.2, 0.3, 0.1, 0.2, 0.1]
-CONFIG_PATH = "config.txt"  # No need to give cluster_config here, even in cluster mode
+CONFIG_PATH = "cluster_config.txt"  # No need to give cluster_config here, even in cluster mode
 RESULTS_DIR = os.getcwd()
 _MODE = 'cluster'
 
@@ -23,7 +23,10 @@ _EXECUTABLE_PRINT = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndP
 _EXECUTABLE_COMPARE = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndCompare")
 _OBJECTIVE_STR = "objective="
 _CLUSTER_WEIGHTS_FILE = "weights.txt"
+_PARALLELISATION_CUTOFF = 9
 
+# A global, for now
+_N_BLOCK = 0
 
 def run_lower_level_print(output_path, weights):
     """Runs lower level optimiser and prints result file"""
@@ -84,6 +87,9 @@ def objective(weights, normalisers, reference_file):
 def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
     """NOMAD interface with constraints, in batch mode"""
 
+    global _N_BLOCK 
+    _N_BLOCK = _N_BLOCK + 1
+
     def cluster_objective(block):
         n_points = block.size()
         eval_ok = [False for i in range(n_points)]
@@ -102,29 +108,35 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
                     validity.append(True)
                     for val in vals:
                         file.write(str(val) + " ")
-                        file.write('\n')
+                    file.write("\n")
                 else:
                     validity.append(False)
         
         # Dispatch to cluster
-        command = ["qsub", "-sync", "y", "-t", "1-" + str(n_points), "cluster.sh"]
-        subprocess.run(command, check=True)
+        if any(validity):
+            n_evals = len([sample for sample in validity if sample is True])
+            #if n_evals > _PARALLELISATION_CUTOFF:
+            command = ["qsub", "-P", "inf_slmc", "-sync", "y", "-t", "1-" + str(n_points), "cluster.sh"]
+            #else:
+            #   command = ["qsub", "-P", "inf_slmc", "-sync", "y", "-t", "1-1", "-pe", "sharedmem", "16", "-R", "y", "cluster.sh"]
+            subprocess.run(command, check=True)
 
         # Read results
         for i in range(n_points):
             x = block.get_x(i)
             f = 0
             if validity[i]:
+                f = 1
                 filepath = str(i) + ".sto"
                 with open(filepath, 'r') as file:
                     f = float(file.readline())
                 os.remove(filepath)
-            rawBBO = str(f) + " " + gs[i]
+            rawBBO = str(f) + " " + str(gs[i])
             x.setBBO(rawBBO.encode("UTF-8"))
             eval_ok[i] = True
 
         # Delete weights file
-        os.remove(_CLUSTER_WEIGHTS_FILE)
+        os.rename(_CLUSTER_WEIGHTS_FILE, "weights" + str(_N_BLOCK) + ".txt")
 
         return eval_ok
 
@@ -156,7 +168,9 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
     if mode == "cluster":
         objective = cluster_objective
 
-    return PyNomad.optimize(objective, [], [lb] * dim, [ub] * dim, params)
+    x0 = [0.1, 0.1, 0.2, 0.2, 0.2, 0.2]
+
+    return PyNomad.optimize(objective, x0, [lb] * dim, [ub] * dim, params)
 
 
 def main():
@@ -169,7 +183,7 @@ def main():
     results_path = os.path.join(RESULTS_DIR, "results.json")
 
     # Run normaliser simulations
-    simulate_normalisers(normaliser_dir, n_parameters)
+#    simulate_normalisers(normaliser_dir, n_parameters)
 
     # Load normaliser results
     normalisers = compute_normalisers(
@@ -178,7 +192,7 @@ def main():
 
     # Compute reference
     normalised_weights = numpy.divide(REFERENCE_WEIGHTS, normalisers)
-    run_lower_level_print(reference_path, normalised_weights)
+#    run_lower_level_print(reference_path, normalised_weights)
 
     # Use MADS to run upper-level optimisation
     inner_objective = lambda weights: objective(weights, normalisers, reference_path)

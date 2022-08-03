@@ -7,7 +7,8 @@
  
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
-module load roslin/gcc/7.3.0
+module load phys/compilers/gcc/11.2.0
+module load openmpi
 
 # Paths to required shared libraries
 export OPENSIM_PROJECT_LOCATION=/home/dgordon3/opensim
@@ -17,8 +18,9 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_INSTALL_LOCATION}/opensim-core
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_DEPENDENCIES_DIR}/adol-c/lib64
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_DEPENDENCIES_DIR}/ipopt/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_DEPENDENCIES_DIR}/casadi/lib
-export ERGONOMICS_HOME=~/Documents/GitHub/ergonomics
-export NOMAD_HOME=~/External/nomad
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OPENSIM_DEPENDENCIES_DIR}/ezc3d/lib64
+export ERGONOMICS_HOME=~/ergonomics
+export NOMAD_HOME=~/nomad
 
 # Read weights file in to array
 readarray -t weights < weights.txt
