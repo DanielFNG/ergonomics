@@ -100,7 +100,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
         gs = []
         validity = []
         local_savedir = str(_N_BLOCK)
-        os.makedirs(local_savedir)
+        os.makedirs(local_savedir, exist_ok=True)
 
         # Write weights file
         with open(_CLUSTER_WEIGHTS_FILE, "w") as file:
