@@ -9,9 +9,7 @@ import json
 # High-level options
 N_EVALUATIONS = 1000
 REFERENCE_WEIGHTS = [0.1, 0.2, 0.3, 0.1, 0.2, 0.1]
-CONFIG_PATH = (
-    os.path.join(os.getenv('ERGONOMICS_HOME'), "Examples", "SitToStand", "config.txt")
-)
+CONFIG_PATH = "serial_config.txt"
 RESULTS_DIR = os.getcwd()
 
 # Low-level options
@@ -20,8 +18,10 @@ _LOWER_LIMIT = 0
 _IDEAL_OPTIMISED_COST = 1
 _NORMALISER_FOLDER = "normalisers"
 _REFERENCE_FILE = "reference.sto"
-_EXECUTABLE_PRINT = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndPrint")
-_EXECUTABLE_COMPARE = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndCompare")
+_EXECUTABLE_PRINT = os.path.join(os.getenv("ERGONOMICS_HOME"), "bin", "solveAndPrint")
+_EXECUTABLE_COMPARE = os.path.join(
+    os.getenv("ERGONOMICS_HOME"), "bin", "solveAndCompare"
+)
 _OBJECTIVE_STR = "objective="
 
 
@@ -82,30 +82,29 @@ def objective(weights, normalisers, reference_file):
 
 
 def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds):
-    """NOMAD interface with constraints, in batch mode"""
+    """NOMAD interface with constraints, in serial mode"""
 
-    def objective(block):
-        n_points = block.size()
-        eval_ok = [False for i in range(n_points)]
-        for i in range(n_points):
-            x = block.get_x(i)
-            vals = [x.get_coord(i) for i in range(x.size())]
-            total = numpy.sum(numpy.array(vals))
-            g = total - 1
-            f = 0
-            if g <= 0: # So we don't evaluate a useless point - too expensive
-                f = func(vals)
-            rawBBO = str(f) + " " + str(g)
-            x.setBBO(rawBBO.encode("UTF-8"))
-            eval_ok[i] = True
+    def objective(x):
+        vals = [x.get_coord(i) for i in range(x.size())]
+        total = numpy.sum(numpy.array(vals))
+        g = total - 1
+        f = 0
+        if g <= 0:  # So we don't evaluate a useless point - too expensive
+            f = func(vals)
+        rawBBO = str(f) + " " + str(g)
+        x.setBBO(rawBBO.encode("UTF-8"))
+        eval_ok = True
         return eval_ok
 
-    params = ["DIMENSION " + str(dim), "BB_OUTPUT_TYPE OBJ EB", 
-        "MAX_BB_EVAL " + str(max_evals), 
-        "DIRECTION_TYPE ORTHO N+1 QUAD", "DIRECTION_TYPE ORTHO 2N", 
-        "DIRECTION_TYPE ORTHO N+1 NEG", "DIRECTION_TYPE N+1 UNI",
-        "VNS_MADS_SEARCH yes", "ANISOTROPIC_MESH no", 
-        "BB_MAX_BLOCK_SIZE " + str(n_seeds), "LH_SEARCH " + str(n_seeds) + " 0"]
+    params = [
+        "DIMENSION " + str(dim),
+        "BB_OUTPUT_TYPE OBJ EB",
+        "MAX_BB_EVAL " + str(max_evals),
+        "DIRECTION_TYPE ORTHO N+1 UNI",
+        "VNS_MADS_SEARCH yes",
+        "ANISOTROPIC_MESH no",
+        "LH_SEARCH " + str(n_seeds) + " 0",
+    ]
 
     return PyNomad.optimize(objective, [], [lb] * dim, [ub] * dim, params)
 
@@ -120,7 +119,8 @@ def main():
     results_path = os.path.join(RESULTS_DIR, "results.json")
 
     # Run normaliser simulations
-    simulate_normalisers(normaliser_dir, n_parameters)
+    if not os.path.exists(normaliser_dir):
+        simulate_normalisers(normaliser_dir, n_parameters)
 
     # Load normaliser results
     normalisers = compute_normalisers(
@@ -128,16 +128,23 @@ def main():
     )
 
     # Compute reference
-    normalised_weights = numpy.divide(REFERENCE_WEIGHTS, normalisers)
-    run_lower_level_print(reference_path, normalised_weights)
+    if not os.path.exists(reference_path):
+        normalised_weights = numpy.divide(REFERENCE_WEIGHTS, normalisers)
+        run_lower_level_print(reference_path, normalised_weights)
 
     # Use MADS to run upper-level optimisation
     inner_objective = lambda weights: objective(weights, normalisers, reference_path)
     result = solve_constrained_nomad(
-        inner_objective, n_parameters, _LOWER_LIMIT, _UPPER_LIMIT, N_EVALUATIONS, n_seeds)
-    
+        inner_objective,
+        n_parameters,
+        _LOWER_LIMIT,
+        _UPPER_LIMIT,
+        N_EVALUATIONS,
+        n_seeds,
+    )
+
     # Save results to file
-    with open(results_path, 'w') as f:
+    with open(results_path, "w") as f:
         json.dump(result, f, indent=4)
 
 
