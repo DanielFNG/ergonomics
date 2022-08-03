@@ -7,7 +7,7 @@ import PyNomad
 import json
 
 # High-level options
-N_EVALUATIONS = 1000
+MAX_TIME = 60 * 60 * 8  # 8 hours. Not ideal, but there are many infeasible points.
 REFERENCE_WEIGHTS = [0.1, 0.2, 0.3, 0.1, 0.2, 0.1]
 CONFIG_PATH = "serial_config.txt"
 RESULTS_DIR = os.getcwd()
@@ -81,32 +81,37 @@ def objective(weights, normalisers, reference_file):
         return float(temp_file.readline())
 
 
-def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds):
+def solve_constrained_nomad(func, dim, lb, ub, max_time):
     """NOMAD interface with constraints, in serial mode"""
 
     def objective(x):
+        eval_ok = True
         vals = [x.get_coord(i) for i in range(x.size())]
         total = numpy.sum(numpy.array(vals))
         g = total - 1
-        f = 0
-        if g <= 0:  # So we don't evaluate a useless point - too expensive
+        h = 1 - total
+        f = 10  # Prohibitvely high score for constraint violation, but I don't think this is used
+        if g <= 0 and h <= 0:  # So we don't evaluate a useless point - too expensive
             f = func(vals)
-        rawBBO = str(f) + " " + str(g)
+            eval_ok = True
+        rawBBO = str(f) + " " + str(g) + " " + str(h)
         x.setBBO(rawBBO.encode("UTF-8"))
-        eval_ok = True
         return eval_ok
 
     params = [
         "DIMENSION " + str(dim),
-        "BB_OUTPUT_TYPE OBJ EB",
-        "MAX_BB_EVAL " + str(max_evals),
+        "BB_OUTPUT_TYPE OBJ EB EB",
+        "MAX_TIME " + str(max_time),
         "DIRECTION_TYPE ORTHO N+1 UNI",
         "VNS_MADS_SEARCH yes",
         "ANISOTROPIC_MESH no",
-        "LH_SEARCH " + str(n_seeds) + " 0",
+        "DISPLAY_ALL_EVAL yes",
+        "DISPLAY_DEGREE 2",
+        "DISPLAY_STATS BBE FEAS_BBE OBJ FEAS_BBE INF_BBE",
     ]
+    x0 = [0.1, 0.1, 0.2, 0.2, 0.2, 0.2]
 
-    return PyNomad.optimize(objective, [], [lb] * dim, [ub] * dim, params)
+    return PyNomad.optimize(objective, x0, [lb] * dim, [ub] * dim, params)
 
 
 def main():
@@ -139,8 +144,7 @@ def main():
         n_parameters,
         _LOWER_LIMIT,
         _UPPER_LIMIT,
-        N_EVALUATIONS,
-        n_seeds,
+        MAX_TIME,
     )
 
     # Save results to file
