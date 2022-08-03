@@ -2,16 +2,18 @@
 import os
 import subprocess
 import tempfile
+import json
 import numpy
 import PyNomad
-import json
 
 # High-level options
 N_EVALUATIONS = 50
 REFERENCE_WEIGHTS = [0.1, 0.2, 0.3, 0.1, 0.2, 0.1]
-CONFIG_PATH = "cluster_config.txt"  # No need to give cluster_config here, even in cluster mode
+CONFIG_PATH = (
+    "cluster_config.txt"  # No need to give cluster_config here, even in cluster mode
+)
 RESULTS_DIR = os.getcwd()
-_MODE = 'cluster'
+_MODE = "cluster"
 
 # Low-level options
 _UPPER_LIMIT = 1
@@ -19,14 +21,16 @@ _LOWER_LIMIT = 0
 _IDEAL_OPTIMISED_COST = 1
 _NORMALISER_FOLDER = "normalisers"
 _REFERENCE_FILE = "reference.sto"
-_EXECUTABLE_PRINT = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndPrint")
-_EXECUTABLE_COMPARE = os.path.join(os.getenv('ERGONOMICS_HOME'), "bin", "solveAndCompare")
+_EXECUTABLE_PRINT = os.path.join(os.getenv("ERGONOMICS_HOME"), "bin", "solveAndPrint")
+_EXECUTABLE_COMPARE = os.path.join(
+    os.getenv("ERGONOMICS_HOME"), "bin", "solveAndCompare"
+)
 _OBJECTIVE_STR = "objective="
 _CLUSTER_WEIGHTS_FILE = "weights.txt"
-_PARALLELISATION_CUTOFF = 9
 
 # A global, for now
 _N_BLOCK = 0
+
 
 def run_lower_level_print(output_path, weights):
     """Runs lower level optimiser and prints result file"""
@@ -87,7 +91,7 @@ def objective(weights, normalisers, reference_file):
 def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
     """NOMAD interface with constraints, in batch mode"""
 
-    global _N_BLOCK 
+    global _N_BLOCK
     _N_BLOCK = _N_BLOCK + 1
 
     def cluster_objective(block):
@@ -97,7 +101,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
         validity = []
 
         # Write weights file
-        with open(_CLUSTER_WEIGHTS_FILE, 'w') as file:
+        with open(_CLUSTER_WEIGHTS_FILE, "w") as file:
             for i in range(n_points):
                 x = block.get_x(i)
                 vals = [x.get_coord(i) for i in range(x.size())]
@@ -111,14 +115,19 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
                     file.write("\n")
                 else:
                     validity.append(False)
-        
+
         # Dispatch to cluster
         if any(validity):
-            n_evals = len([sample for sample in validity if sample is True])
-            #if n_evals > _PARALLELISATION_CUTOFF:
-            command = ["qsub", "-P", "inf_slmc", "-sync", "y", "-t", "1-" + str(n_points), "cluster.sh"]
-            #else:
-            #   command = ["qsub", "-P", "inf_slmc", "-sync", "y", "-t", "1-1", "-pe", "sharedmem", "16", "-R", "y", "cluster.sh"]
+            command = [
+                "qsub",
+                "-P",
+                "inf_slmc",
+                "-sync",
+                "y",
+                "-t",
+                "1-" + str(n_points),
+                "cluster.sh",
+            ]
             subprocess.run(command, check=True)
 
         # Read results
@@ -128,7 +137,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
             if validity[i]:
                 f = 1
                 filepath = str(i) + ".sto"
-                with open(filepath, 'r') as file:
+                with open(filepath, "r") as file:
                     f = float(file.readline())
                 os.remove(filepath)
             rawBBO = str(f) + " " + str(gs[i])
@@ -140,7 +149,6 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
 
         return eval_ok
 
-
     def local_objective(block):
         n_points = block.size()
         eval_ok = [False for i in range(n_points)]
@@ -150,19 +158,26 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
             total = numpy.sum(numpy.array(vals))
             g = total - 1
             f = 0
-            if g <= 0: # So we don't evaluate a useless point - too expensive
+            if g <= 0:  # So we don't evaluate a useless point - too expensive
                 f = func(vals)
             rawBBO = str(f) + " " + str(g)
             x.setBBO(rawBBO.encode("UTF-8"))
             eval_ok[i] = True
         return eval_ok
 
-    params = ["DIMENSION " + str(dim), "BB_OUTPUT_TYPE OBJ EB", 
-        "MAX_BB_EVAL " + str(max_evals), 
-        "DIRECTION_TYPE ORTHO N+1 QUAD", "DIRECTION_TYPE ORTHO 2N", 
-        "DIRECTION_TYPE ORTHO N+1 NEG", "DIRECTION_TYPE N+1 UNI",
-        "VNS_MADS_SEARCH yes", "ANISOTROPIC_MESH no", 
-        "BB_MAX_BLOCK_SIZE " + str(n_seeds), "LH_SEARCH " + str(n_seeds) + " 0"]
+    params = [
+        "DIMENSION " + str(dim),
+        "BB_OUTPUT_TYPE OBJ EB",
+        "MAX_BB_EVAL " + str(max_evals),
+        "DIRECTION_TYPE ORTHO N+1 QUAD",
+        "DIRECTION_TYPE ORTHO 2N",
+        "DIRECTION_TYPE ORTHO N+1 NEG",
+        "DIRECTION_TYPE N+1 UNI",
+        "VNS_MADS_SEARCH yes",
+        "ANISOTROPIC_MESH no",
+        "BB_MAX_BLOCK_SIZE " + str(n_seeds),
+        "LH_SEARCH " + str(n_seeds) + " 0",
+    ]
 
     objective = local_objective
     if mode == "cluster":
@@ -183,7 +198,8 @@ def main():
     results_path = os.path.join(RESULTS_DIR, "results.json")
 
     # Run normaliser simulations
-#    simulate_normalisers(normaliser_dir, n_parameters)
+    if ~os.path.exists(normaliser_dir):
+        simulate_normalisers(normaliser_dir, n_parameters)
 
     # Load normaliser results
     normalisers = compute_normalisers(
@@ -191,17 +207,24 @@ def main():
     )
 
     # Compute reference
-    normalised_weights = numpy.divide(REFERENCE_WEIGHTS, normalisers)
-#    run_lower_level_print(reference_path, normalised_weights)
+    if ~os.path.exists(reference_path):
+        normalised_weights = numpy.divide(REFERENCE_WEIGHTS, normalisers)
+        run_lower_level_print(reference_path, normalised_weights)
 
     # Use MADS to run upper-level optimisation
     inner_objective = lambda weights: objective(weights, normalisers, reference_path)
     result = solve_constrained_nomad(
-        inner_objective, n_parameters, _LOWER_LIMIT, _UPPER_LIMIT, N_EVALUATIONS, 
-        n_seeds, _MODE)
-    
+        inner_objective,
+        n_parameters,
+        _LOWER_LIMIT,
+        _UPPER_LIMIT,
+        N_EVALUATIONS,
+        n_seeds,
+        _MODE,
+    )
+
     # Save results to file
-    with open(results_path, 'w') as f:
+    with open(results_path, "w") as f:
         json.dump(result, f, indent=4)
 
 
