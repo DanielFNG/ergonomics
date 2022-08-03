@@ -99,6 +99,8 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
         eval_ok = [False for i in range(n_points)]
         gs = []
         validity = []
+        local_savedir = str(_N_BLOCK)
+        os.makedirs(local_savedir)
 
         # Write weights file
         with open(_CLUSTER_WEIGHTS_FILE, "w") as file:
@@ -131,22 +133,24 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
             if _N_BLOCK > 2:  # We've already computed the reference - temporary
                 subprocess.run(command, check=True)
 
-        # Read results
+        # Read results & move files
         for i in range(n_points):
             x = block.get_x(i)
             f = 0
             if validity[i]:
                 f = 1
-                filepath = str(i) + ".txt"
+                filepath = str(i + 1) + ".txt"
                 with open(filepath, "r") as file:
                     f = float(file.readline())
-                os.remove(filepath)
+                os.rename(filepath, os.path.join(local_savedir, filepath))
             rawBBO = str(f) + " " + str(gs[i])
             x.setBBO(rawBBO.encode("UTF-8"))
             eval_ok[i] = True
 
-        # Delete weights file
-        os.rename(_CLUSTER_WEIGHTS_FILE, "weights" + str(_N_BLOCK) + ".txt")
+        # Move results files
+        os.rename(
+            _CLUSTER_WEIGHTS_FILE, os.path.join(local_savedir, _CLUSTER_WEIGHTS_FILE)
+        )
 
         return eval_ok
 
