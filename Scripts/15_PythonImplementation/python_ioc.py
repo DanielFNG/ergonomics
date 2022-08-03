@@ -129,7 +129,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
                 "1-" + str(n_points),
                 "cluster.sh",
             ]
-            if _N_BLOCK > 2:  # We've already computed the reference - temporary
+            if _N_BLOCK > 1:  # We've already computed the reference - temporary
                 subprocess.run(command, check=True)
 
         # Read results & move files
