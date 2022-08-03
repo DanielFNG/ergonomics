@@ -136,7 +136,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals, n_seeds, mode):
             f = 0
             if validity[i]:
                 f = 1
-                filepath = str(i) + ".sto"
+                filepath = str(i) + ".txt"
                 with open(filepath, "r") as file:
                     f = float(file.readline())
                 os.remove(filepath)
