@@ -7,7 +7,7 @@ import PyNomad
 import json
 
 # High-level options
-MAX_TIME = 60 * 60 * 8  # 8 hours. Not ideal, but there are many infeasible points.
+MAX_EVALUATIONS = 1000
 REFERENCE_WEIGHTS = [0.1, 0.2, 0.3, 0.1, 0.2, 0.1]
 CONFIG_PATH = "serial_config.txt"
 RESULTS_DIR = os.getcwd()
@@ -42,7 +42,7 @@ def run_lower_level_compare(output_path, reference_path, weights):
         output_path,
         reference_path,
     ] + str_weights
-    subprocess.run(command, check=True)
+    subprocess.run(command, check=True, stdout=subprocess.DEVNULL)
 
 
 def simulate_normalisers(destination, n_parameters):
@@ -81,27 +81,27 @@ def objective(weights, normalisers, reference_file):
         return float(temp_file.readline())
 
 
-def solve_constrained_nomad(func, dim, lb, ub, max_time):
+def solve_constrained_nomad(func, dim, lb, ub, max_evals):
     """NOMAD interface with constraints, in serial mode"""
 
     def objective(x):
-        eval_ok = True
         vals = [x.get_coord(i) for i in range(x.size())]
         total = numpy.sum(numpy.array(vals))
         g = total - 1
         h = 1 - total
-        f = 10  # Prohibitvely high score for constraint violation, but I don't think this is used
-        if g <= 0 and h <= 0:  # So we don't evaluate a useless point - too expensive
-            f = func(vals)
-            eval_ok = True
+        #f = 10  # Prohibitvely high score for constraint violation, but I don't think this is used
+        #if g <= 0 and h <= 0:  # So we don't evaluate a useless point - too expensive
+        #    f = func(vals)
+        #    eval_ok = True
+        f = func(vals)
         rawBBO = str(f) + " " + str(g) + " " + str(h)
         x.setBBO(rawBBO.encode("UTF-8"))
-        return eval_ok
+        return True
 
     params = [
         "DIMENSION " + str(dim),
-        "BB_OUTPUT_TYPE OBJ EB EB",
-        "MAX_TIME " + str(max_time),
+        "BB_OUTPUT_TYPE OBJ PB PB",
+        "MAX_BB_EVAL " + str(max_evals),
         "DIRECTION_TYPE ORTHO N+1 UNI",
         "VNS_MADS_SEARCH yes",
         "ANISOTROPIC_MESH no",
@@ -144,7 +144,7 @@ def main():
         n_parameters,
         _LOWER_LIMIT,
         _UPPER_LIMIT,
-        MAX_TIME,
+        MAX_EVALUATIONS,
     )
 
     # Save results to file
