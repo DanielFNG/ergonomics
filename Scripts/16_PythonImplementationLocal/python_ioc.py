@@ -8,7 +8,7 @@ import json
 
 # High-level options
 MAX_EVALUATIONS = 1000
-REFERENCE_WEIGHTS = [0.1, 0.2, 0.3, 0.1, 0.2, 0.1]
+REFERENCE_WEIGHTS = [0.4, 0.0, 0.1, 0.1, 0.0, 0.4]
 CONFIG_PATH = "serial_config.txt"
 RESULTS_DIR = os.getcwd()
 
@@ -87,20 +87,20 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals):
     def objective(x):
         vals = [x.get_coord(i) for i in range(x.size())]
         total = numpy.sum(numpy.array(vals))
+        vals.append(max(0, 1 - total))
         g = total - 1
-        h = 1 - total
         #f = 10  # Prohibitvely high score for constraint violation, but I don't think this is used
         #if g <= 0 and h <= 0:  # So we don't evaluate a useless point - too expensive
         #    f = func(vals)
         #    eval_ok = True
         f = func(vals)
-        rawBBO = str(f) + " " + str(g) + " " + str(h)
+        rawBBO = str(f) + " " + str(g)
         x.setBBO(rawBBO.encode("UTF-8"))
         return True
 
     params = [
-        "DIMENSION " + str(dim),
-        "BB_OUTPUT_TYPE OBJ PB PB",
+        "DIMENSION " + str(local_dim),
+        "BB_OUTPUT_TYPE OBJ PB",
         "MAX_BB_EVAL " + str(max_evals),
         "DIRECTION_TYPE ORTHO N+1 UNI",
         "VNS_MADS_SEARCH yes",
@@ -109,9 +109,12 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals):
         "DISPLAY_DEGREE 2",
         "DISPLAY_STATS BBE FEAS_BBE OBJ FEAS_BBE INF_BBE",
     ]
-    x0 = [0.1, 0.1, 0.2, 0.2, 0.2, 0.2]
+    local_dim = dim - 1
+    unit = numpy.round(1/dim)
+    x0 = numpy.ones([1, local_dim]) * unit
+    numpy.append(x0, 1 - numpy.sum(x0))
 
-    return PyNomad.optimize(objective, x0, [lb] * dim, [ub] * dim, params)
+    return PyNomad.optimize(objective, x0, [lb] * local_dim, [ub] * local_dim, params)
 
 
 def main():
