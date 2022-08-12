@@ -22,7 +22,8 @@ function solution = produceTrackingGuess(...
     % Get & set start & end times
     input_data = Data(input);
     track.set_initial_time(input_data.Timesteps(1));
-    track.set_final_time(input_data.Timesteps(end));
+    %track.set_final_time(input_data.Timesteps(end));
+    track.set_final_time(input_data.Timesteps(1) + 0.1)
     
     % Initialise study & problem
     study = track.initialize();
