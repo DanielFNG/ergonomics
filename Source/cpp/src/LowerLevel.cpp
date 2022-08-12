@@ -1,5 +1,5 @@
 #include <LowerLevel.hpp>
-#include <OpenSim/Moco/osimMoco.h>
+#include <MocoImporter.hpp>
 
 using namespace OpenSim;
 

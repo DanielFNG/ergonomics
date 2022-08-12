@@ -1,7 +1,7 @@
 #include <Configuration.hpp>
 #include <ProblemBounds.hpp>
 #include <vector>
-#include <OpenSim/Moco/osimMoco.h>
+#include <MocoImporter.hpp>
 
 class LowerLevel 
 {

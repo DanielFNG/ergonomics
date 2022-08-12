@@ -1,6 +1,6 @@
 #include <LowerLevel.hpp>
 #include <string>
-#include <OpenSim/Moco/osimMoco.h>
+#include <MocoImporter.hpp>
 #include <MocoProjectedStabilityGoal.hpp>
 
 using namespace OpenSim;

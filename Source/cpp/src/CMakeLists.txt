@@ -9,7 +9,8 @@ add_library(custom_goals
     Configuration.cpp "${MocoLowerLevel_SOURCE_DIR}/include/Configuration.hpp"
     LowerLevel.cpp "${MocoLowerLevel_SOURCE_DIR}/include/LowerLevel.hpp"
     SitToStand.cpp "${MocoLowerLevel_SOURCE_DIR}/include/SitToStand.hpp"
-    "${MocoLowerLevel_SOURCE_DIR}/include/Tasks.hpp")
+    "${MocoLowerLevel_SOURCE_DIR}/include/Tasks.hpp"
+    "${MocoLowerLevel_SOURCE_DIR}/include/MocoImporter.hpp")
 
 # Inlcude directories
 target_include_directories(custom_goals PUBLIC ../include)
