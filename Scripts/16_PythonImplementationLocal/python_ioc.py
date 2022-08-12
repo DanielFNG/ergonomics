@@ -98,6 +98,9 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals):
         x.setBBO(rawBBO.encode("UTF-8"))
         return True
 
+    local_dim = dim - 1
+    unit = numpy.round(1/dim, 4)
+    x0 = numpy.multiply([1] * local_dim, unit)
     params = [
         "DIMENSION " + str(local_dim),
         "BB_OUTPUT_TYPE OBJ PB",
@@ -107,12 +110,8 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals):
         "ANISOTROPIC_MESH no",
         "DISPLAY_ALL_EVAL yes",
         "DISPLAY_DEGREE 2",
-        "DISPLAY_STATS BBE FEAS_BBE OBJ FEAS_BBE INF_BBE",
+        "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
     ]
-    local_dim = dim - 1
-    unit = numpy.round(1/dim)
-    x0 = numpy.ones([1, local_dim]) * unit
-    numpy.append(x0, 1 - numpy.sum(x0))
 
     return PyNomad.optimize(objective, x0, [lb] * local_dim, [ub] * local_dim, params)
 
