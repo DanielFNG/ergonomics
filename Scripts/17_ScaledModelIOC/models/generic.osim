@@ -69,7 +69,7 @@
 				<!--The parameter that determines the smoothness of the transition of the tanh used to smooth the Hunt-Crossley force. The larger the steeper the transition but the worse for optimization, default is 50.-->
 				<hunt_crossley_smoothing>50</hunt_crossley_smoothing>
 			</SmoothSphereHalfSpaceForce>
-            <SmoothSphereHalfSpaceForce name="r_2">
+			<SmoothSphereHalfSpaceForce name="r_2">
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/r_2</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -91,7 +91,7 @@
 				<!--The parameter that determines the smoothness of the transition of the tanh used to smooth the Hunt-Crossley force. The larger the steeper the transition but the worse for optimization, default is 50.-->
 				<hunt_crossley_smoothing>50</hunt_crossley_smoothing>
 			</SmoothSphereHalfSpaceForce>
-            <SmoothSphereHalfSpaceForce name="r_3">
+			<SmoothSphereHalfSpaceForce name="r_3">
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/r_3</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -113,7 +113,7 @@
 				<!--The parameter that determines the smoothness of the transition of the tanh used to smooth the Hunt-Crossley force. The larger the steeper the transition but the worse for optimization, default is 50.-->
 				<hunt_crossley_smoothing>50</hunt_crossley_smoothing>
 			</SmoothSphereHalfSpaceForce>
-            <SmoothSphereHalfSpaceForce name="r_4">
+			<SmoothSphereHalfSpaceForce name="r_4">
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/r_4</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -135,7 +135,7 @@
 				<!--The parameter that determines the smoothness of the transition of the tanh used to smooth the Hunt-Crossley force. The larger the steeper the transition but the worse for optimization, default is 50.-->
 				<hunt_crossley_smoothing>50</hunt_crossley_smoothing>
 			</SmoothSphereHalfSpaceForce>
-            <SmoothSphereHalfSpaceForce name="l_1">
+			<SmoothSphereHalfSpaceForce name="l_1">
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/l_1</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -157,7 +157,7 @@
 				<!--The parameter that determines the smoothness of the transition of the tanh used to smooth the Hunt-Crossley force. The larger the steeper the transition but the worse for optimization, default is 50.-->
 				<hunt_crossley_smoothing>50</hunt_crossley_smoothing>
 			</SmoothSphereHalfSpaceForce>
-            <SmoothSphereHalfSpaceForce name="l_2">
+			<SmoothSphereHalfSpaceForce name="l_2">
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/l_2</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -179,7 +179,7 @@
 				<!--The parameter that determines the smoothness of the transition of the tanh used to smooth the Hunt-Crossley force. The larger the steeper the transition but the worse for optimization, default is 50.-->
 				<hunt_crossley_smoothing>50</hunt_crossley_smoothing>
 			</SmoothSphereHalfSpaceForce>
-            <SmoothSphereHalfSpaceForce name="l_3">
+			<SmoothSphereHalfSpaceForce name="l_3">
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/l_3</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -201,7 +201,7 @@
 				<!--The parameter that determines the smoothness of the transition of the tanh used to smooth the Hunt-Crossley force. The larger the steeper the transition but the worse for optimization, default is 50.-->
 				<hunt_crossley_smoothing>50</hunt_crossley_smoothing>
 			</SmoothSphereHalfSpaceForce>
-            <SmoothSphereHalfSpaceForce name="l_4">
+			<SmoothSphereHalfSpaceForce name="l_4">
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/l_4</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -563,6 +563,8 @@
 							<scale_factors>0.91392399999999996 0.91392399999999996 0.91392399999999996</scale_factors>
 							<!--Default appearance attributes for this Geometry-->
 							<Appearance>
+								<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+								<visible>true</visible>
 								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
 								<opacity>1</opacity>
 								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -662,6 +664,8 @@
 							<scale_factors>0.91392399999999996 0.91392399999999996 0.91392399999999996</scale_factors>
 							<!--Default appearance attributes for this Geometry-->
 							<Appearance>
+								<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+								<visible>true</visible>
 								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
 								<opacity>1</opacity>
 								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -776,7 +780,7 @@
 						<groups />
 					</WrapObjectSet>
 					<!--The mass of the body (kg)-->
-					<mass>100</mass>
+					<mass>0</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
@@ -814,13 +818,13 @@
 						<groups />
 					</WrapObjectSet>
 					<!--The mass of the body (kg)-->
-					<mass>100</mass>
+					<mass>0</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
 					<inertia>0.33333299999999999 33.666699999999999 33.333300000000001 0 0 0</inertia>
 				</Body>
-                <Body name="torso">
+				<Body name="torso">
 					<!--The geometry used to display the axes of this Frame.-->
 					<FrameGeometry name="frame_geometry">
 						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
@@ -907,7 +911,7 @@
 						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
 					</FrameGeometry>
 					<!--The mass of the body (kg)-->
-					<mass>1</mass>
+					<mass>0</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
@@ -1438,7 +1442,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/block_l</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.05 0</translation>
+							<translation>0 0.050000000000000003 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -1477,13 +1481,13 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/block_r</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.05 0</translation>
+							<translation>0 0.050000000000000003 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
 					</frames>
 				</WeldJoint>
-                <PinJoint name="lumbar">
+				<PinJoint name="lumbar">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
 					<socket_parent_frame>pelvis_offset</socket_parent_frame>
 					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
@@ -1547,7 +1551,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/ground</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.388 0</translation>
+							<translation>0 0.38800000000000001 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -1629,6 +1633,168 @@
 			<objects />
 			<groups />
 		</ForceSet>
+		<!--Markers in the model.-->
+		<MarkerSet name="markerset">
+			<objects>
+				<Marker name="Clavical">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.047913300516502652 0.35242315405725716 0.0020976130851265962</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="R_Acromium">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.019767397884239507 0.40013435227426519 0.11413354185967239</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L_Acromium">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.019767007394178596 0.40013421055238879 -0.114134</location>
+				</Marker>
+				<Marker name="Sternum">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.10294618659201617 0.22486400768704762 0.00035574330549889056</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="Torso">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.062129806336565535 0.33558443779298702 -0.06005413424195092</location>
+				</Marker>
+				<Marker name="R_Pelvis">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.066102326113875121 0.0042239609368908762 0.15645914707447017</location>
+				</Marker>
+				<Marker name="R_ASIS">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.016794099999999999 0.0042239599999999997 0.12135799999999999</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="V_Sacral">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.20294429015779303 0.0026602823304442895 0.00065137895890836719</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="L_Pelvis">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.066102300000000003 0.0042239599999999997 -0.15645899999999999</location>
+				</Marker>
+				<Marker name="L_ASIS">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.016794099999999999 0.0042239599999999997 -0.12135799999999999</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="R_Thigh">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.092854047881217275 -0.27098845741518535 0.010882614112807401</location>
+				</Marker>
+				<Marker name="R_Thigh_Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.00043436178013545046 -0.40989297070224812 0.052709660137574013</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="R_Thigh_Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0059597295626510685 -0.40247543225771171 -0.053869636000047946</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="R_Shank">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0018963070522704101 -0.22684998828490066 0.057940389424213021</location>
+				</Marker>
+				<Marker name="R_Shank_Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0016282920306067289 -0.40008879948501808 0.058957049593066344</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="R_Shank_Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0020658462476289691 -0.38905336727995665 -0.035099880981219696</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="R_Toe">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.16684507542645888 0.02199358946251162 -0.026778928708859534</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="R_Heel">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.024350814555458691 0.011322490865095958 -0.0050277848843195555</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="RHJC">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.003762169472891666 -0.0040415296435886428 0.0033231805167699968</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="RKJC">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.014704070558820406 -0.012060439074775275 0.00012685706922120621</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="RAJC">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.045881458105942005 0.061530225067569888 0.001721158947375831</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+			</objects>
+			<groups />
+		</MarkerSet>
 		<!--Geometry to be used in contact forces.-->
 		<ContactGeometrySet name="contactgeometryset">
 			<objects>
@@ -1668,65 +1834,65 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 -0.074</location>
+					<location>-0.999 -0.024 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
 				<ContactSphere name="r_2">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 0.074</location>
+					<location>-0.999 -0.024 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
 				<ContactSphere name="r_3">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 -0.074</location>
+					<location>0.999 -0.024 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
 				<ContactSphere name="r_4">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 0.074</location>
+					<location>0.999 -0.024 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
-                <ContactSphere name="l_1">
+				<ContactSphere name="l_1">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 -0.074</location>
+					<location>-0.999 -0.024 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
 				<ContactSphere name="l_2">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 0.074</location>
+					<location>-0.999 -0.024 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
 				<ContactSphere name="l_3">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 -0.074</location>
+					<location>0.999 -0.024 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
 				<ContactSphere name="l_4">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 0.074</location>
+					<location>0.999 -0.024 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
-					<radius>0.005</radius>
+					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
 				<ContactHalfSpace name="floor">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
