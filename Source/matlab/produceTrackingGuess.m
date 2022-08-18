@@ -1,5 +1,5 @@
 function solution = produceTrackingGuess(...
-    name, w_states, w_controls, osim, input, bounds)
+    name, w_states, w_controls, osim, input, bounds, max_iter, guess_path)
 % Currently, in the absence of measured seat forces, this function performs
 % kinematic tracking only & does not consider any measured GRFs.
 
@@ -23,7 +23,7 @@ function solution = produceTrackingGuess(...
     input_data = Data(input);
     track.set_initial_time(input_data.Timesteps(1));
     track.set_final_time(input_data.Timesteps(end));
-    
+
     % Initialise study & problem
     study = track.initialize();
     problem = study.updProblem();
@@ -39,7 +39,16 @@ function solution = produceTrackingGuess(...
     effort.setWeight(w_controls);
 
     % Apply joint angle & speed bounds
-    applyStateBounds(problem, bounds);
+    applyStateBoundsTracking(problem, bounds);
+
+    % Set initial guess
+    if nargin >= 7
+        solver = MocoCasADiSolver.safeDownCast(study.updSolver());
+        solver.set_optim_max_iterations(max_iter);
+    end
+    if nargin == 8
+        solver.setGuessFile(guess_path);
+    end
 
     % Solve tracking problem
     solution = study.solve();
