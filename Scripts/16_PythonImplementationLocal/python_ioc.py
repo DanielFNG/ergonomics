@@ -89,11 +89,9 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals):
         total = numpy.sum(numpy.array(vals))
         vals.append(max(0, 1 - total))
         g = total - 1
-        #f = 10  # Prohibitvely high score for constraint violation, but I don't think this is used
-        #if g <= 0 and h <= 0:  # So we don't evaluate a useless point - too expensive
-        #    f = func(vals)
-        #    eval_ok = True
-        f = func(vals)
+        f = 10  # Prohibitvely high score for constraint violation, but I don't think this is used
+        if g <= 0:  # So we don't evaluate a useless point - too expensive
+            f = func(vals)
         rawBBO = str(f) + " " + str(g)
         x.setBBO(rawBBO.encode("UTF-8"))
         return True
@@ -103,7 +101,7 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals):
     x0 = numpy.multiply([1] * local_dim, unit)
     params = [
         "DIMENSION " + str(local_dim),
-        "BB_OUTPUT_TYPE OBJ PB",
+        "BB_OUTPUT_TYPE OBJ EB",
         "MAX_BB_EVAL " + str(max_evals),
         "DIRECTION_TYPE ORTHO N+1 UNI",
         "VNS_MADS_SEARCH yes",
