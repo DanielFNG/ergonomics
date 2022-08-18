@@ -7,7 +7,7 @@ import PyNomad
 import json
 
 # High-level options
-MAX_EVALUATIONS = 1000
+MAX_EVALUATIONS = 1500
 REFERENCE_WEIGHTS = [0.4, 0.0, 0.1, 0.1, 0.0, 0.4]
 CONFIG_PATH = "serial_config.txt"
 RESULTS_DIR = os.getcwd()
