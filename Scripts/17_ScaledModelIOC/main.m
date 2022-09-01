@@ -1,12 +1,13 @@
 % Mode selection
-mode = 'perturbed';
+mode = 'unperturbed';
 
 % Paths
-model = ['models' filesep 'configured.osim'];
-ik_folder = [mode filesep 'ik'];
+model = ['models' filesep 'halved.osim'];
+ik_folder = [mode filesep 'ik_zerod'];
 bounds_file = [mode filesep 'config.txt'];
 save_folder = [mode filesep 'sols'];
 mkdir(save_folder);
+initial_guess_path = 'initial_guess.sto';
 guess_path = 'guess.sto';
 
 % Weights & constants
@@ -14,8 +15,8 @@ w_states = 1;
 w_controls = 0;
 states_path = 'ik_states.sto';
 save_path = 'TrackingSolution.sto';
-guess_iters = 100;
-sol_iters = 1000;
+guess_iters = 500;
+sol_iters = 2000;
 
 % Load model & bounds
 osim = org.opensim.modeling.Model(model);

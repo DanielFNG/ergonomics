@@ -5,7 +5,7 @@
 		<components>
 			<SmoothSphereHalfSpaceForce name="chair_r">
 				<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
-				<appliesForce>true</appliesForce>
+				<appliesForce>false</appliesForce>
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/butt_r</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -29,7 +29,7 @@
 			</SmoothSphereHalfSpaceForce>
 			<SmoothSphereHalfSpaceForce name="chair_l">
 				<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
-				<appliesForce>true</appliesForce>
+				<appliesForce>false</appliesForce>
 				<!--Path to a Component that satisfies the Socket 'sphere' of type ContactSphere (description: The sphere participating in this contact.).-->
 				<socket_sphere>/contactgeometryset/butt_l</socket_sphere>
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
@@ -57,7 +57,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -79,7 +79,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -101,7 +101,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -123,7 +123,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -145,7 +145,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -167,7 +167,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -189,7 +189,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -211,7 +211,7 @@
 				<!--Path to a Component that satisfies the Socket 'half_space' of type ContactHalfSpace (description: The half-space participating in this contact.).-->
 				<socket_half_space>/contactgeometryset/floor</socket_half_space>
 				<!--The stiffness constant (i.e., plain strain modulus), default is 1 (N/m^2)-->
-				<stiffness>3067776</stiffness>
+				<stiffness>3067776000</stiffness>
 				<!--The dissipation coefficient, default is 0 (s/m).-->
 				<dissipation>2</dissipation>
 				<!--The coefficient of static friction, default is 0.-->
@@ -235,7 +235,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>lumbar</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>300</optimal_force>
+				<optimal_force>200</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -766,7 +766,7 @@
 							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 							<socket_frame>..</socket_frame>
 							<!--Scale factors in X, Y, Z directions respectively.-->
-							<scale_factors>20 0.5 1.5</scale_factors>
+							<scale_factors>20 0.01 1.5</scale_factors>
 							<!--Default appearance attributes for this Geometry-->
 							<Appearance>
 								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
@@ -784,7 +784,7 @@
 						<groups />
 					</WrapObjectSet>
 					<!--The mass of the body (kg)-->
-					<mass>100</mass>
+					<mass>10000</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
@@ -804,7 +804,7 @@
 							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 							<socket_frame>..</socket_frame>
 							<!--Scale factors in X, Y, Z directions respectively.-->
-							<scale_factors>20 0.5 1.5</scale_factors>
+							<scale_factors>20 0.01 1.5</scale_factors>
 							<!--Default appearance attributes for this Geometry-->
 							<Appearance>
 								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
@@ -822,7 +822,7 @@
 						<groups />
 					</WrapObjectSet>
 					<!--The mass of the body (kg)-->
-					<mass>100</mass>
+					<mass>10000</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
@@ -936,11 +936,11 @@
 					<coordinates>
 						<Coordinate name="pelvis_tilt">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0.30009989174653068</default_value>
+							<default_value>0</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-1.570796326794897 1.570796326794897</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 						</Coordinate>
 						<Coordinate name="pelvis_tx">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
@@ -948,7 +948,7 @@
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-5 5</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 						</Coordinate>
 						<Coordinate name="pelvis_ty">
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
@@ -1044,11 +1044,11 @@
 					<coordinates>
 						<Coordinate name="hip_flexion_r">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>1.0150660396673821</default_value>
+							<default_value>0</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-1.0471975511965981 2.0943951023931948</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 						</Coordinate>
 					</coordinates>
 					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
@@ -1140,11 +1140,11 @@
 					<coordinates>
 						<Coordinate name="knee_angle_r">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>-1.3554925102688762</default_value>
+							<default_value>0</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-2.0943951023931948 0.174532925199433</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 						</Coordinate>
 					</coordinates>
 					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
@@ -1236,11 +1236,11 @@
 					<coordinates>
 						<Coordinate name="ankle_angle_r">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0.041413172491321419</default_value>
+							<default_value>0</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-0.69813170079773201 0.52359877559829904</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 						</Coordinate>
 					</coordinates>
 					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
@@ -1520,11 +1520,11 @@
 					<coordinates>
 						<Coordinate name="lumbar">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>-0.66519733781259882</default_value>
+							<default_value>0</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-1.570796326794897 1.570796326794897</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
-							<locked>false</locked>
+							<locked>true</locked>
 						</Coordinate>
 					</coordinates>
 					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
@@ -1862,7 +1862,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 -0.073999999999999996</location>
+					<location>-0.999 0 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1870,7 +1870,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 0.073999999999999996</location>
+					<location>-0.999 0 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1878,7 +1878,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 -0.073999999999999996</location>
+					<location>0.999 0 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1886,7 +1886,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_r</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 0.073999999999999996</location>
+					<location>0.999 0 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1894,7 +1894,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 -0.073999999999999996</location>
+					<location>-0.999 0 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1902,7 +1902,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.999 -0.024 0.073999999999999996</location>
+					<location>-0.999 0 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1910,7 +1910,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 -0.073999999999999996</location>
+					<location>0.999 0 -0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1918,7 +1918,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/block_l</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.999 -0.024 0.073999999999999996</location>
+					<location>0.999 0 0.073999999999999996</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.0050000000000000001</radius>
 				</ContactSphere>
@@ -1960,7 +1960,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/pelvis</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.125 -0.158 0.050000000000000003</location>
+					<location>-0.125 -0.10000000000000001 0.050000000000000003</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.035000000000000003</radius>
 				</ContactSphere>
@@ -1968,7 +1968,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/pelvis</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.125 -0.158 -0.050000000000000003</location>
+					<location>-0.125 -0.10000000000000001 -0.050000000000000003</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.035000000000000003</radius>
 				</ContactSphere>
