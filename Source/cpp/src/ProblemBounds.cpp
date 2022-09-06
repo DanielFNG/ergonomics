@@ -5,7 +5,7 @@
 #include <sstream>
 #include <iostream>
 #include <fstream>
-#include <OpenSim/Moco/osimMoco.h>
+#include <MocoImporter.hpp>
 
 ProblemBounds::ProblemBounds() {};
 
