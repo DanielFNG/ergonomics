@@ -78,7 +78,9 @@ Configuration parseConfiguration(std::string config_path)
         std::filesystem::path path(values[indices[i]]);
         if (path.is_relative())
         {
-            values[indices[i]] = std::filesystem::path(absolute_root.string() + "/" + path.string()).make_preferred();
+            std::filesystem::path abs_path;
+            abs_path = std::filesystem::path(absolute_root.string() + "/" + path.string()).make_preferred();
+            values[indices[i]] = abs_path.string();
         }
     }
 

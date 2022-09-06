@@ -1,3 +1,6 @@
+#ifndef INCLUDE_TASKS
+#define INCLUDE_TASKS
+
 #include <SitToStand.hpp>
 #include <string>
 #include <vector>
@@ -11,3 +14,5 @@ namespace Tasks
         {"SitToStand", &SitToStand}
     };
 }
+
+#endif

@@ -1,11 +1,7 @@
 #ifndef OPENSIM_MOCOSTABILITYGOAL_H
 #define OPENSIM_MOCOSTABILITYGOAL_H
 
-#define OSIMMOCO_API 
-#define OPENSIM_OSIMMOCODLL_H
-
-#include <OpenSim/Moco/osimMoco.h>
-#include <OpenSim/Moco/MocoGoal/MocoGoal.h>
+#include <MocoImporter.hpp>
 
 namespace OpenSim {
 

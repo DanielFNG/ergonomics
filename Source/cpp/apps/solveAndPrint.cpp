@@ -2,7 +2,7 @@
 #include <vector>
 #include <map>
 #include <functional>
-#include <OpenSim/Moco/osimMoco.h>
+#include <MocoImporter.hpp>
 #include <Tasks.hpp>
 
 int main(int argc, char* argv[])
