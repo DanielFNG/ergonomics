@@ -1,5 +1,6 @@
 """ Python implementation of IOC framework """
 from asyncio.subprocess import DEVNULL
+from platform import system
 import os
 import subprocess
 import tempfile
@@ -8,22 +9,30 @@ import PyNomad
 import json
 import opensim
 
-# Low-level options
+# Low-level algorithmic options
 _UPPER_LIMIT = 1
 _LOWER_LIMIT = 0
 _IDEAL_OPTIMISED_COST = 1
 _PRE_NORMALISERS = [1, 1, 1000, 1000, 1000, 1000]
 _N_PARAMETERS = 6
+
+# File-structure
 _NORMALISER_FOLDER = "normalisers"
 _EXECUTABLE_PRINT = os.path.join(os.getenv("ERGONOMICS_HOME"), "bin", "solveAndPrint")
 _OBJECTIVE_STR = "objective="
 
+# Windows-specific implementation details
+_DELETE_TEMP_FILES = system() == "Windows"
+_ERR_OUTPUT = subprocess.DEVNULL if _DELETE_TEMP_FILES else None
 
 def run_lower_level_print(output_path, weights, config_path):
     """Runs lower level optimiser and prints result file"""
+    # Note: we ignore stdout to better see the NOMAD optimisation output. On Windows the
+    # stderr is also ignored, because by default the IPOPT version included with the 
+    # Windows OpenSim binary prints an error message each run, cluttering the output 
     str_weights = [str(weight) for weight in weights]
     command = [_EXECUTABLE_PRINT, "SitToStand", config_path, output_path] + str_weights
-    subprocess.run(command, check=True, stdout=DEVNULL)
+    subprocess.run(command, check=True, stdout=subprocess.DEVNULL, stderr=_ERR_OUTPUT)
 
 
 def simulate_normalisers(destination, n_parameters, config_path):
@@ -55,13 +64,16 @@ def get_objective_from_file(filename):
 
 def objective(weights, normalisers, reference_sols, config_path):
     """Run lower level using normalised weights & compare to reference"""
-    with tempfile.NamedTemporaryFile(suffix=".sto") as temp_file:
+
+    with tempfile.NamedTemporaryFile(suffix=".sto", delete=(not _DELETE_TEMP_FILES)) as temp_file:
         run_lower_level_print(temp_file.name, numpy.divide(weights, normalisers), config_path)
         sol = opensim.MocoTrajectory(temp_file.name)
         values = []
         for ref in reference_sols:
             values.append(sol.compareContinuousVariablesRMSPattern(ref, "states", ".*"))
-        return numpy.mean(values)
+    if _DELETE_TEMP_FILES:
+        os.remove(temp_file.name)
+    return numpy.mean(values)
 
 
 def solve_constrained_nomad(func, dim, lb, ub, max_evals):
