@@ -76,7 +76,7 @@ def objective(weights, normalisers, reference_sols, config_path):
     return numpy.mean(values)
 
 
-def solve_constrained_nomad(func, dim, lb, ub, max_evals):
+def solve_constrained_nomad(func, dim, lb, ub, params):
     """NOMAD interface with constraints, in serial mode"""
 
     def objective(x):
@@ -94,18 +94,6 @@ def solve_constrained_nomad(func, dim, lb, ub, max_evals):
     local_dim = dim - 1
     unit = numpy.round(1/dim, 4)
     x0 = numpy.multiply([1] * local_dim, unit)
-    params = [
-        "DIMENSION " + str(local_dim),
-        "BB_OUTPUT_TYPE OBJ EB",
-        "MAX_BB_EVAL " + str(max_evals),
-        "DIRECTION_TYPE ORTHO N+1 UNI",
-        "VNS_MADS_SEARCH yes",
-        "ANISOTROPIC_MESH no",
-        "DISPLAY_ALL_EVAL yes",
-        "DISPLAY_DEGREE 2",
-        "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
-        "NB_THREADS_OPENMP 1"
-    ]
 
     return PyNomad.optimize(objective, x0, [lb] * local_dim, [ub] * local_dim, params)
 
@@ -146,18 +134,128 @@ def process(subject, mode):
 
     # Use MADS to run upper-level optimisation
     inner_objective = lambda weights: objective(weights, normalisers, reference_sols, config_path)
+    params = [
+        "DIMENSION 5",
+        "BB_OUTPUT_TYPE OBJ EB",
+        "MAX_BB_EVAL " + str(max_evaluations),
+        "DIRECTION_TYPE ORTHO N+1 UNI",
+        "VNS_MADS_SEARCH yes",
+        "ANISOTROPIC_MESH no",
+        "DISPLAY_ALL_EVAL yes",
+        "DISPLAY_DEGREE 2",
+        "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
+        "NB_THREADS_OPENMP 1"
+    ]
     result = solve_constrained_nomad(
         inner_objective,
         _N_PARAMETERS,
         _LOWER_LIMIT,
         _UPPER_LIMIT,
-        max_evaluations,
+        params,
     )
 
     # Save results to file
     with open(results_path, "w") as f:
         json.dump(result, f, indent=4)
 
+def ground_truth(working_dir, results_folder, weights):
+
+    # High-level options
+    max_evaluations = 10
+
+    # Paths
+    config_path = os.path.join(working_dir, "ioc_config.txt")
+
+    # Initial setup
+    normaliser_dir = os.path.join(working_dir, _NORMALISER_FOLDER)
+    results_dir = os.path.join(working_dir, results_folder)
+    os.mkdir(results_dir)
+    weights_path = os.path.join(results_dir, "weights.txt")
+    results_path = os.path.join(results_dir, "results.json")
+    history_path = os.path.join(results_dir, "history.txt")
+
+    # Run normaliser simulations
+    if not os.path.exists(normaliser_dir):
+        simulate_normalisers(normaliser_dir, _N_PARAMETERS, config_path)
+
+    # Load normaliser results
+    normalisers = compute_normalisers(
+        normaliser_dir, _N_PARAMETERS, _IDEAL_OPTIMISED_COST
+    )
+
+    # Generate reference
+    with tempfile.NamedTemporaryFile(suffix=".sto", delete = (not _DELETE_TEMP_FILES)) as temp_file:
+        run_lower_level_print(temp_file.name, numpy.divide(weights, normalisers), config_path)
+        reference_sols = [opensim.MocoTrajectory(temp_file.name)]
+    if _DELETE_TEMP_FILES:
+        os.remove(temp_file.name)
+
+    # Store reference weights
+    with open(weights_path, "w", encoding="utf-8") as file:
+        file.write(str(weights))
+
+    # Use MADS to run upper-level optimisation
+    inner_objective = lambda weights: objective(weights, normalisers, reference_sols, config_path)
+    params = [
+        "DIMENSION 5",
+        "BB_OUTPUT_TYPE OBJ EB",
+        "MAX_BB_EVAL " + str(max_evaluations),
+        "DIRECTION_TYPE ORTHO N+1 UNI",
+        "VNS_MADS_SEARCH yes",
+        "ANISOTROPIC_MESH no",
+        "DISPLAY_ALL_EVAL yes",
+        "DISPLAY_DEGREE 2",
+        "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
+        "NB_THREADS_OPENMP 1",
+        "HISTORY_FILE " + history_path
+    ]
+    result = solve_constrained_nomad(
+        inner_objective,
+        _N_PARAMETERS,
+        _LOWER_LIMIT,
+        _UPPER_LIMIT,
+        params,
+    )
+
+    # Save results to file
+    with open(results_path, "w") as f:
+        json.dump(result, f, indent=4)
+
+def print_solution(subject, mode, weights):
+    """Helper script"""
+
+    # Paths
+    subject_path = "s" + str(subject)
+    config_path = os.path.join(subject_path, mode, "ioc_config.txt")
+    results_dir = os.path.join(subject_path, mode)
+    reference_dir = os.path.join(subject_path, mode, "sols")
+    output_path = os.path.join(results_dir, "ioc_solution.sto")
+
+    # Initial setup
+    normaliser_dir = os.path.join(results_dir, _NORMALISER_FOLDER)
+
+    # Load normaliser results
+    normalisers = compute_normalisers(
+        normaliser_dir, _N_PARAMETERS, _IDEAL_OPTIMISED_COST
+    )
+
+    # Pre-load reference solutions
+    reference_paths = [file for file in os.listdir(reference_dir) if 
+        os.path.isfile(os.path.join(reference_dir, file)) and not file.startswith('.')]
+    reference_sols = []
+    for file in reference_paths:
+        full_path = os.path.join(reference_dir, file)
+        reference_sols.append(opensim.MocoTrajectory(full_path))
+
+    # Print requested solution
+    run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
+
 if __name__ == "__main__":
-    process(1, "unperturbed")
-    process(1, "perturbed")
+    working_dir = "ground_truth"
+    for i in range(0, 10):
+        while True:
+            x = numpy.random.random([1, 6])
+            if numpy.sum(x) <= 1:
+                break
+        print(x.tolist()[0])
+        ground_truth(working_dir, str(i), x.tolist()[0])
