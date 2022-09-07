@@ -204,7 +204,8 @@ def ground_truth(working_dir, results_folder, weights):
         "DISPLAY_ALL_EVAL yes",
         "DISPLAY_DEGREE 2",
         "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
-        "HISTORY_FILE " + history_path
+        "HISTORY_FILE " + history_path,
+	"NB_THREADS_OPENMP 1"
     ]
     result = solve_constrained_nomad(
         inner_objective,
@@ -251,7 +252,8 @@ if __name__ == "__main__":
         while True:
             x = numpy.random.random([1, 5])
             if numpy.sum(x) <= 1:
-                x.append(1 - numpy.sum(x))
+                x = x.tolist()[0]
+		x.append(1 - sum(x))
                 break
-        print(x.tolist()[0])
-        ground_truth(working_dir, str(i), x.tolist()[0])
+        print(x)
+        ground_truth(working_dir, str(i), x)
