@@ -225,7 +225,6 @@ def print_solution(subject, mode, weights):
     subject_path = "s" + str(subject)
     config_path = os.path.join(subject_path, mode, "ioc_config.txt")
     results_dir = os.path.join(subject_path, mode)
-    reference_dir = os.path.join(subject_path, mode, "sols")
     output_path = os.path.join(results_dir, "ioc_solution.sto")
 
     # Initial setup
@@ -236,15 +235,14 @@ def print_solution(subject, mode, weights):
         normaliser_dir, _N_PARAMETERS, _IDEAL_OPTIMISED_COST
     )
 
-    # Pre-load reference solutions
-    reference_paths = [file for file in os.listdir(reference_dir) if 
-        os.path.isfile(os.path.join(reference_dir, file)) and not file.startswith('.')]
-    reference_sols = []
-    for file in reference_paths:
-        full_path = os.path.join(reference_dir, file)
-        reference_sols.append(opensim.MocoTrajectory(full_path))
-
     # Print requested solution
+    run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
+
+def print_specific_solution(config_path, output_path, weights, normaliser_dir):
+    # Load normaliser results
+    normalisers = compute_normalisers(
+        normaliser_dir, _N_PARAMETERS, _IDEAL_OPTIMISED_COST
+    )
     run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
 
 if __name__ == "__main__":
