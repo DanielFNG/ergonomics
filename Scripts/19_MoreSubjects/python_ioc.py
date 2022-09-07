@@ -70,7 +70,7 @@ def objective(weights, normalisers, reference_sols, config_path):
         sol = opensim.MocoTrajectory(temp_file.name)
         values = []
         for ref in reference_sols:
-            values.append(sol.compareContinuousVariablesRMSPattern(ref, "states", ".*"))
+            values.append(sol.compareContinuousVariablesRMSPattern(ref, "states", ".*value"))
     if _DELETE_TEMP_FILES:
         os.remove(temp_file.name)
     return numpy.mean(values)
@@ -161,7 +161,7 @@ def process(subject, mode):
 def ground_truth(working_dir, results_folder, weights):
 
     # High-level options
-    max_evaluations = 10
+    max_evaluations = 2000
 
     # Paths
     config_path = os.path.join(working_dir, "ioc_config.txt")
@@ -173,6 +173,7 @@ def ground_truth(working_dir, results_folder, weights):
     weights_path = os.path.join(results_dir, "weights.txt")
     results_path = os.path.join(results_dir, "results.json")
     history_path = os.path.join(results_dir, "history.txt")
+    reference_path = os.path.join(results_dir, "reference.sto")
 
     # Run normaliser simulations
     if not os.path.exists(normaliser_dir):
@@ -184,11 +185,8 @@ def ground_truth(working_dir, results_folder, weights):
     )
 
     # Generate reference
-    with tempfile.NamedTemporaryFile(suffix=".sto", delete = (not _DELETE_TEMP_FILES)) as temp_file:
-        run_lower_level_print(temp_file.name, numpy.divide(weights, normalisers), config_path)
-        reference_sols = [opensim.MocoTrajectory(temp_file.name)]
-    if _DELETE_TEMP_FILES:
-        os.remove(temp_file.name)
+    run_lower_level_print(reference_path, numpy.divide(weights, normalisers), config_path)
+    reference_sols = [opensim.MocoTrajectory(reference_path)]
 
     # Store reference weights
     with open(weights_path, "w", encoding="utf-8") as file:
@@ -206,7 +204,6 @@ def ground_truth(working_dir, results_folder, weights):
         "DISPLAY_ALL_EVAL yes",
         "DISPLAY_DEGREE 2",
         "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
-        "NB_THREADS_OPENMP 1",
         "HISTORY_FILE " + history_path
     ]
     result = solve_constrained_nomad(
@@ -254,8 +251,9 @@ if __name__ == "__main__":
     working_dir = "ground_truth"
     for i in range(0, 10):
         while True:
-            x = numpy.random.random([1, 6])
+            x = numpy.random.random([1, 5])
             if numpy.sum(x) <= 1:
+                x.append(1 - numpy.sum(x))
                 break
         print(x.tolist()[0])
         ground_truth(working_dir, str(i), x.tolist()[0])
