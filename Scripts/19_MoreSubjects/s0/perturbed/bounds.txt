@@ -1,0 +1,11 @@
+indegrees                                	true
+timerange	1.898	1.898
+Name                                     	LowerBound 	UpperBound 	InitialValue 	FinalValue
+/jointset/hip_r/hip_flexion_r/value      	-18         	135          	56.774        	0
+/jointset/knee_r/knee_angle_r/value      	-140        	5           	-70.326      	0
+/jointset/ankle_r/ankle_angle_r/value    	-60           	15          	2.7552        	0
+/jointset/lumbar/lumbar/value            	-50         	15          	-28.981       	0
+/jointset/hip_r/hip_flexion_r/speed      	-360       	360        	0       	0             	
+/jointset/knee_r/knee_angle_r/speed      	-360        	360        	0       	0             	
+/jointset/ankle_r/ankle_angle_r/speed    	-360       	360         	0       	0             	
+/jointset/lumbar/lumbar/speed            	-360       	360           	0       	0             	

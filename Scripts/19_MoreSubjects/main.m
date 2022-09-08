@@ -1,10 +1,10 @@
 % Mode selection
-subject = 2;
+subject = 0;
 mode = 'perturbed';
 
 % Paths
 model = ['s' num2str(subject) filesep 'model_configured.osim'];
-ik_folder = ['s' num2str(subject) filesep mode filesep 'ik_zerod'];
+ik_folder = ['s' num2str(subject) filesep mode filesep 'ik_processed'];
 bounds_file = ['s' num2str(subject) filesep mode filesep 'tracking_config.txt'];
 save_folder = ['s' num2str(subject) filesep mode filesep 'sols'];
 guess_path = ['s' num2str(subject) filesep 'guess.sto'];

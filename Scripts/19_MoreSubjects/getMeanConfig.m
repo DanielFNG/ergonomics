@@ -1,9 +1,9 @@
 % Mode selection
-subject = 2;
+subject = 0;
 mode = 'perturbed';
 
 % Get file paths
-root = ['s' num2str(subject) filesep mode filesep 'ik_zerod'];
+root = ['s' num2str(subject) filesep mode filesep 'ik_processed'];
 [n, files] = getFilePaths(root, '.mot');
 
 % Open an initial file to initialise the config array

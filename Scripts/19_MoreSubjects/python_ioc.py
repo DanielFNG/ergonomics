@@ -246,14 +246,34 @@ def print_specific_solution(config_path, output_path, weights, normaliser_dir):
     )
     run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
 
-if __name__ == "__main__":
-    working_dir = "ground_truth"
-    for i in range(0, 10):
+def span(config_path, output_dir, normaliser_dir):
+    normalisers = compute_normalisers(
+        normaliser_dir, _N_PARAMETERS, _IDEAL_OPTIMISED_COST
+    )
+    for sample in range(0, 1000):
         while True:
-            x = numpy.random.random([1, 5])
-            if numpy.sum(x) <= 1:
-                x = x.tolist()[0]
-                x.append(1 - sum(x))
+            weights = numpy.random.random([1, 5])
+            if numpy.sum(weights) <= 1:
+                weights = weights.tolist()[0]
+                weights.append(1 - sum(weights))
                 break
-        print(x)
-        ground_truth(working_dir, str(i), x)
+        output_path = os.path.join(output_dir, str(sample) + ".sto")
+        print(output_path, weights)
+        run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
+
+if __name__ == "__main__":
+    config_path = "s0/unperturbed/ioc_config.txt"
+    output_dir = "s0/unperturbed/span"
+    os.mkdir(output_dir)
+    normaliser_dir = "s0/unperturbed/normalisers"
+    span(config_path, output_dir, normaliser_dir)
+    #working_dir = "ground_truth"
+    #for i in range(0, 10):
+    #    while True:
+    #        x = numpy.random.random([1, 5])
+    #        if numpy.sum(x) <= 1:
+    #            x = x.tolist()[0]
+    #            x.append(1 - sum(x))
+    #            break
+    #    print(x)
+    #    ground_truth(working_dir, str(i), x)

@@ -1,5 +1,5 @@
 indegrees                                	true
-timerange	2.54	2.54
+timerange	1.834	1.834
 Name                                     	LowerBound 	UpperBound 	InitialValue 	FinalValue
 /jointset/hip_r/hip_flexion_r/value      	-18         	135          	64.365        	0
 /jointset/knee_r/knee_angle_r/value      	-140        	5           	-65.419      	0
