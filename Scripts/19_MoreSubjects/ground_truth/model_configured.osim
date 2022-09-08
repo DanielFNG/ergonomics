@@ -55,7 +55,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>lumbar</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>300</optimal_force>
+				<optimal_force>200</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -67,7 +67,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>hip_flexion_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>300</optimal_force>
+				<optimal_force>200</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -79,7 +79,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>knee_angle_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>300</optimal_force>
+				<optimal_force>200</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -91,7 +91,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>ankle_angle_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>300</optimal_force>
+				<optimal_force>200</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -501,7 +501,7 @@
 					<coordinates>
 						<Coordinate name="hip_flexion_r">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0</default_value>
+							<default_value>0.97158988800020329</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-1.0471975511965981 2.0943951023931948</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
@@ -550,8 +550,6 @@
 					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
 					<coordinates>
 						<Coordinate name="knee_angle_r">
-							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-2.0943951023931948 0.174532925199433</range>
 						</Coordinate>
@@ -599,7 +597,7 @@
 					<coordinates>
 						<Coordinate name="ankle_angle_r">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0</default_value>
+							<default_value>0.078819069020063914</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-0.69813170079773201 0.52359877559829904</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
@@ -727,7 +725,7 @@
 					<coordinates>
 						<Coordinate name="lumbar">
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0</default_value>
+							<default_value>-0.39631191325035242</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-1.570796326794897 1.570796326794897</range>
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
@@ -786,7 +784,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/ground</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.44500000000000001 0</translation>
+							<translation>0 0.54500000000000004 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -1044,7 +1042,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/pelvis</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.125 -0.13500000000000001 0.050000000000000003</location>
+					<location>-0.125 -0.14099999999999999 0.050000000000000003</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.035000000000000003</radius>
 				</ContactSphere>
@@ -1052,7 +1050,7 @@
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/pelvis</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-0.125 -0.13500000000000001 -0.050000000000000003</location>
+					<location>-0.125 -0.14099999999999999 -0.050000000000000003</location>
 					<!--Radius of the sphere (default: 0).-->
 					<radius>0.035000000000000003</radius>
 				</ContactSphere>
