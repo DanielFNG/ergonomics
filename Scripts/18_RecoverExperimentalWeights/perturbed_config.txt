@@ -1,0 +1,8 @@
+max_iterations	10000
+model_path	halved.osim
+bounds_path	perturbed_bounds.txt
+guess_path	perturbed_guess.sto
+parallel	1
+num_mesh_intervals	50
+convergence_tolerance	0.01
+constraint_tolerance	0.0001
