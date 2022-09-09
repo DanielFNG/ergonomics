@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
     // Load the provided reference & solution
     OpenSim::MocoTrajectory solution = OpenSim::MocoTrajectory(solution_path);
     OpenSim::MocoTrajectory reference = OpenSim::MocoTrajectory(reference_path);
-    double comparison = sol.compareContinuousVariablesRMS(reference, "states", ".*value");
+    double comparison = solution.compareContinuousVariablesRMSPattern(reference, "states", ".*value");
 
     // Write the resulting RMS to the specified output file
     std::ofstream output_file(output_path);
