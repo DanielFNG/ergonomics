@@ -1,4 +1,4 @@
-subjects = 0;
+subjects = 0:2;
 modes = {'unperturbed', 'perturbed'};
 destination = 'ik_zerod';
 
@@ -9,7 +9,7 @@ for subject = subjects
             test = Data(['s' num2str(subject) filesep modes{mode} filesep 'ik' filesep num2str(i) '.mot']);
             indices = findSTSIndices(test);
             test = test.slice(indices);
-            time.Timesteps = test.Timesteps - test.Timesteps(1);
+            test.Timesteps = test.Timesteps - test.Timesteps(1);
             test.Values(:, 1) = test.Timesteps;
             test.writeToFile(['s' num2str(subject) filesep modes{mode} filesep 'ik_processed' filesep num2str(i) '.mot']);
         end

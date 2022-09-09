@@ -25,7 +25,13 @@ function solution = produceTrackingGuess(...
     track.set_final_time(input_data.Timesteps(end));
 
     % Initialise study & problem
-    study = track.initialize();
+    try
+        study = track.initialize();
+    catch err
+        warning(err.message);
+        track.set_final_time(input_data.Timesteps(end) + 0.001);
+        study = track.initialize();
+    end
     problem = study.updProblem();
 
     % Model processing 
