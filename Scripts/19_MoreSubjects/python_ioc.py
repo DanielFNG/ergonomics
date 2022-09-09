@@ -153,12 +153,11 @@ def process(subject, mode):
     )
 
     # Pre-load reference solutions
-    reference_paths = [file for file in os.listdir(reference_dir) if 
+    reference_paths = [os.path.join(reference_dir, file) for file in os.listdir(reference_dir) if 
         os.path.isfile(os.path.join(reference_dir, file)) and not file.startswith('.')]
     reference_sols = []
     for file in reference_paths:
-        full_path = os.path.join(reference_dir, file)
-        reference_sols.append(opensim.MocoTrajectory(full_path))
+        reference_sols.append(opensim.MocoTrajectory(file))
 
     # Use MADS to run upper-level optimisation
     if cluster:
@@ -169,9 +168,6 @@ def process(subject, mode):
         "DIMENSION 5",
         "BB_OUTPUT_TYPE OBJ EB",
         "MAX_BB_EVAL " + str(max_evaluations),
-        "DIRECTION_TYPE ORTHO N+1 UNI",
-        "VNS_MADS_SEARCH yes",
-        "ANISOTROPIC_MESH no",
         "DISPLAY_ALL_EVAL yes",
         "DISPLAY_DEGREE 2",
         "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
@@ -193,6 +189,7 @@ def ground_truth(working_dir, results_folder, weights):
 
     # High-level options
     max_evaluations = 2000
+    cluster = True
 
     # Paths
     config_path = os.path.join(working_dir, "ioc_config.txt")
@@ -224,7 +221,10 @@ def ground_truth(working_dir, results_folder, weights):
         file.write(str(weights))
 
     # Use MADS to run upper-level optimisation
-    inner_objective = lambda weights: objective(weights, normalisers, reference_sols, config_path)
+    if cluster:
+        inner_objective = lambda weights: cluster_objective(weights, normalisers, [reference_path], config_path)
+    else:
+        inner_objective = lambda weights: objective(weights, normalisers, reference_sols, config_path)
     params = [
         "DIMENSION 5",
         "BB_OUTPUT_TYPE OBJ EB",
@@ -290,18 +290,13 @@ def span(config_path, output_dir, normaliser_dir):
         run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
 
 if __name__ == "__main__":
-    config_path = "s0/unperturbed/ioc_config.txt"
-    output_dir = "s0/unperturbed/span"
-    os.mkdir(output_dir)
-    normaliser_dir = "s0/unperturbed/normalisers"
-    span(config_path, output_dir, normaliser_dir)
-    #working_dir = "ground_truth"
-    #for i in range(0, 10):
-    #    while True:
-    #        x = numpy.random.random([1, 5])
-    #        if numpy.sum(x) <= 1:
-    #            x = x.tolist()[0]
-    #            x.append(1 - sum(x))
-    #            break
-    #    print(x)
-    #    ground_truth(working_dir, str(i), x)
+    working_dir = "ground_truth"
+    for i in range(0, 10):
+        while True:
+            x = numpy.random.random([1, 5])
+            if numpy.sum(x) <= 1:
+                x = x.tolist()[0]
+                x.append(1 - sum(x))
+                break
+        print(x)
+        ground_truth(working_dir, str(i), x)
