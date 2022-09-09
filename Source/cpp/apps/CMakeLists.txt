@@ -3,7 +3,7 @@ set(bin_dir_release "../../../../bin")
 
 # Executables we want to compile
 set(APP_FILES
-    solveAndCompare
+    compareKinematicRMS
     solveAndPrint)
 
 # Create executables in turn

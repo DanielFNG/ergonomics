@@ -19,6 +19,7 @@ _N_PARAMETERS = 6
 # File-structure
 _NORMALISER_FOLDER = "normalisers"
 _EXECUTABLE_PRINT = os.path.join(os.getenv("ERGONOMICS_HOME"), "bin", "solveAndPrint")
+_EXECUTABLE_COMPARE = os.path.join(os.getenv("ERGONOMICS_HOME"), "bin", "compareKinematicRMS")
 _OBJECTIVE_STR = "objective="
 
 # Windows-specific implementation details
@@ -32,6 +33,12 @@ def run_lower_level_print(output_path, weights, config_path):
     # Windows OpenSim binary prints an error message each run, cluttering the output 
     str_weights = [str(weight) for weight in weights]
     command = [_EXECUTABLE_PRINT, "SitToStand", config_path, output_path] + str_weights
+    subprocess.run(command, check=True, stdout=subprocess.DEVNULL, stderr=_ERR_OUTPUT)
+
+def run_lower_level_compare(output_path, sol_path, ref_path):
+    """Calls C++ compare method"""
+    # Temporarily needed while cluster doesn't have access to Python API
+    command = [_EXECUTABLE_COMPARE, output_path, sol_path, ref_path] 
     subprocess.run(command, check=True, stdout=subprocess.DEVNULL, stderr=_ERR_OUTPUT)
 
 
@@ -75,6 +82,26 @@ def objective(weights, normalisers, reference_sols, config_path):
         os.remove(temp_file.name)
     return numpy.mean(values)
 
+def cluster_objective(weights, normalisers, reference_paths, config_path):
+    """Temporarily hard-code compare method for cluster usage"""
+
+    with tempfile.NamedTemporaryFile(suffix=".sto", delete=(not _DELETE_TEMP_FILES)) as temp_file:
+        run_lower_level_print(temp_file.name, numpy.divide(weights, normalisers), config_path)
+        values = []
+        for ref_path in reference_paths:
+            with tempfile.NamedTemporaryFile(suffix=".txt", delete=(not _DELETE_TEMP_FILES)) as temp_compare_file:
+                run_lower_level_compare(temp_compare_file.name, temp_file.name, ref_path)
+                with open(temp_compare_file.name, "r", encoding="utf-8") as file:
+                    for line in file:
+                        values.append(float(line))
+    
+    if _DELETE_TEMP_FILES:
+        os.remove(temp_file.name)
+        os.remove(temp_compare_file.name)
+        
+    return numpy.mean(values)
+
+
 
 def solve_constrained_nomad(func, dim, lb, ub, params):
     """NOMAD interface with constraints, in serial mode"""
@@ -103,6 +130,7 @@ def process(subject, mode):
 
     # High-level options
     max_evaluations = 1000
+    cluster = False
 
     # Paths
     subject_path = "s" + str(subject)
@@ -133,7 +161,10 @@ def process(subject, mode):
         reference_sols.append(opensim.MocoTrajectory(full_path))
 
     # Use MADS to run upper-level optimisation
-    inner_objective = lambda weights: objective(weights, normalisers, reference_sols, config_path)
+    if cluster:
+        inner_objective = lambda weights: cluster_objective(weights, normalisers, reference_paths, config_path)
+    else:
+        inner_objective = lambda weights: objective(weights, normalisers, reference_sols, config_path)
     params = [
         "DIMENSION 5",
         "BB_OUTPUT_TYPE OBJ EB",
