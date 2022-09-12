@@ -122,7 +122,7 @@ def solve_constrained_nomad(func, dim, lb, ub, params):
     unit = numpy.round(1/dim, 4)
     x0 = numpy.multiply([1] * local_dim, unit)
 
-    return PyNomad.optimize(objective, x0, [lb] * local_dim, [ub] * local_dim, params)
+    return PyNomad.optimize(objective, [], [lb] * local_dim, [ub] * local_dim, params)
 
 
 def process(subject, mode):
@@ -168,6 +168,8 @@ def process(subject, mode):
         "DIMENSION 5",
         "BB_OUTPUT_TYPE OBJ EB",
         "MAX_BB_EVAL " + str(max_evaluations),
+        "VNS_MADS_SEARCH yes",
+        "X0 x0.txt",
         "DISPLAY_ALL_EVAL yes",
         "DISPLAY_DEGREE 2",
         "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
@@ -229,6 +231,7 @@ def ground_truth(working_dir, results_folder, weights):
         "DIMENSION 5",
         "BB_OUTPUT_TYPE OBJ EB",
         "MAX_BB_EVAL " + str(max_evaluations),
+        "VNS_MADS_SEARCH yes",
         "DISPLAY_ALL_EVAL yes",
         "DISPLAY_DEGREE 2",
         "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
