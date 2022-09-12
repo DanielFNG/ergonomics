@@ -4,7 +4,8 @@ set(bin_dir_release "../../../../bin")
 # Executables we want to compile
 set(APP_FILES
     compareKinematicRMS
-    solveAndPrint)
+    solveAndPrint
+    solveAndPrintTracked)
 
 # Create executables in turn
 foreach(TARGET IN LISTS APP_FILES)
