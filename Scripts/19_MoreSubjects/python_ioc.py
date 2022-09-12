@@ -98,7 +98,7 @@ def cluster_objective(weights, normalisers, reference_paths, config_path):
     if _DELETE_TEMP_FILES:
         os.remove(temp_file.name)
         os.remove(temp_compare_file.name)
-        
+
     return numpy.mean(values)
 
 
@@ -189,7 +189,7 @@ def ground_truth(working_dir, results_folder, weights):
 
     # High-level options
     max_evaluations = 2000
-    cluster = True
+    cluster = False
 
     # Paths
     config_path = os.path.join(working_dir, "ioc_config.txt")
