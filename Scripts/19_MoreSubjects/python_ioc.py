@@ -232,6 +232,7 @@ def ground_truth(working_dir, results_folder, weights):
         "BB_OUTPUT_TYPE OBJ EB",
         "MAX_BB_EVAL " + str(max_evaluations),
         "VNS_MADS_SEARCH yes",
+        "X0 x0.txt",
         "DISPLAY_ALL_EVAL yes",
         "DISPLAY_DEGREE 2",
         "DISPLAY_STATS BBE OBJ ( SOL ) CONS_H FEAS_BBE INF_BBE",
@@ -293,17 +294,13 @@ def span(config_path, output_dir, normaliser_dir):
         run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
 
 if __name__ == "__main__":
-    process(1, "unperturbed")
-    process(1, "perturbed")
-    process(2, "unperturbed")
-    process(2, "perturbed")
-    #working_dir = "ground_truth"
-    #for i in range(0, 10):
-    #    while True:
-    #        x = numpy.random.random([1, 5])
-    #        if numpy.sum(x) <= 1:
-    #            x = x.tolist()[0]
-    #            x.append(1 - sum(x))
-    #            break
-    #    print(x)
-    #    ground_truth(working_dir, str(i), x)
+    working_dir = "ground_truth"
+    for i in range(0, 10):
+        while True:
+            x = numpy.random.random([1, 5])
+            if numpy.sum(x) <= 1:
+                x = x.tolist()[0]
+                x.append(1 - sum(x))
+                break
+        print(x)
+        ground_truth(working_dir, str(i), x)
