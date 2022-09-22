@@ -294,13 +294,5 @@ def span(config_path, output_dir, normaliser_dir):
         run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
 
 if __name__ == "__main__":
-    working_dir = "ground_truth"
-    for i in range(0, 10):
-        while True:
-            x = numpy.random.random([1, 5])
-            if numpy.sum(x) <= 1:
-                x = x.tolist()[0]
-                x.append(1 - sum(x))
-                break
-        print(x)
-        ground_truth(working_dir, str(i), x)
+    process(3, "unperturbed")
+    process(3, "perturbed")
