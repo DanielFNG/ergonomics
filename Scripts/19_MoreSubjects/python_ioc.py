@@ -76,8 +76,17 @@ def objective(weights, normalisers, reference_sols, config_path):
         run_lower_level_print(temp_file.name, numpy.divide(weights, normalisers), config_path)
         sol = opensim.MocoTrajectory(temp_file.name)
         values = []
+        n_times = sol.getNumTimes()
+        n_values = 4
         for ref in reference_sols:
-            values.append(sol.compareContinuousVariablesRMSPattern(ref, "states", ".*value"))
+            ref.resampleWithNumTimes(sol.getNumTimes())
+            sse = 0
+            sol_matrix = sol.getValuesTrajectory()
+            ref_matrix = ref.getValuesTrajectory()
+            for value in range(0, n_values):
+                for time in range(0, n_times):
+                    sse = sse + (ref_matrix.get(time, value) - sol_matrix.get(time, value))**2
+            values.append(sse)
     if _DELETE_TEMP_FILES:
         os.remove(temp_file.name)
     return numpy.mean(values)
@@ -111,10 +120,10 @@ def solve_constrained_nomad(func, dim, lb, ub, params):
         total = numpy.sum(numpy.array(vals))
         vals.append(max(0, 1 - total))
         g = total - 1
-        f = 10  # Prohibitvely high score for constraint violation, but I don't think this is used
+        f = 1000  # Prohibitvely high score for constraint violation, but I don't think this is used
         if g <= 0:  # So we don't evaluate a useless point - too expensive
             f = func(vals)
-        rawBBO = str(f) + " " + str(g)
+        rawBBO = str(f) + " " + str(min(0.001, g)) # Temporary modification to ensure very small values of g aren't mistreated as feasible
         x.setBBO(rawBBO.encode("UTF-8"))
         return True
 
@@ -294,5 +303,5 @@ def span(config_path, output_dir, normaliser_dir):
         run_lower_level_print(output_path, numpy.divide(weights, normalisers), config_path)
 
 if __name__ == "__main__":
-    process(3, "unperturbed")
-    process(3, "perturbed")
+    process(0, "unperturbed")
+    process(0, "perturbed")
