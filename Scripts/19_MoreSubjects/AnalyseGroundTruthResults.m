@@ -1,19 +1,27 @@
-root = '/home/danielfng/Documents/Local Ergonomics Results/Ground Truth Weight Recovery';
-samples = 0:16;
+root = '/Users/daniel/Library/CloudStorage/OneDrive-UniversityofEdinburgh/Projects/Ergonomics/IOC Framework/Sit To Stand Pertubation Testing/Ground Truth Weight Recovery/New IOC Settings';
+samples = 0:7;
 
 best_objective_plot = figure;
 xlabel('Iterations');
-ylabel('RMSE');
-title('Objective');
-set(gca, 'FontSize', 12);
+ylabel('Error');
+set(gca, 'FontSize', 25);
 set(gca, 'YScale', 'log');
 hold on;
+box on;
 weight_error_plot = figure;
-title('Weights Error');
+title('Error');
 xlabel('Iterations');
 ylabel('Euclidian Distance');
-set(gca, 'FontSize', 12);
+set(gca, 'FontSize', 15);
 hold on;
+box on;
+
+ground_truth_error = [];
+weights_error = [];
+individual_weights_error = [];
+
+best_objective_matrix = [];
+weight_error_matrix = [];
 
 for sample = samples
     results_folder = [root filesep num2str(sample)];
@@ -26,12 +34,28 @@ for sample = samples
     
     [best_objective_vec, weight_error_vec, best_weights] = getBestHistory(objectives, samples, weights);
 
+    if sample == 1
+        visibility = 'on';
+    else
+        visibility = 'off';
+    end
     figure(best_objective_plot);
-    plot(best_objective_vec, 'LineWidth', 1.5);
+    plot(best_objective_vec, 'LineWidth', 1.5, 'Color', [0, 0.4470, 0.7410, 0.4], 'HandleVisibility', visibility);
 
-    figure(weight_error_plot);
-    plot(weight_error_vec, 'LineWidth', 1.5);
+    %figure(weight_error_plot);
+    plot(weight_error_vec, 'LineWidth', 1.5, 'Color', [0.8500, 0.3250, 0.0980, 0.4], 'HandleVisibility', visibility);
+
+    best_objective_matrix = [best_objective_matrix; best_objective_vec];
+    weight_error_matrix = [weight_error_matrix; weight_error_vec];
+
+    ground_truth_error = [ground_truth_error best_objective_vec(end)];
+    weights_error = [weights_error weight_error_vec(end)];
+    individual_weights_error = [individual_weights_error; abs(best_weights - weights)];
 end
+
+plot(mean(best_objective_matrix, 1), 'LineWidth', 3, 'Color', [0, 0.4470, 0.7410, 1.0]);
+plot(mean(weight_error_matrix, 1), 'LineWidth', 3, 'Color', [0.8500, 0.3250, 0.0980, 1.0]);
+legend('Objective (Sample)', 'Weights (Sample)', 'Objective (Mean)', 'Weights (Mean)', 'Location', 'northoutside', 'Orientation', 'horizontal');
 
 
 function weights = readWeights(weights_path)
