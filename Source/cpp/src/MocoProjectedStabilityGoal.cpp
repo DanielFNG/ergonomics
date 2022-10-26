@@ -32,12 +32,12 @@ void MocoProjectedStabilityGoal::calcIntegrandImpl(
 
     // Access required contact forces.
     std::vector<std::string> force_strings = {
-        "l_1", "l_3", "r_3", "r_1"
+        "l_1", "l_3", "r_3"
     };
 
     // Access required contact geometries
     std::vector<std::string> sphere_strings = {
-        "heel_l", "front_l", "front_r", "heel_r"
+        "front_r", "heel_r", "butt_r"
     };
 
     // Get model weight

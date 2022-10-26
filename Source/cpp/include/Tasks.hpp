@@ -2,6 +2,7 @@
 #define INCLUDE_TASKS
 
 #include <SitToStand.hpp>
+#include <CombinedSitToStand.hpp>
 #include <string>
 #include <vector>
 #include <map>
@@ -11,7 +12,8 @@ namespace Tasks
 {
     std::map<std::string, std::function<OpenSim::MocoSolution(std::string, std::vector<double>)>> TASK_MAP = 
     {
-        {"SitToStand", &SitToStand}
+        {"SitToStand", &SitToStand},
+        {"CombinedSitToStand", &CombinedSitToStand}
     };
 }
 
