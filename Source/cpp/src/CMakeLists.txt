@@ -9,6 +9,7 @@ add_library(custom_goals
     Configuration.cpp "${MocoLowerLevel_SOURCE_DIR}/include/Configuration.hpp"
     LowerLevel.cpp "${MocoLowerLevel_SOURCE_DIR}/include/LowerLevel.hpp"
     SitToStand.cpp "${MocoLowerLevel_SOURCE_DIR}/include/SitToStand.hpp"
+    SitToStandTracked.cpp "${MocoLowerLevel_SOURCE_DIR}/include/SitToStandTracked.hpp"
     "${MocoLowerLevel_SOURCE_DIR}/include/Tasks.hpp"
     "${MocoLowerLevel_SOURCE_DIR}/include/MocoImporter.hpp")
 

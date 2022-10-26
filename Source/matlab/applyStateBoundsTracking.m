@@ -10,8 +10,12 @@ function applyStateBoundsTracking(problem, bounds)
         if isnan(initial)
             initial = [];
         end
+        final = bounds.FinalValue(i);
+        if isnan(final)
+            final = [];
+        end
         problem.setStateInfo(bounds.Name{i}, ...
-            [bounds.LowerBound(i), bounds.UpperBound(i)], initial);
+            [bounds.LowerBound(i), bounds.UpperBound(i)], initial, final);
     end
 
 end

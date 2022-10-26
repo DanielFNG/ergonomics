@@ -20,33 +20,13 @@ void MocoProjectedStabilityGoal::calcIntegrandImpl(
     // Update model positions
     getModel().realizeDynamics(input.state);
 
-    /*// Access required contact forces.
-    std::vector<std::string> force_strings = {
-        "chair_r", "chair_l", "l_1", "l_3", "r_3", "r_1"
-    };
-
     // Access required contact geometries
-    std::vector<std::string> sphere_strings = {
-        "butt_r", "butt_l", "heel_l", "front_l", "front_r", "heel_r"
-    };*/
-
-    // Access required contact forces.
-    std::vector<std::string> force_strings = {
-        "l_1", "l_3", "r_3", "r_1"
-    };
-
-    // Access required contact geometries
-    std::vector<std::string> sphere_strings = {
-        "heel_l", "front_l", "front_r", "heel_r"
-    };
-
-    // Get model weight
-    double model_weight = getModel().getGravity().get(1)*getModel().getTotalMass(input.state);
+    std::vector<std::string> sphere_strings = {"front_r", "heel_r", "butt_r"};
         
     // Create PBoS polygon
     polygon_2d pbos_poly;
     bool empty = true;
-    for (int i = 0; i < force_strings.size(); i++) {
+    for (int i = 0; i < sphere_strings.size(); i++) {
 
         // Get contact sphere & associated frame
         const auto& geometries = getModel().getContactGeometrySet();
@@ -73,16 +53,20 @@ void MocoProjectedStabilityGoal::calcIntegrandImpl(
     const auto& bs = getModel().getBodySet();
     for (int i = 0; i < bs.getSize(); i++) {
         const auto& body = bs.get(i);
-        const SimTK::Vec3 body_com = body.get_mass_center();
-        vec = body.findStationLocationInGround(input.state, body_com);
-        vel = body.findStationVelocityInGround(input.state, body_com);
-        Mass += body.get_mass();
-        com[0] += body.get_mass() * vec[0];
-        com[1] += body.get_mass() * vec[1];
-        com[2] += body.get_mass() * vec[2];
-        com_v[0] += body.get_mass() * vel[0];
-        com_v[1] += body.get_mass() * vel[1];
-        com_v[2] += body.get_mass() * vel[2];
+        const std::string name = body.getName();
+        if (!(name == "block_r" || name == "block_l" || name == "chair")) 
+        {
+            const SimTK::Vec3 body_com = body.get_mass_center();
+            vec = body.findStationLocationInGround(input.state, body_com);
+            vel = body.findStationVelocityInGround(input.state, body_com);
+            Mass += body.get_mass();
+            com[0] += body.get_mass() * vec[0];
+            com[1] += body.get_mass() * vec[1];
+            com[2] += body.get_mass() * vec[2];
+            com_v[0] += body.get_mass() * vel[0];
+            com_v[1] += body.get_mass() * vel[1];
+            com_v[2] += body.get_mass() * vel[2];
+        }
     }
     com[0] /= Mass;
     com[1] /= Mass;
