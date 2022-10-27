@@ -21,23 +21,8 @@ if __name__ == "__main__":
     config_path_weak = "config_weak.txt"
     config_path_assisted = "config_assisted.txt"
 
-    # Strong 
-    output_path = "results/normal.sto"
-    combined_weights = [1, 1]
-    #run_lower_level_print(output_path, [0, 0], config_path)
-
-    # Weak
-    output_path = "results/weak.sto"
-    #run_lower_level_print(output_path, [0, 0], config_path_weak)
-
-    # Assistance - stability
-    output_path = "results/stability.sto"
-    #run_lower_level_print(output_path, [0, 1], config_path_assisted)
-
-    # Assistance - lumbar loading
-    output_path = "results/lumbar.sto"
-    run_lower_level_print(output_path, [0.1, 0], config_path_assisted)
-
-    # Assistance - stability & lumbar loading
-    output_path = "results/combined.sto"
-    run_lower_level_print(output_path, [0.1, 1], config_path_assisted)
+    run_lower_level_print("results/normal.sto", [0.0001, 1], config_path)
+    run_lower_level_print("results/weak.sto", [0.0001, 1], config_path_weak)
+    run_lower_level_print("results/stability.sto", [0, 1], config_path_assisted)
+    run_lower_level_print("results/lumbar.sto", [0.0001, 0], config_path_assisted)
+    run_lower_level_print("results/combined.sto", [0.0001, 1], config_path_assisted)
