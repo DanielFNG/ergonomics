@@ -17,7 +17,27 @@ def run_lower_level_print(output_path, weights, config_path):
     subprocess.run(command, check=True, stderr=_ERR_OUTPUT)
 
 if __name__ == "__main__":
-    output_path = "test.sto"
-    weights = [0, 1]
     config_path = "config.txt"
-    run_lower_level_print(output_path, weights, config_path)
+    config_path_weak = "config_weak.txt"
+    config_path_assisted = "config_assisted.txt"
+
+    # Strong 
+    output_path = "results/normal.sto"
+    combined_weights = [1, 1]
+    #run_lower_level_print(output_path, [0, 0], config_path)
+
+    # Weak
+    output_path = "results/weak.sto"
+    #run_lower_level_print(output_path, [0, 0], config_path_weak)
+
+    # Assistance - stability
+    output_path = "results/stability.sto"
+    #run_lower_level_print(output_path, [0, 1], config_path_assisted)
+
+    # Assistance - lumbar loading
+    output_path = "results/lumbar.sto"
+    run_lower_level_print(output_path, [0.1, 0], config_path_assisted)
+
+    # Assistance - stability & lumbar loading
+    output_path = "results/combined.sto"
+    run_lower_level_print(output_path, [0.1, 1], config_path_assisted)

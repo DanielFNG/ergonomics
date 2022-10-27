@@ -1,0 +1,17 @@
+inDegrees=no
+num_controls=0
+num_derivatives=0
+num_iterations=-1
+num_multipliers=0
+num_parameters=0
+num_slacks=0
+num_states=0
+objective=-1.000000
+solver_duration=-1.000000
+status=
+success=true
+DataType=double
+version=3
+OpenSimVersion=4.4-2022-04-25-105b6ce37
+endheader
+time
