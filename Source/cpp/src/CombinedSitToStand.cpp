@@ -26,6 +26,8 @@ void configureGoals2(MocoProblem& problem, std::vector<double> weights)
     */
 
     auto* stability = problem.addGoal<MocoProjectedStabilityGoal>(names[1], weights[1]);
+    std::vector<std::string> active_bodies = {"pelvis", "femur_r", "tibia_r", "talus_r", "calcn_r", "toes_r", "torso", "humerus_r", "ulna_r", "radius_r", "hand_r", "APO_backpack", "APO_group_r", "APO_r_link"};
+    stability->assignActiveBodies(active_bodies);
 
     // Disable goals of 0 weight -> noticeable speed gains
     for (int i = 0; i < names.size(); i++) 

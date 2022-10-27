@@ -14,6 +14,12 @@ void MocoProjectedStabilityGoal::initializeOnModelImpl(const Model&) const {
     setRequirements(1, 1, SimTK::Stage::Dynamics);
 }
 
+void MocoProjectedStabilityGoal::assignActiveBodies(std::vector<std::string> bodies) {
+    for (int i = 0; i < bodies.size(); i++) {
+        active_bodies.push_back(bodies[i]);
+    }
+}
+
 void MocoProjectedStabilityGoal::calcIntegrandImpl(
         const IntegrandInput& input, double& integrand) const {
     
@@ -71,8 +77,8 @@ void MocoProjectedStabilityGoal::calcIntegrandImpl(
     double com_v[3] = {0.0, 0.0, 0.0};
     SimTK::Vec3 vec, vel;
     const auto& bs = getModel().getBodySet();
-    for (int i = 0; i < bs.getSize(); i++) {
-        const auto& body = bs.get(i);
+    for (int i = 0; i < active_bodies.size(); i++) {
+        const auto& body = bs.get(active_bodies[i]);
         const SimTK::Vec3 body_com = body.get_mass_center();
         vec = body.findStationLocationInGround(input.state, body_com);
         vel = body.findStationVelocityInGround(input.state, body_com);

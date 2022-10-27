@@ -2,17 +2,21 @@
 #define OPENSIM_MOCOPROJECTEDSTABILITYGOAL_H
 
 #include <MocoImporter.hpp>
+#include <vector>
+#include <string>
 
 namespace OpenSim {
 
     class OSIMMOCO_API MocoProjectedStabilityGoal : public MocoGoal {
         OpenSim_DECLARE_CONCRETE_OBJECT(MocoProjectedStabilityGoal, MocoGoal);
 
+        std::vector<std::string> active_bodies = {};
         public:
             MocoProjectedStabilityGoal();
             MocoProjectedStabilityGoal(std::string name) : MocoGoal(std::move(name)) {}
             MocoProjectedStabilityGoal(std::string name, double weight) : 
                 MocoGoal(std::move(name), weight) {}
+            void assignActiveBodies(std::vector<std::string>);
 
         protected:
             Mode getDefaultModeImpl() const override { return Mode::Cost; }
