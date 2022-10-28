@@ -21,11 +21,11 @@ if __name__ == "__main__":
     config_path_weak = "config_weak.txt"
     config_path_assisted = "config_assisted.txt"
 
-    run_lower_level_print("results/normal.sto", [0.0001, 1], config_path)
-    run_lower_level_print("results/weak.sto", [0.0001, 1], config_path_weak)
-    run_lower_level_print("results/stability.sto", [0.000001, 1], config_path_assisted)
-    run_lower_level_print("results/lumbar.sto", [0.1, 0.01], config_path_assisted)
-    run_lower_level_print("results/combined.sto", [0.0001, 1], config_path_assisted)
+    #run_lower_level_print("results/normal.sto", [0.0001, 1], config_path)
+    #run_lower_level_print("results/weak.sto", [0.0001, 1], config_path_weak)
+    #run_lower_level_print("results/stability.sto", [0.000001, 1], config_path_assisted)
+    run_lower_level_print("results/lumbar.sto", [0.0001, 0.01], config_path_assisted)
+    #run_lower_level_print("results/combined.sto", [0.0001, 1], config_path_assisted)
 
     #stability_normaliser = 0.049487
     #lumbar_normaliser = 1.635585/0.1
