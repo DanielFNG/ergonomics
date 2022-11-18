@@ -12,5 +12,5 @@ end
 legend(files, 'Interpreter', 'none');
 xlabel('% of Motion');
 ylabel('Torque (Nm)');
-set(gca, 'FontSize', 15);
+set(gca, 'FontSize', 20);
 title('APO Assistance');
