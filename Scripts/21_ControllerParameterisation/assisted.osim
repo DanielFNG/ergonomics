@@ -55,7 +55,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>lumbar</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>200</optimal_force>
+				<optimal_force>20</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -67,7 +67,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>hip_flexion_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>200</optimal_force>
+				<optimal_force>20</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -79,7 +79,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>knee_angle_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>200</optimal_force>
+				<optimal_force>20</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -91,7 +91,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>ankle_angle_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>20</optimal_force>
+				<optimal_force>200</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -3286,7 +3286,52 @@
 		</ConstraintSet>
 		<!--Forces in the model (includes Actuators).-->
 		<ForceSet name="forceset">
-			<objects />
+			<objects>
+				<PrescribedForce>
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame onto which this force is applied.).-->
+					<socket_frame>/bodyset/APO_group_r</socket_frame>
+					<!--Flag indicating whether the quantities (specified in force/torqueFunctions) is in global frame.-->
+					<forceIsGlobal>true</forceIsGlobal>
+					<!--Three functions describing the torque the PrescribedForce applies.-->
+					<FunctionSet name="torqueFunctions">
+						<objects>
+							<Constant>
+								<value>0</value>
+							</Constant>
+							<Constant>
+								<value>0</value>
+							</Constant>
+							<PiecewiseConstantFunction>
+								<x> 0 0.015 0.03 0.045 0.06 0.075 0.09 0.105 0.12 0.135 0.15 0.165 0.18 0.195 0.21 0.225 0.24 0.255 0.27 0.285 0.3 0.315 0.33 0.345 0.36 0.375 0.39 0.405 0.42 0.435 0.45 0.465 0.48 0.495 0.51 0.525 0.54 0.555 0.57 0.585 0.6 0.615 0.63 0.645 0.66 0.675 0.69 0.705 0.72 0.735 0.75 0.765 0.78 0.795 0.81 0.825 0.84 0.855 0.87 0.885 0.9 0.915 0.93 0.945 0.96 0.975 0.99 1.005 1.02 1.035 1.05 1.065 1.08 1.095 1.11 1.125 1.14 1.155 1.17 1.185 1.2 1.215 1.23 1.245 1.26 1.275 1.29 1.305 1.32 1.335 1.35 1.365 1.38 1.395 1.41 1.425 1.44 1.455 1.47 1.485 1.5</x>
+								<y> 0 0.923374 3.67076 8.17451 14.3237 21.967 30.9161 40.9507 51.8237 63.2674 75 86.7326 98.1763 109.049 119.084 128.033 135.676 141.825 146.329 149.077 150 150 150 150 150 150 150 150 150 150 150 150 150 150 150 150 150 150 150 150 150 149.954 149.816 149.591 149.284 148.902 148.454 147.952 147.409 146.837 146.25 145.663 145.091 144.548 144.046 143.598 143.216 142.909 142.684 142.546 142.5 141.9 140.114 137.187 133.19 128.221 122.405 115.882 108.815 101.376 93.75 86.1238 78.6854 71.618 65.0955 59.2785 54.3104 50.3134 47.386 45.6002 45 44.723 43.8988 42.5476 40.7029 38.4099 35.7252 32.7148 29.4529 26.0198 22.5 18.9802 15.5471 12.2852 9.27483 6.5901 4.29712 2.45235 1.10123 0.277012 0</y>
+							</PiecewiseConstantFunction>
+						</objects>
+						<groups />
+					</FunctionSet>
+				</PrescribedForce>
+				<PrescribedForce>
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame onto which this force is applied.).-->
+					<socket_frame>/bodyset/APO_r_link</socket_frame>
+					<!--Flag indicating whether the quantities (specified in force/torqueFunctions) is in global frame.-->
+					<forceIsGlobal>true</forceIsGlobal>
+					<!--Three functions describing the torque the PrescribedForce applies.-->
+					<FunctionSet name="torqueFunctions">
+						<objects>
+							<Constant>
+								<value>0</value>
+							</Constant>
+							<Constant>
+								<value>0</value>
+							</Constant>
+							<PiecewiseConstantFunction>
+								<x> 0 0.015 0.03 0.045 0.06 0.075 0.09 0.105 0.12 0.135 0.15 0.165 0.18 0.195 0.21 0.225 0.24 0.255 0.27 0.285 0.3 0.315 0.33 0.345 0.36 0.375 0.39 0.405 0.42 0.435 0.45 0.465 0.48 0.495 0.51 0.525 0.54 0.555 0.57 0.585 0.6 0.615 0.63 0.645 0.66 0.675 0.69 0.705 0.72 0.735 0.75 0.765 0.78 0.795 0.81 0.825 0.84 0.855 0.87 0.885 0.9 0.915 0.93 0.945 0.96 0.975 0.99 1.005 1.02 1.035 1.05 1.065 1.08 1.095 1.11 1.125 1.14 1.155 1.17 1.185 1.2 1.215 1.23 1.245 1.26 1.275 1.29 1.305 1.32 1.335 1.35 1.365 1.38 1.395 1.41 1.425 1.44 1.455 1.47 1.485 1.5</x>
+								<y> -0 -0.923374 -3.67076 -8.17451 -14.3237 -21.967 -30.9161 -40.9507 -51.8237 -63.2674 -75 -86.7326 -98.1763 -109.049 -119.084 -128.033 -135.676 -141.825 -146.329 -149.077 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -150 -149.954 -149.816 -149.591 -149.284 -148.902 -148.454 -147.952 -147.409 -146.837 -146.25 -145.663 -145.091 -144.548 -144.046 -143.598 -143.216 -142.909 -142.684 -142.546 -142.5 -141.9 -140.114 -137.187 -133.19 -128.221 -122.405 -115.882 -108.815 -101.376 -93.75 -86.1238 -78.6854 -71.618 -65.0955 -59.2785 -54.3104 -50.3134 -47.386 -45.6002 -45 -44.723 -43.8988 -42.5476 -40.7029 -38.4099 -35.7252 -32.7148 -29.4529 -26.0198 -22.5 -18.9802 -15.5471 -12.2852 -9.27483 -6.5901 -4.29712 -2.45235 -1.10123 -0.277012 -0</y>
+							</PiecewiseConstantFunction>
+						</objects>
+						<groups />
+					</FunctionSet>
+				</PrescribedForce>
+			</objects>
 			<groups />
 		</ForceSet>
 		<!--Markers in the model.-->

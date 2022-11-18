@@ -31,9 +31,10 @@ def controller(locations, magnitudes):
 
     return x, y
 
-locations = [0, 20, 40, 60, 80, 100]
-values = [0, 0.1, 1, 0.7, 0.7, 0]
-xc, yc = controller(locations, values)
-plt.plot(locations, values, 'b--')
-plt.plot(xc, yc, 'g--')
-plt.show()
+if __name__ == "__main__":
+    locations = [0, 20, 40, 60, 80, 100]
+    values = [0, 0.1, 1, 0.7, 0.7, 0]
+    xc, yc = controller(locations, values)
+    plt.plot(locations, values, 'b--')
+    plt.plot(xc, yc, 'g--')
+    plt.show()

@@ -55,7 +55,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>lumbar</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>200</optimal_force>
+				<optimal_force>20</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -67,7 +67,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>hip_flexion_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>200</optimal_force>
+				<optimal_force>20</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -79,7 +79,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>knee_angle_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>200</optimal_force>
+				<optimal_force>20</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>
@@ -91,7 +91,7 @@
 				<!--Name of the generalized coordinate to which the actuator applies.-->
 				<coordinate>ankle_angle_r</coordinate>
 				<!--The maximum generalized force produced by this actuator.-->
-				<optimal_force>20</optimal_force>
+				<optimal_force>200</optimal_force>
 				<!--Larger value means activation changes more slowly (units: seconds; default: 0.01 seconds).-->
 				<activation_time_constant>0.01</activation_time_constant>
 			</ActivationCoordinateActuator>

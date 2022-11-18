@@ -1,0 +1,26 @@
+in_degrees  yes
+Name    LowerBound  UpperBound  InitialValue    FinalValue 
+/jointset/hip_r/hip_flexion_r/value                        	-18  	135 	55.668  	0 
+/jointset/knee_r/knee_angle_r/value                        	-140 	  5 	-71.705 	0 
+/jointset/ankle_r/ankle_angle_r/value                      	-60  	 15 	4.516   	0 
+/jointset/lumbar/lumbar/value                              	-50  	 15 	-22.667 	0 
+/jointset/acromial_r/arm_flex_r/value                      	-10  	 90 	60.201  	0  
+/jointset/elbow_r/elbow_flex_r/value                       	-10  	 90 	40.175  	0  
+/jointset/hip_r_h/hip_flexion_r_h/value                    	-18  	135 	0.113   	0  
+/jointset/knee_r_h/knee_angle_r_h/value                    	-140 	  5 	0.297   	0  
+/jointset/ankle_r_h/ankle_angle_r_h/value                  	-60  	 15 	0.490   	0  
+/jointset/lumbar_h/lumbar_h/value                          	-50  	 15 	-0.052  	0  
+/jointset/acromial_l_h/arm_flex_l_h/value                  	-10  	 90 	30.130  	0  
+/jointset/elbow_l_h/elbow_flex_l_h/value                   	-10  	 90 	26.241  	0  
+/jointset/hip_r/hip_flexion_r/speed                        	-360 	360 	0       	0 	
+/jointset/knee_r/knee_angle_r/speed                        	-360 	360 	0       	0 	
+/jointset/ankle_r/ankle_angle_r/speed                      	-360 	360 	0       	0 	
+/jointset/lumbar/lumbar/speed                              	-360 	360 	0       	0 
+/jointset/acromial_r/arm_flex_r/speed                      	-360 	360 	0       	0 
+/jointset/elbow_r/elbow_flex_r/speed                       	-360 	360 	0       	0 
+/jointset/hip_r_h/hip_flexion_r_h/speed                    	-360 	360 	0       	0 
+/jointset/knee_r_h/knee_angle_r_h/speed                   	-360 	360 	0       	0 
+/jointset/ankle_r_h/ankle_angle_r_h/speed                  	-360 	360 	0       	0 
+/jointset/lumbar_h/lumbar_h/speed                          	-360 	360 	0       	0 
+/jointset/acromial_l_h/arm_flex_l_h/speed                  	-360 	360 	0       	0 
+/jointset/elbow_l_h/elbow_flex_l_h/speed                   	-360 	360 	0       	0 

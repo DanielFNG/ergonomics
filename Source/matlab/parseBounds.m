@@ -3,10 +3,11 @@ function bounds = parseBounds(filename, osim)
     % Open file
     fid = fopen(filename);
     
-    % Read degrees header & close the file
-    header = strsplit(fgetl(fid), '\t');
-    in_degrees = strcmp(header{2}, 'yes');
-    fclose(fid);
+    in_degrees = true
+    %% Read degrees header & close the file
+    %header = strsplit(fgetl(fid), '\t');
+    %in_degrees = strcmp(header{2}, 'yes');
+    %fclose(fid);
     
     % Import the rest of the data as a table
     bounds = readtable(filename);
