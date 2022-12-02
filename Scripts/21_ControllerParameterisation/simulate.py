@@ -11,7 +11,6 @@ _GOAL_SPECIFICATION = "CombinedSitToStand"
 _EXECUTABLE_PRINT = os.path.join(os.getenv("ERGONOMICS_HOME"), "bin", "solveAndPrint")
 _DELETE_TEMP_FILES = system() == "Windows"
 _ERR_OUTPUT = subprocess.DEVNULL if _DELETE_TEMP_FILES else None
-_WEIGHTS = [0.0001, 1]  # Same as previous combined results
 _TIME = 1.5
 _MAX_TORQUE = 150
 _OBJECTIVE_STR = "objective="
@@ -81,24 +80,27 @@ def get_objective_from_file(filename):
             if _OBJECTIVE_STR in line:
                 return float(line.replace(_OBJECTIVE_STR, ""))
 
-def objective(node_values, input_model, output_model, config_path):
+def objective(node_values, input_model, output_model, config_path, weights):
     nodes = [0, 20, 40, 60, 80, 100]
     node_values = [0] + node_values + [0]
     x, y = controller(nodes, node_values)
     timesteps = x * _TIME / x[-1]
     create_assisted_model(input_model, output_model, timesteps, y * _MAX_TORQUE)
-    run_lower_level_print("solution.sto", _WEIGHTS, config_path)
+    run_lower_level_print("solution.sto", weights, config_path)
     return get_objective_from_file("solution.sto")
 
 
 if __name__ == "__main__":
+
+    weightings = [[0.0001, 1],
+        [0.000001, 1],
+        [0.0001, 0.001]]
 
     config_path = "config.txt"
     input_model = "base.osim"
     output_model = "assisted.osim"
 
     max_evaluations = 100
-    inner_objective = lambda node_values: objective(node_values, input_model, output_model, config_path)
     params = [
         "DIMENSION 4",
         "BB_OUTPUT_TYPE OBJ",
@@ -110,9 +112,30 @@ if __name__ == "__main__":
         "DISPLAY_STATS BBE OBJ ( SOL )",
         "NB_THREADS_OPENMP 1"
     ]
+
+    weights = [0.000001, 1]
+    inner_objective = lambda node_values: objective(node_values, input_model, output_model, config_path, weights)
     result = solve_constrained_nomad(
         inner_objective, 4, 0, 1, params
     )
-
-    with open("results.json", "w") as f:
+    with open("weights2.json", "w") as f:
         json.dump(result, f, indent=4)
+
+    _MAX_TORQUE = 10
+    weights = [0.0001, 1]
+    inner_objective = lambda node_values: objective(node_values, input_model, output_model, config_path, weights)
+    result = solve_constrained_nomad(
+            inner_objective, 4, 0, 1, params
+        )
+    with open("realistic.json", "w") as f:
+        json.dump(result, f, indent=4)
+
+    _MAX_TORQUE = 150
+    weights = [0.0001, 0.001]
+    inner_objective = lambda node_values: objective(node_values, input_model, output_model, config_path, weights)
+    result = solve_constrained_nomad(
+        inner_objective, 4, 0, 1, params
+    )
+    with open("weights3.json", "w") as f:
+        json.dump(result, f, indent=4)
+

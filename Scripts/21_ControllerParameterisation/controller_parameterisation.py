@@ -33,8 +33,11 @@ def controller(locations, magnitudes):
 
 if __name__ == "__main__":
     locations = [0, 20, 40, 60, 80, 100]
-    values = [0, 0.1, 1, 0.7, 0.7, 0]
+    values = [0, 0.9, 1, 1.0, 0.5, 0]
+    values2 = [0, 0.4, 0.8, 0.4, 0.1, 0]
     xc, yc = controller(locations, values)
-    plt.plot(locations, values, 'b--')
+    xp, yp = controller(locations, values2)
+    #plt.plot(locations, values, 'b--')
     plt.plot(xc, yc, 'g--')
+    plt.plot(xp, yp, 'r--')
     plt.show()
