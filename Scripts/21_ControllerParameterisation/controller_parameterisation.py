@@ -34,10 +34,25 @@ def controller(locations, magnitudes):
 if __name__ == "__main__":
     locations = [0, 20, 40, 60, 80, 100]
     values = [0, 0.9, 1, 1.0, 0.5, 0]
-    values2 = [0, 0.4, 0.8, 0.4, 0.1, 0]
+    locs2 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    values2 = [0, 0.9,
+        0.9,
+        0.9,
+        0.1181,
+        0.1,
+        0.1031,
+        0.1271,
+        0.8,
+        0.2001, 
+        0
+    ]
+    locs3 = [0, 20, 40, 60, 80, 100]
+    values3 = [0, 0.338, 0.0, 1.0, 0.1, 0]
     xc, yc = controller(locations, values)
-    xp, yp = controller(locations, values2)
+    xp, yp = controller(locs2, values2)
+    xd, yd = controller(locs3, values3)
     #plt.plot(locations, values, 'b--')
     plt.plot(xc, yc, 'g--')
     plt.plot(xp, yp, 'r--')
+    plt.plot(xd, yd, 'b--')
     plt.show()
