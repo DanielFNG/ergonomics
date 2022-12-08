@@ -6,6 +6,7 @@ import opensim
 from controller_parameterisation import controller
 import PyNomad
 import json
+import contextlib, io
 
 _GOAL_SPECIFICATION = "CombinedSitToStand"
 _EXECUTABLE_PRINT = os.path.join(os.getenv("ERGONOMICS_HOME"), "bin", "solveAndPrint")
@@ -22,7 +23,7 @@ def run_lower_level_print(output_path, weights, config_path):
     # Windows OpenSim binary prints an error message each run, cluttering the output 
     str_weights = [str(weight) for weight in weights]
     command = [_EXECUTABLE_PRINT, _GOAL_SPECIFICATION, config_path, output_path] + str_weights
-    subprocess.run(command, check=True, stderr=_ERR_OUTPUT, stdout=subprocess.DEVNULL)
+    subprocess.run(command, check=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
 def create_assisted_model(input_filename, output_filename, timesteps, values):
     
@@ -36,7 +37,7 @@ def create_assisted_model(input_filename, output_filename, timesteps, values):
 
     # Create constant 0 functions for inactive dimensions
     zero = opensim.Constant(0)
-    
+
     # Create a prescribed force
     prescribed_force = opensim.PrescribedForce()
     prescribed_force.setFrameName("/bodyset/APO_group_r")
@@ -48,7 +49,7 @@ def create_assisted_model(input_filename, output_filename, timesteps, values):
     opposite_force.setFrameName("/bodyset/APO_r_link")
     opposite_force.setForceIsInGlobalFrame(True)
     opposite_force.setTorqueFunctions(zero, zero, torque_opposite)
-    
+
     # Add to model
     osim = opensim.Model(input_filename)
     force_set = osim.updForceSet()
@@ -100,8 +101,11 @@ def objective2(n, node_values, input_model, output_model, config_path, weights, 
 
 if __name__ == "__main__":
 
+    # Suppress opensim logger output
+    opensim.Logger.setLevelString("Off")
+
     weights = [0.0001, 1]
-    iterations = [100, 500, 1000]
+    iterations = [250]
 
     config_path = "config.txt"
     input_model = "base.osim"
