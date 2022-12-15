@@ -1,0 +1,8 @@
+{
+    "x_best": [],
+    "f_best": Infinity,
+    "h_best": Infinity,
+    "nb_evals": 4473866448,
+    "nb_iters": 0,
+    "exit_status": 0
+}

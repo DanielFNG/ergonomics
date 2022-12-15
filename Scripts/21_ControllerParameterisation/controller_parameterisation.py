@@ -32,27 +32,18 @@ def controller(locations, magnitudes):
     return x, y
 
 if __name__ == "__main__":
-    locations = [0, 20, 40, 60, 80, 100]
-    values = [0, 0.9, 1, 1.0, 0.5, 0]
-    locs2 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-    values2 = [0, 0.9,
-        0.9,
-        0.9,
-        0.1181,
-        0.1,
-        0.1031,
-        0.1271,
-        0.8,
-        0.2001, 
-        0
-    ]
-    locs3 = [0, 20, 40, 60, 80, 100]
-    values3 = [0, 0.338, 0.0, 1.0, 0.1, 0]
-    xc, yc = controller(locations, values)
-    xp, yp = controller(locs2, values2)
-    xd, yd = controller(locs3, values3)
-    #plt.plot(locations, values, 'b--')
-    plt.plot(xc, yc, 'g--')
-    plt.plot(xp, yp, 'r--')
-    plt.plot(xd, yd, 'b--')
+    l1 = [0, 50, 100]
+    l2 = [0, 25, 50, 75, 100]
+    v1 = [0, 0.972, 0]
+    v2 = [0.884, 0.976, 0.298]
+    v3 = [0, 0.993, 0.990, 1.0, 0]
+    v4 = [0, 1, 1, 1, 0]
+    x1, y1 = controller(l1, v1)
+    x2, y2 = controller(l1, v2)
+    x3, y3 = controller(l2, v3)
+    x4, y4 = controller(l2, v4)
+    plt.plot(x1, y1, 'g--')
+    plt.plot(x2, y2, 'r--')
+    plt.plot(x3, y3, 'b--')
+    plt.plot(x4, y4, 'c--')
     plt.show()

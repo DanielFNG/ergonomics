@@ -1,16 +1,26 @@
-lumbar_weights = [0.0001, 0.0001, 0.0001, 0.000001, 0.0001, 0.0001];
-lumbar_results = [0.020797, 0.020996, 0, 0.000212, 0, 0];
-stability_weights = [1, 1, 1, 1, 0.001, 1];
-stability_results = [0.051847, 0.053271, 0, 0.048020, 0, 0];
+lumbar_weights = [0.0001, 0.0001, 0.0001, 0.0001];
+lumbar_results = [0.009094, 0.005961, 0.010269, 0.005317];
+stability_weights = [1, 1, 1, 1];
+stability_results = [0.046672, 0.047072, 0.050387, 0.045132];
 
+n_results = length(lumbar_weights);
 lumbar = lumbar_results./lumbar_weights;
 stability = stability_results./stability_weights;
-createfigure([1, 4, 7, 10, 13, 16], lumbar, [2, 5, 8, 11, 14, 17], stability);
+tick_locs = 1:3:(n_results-1)*3 + 1;
 
-xlim([-0.5, 18.5]);
+
+xlim([tick_locs(1) - 1.5, tick_locs(end) + 1.5]);
+
+mid_ticks = (tick_locs + tick_locs + 1)/2;
+labels = cell(n_results, 1);
+for i = 1:n_results
+    labels{i} = num2str(i);
+end
+
+createfigure(tick_locs, lumbar, tick_locs + 1, stability, mid_ticks, labels);
 
 % The following is a MATLAB auto-generated function based on a saved plot.
-function createfigure(xvector1, yvector1, xvector2, yvector2)
+function createfigure(xvector1, yvector1, xvector2, yvector2, mid_ticks, labels)
 %CREATEFIGURE(xvector1, yvector1, xvector2, yvector2)
 %  XVECTOR1:  bar xvector
 %  YVECTOR1:  bar yvector
@@ -61,8 +71,7 @@ xlabel({'Simulation Case',''});
 box(axes1,'on');
 hold(axes1,'off');
 % Set the remaining axes properties
-set(axes1,'FontSize',20,'OuterPosition',[0 0 0.95 1],'XTick',[1.5 4.5 7.5 10.5 13.5 16.5],'XTickLabel',...
-    {'1','2','3','4','5', '6'});
+set(axes1,'FontSize',20,'OuterPosition',[0 0 0.95 1],'XTick',mid_ticks,'XTickLabel',labels);
 % Create legend
 legend1 = legend(axes1,'show');
 set(legend1,'Position',[0.144362358447775 0.779761904761919 0.134738186462324 0.113095238095238]);
