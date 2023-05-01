@@ -1,5 +1,5 @@
 max_iterations	2000
-model_path	models/combined_apo_fixed_weak_active.osim
+model_path	models/assisted.osim
 bounds_path	bounds.txt
 guess_path	guess.sto
 parallel	1

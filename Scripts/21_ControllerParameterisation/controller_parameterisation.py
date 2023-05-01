@@ -32,18 +32,33 @@ def controller(locations, magnitudes):
     return x, y
 
 if __name__ == "__main__":
-    l1 = [0, 50, 100]
-    l2 = [0, 25, 50, 75, 100]
-    v1 = [0, 0.972, 0]
-    v2 = [0.884, 0.976, 0.298]
-    v3 = [0, 0.993, 0.990, 1.0, 0]
-    v4 = [0, 1, 1, 1, 0]
-    x1, y1 = controller(l1, v1)
-    x2, y2 = controller(l1, v2)
-    x3, y3 = controller(l2, v3)
-    x4, y4 = controller(l2, v4)
+    x = [0, 25, 50, 75, 100]
+    y = [0,
+        0.76999999999992,
+        0.054,
+        0.009, 0
+    ]
+    x1, y1 = controller(x, y)
+    x = [0, 17, 34, 51, 68, 85, 100]
+    y = [0,
+        0.7,
+        0.095,
+        0.068,
+        0.2,
+        0.55, 0
+    ]
+    x2, y2 = controller(x, y)
+    x = [0,
+        11,
+        63,
+        66, 100]
+    y = [0,
+        0.90614182174349,
+        0.0,
+        0.0, 0
+    ]
+    x3, y3 = controller(x, y)
     plt.plot(x1, y1, 'g--')
     plt.plot(x2, y2, 'r--')
     plt.plot(x3, y3, 'b--')
-    plt.plot(x4, y4, 'c--')
     plt.show()

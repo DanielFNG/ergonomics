@@ -112,7 +112,7 @@ if __name__ == "__main__":
     opensim.Logger.setLevelString("Off")
 
     weights = [0.0001, 1, 0.0001]
-    iterations = [100]
+    iterations = [500]
     config_path = "config.txt"
     input_model = "base.osim"
     output_model = "assisted.osim"
@@ -146,6 +146,6 @@ if __name__ == "__main__":
             "NB_THREADS_OPENMP 1"
         ]
         result = solve_constrained_nomad(inner_objective, lb, ub, params)
-        with open("with-knee-variable-nodes.json", "w") as f:
+        with open("with-knee-variable-nodes-500iter.json", "w") as f:
             json.dump(result, f, indent=4)
 

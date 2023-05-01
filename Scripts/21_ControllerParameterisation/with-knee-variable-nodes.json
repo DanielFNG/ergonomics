@@ -1,8 +1,15 @@
 {
-    "x_best": [],
-    "f_best": Infinity,
-    "h_best": Infinity,
-    "nb_evals": 4473866448,
+    "x_best": [
+        11.0,
+        63.0,
+        66.0,
+        0.90614182174349,
+        0.0,
+        0.0
+    ],
+    "f_best": 0.100548,
+    "h_best": 0.0,
+    "nb_evals": 5580296400,
     "nb_iters": 0,
-    "exit_status": 0
+    "exit_status": 1
 }

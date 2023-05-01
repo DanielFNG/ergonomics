@@ -8,14 +8,14 @@ using namespace OpenSim;
 void configureGoals2(MocoProblem& problem, std::vector<double> weights)
 {
     // Names
-    std::vector<std::string> names = {"lumbar", "stability", "knee"};
+    std::vector<std::string> names = {"lumbar", "stability"};
 
     // Goal definitions
     auto* lumbar = problem.addGoal<MocoJointReactionGoal>(names[0], weights[0]);
     lumbar->setJointPath("jointset/lumbar_h");
 
-    auto* knee = problem.addGoal<MocoJointReactionGoal>(names[2], weights[2]);
-    knee->setJointPath("jointset/knee_r");
+    //auto* knee = problem.addGoal<MocoJointReactionGoal>(names[2], weights[2]);
+    //knee->setJointPath("jointset/knee_r");
     /*
     auto* effort = problem.addGoal<MocoControlGoal>(names[0], weights[0]);
     effort->setDivideByDisplacement(true);
