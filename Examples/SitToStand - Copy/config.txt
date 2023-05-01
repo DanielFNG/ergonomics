@@ -1,8 +1,0 @@
-max_iterations	2000
-model_path	model.osim
-bounds_path	bounds.txt
-guess_path	TrackingSolutionJoints.sto
-parallel	1
-num_mesh_intervals	50
-convergence_tolerance	0.01
-constraint_tolerance	0.0001
