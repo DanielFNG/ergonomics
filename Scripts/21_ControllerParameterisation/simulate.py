@@ -111,8 +111,8 @@ if __name__ == "__main__":
     # Suppress opensim logger output
     opensim.Logger.setLevelString("Off")
 
-    weights = [0.0001, 1, 0.0001]
-    iterations = [500]
+    weights = [0.000001, 1, 0.0001]
+    iterations = [250]
     config_path = "config.txt"
     input_model = "base.osim"
     output_model = "assisted.osim"
@@ -146,6 +146,36 @@ if __name__ == "__main__":
             "NB_THREADS_OPENMP 1"
         ]
         result = solve_constrained_nomad(inner_objective, lb, ub, params)
-        with open("with-knee-variable-nodes-500iter.json", "w") as f:
+        with open("knee-dominated.json", "w") as f:
+            json.dump(result, f, indent=4)
+
+    weights = [0.0001, 1, 0.000001]
+
+    inner_objective = lambda nodes: objective_variable_nodes(nodes, input_model, output_model, config_path, weights)
+    
+    n_nodes = dimension//2
+    m_nodes = n_nodes - 1
+    interval = 100//n_nodes
+    cutoff = (n_nodes - 1) * interval
+    lb_points = list(np.linspace(0, cutoff, n_nodes))
+    ub_points = list(np.linspace(interval, cutoff, m_nodes)) + [100]
+    lb = lb_points + [lb_value] * n_nodes
+    ub = ub_points + [ub_value] * n_nodes
+
+    for max_iterations in iterations:
+        params = [
+            "DIMENSION " + str(dimension),
+            "LH_SEARCH " + str(initial_search_size) + " 0",
+            "BB_INPUT_TYPE ( " + "I " * n_nodes + "R " * n_nodes + ")",
+            "BB_OUTPUT_TYPE OBJ",
+            "MAX_BB_EVAL " + str(max_iterations),
+            "VNS_MADS_SEARCH yes",
+            "DISPLAY_ALL_EVAL yes",
+            "DISPLAY_DEGREE 2",
+            "DISPLAY_STATS BBE OBJ ( SOL )",
+            "NB_THREADS_OPENMP 1"
+        ]
+        result = solve_constrained_nomad(inner_objective, lb, ub, params)
+        with open("lumbar-dominated.json", "w") as f:
             json.dump(result, f, indent=4)
 
