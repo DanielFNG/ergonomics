@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/350362988.svg)](https://zenodo.org/badge/latestdoi/350362988)
+
 This repository contains research code for learning human motion strategies via inverse musculoskeletal optimal control and simulating 
 human-robot collaboration scenarios.
 
